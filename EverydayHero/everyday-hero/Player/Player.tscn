@@ -14,6 +14,7 @@ script = ExtResource("1_xhfnw")
 texture = ExtResource("2_q3lat")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody2D"]
+scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_0rwas")
 
 [node name="PlayerCamera2D" type="Camera2D" parent="PlayerBody2D"]
