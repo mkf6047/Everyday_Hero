@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://djx64uhnvvqur"]
+
+[ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="1_rgbf5"]
+[ext_resource type="Script" uid="uid://cfvpdi3cypib" path="res://NPC/InteractableModel/CollideLeft.cs" id="2_gwxo3"]
+[ext_resource type="Script" uid="uid://dwb4cmveohqg2" path="res://NPC/InteractableModel/CollideRight.cs" id="3_kxga2"]
+[ext_resource type="Script" uid="uid://dmibri8bvruff" path="res://NPC/InteractableModel/CollideUp.cs" id="4_e4vgp"]
+[ext_resource type="Script" uid="uid://djutv14jxbgbj" path="res://NPC/InteractableModel/CollideDown.cs" id="5_3cril"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20814"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwxo3"]
+size = Vector2(30, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxga2"]
+size = Vector2(30, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4vgp"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgbf5"]
+size = Vector2(30, 30)
+
+[node name="Interactable" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_interpolation_mode = 2
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_20814")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_rgbf5")
+
+[node name="CollideLeft" type="Area2D" parent="."]
+position = Vector2(-30, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_gwxo3")
+
+[node name="CollisionShapeLeft" type="CollisionShape2D" parent="CollideLeft"]
+shape = SubResource("RectangleShape2D_gwxo3")
+
+[node name="CollideRight" type="Area2D" parent="."]
+position = Vector2(30, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_kxga2")
+
+[node name="CollisionShapeRight" type="CollisionShape2D" parent="CollideRight"]
+shape = SubResource("RectangleShape2D_kxga2")
+
+[node name="CollideUp" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_e4vgp")
+
+[node name="CollisionShapeUp" type="CollisionShape2D" parent="CollideUp"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_e4vgp")
+
+[node name="CollideDown" type="Area2D" parent="."]
+position = Vector2(0, 30)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_3cril")
+
+[node name="CollisionShapeDown" type="CollisionShape2D" parent="CollideDown"]
+shape = SubResource("RectangleShape2D_rgbf5")
+
+[connection signal="body_entered" from="CollideLeft" to="CollideLeft" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="CollideLeft" to="CollideLeft" method="OnArea2DBodyExited"]
+[connection signal="body_entered" from="CollideRight" to="CollideRight" method="_on_body_entered"]
+[connection signal="body_exited" from="CollideRight" to="CollideRight" method="OnArea2DBodyExited"]
+[connection signal="body_entered" from="CollideUp" to="CollideUp" method="_on_body_entered"]
+[connection signal="body_exited" from="CollideUp" to="CollideUp" method="OnArea2DBodyExited"]
+[connection signal="body_entered" from="CollideDown" to="CollideDown" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="CollideDown" to="CollideDown" method="OnArea2DBodyExited"]
