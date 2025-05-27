@@ -37,7 +37,7 @@ texture = ExtResource("1_rgbf5")
 [node name="CollideLeft" type="Area2D" parent="."]
 position = Vector2(-30, 0)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("2_gwxo3")
 
 [node name="CollisionShapeLeft" type="CollisionShape2D" parent="CollideLeft"]
@@ -46,7 +46,7 @@ shape = SubResource("RectangleShape2D_gwxo3")
 [node name="CollideRight" type="Area2D" parent="."]
 position = Vector2(30, 0)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("3_kxga2")
 
 [node name="CollisionShapeRight" type="CollisionShape2D" parent="CollideRight"]
@@ -54,7 +54,7 @@ shape = SubResource("RectangleShape2D_kxga2")
 
 [node name="CollideUp" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("4_e4vgp")
 
 [node name="CollisionShapeUp" type="CollisionShape2D" parent="CollideUp"]
@@ -64,7 +64,7 @@ shape = SubResource("RectangleShape2D_e4vgp")
 [node name="CollideDown" type="Area2D" parent="."]
 position = Vector2(0, 30)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("5_3cril")
 
 [node name="CollisionShapeDown" type="CollisionShape2D" parent="CollideDown"]

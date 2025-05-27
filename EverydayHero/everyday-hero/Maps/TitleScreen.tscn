@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://yra1xlevfyws"]
+
+[ext_resource type="Script" uid="uid://chrohqeso06v" path="res://Maps/TitleScreen.cs" id="1_3o3eu"]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_3o3eu")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_top = 324.0
+offset_right = 1152.0
+offset_bottom = 364.0
+bbcode_enabled = true
+text = "[center]Press Z / Enter to Continue.[/center]"
