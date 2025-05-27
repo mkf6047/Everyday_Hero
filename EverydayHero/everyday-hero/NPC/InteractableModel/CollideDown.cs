@@ -3,6 +3,13 @@ using System;
 
 public partial class CollideDown : Area2D
 {
+    Sprite2D NPCsprite;
+
+    public override void _Ready()
+    {
+        base._Ready();
+        NPCsprite = (Sprite2D)GetNode("/root/MainScene/Interactable/RigidBody2D/InteractiveSprite");
+    }
 
 
     public virtual void OnArea2DBodyEntered(Node2D body)
@@ -10,6 +17,10 @@ public partial class CollideDown : Area2D
         try
         {
             Player player = (Player)body;
+            if (Input.IsActionPressed("Interact"))
+            {
+                NPCsprite.Texture = GD.Load<Texture2D>("res://Sprites/Interacted.png");
+            }
         }
         catch
         {
@@ -25,7 +36,7 @@ public partial class CollideDown : Area2D
         }
         catch
         {
-            GD.PrintErr("Interactive item just collided with something other than a Player.");
+            GD.PrintErr("Interactive item just stopped colliding with something other than a Player.");
         }
     }
 }

@@ -31,7 +31,7 @@ gravity_scale = 0.0
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_20814")
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+[node name="InteractiveSprite" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("1_rgbf5")
 
 [node name="CollideLeft" type="Area2D" parent="."]

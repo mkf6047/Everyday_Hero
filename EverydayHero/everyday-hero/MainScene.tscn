@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=5 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_3mqji"]
 [ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="2_x4av3"]
+[ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="3_rpqi1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4av3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_3mqji")]
 
@@ -34,3 +35,6 @@ shape = SubResource("RectangleShape2D_x4av3")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D2"]
 texture = ExtResource("2_x4av3")
+
+[node name="Interactable" parent="." instance=ExtResource("3_rpqi1")]
+position = Vector2(100, 150)
