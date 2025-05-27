@@ -5,11 +5,26 @@ public partial class CollideUp : Area2D
 {
     Sprite2D NPCsprite;
 
+    bool isColliding;
+
     public override void _Ready()
     {
         base._Ready();
         NPCsprite = (Sprite2D)GetNode("/root/MainScene/Interactable/RigidBody2D/InteractiveSprite");
+        isColliding = false;
     }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (isColliding) {
+            if (Input.IsActionPressed("Interact"))
+            {
+                NPCsprite.Texture = GD.Load<Texture2D>("res://Sprites/Interacted.png");
+            }
+        }
+    }
+
 
 
     public virtual void OnArea2DBodyEntered(Node2D body)
@@ -17,10 +32,9 @@ public partial class CollideUp : Area2D
         try
         {
             Player player = (Player)body;
-            if (Input.IsActionPressed("Interact"))
-            {
-                NPCsprite.Texture = GD.Load<Texture2D>("res://Sprites/Interacted.png");
-            }
+            isColliding = true;
+            Sprite2D notice = (Sprite2D)GetNode("/root/MainScene/Player/PlayerBody2D/Notice");
+            notice.Call("ShowNotice");
         }
         catch
         {
@@ -33,6 +47,9 @@ public partial class CollideUp : Area2D
         try
         {
             Player player = (Player)body;
+            isColliding = false;
+            Sprite2D notice = (Sprite2D)GetNode("/root/MainScene/Player/PlayerBody2D/Notice");
+            notice.Call("HideNotice");
         }
         catch
         {
