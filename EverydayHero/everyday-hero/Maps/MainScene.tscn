@@ -13,6 +13,7 @@
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_interpolation_mode = 2
 position = Vector2(200, 0)
+collision_layer = 3
 mass = 0.001
 gravity_scale = 0.0
 
@@ -26,6 +27,7 @@ texture = ExtResource("2_x4av3")
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
 physics_interpolation_mode = 2
 position = Vector2(500, 0)
+collision_layer = 3
 mass = 0.001
 gravity_scale = 0.0
 

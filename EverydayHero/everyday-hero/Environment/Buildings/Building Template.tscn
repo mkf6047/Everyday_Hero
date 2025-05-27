@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://drhne4rxavvvr"]
+
+[ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_5p7bx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
+size = Vector2(40, 30)
+
+[node name="BuildingTemplate" type="Node2D"]
+
+[node name="BuildingPolygon" type="RigidBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
+polygon = PackedVector2Array(150, -70, 150, 70, 20, 70, 20, 40, -20, 40, -20, 70, -150, 70, -150, -70)
+
+[node name="DoorPolygon" type="Area2D" parent="."]
+position = Vector2(0, 55)
+script = ExtResource("1_5p7bx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorPolygon"]
+shape = SubResource("RectangleShape2D_bykni")
+
+[connection signal="body_entered" from="DoorPolygon" to="DoorPolygon" method="OnArea2DBodyEntered"]
