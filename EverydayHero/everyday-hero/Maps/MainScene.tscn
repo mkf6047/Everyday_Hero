@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=6 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_3mqji"]
 [ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="2_x4av3"]
 [ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="3_rpqi1"]
+[ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="4_kc1jb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4av3"]
 
@@ -12,7 +13,7 @@
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_interpolation_mode = 2
-position = Vector2(200, 0)
+position = Vector2(452, 125)
 collision_layer = 3
 mass = 0.001
 gravity_scale = 0.0
@@ -26,7 +27,7 @@ texture = ExtResource("2_x4av3")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
 physics_interpolation_mode = 2
-position = Vector2(500, 0)
+position = Vector2(541, 125)
 collision_layer = 3
 mass = 0.001
 gravity_scale = 0.0
@@ -40,3 +41,6 @@ texture = ExtResource("2_x4av3")
 
 [node name="Interactable" parent="." instance=ExtResource("3_rpqi1")]
 position = Vector2(100, 150)
+
+[node name="BuildingTemplate" parent="." instance=ExtResource("4_kc1jb")]
+position = Vector2(500, 37)

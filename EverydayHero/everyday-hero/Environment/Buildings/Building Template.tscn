@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_5p7bx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
-size = Vector2(40, 30)
+size = Vector2(38, 28)
 
 [node name="BuildingTemplate" type="Node2D"]
 

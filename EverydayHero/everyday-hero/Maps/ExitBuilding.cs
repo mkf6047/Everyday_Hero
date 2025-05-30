@@ -9,7 +9,7 @@ public partial class ExitBuilding : Area2D
         try
         {
             Player player = (Player)body;
-            GetTree().ChangeSceneToFile("res://Environment/Buildings/Building Template.tscn");
+            GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn"); 
         }
         catch
         {
