@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://bih5jqpk1bktm"]
+[gd_scene load_steps=3 format=3 uid="uid://bih5jqpk1bktm"]
+
+[ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/ExitBuilding.cs" id="1_tmr1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]
+size = Vector2(40, 20)
 
 [node name="BuildingInterior" type="Node2D"]
+
+[node name="Walls" type="RigidBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 0, 1152, 0, 1152, 648, 0, 648, 0, 0, 20, 20, 20, 628, 1132, 628, 1132, 20, 20, 20)
+
+[node name="ExitBuilding" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_tmr1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBuilding"]
+position = Vector2(556, 618)
+shape = SubResource("RectangleShape2D_vpuan")
+
+[connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]
