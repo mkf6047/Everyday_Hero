@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://drhne4rxavvvr"]
+[gd_scene load_steps=4 format=3 uid="uid://drhne4rxavvvr"]
 
 [ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_5p7bx"]
+[ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Environmental/Door-Tile.png" id="2_htv7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
-size = Vector2(38, 28)
+size = Vector2(64, 64)
 
 [node name="BuildingTemplate" type="Node2D"]
 
@@ -11,15 +12,24 @@ size = Vector2(38, 28)
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
-polygon = PackedVector2Array(150, -70, 150, 70, 20, 70, 20, 40, -20, 40, -20, 70, -150, 70, -150, -70)
+polygon = PackedVector2Array(160, -96, 160, 96, 35, 96, 35, 29, -35, 29, -35, 96, -160, 96, -160, -96)
 
 [node name="DoorPolygon" type="Area2D" parent="."]
-position = Vector2(0, 55)
+position = Vector2(0, 64)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_5p7bx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorPolygon"]
 shape = SubResource("RectangleShape2D_bykni")
+
+[node name="LeftDoor" type="Sprite2D" parent="DoorPolygon"]
+position = Vector2(-16, 0)
+texture = ExtResource("2_htv7f")
+
+[node name="RightDoor" type="Sprite2D" parent="DoorPolygon"]
+position = Vector2(16, 0)
+texture = ExtResource("2_htv7f")
+flip_h = true
 
 [connection signal="body_entered" from="DoorPolygon" to="DoorPolygon" method="OnArea2DBodyEntered"]
