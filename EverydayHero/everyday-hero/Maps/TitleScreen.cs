@@ -3,7 +3,7 @@ using System;
 
 public partial class TitleScreen : Node2D
 {
-
+    //press Interact Button (Z or Enter) to move to the save files
     public override void _Process(double delta)
     {
         base._Process(delta);
