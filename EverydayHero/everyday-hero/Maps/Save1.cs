@@ -9,17 +9,16 @@ public partial class Save1 : Button
     {
         base._Ready();
         this.Pressed += Clicked;
+        PlayerInfo = (PlayerVariables)GetNode("/root/PlayerVariables");
     }
 
     //when clicked, the below activates
     private void Clicked()
     {
-        PlayerInfo = GD.Load<PackedScene>("res://PlayerInformation/PlayerVariables.tscn").Instantiate<PlayerVariables>();
         using var file = FileAccess.Open("user://save_game_1.dat", FileAccess.ModeFlags.Read);
         string content = file.GetAsText();
         PlayerInfo.coin = Int32.Parse(content);
         GetTree().Root.AddChild(PlayerInfo);
         GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn");
     }
-
 }
