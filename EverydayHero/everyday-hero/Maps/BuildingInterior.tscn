@@ -31,17 +31,17 @@ position = Vector2(576, 324)
 [node name="Carpet" type="Sprite2D" parent="."]
 z_index = -1
 texture_repeat = 2
-position = Vector2(576, 288)
+position = Vector2(576, 408)
 texture = ExtResource("3_0arif")
 region_enabled = true
-region_rect = Rect2(0, 0, 1152, 576)
+region_rect = Rect2(0, 0, 192, 480)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
+[node name="WoodFloor" type="Sprite2D" parent="."]
+z_index = -2
 texture_repeat = 2
-position = Vector2(576, 612)
+position = Vector2(576, 324)
 texture = ExtResource("4_ym3th")
 region_enabled = true
-region_rect = Rect2(0, 0, 1152, 72)
+region_rect = Rect2(0, 0, 1152, 648)
 
 [connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]
