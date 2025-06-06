@@ -32,7 +32,7 @@ public partial class DeskInteract : Area2D
         {
             Player player = (Player)body;
             isColliding = true;
-            Sprite2D notice = (Sprite2D)GetNode("/root/MainScene/Player/PlayerBody2D/Notice");
+            Sprite2D notice = (Sprite2D)GetNode("/root/BuildingInterior/Player/PlayerBody2D/Notice");
             notice.Call("ShowNotice");
         }
         catch
@@ -47,7 +47,7 @@ public partial class DeskInteract : Area2D
         {
             Player player = (Player)body;
             isColliding = false;
-            Sprite2D notice = (Sprite2D)GetNode("/root/MainScene/Player/PlayerBody2D/Notice");
+            Sprite2D notice = (Sprite2D)GetNode("/root/BuildingInterior/Player/PlayerBody2D/Notice");
             notice.Call("HideNotice");
         }
         catch

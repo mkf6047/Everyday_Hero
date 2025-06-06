@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://yhbdyofw3n7k"]
+[gd_scene load_steps=4 format=3 uid="uid://yhbdyofw3n7k"]
+
+[ext_resource type="Script" uid="uid://bdcwmogegcsh7" path="res://QuestSorting/Random_Quest/MoveableQuest.cs" id="1_mupi5"]
+[ext_resource type="Texture2D" uid="uid://c6atyep8si700" path="res://Sprites/QuestPaper.png" id="2_w37uj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tebf4"]
+size = Vector2(160, 256)
 
 [node name="RandomQuest" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 24
+script = ExtResource("1_mupi5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w37uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tebf4")
