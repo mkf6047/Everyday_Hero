@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://don80isxypqih"]
+
+[ext_resource type="Texture2D" uid="uid://rffsh8ijxolg" path="res://Sprites/Environmental/Desk-Tiles.png" id="1_ie80k"]
+[ext_resource type="Script" uid="uid://dnjsl7ohblf6u" path="res://NPC/DeskInteraction/DeskInteract.cs" id="2_lsddi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4vgp"]
+size = Vector2(30, 30)
+
+[node name="Interactable" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_interpolation_mode = 2
+collision_layer = 5
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(-32, -19, -32, 22, 32, 22, 32, -19, 14.5, -19, 14.5, 6.5, -16, 6.5, -16, -19)
+
+[node name="DeskSprite" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_ie80k")
+
+[node name="DeskInteract" type="Area2D" parent="."]
+position = Vector2(0, -10)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("2_lsddi")
+
+[node name="CollisionShapeUp" type="CollisionShape2D" parent="DeskInteract"]
+shape = SubResource("RectangleShape2D_e4vgp")
+
+[connection signal="body_entered" from="DeskInteract" to="DeskInteract" method="_on_body_entered"]
+[connection signal="body_exited" from="DeskInteract" to="DeskInteract" method="OnArea2DBodyExited"]
