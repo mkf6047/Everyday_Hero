@@ -3,8 +3,6 @@ using System;
 
 public partial class DeskInteract : Area2D
 {
-    Sprite2D NPCsprite;
-
     bool isColliding;
 
     public override void _Ready()
@@ -15,7 +13,6 @@ public partial class DeskInteract : Area2D
 
     public override void _Process(double delta)
     {
-        base._Process(delta);
         if (isColliding) {
             if (Input.IsActionPressed("Interact"))
             {

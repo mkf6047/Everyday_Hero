@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=13 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
 [ext_resource type="Texture2D" uid="uid://cigrd2q5q7ajn" path="res://Sprites/DelayQuest.png" id="3_c7i46"]
+[ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
 [ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/AcceptQuest.png" id="4_q1cm5"]
+[ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
 [ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/DisposeQuest.png" id="5_jj7dt"]
+[ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -30,6 +33,9 @@ shape = SubResource("CircleShape2D_xmd7o")
 
 [node name="Delay" type="Area2D" parent="."]
 position = Vector2(288, 50)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_k7knd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Delay"]
 shape = SubResource("RectangleShape2D_k7knd")
@@ -39,6 +45,9 @@ texture = ExtResource("3_c7i46")
 
 [node name="Accept" type="Area2D" parent="."]
 position = Vector2(576, 50)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("5_3ky2r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Accept"]
 shape = SubResource("RectangleShape2D_3ky2r")
@@ -48,6 +57,9 @@ texture = ExtResource("4_q1cm5")
 
 [node name="Dispose" type="Area2D" parent="."]
 position = Vector2(864, 50)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("7_gjghe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dispose"]
 shape = SubResource("RectangleShape2D_gjghe")
