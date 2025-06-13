@@ -25,6 +25,9 @@ position = Vector2(416, 160)
 [node name="BuildingTemplate" parent="." instance=ExtResource("3_qk0fn")]
 position = Vector2(512, 16)
 
+[node name="PlayerHomeExternal" parent="." instance=ExtResource("14_5mg18")]
+position = Vector2(32, -400)
+
 [node name="SpriteHolder" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteHolder"]
@@ -152,6 +155,3 @@ position = Vector2(64, -16)
 texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 576)
-
-[node name="BuildingTemplate2" parent="." instance=ExtResource("14_5mg18")]
-position = Vector2(32, -400)

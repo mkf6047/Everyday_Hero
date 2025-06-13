@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
 
-[node name="BuildingTemplate" type="Node2D"]
+[node name="PlayerHomeExternal" type="Node2D"]
 
 [node name="BuildingPolygon" type="RigidBody2D" parent="."]
 collision_layer = 3
