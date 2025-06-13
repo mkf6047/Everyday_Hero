@@ -1,15 +1,153 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=14 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_3mqji"]
 [ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="3_rpqi1"]
+[ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_imrva"]
 [ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="4_kc1jb"]
+[ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_gcfom"]
+[ext_resource type="Texture2D" uid="uid://k2unh0g51sds" path="res://Sprites/Exterior/Right-Path.png" id="6_m7htv"]
+[ext_resource type="Texture2D" uid="uid://drxgu84vbaxdh" path="res://Sprites/Exterior/Lower-Right-Path.png" id="7_m7htv"]
+[ext_resource type="Texture2D" uid="uid://drqq8hpfmwltw" path="res://Sprites/Exterior/Upper-Left-Grass.png" id="8_vnvxs"]
+[ext_resource type="Texture2D" uid="uid://cx1nccsch5sll" path="res://Sprites/Exterior/Grass-Tile.png" id="9_8xx6d"]
+[ext_resource type="Texture2D" uid="uid://bkp52or1lmpdk" path="res://Sprites/Exterior/Upper-Path.png" id="10_ovgwe"]
+[ext_resource type="Texture2D" uid="uid://bcmret4ch8r7b" path="res://Sprites/Exterior/Lower-Path.png" id="11_gsado"]
+[ext_resource type="Texture2D" uid="uid://dhfhoeq8v5x31" path="res://Sprites/Exterior/Lower-Left-Path.png" id="12_ovgwe"]
+[ext_resource type="Texture2D" uid="uid://dh2un4pu30iuj" path="res://Sprites/Exterior/Upper-Right-Grass.png" id="13_gsado"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_3mqji")]
 
 [node name="Interactable" parent="." instance=ExtResource("3_rpqi1")]
-position = Vector2(100, 150)
+position = Vector2(416, 160)
 
 [node name="BuildingTemplate" parent="." instance=ExtResource("4_kc1jb")]
-position = Vector2(500, 37)
+position = Vector2(512, 16)
+
+[node name="SpriteHolder" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="LeftPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
+z_index = -2
+texture_repeat = 2
+position = Vector2(480, 192)
+texture = ExtResource("4_imrva")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 160)
+
+[node name="CenterPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(512, 224)
+texture = ExtResource("5_gcfom")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 224)
+
+[node name="RightPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(544, 224)
+texture = ExtResource("6_m7htv")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 224)
+
+[node name="ExternalCorner1" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(544, 352)
+texture = ExtResource("7_m7htv")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="InternalCorner1" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(480, 288)
+texture = ExtResource("8_vnvxs")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Grass1" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(272, 192)
+texture = ExtResource("9_8xx6d")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 160)
+
+[node name="Grass2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(640, 192)
+texture = ExtResource("9_8xx6d")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 160)
+
+[node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(272, 288)
+texture = ExtResource("10_ovgwe")
+region_enabled = true
+region_rect = Rect2(0, 0, 384, 32)
+
+[node name="LowerPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(272, 352)
+texture = ExtResource("11_gsado")
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 32)
+
+[node name="CenterPathGuildhall2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(272, 320)
+texture = ExtResource("5_gcfom")
+region_enabled = true
+region_rect = Rect2(0, 0, 448, 32)
+
+[node name="ExternalCorner2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, 352)
+texture = ExtResource("12_ovgwe")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="InternalCorner2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(64, 288)
+texture = ExtResource("13_gsado")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CenterPathPlayerHome" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(32, 16)
+texture = ExtResource("5_gcfom")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 640)
+
+[node name="LeftPathPlayerHome" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, 16)
+texture = ExtResource("4_imrva")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 640)
+
+[node name="RightPathPlayerHome" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(64, -16)
+texture = ExtResource("6_m7htv")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 576)
