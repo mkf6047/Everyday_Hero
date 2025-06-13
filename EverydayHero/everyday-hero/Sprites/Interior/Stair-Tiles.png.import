@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5py6l0ipnyaa"
-path="res://.godot/imported/Stair-Tiles.png-9d933fd441c28de4e2dbe7fb5298f861.ctex"
+path="res://.godot/imported/Stair-Tiles.png-4f3a8be356dcd27034521ace31fab90f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environmental/Stair-Tiles.png"
-dest_files=["res://.godot/imported/Stair-Tiles.png-9d933fd441c28de4e2dbe7fb5298f861.ctex"]
+source_file="res://Sprites/Interior/Stair-Tiles.png"
+dest_files=["res://.godot/imported/Stair-Tiles.png-4f3a8be356dcd27034521ace31fab90f.ctex"]
 
 [params]
 

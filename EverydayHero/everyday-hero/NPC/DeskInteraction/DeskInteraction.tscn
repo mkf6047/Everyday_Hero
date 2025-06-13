@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://don80isxypqih"]
 
-[ext_resource type="Texture2D" uid="uid://rffsh8ijxolg" path="res://Sprites/Environmental/Desk-Tiles.png" id="1_ie80k"]
+[ext_resource type="Texture2D" uid="uid://rffsh8ijxolg" path="res://Sprites/Interior/Desk-Tiles.png" id="1_ie80k"]
 [ext_resource type="Script" uid="uid://dnjsl7ohblf6u" path="res://NPC/DeskInteraction/DeskInteract.cs" id="2_lsddi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4vgp"]

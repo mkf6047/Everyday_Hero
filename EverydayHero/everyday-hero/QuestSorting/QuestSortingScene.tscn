@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
-[ext_resource type="Texture2D" uid="uid://cigrd2q5q7ajn" path="res://Sprites/DelayQuest.png" id="3_c7i46"]
+[ext_resource type="Texture2D" uid="uid://cigrd2q5q7ajn" path="res://Sprites/QuestSprites/DelayQuest.png" id="3_c7i46"]
 [ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
-[ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/AcceptQuest.png" id="4_q1cm5"]
+[ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="4_q1cm5"]
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
-[ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/DisposeQuest.png" id="5_jj7dt"]
+[ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/QuestSprites/DisposeQuest.png" id="5_jj7dt"]
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]

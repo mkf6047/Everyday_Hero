@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqbl2yuriknv6"
-path="res://.godot/imported/Blacksmith.png-8d428f07a6d43515761e481911cf4830.ctex"
+uid="uid://rffsh8ijxolg"
+path="res://.godot/imported/Desk-Tiles.png-d0fe53fc199e2ff34bb622412e0a5038.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Blacksmith.png"
-dest_files=["res://.godot/imported/Blacksmith.png-8d428f07a6d43515761e481911cf4830.ctex"]
+source_file="res://Sprites/Interior/Desk-Tiles.png"
+dest_files=["res://.godot/imported/Desk-Tiles.png-d0fe53fc199e2ff34bb622412e0a5038.ctex"]
 
 [params]
 

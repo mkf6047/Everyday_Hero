@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8skafytaq0fh"
-path="res://.godot/imported/Carpet-Tiles.png-01db33377b0a3d397f56b1a86ebb2b67.ctex"
+uid="uid://dqbl2yuriknv6"
+path="res://.godot/imported/Blacksmith.png-404fbc793410e46f247b909143274c3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environmental/Carpet-Tiles.png"
-dest_files=["res://.godot/imported/Carpet-Tiles.png-01db33377b0a3d397f56b1a86ebb2b67.ctex"]
+source_file="res://Sprites/BuildingSprites/Blacksmith.png"
+dest_files=["res://.godot/imported/Blacksmith.png-404fbc793410e46f247b909143274c3b.ctex"]
 
 [params]
 

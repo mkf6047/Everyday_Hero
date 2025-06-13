@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uln4tw3qgt41"
-path="res://.godot/imported/PlayerHouse.png-2ca88fd85909ff4414d509a147b99375.ctex"
+uid="uid://diod1n1n4syqf"
+path="res://.godot/imported/Upper-Path.png-16503a3acbcdf66053a47c7d3897d310.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerHouse.png"
-dest_files=["res://.godot/imported/PlayerHouse.png-2ca88fd85909ff4414d509a147b99375.ctex"]
+source_file="res://Sprites/Exterior/Upper-Path.png"
+dest_files=["res://.godot/imported/Upper-Path.png-16503a3acbcdf66053a47c7d3897d310.ctex"]
 
 [params]
 

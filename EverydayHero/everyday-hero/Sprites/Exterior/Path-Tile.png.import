@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbqn5jt6jbf2y"
-path="res://.godot/imported/Guild-Hall.png-c01856a14ccac81be909f2db4ba048fd.ctex"
+uid="uid://bb65y5km7fed8"
+path="res://.godot/imported/Path-Tile.png-2c0d9cd4a34ef197509b17cf7e5af31e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Guild-Hall.png"
-dest_files=["res://.godot/imported/Guild-Hall.png-c01856a14ccac81be909f2db4ba048fd.ctex"]
+source_file="res://Sprites/Exterior/Path-Tile.png"
+dest_files=["res://.godot/imported/Path-Tile.png-2c0d9cd4a34ef197509b17cf7e5af31e.ctex"]
 
 [params]
 

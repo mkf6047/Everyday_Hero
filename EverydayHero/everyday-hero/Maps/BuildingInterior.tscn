@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/ExitBuilding.cs" id="1_tmr1a"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_i0nsx"]
-[ext_resource type="Texture2D" uid="uid://b8skafytaq0fh" path="res://Sprites/Environmental/Carpet-Tiles.png" id="3_0arif"]
-[ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Environmental/Wood-Floor.Tile.png" id="4_ym3th"]
+[ext_resource type="Texture2D" uid="uid://b8skafytaq0fh" path="res://Sprites/Interior/Carpet-Tiles.png" id="3_0arif"]
+[ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_ym3th"]
 [ext_resource type="PackedScene" uid="uid://don80isxypqih" path="res://NPC/DeskInteraction/DeskInteraction.tscn" id="5_ym3th"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]

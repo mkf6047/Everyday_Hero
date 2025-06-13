@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8teybl1kdcbv"
-path="res://.godot/imported/DisposeQuest.png-a1eb93d371374198d0348a25c3f5dea7.ctex"
+uid="uid://ccpl3f4v2pgto"
+path="res://.godot/imported/Guild_Hall_V2.png-1d83c7ed506502d4457f239882d7f4e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DisposeQuest.png"
-dest_files=["res://.godot/imported/DisposeQuest.png-a1eb93d371374198d0348a25c3f5dea7.ctex"]
+source_file="res://Sprites/BuildingSprites/Guild_Hall_V2.png"
+dest_files=["res://.godot/imported/Guild_Hall_V2.png-1d83c7ed506502d4457f239882d7f4e3.ctex"]
 
 [params]
 

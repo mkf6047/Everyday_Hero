@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rffsh8ijxolg"
-path="res://.godot/imported/Desk-Tiles.png-860cd0cd0ba06cd83891fe83c04d9d4e.ctex"
+uid="uid://cbqn5jt6jbf2y"
+path="res://.godot/imported/Guild-Hall.png-c9f03cd02ffe7511b14f07a493b51154.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environmental/Desk-Tiles.png"
-dest_files=["res://.godot/imported/Desk-Tiles.png-860cd0cd0ba06cd83891fe83c04d9d4e.ctex"]
+source_file="res://Sprites/BuildingSprites/Guild-Hall.png"
+dest_files=["res://.godot/imported/Guild-Hall.png-c9f03cd02ffe7511b14f07a493b51154.ctex"]
 
 [params]
 

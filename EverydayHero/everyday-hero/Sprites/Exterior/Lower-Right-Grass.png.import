@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rtk2ung3tkjf"
-path="res://.godot/imported/Door-Tile.png-cfb51f11e74b86c895964a091a25107b.ctex"
+uid="uid://bb27t7v2fmvoq"
+path="res://.godot/imported/Lower-Right-Grass.png-f8137d455ab7705700b5aa0823e47a8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environmental/Door-Tile.png"
-dest_files=["res://.godot/imported/Door-Tile.png-cfb51f11e74b86c895964a091a25107b.ctex"]
+source_file="res://Sprites/Exterior/Lower-Right-Grass.png"
+dest_files=["res://.godot/imported/Lower-Right-Grass.png-f8137d455ab7705700b5aa0823e47a8e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6atyep8si700"
-path="res://.godot/imported/QuestPaper.png-9070c3d65909465fe9834d8af95989f5.ctex"
+uid="uid://cymfr0dg7jafy"
+path="res://.godot/imported/Lower-Left-Grass.png-51f3b7c5ee6d82c97f6bf9f3bb34bf6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/QuestPaper.png"
-dest_files=["res://.godot/imported/QuestPaper.png-9070c3d65909465fe9834d8af95989f5.ctex"]
+source_file="res://Sprites/Exterior/Lower-Left-Grass.png"
+dest_files=["res://.godot/imported/Lower-Left-Grass.png-51f3b7c5ee6d82c97f6bf9f3bb34bf6a.ctex"]
 
 [params]
 

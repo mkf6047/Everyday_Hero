@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du4jphc8mc2a8"
-path="res://.godot/imported/Wood-Floor.Tile.png-6a8492437114eea0d05e4eed95da923a.ctex"
+uid="uid://b8skafytaq0fh"
+path="res://.godot/imported/Carpet-Tiles.png-3dc324a9ab3999a23633b8e459bde577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Environmental/Wood-Floor.Tile.png"
-dest_files=["res://.godot/imported/Wood-Floor.Tile.png-6a8492437114eea0d05e4eed95da923a.ctex"]
+source_file="res://Sprites/Interior/Carpet-Tiles.png"
+dest_files=["res://.godot/imported/Carpet-Tiles.png-3dc324a9ab3999a23633b8e459bde577.ctex"]
 
 [params]
 

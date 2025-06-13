@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4pcpf0kyol07"
-path="res://.godot/imported/AcceptQuest.png-815d4818d2ff42a6b7a7b9256a3006dc.ctex"
+uid="uid://8teybl1kdcbv"
+path="res://.godot/imported/DisposeQuest.png-9c5a087e0cf2c9678bf14b0801ea2562.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/AcceptQuest.png"
-dest_files=["res://.godot/imported/AcceptQuest.png-815d4818d2ff42a6b7a7b9256a3006dc.ctex"]
+source_file="res://Sprites/QuestSprites/DisposeQuest.png"
+dest_files=["res://.godot/imported/DisposeQuest.png-9c5a087e0cf2c9678bf14b0801ea2562.ctex"]
 
 [params]
 

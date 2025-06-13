@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cigrd2q5q7ajn"
-path="res://.godot/imported/DelayQuest.png-6b2400f4ff33d0a4f3b63bfa8b1b74bd.ctex"
+uid="uid://rl20ntdtp4rx"
+path="res://.godot/imported/Lower-Left-Path.png-47c5fea48366628b8f4938e045b21ac4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DelayQuest.png"
-dest_files=["res://.godot/imported/DelayQuest.png-6b2400f4ff33d0a4f3b63bfa8b1b74bd.ctex"]
+source_file="res://Sprites/Exterior/Lower-Left-Path.png"
+dest_files=["res://.godot/imported/Lower-Left-Path.png-47c5fea48366628b8f4938e045b21ac4.ctex"]
 
 [params]
 
