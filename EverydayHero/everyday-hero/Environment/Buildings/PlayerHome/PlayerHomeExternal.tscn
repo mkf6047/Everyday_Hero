@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_3c3ll"]
 [ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Interior/Door-Tile.png" id="2_7vt85"]
-[ext_resource type="Texture2D" uid="uid://ccpl3f4v2pgto" path="res://Sprites/BuildingSprites/Guild_Hall_V2.png" id="3_ywx5r"]
+[ext_resource type="Texture2D" uid="uid://uln4tw3qgt41" path="res://Sprites/BuildingSprites/PlayerHouse.png" id="3_dyns8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
@@ -13,7 +13,7 @@ size = Vector2(64, 64)
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
-polygon = PackedVector2Array(165, -96, 165, 96, 35, 96, 35, 29, -35, 29, -35, 96, -155, 96, -155, -96)
+polygon = PackedVector2Array(40, -96, 40, 96, 35, 96, 35, 29, -35, 29, -35, 96, -120, 96, -120, -96)
 
 [node name="DoorPolygon" type="Area2D" parent="."]
 position = Vector2(0, 64)
@@ -34,9 +34,9 @@ texture = ExtResource("2_7vt85")
 flip_h = true
 
 [node name="Building" type="Sprite2D" parent="."]
-z_index = 2
+z_index = -1
 position = Vector2(5, -32)
-texture = ExtResource("3_ywx5r")
+texture = ExtResource("3_dyns8")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 256)
 

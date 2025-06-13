@@ -1,27 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=15 format=3 uid="uid://dmcqk2d02maf2"]
 
-[ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_3mqji"]
-[ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="3_rpqi1"]
-[ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_imrva"]
-[ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="4_kc1jb"]
-[ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_gcfom"]
-[ext_resource type="Texture2D" uid="uid://k2unh0g51sds" path="res://Sprites/Exterior/Right-Path.png" id="6_m7htv"]
-[ext_resource type="Texture2D" uid="uid://drxgu84vbaxdh" path="res://Sprites/Exterior/Lower-Right-Path.png" id="7_m7htv"]
-[ext_resource type="Texture2D" uid="uid://drqq8hpfmwltw" path="res://Sprites/Exterior/Upper-Left-Grass.png" id="8_vnvxs"]
-[ext_resource type="Texture2D" uid="uid://cx1nccsch5sll" path="res://Sprites/Exterior/Grass-Tile.png" id="9_8xx6d"]
-[ext_resource type="Texture2D" uid="uid://bkp52or1lmpdk" path="res://Sprites/Exterior/Upper-Path.png" id="10_ovgwe"]
-[ext_resource type="Texture2D" uid="uid://bcmret4ch8r7b" path="res://Sprites/Exterior/Lower-Path.png" id="11_gsado"]
-[ext_resource type="Texture2D" uid="uid://dhfhoeq8v5x31" path="res://Sprites/Exterior/Lower-Left-Path.png" id="12_ovgwe"]
-[ext_resource type="Texture2D" uid="uid://dh2un4pu30iuj" path="res://Sprites/Exterior/Upper-Right-Grass.png" id="13_gsado"]
+[ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_mbp3p"]
+[ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="2_4eakb"]
+[ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="3_qk0fn"]
+[ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_3ihjs"]
+[ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_6ue8r"]
+[ext_resource type="Texture2D" uid="uid://k2unh0g51sds" path="res://Sprites/Exterior/Right-Path.png" id="6_7s8ql"]
+[ext_resource type="Texture2D" uid="uid://drxgu84vbaxdh" path="res://Sprites/Exterior/Lower-Right-Path.png" id="7_16s2r"]
+[ext_resource type="Texture2D" uid="uid://drqq8hpfmwltw" path="res://Sprites/Exterior/Upper-Left-Grass.png" id="8_a44ly"]
+[ext_resource type="Texture2D" uid="uid://cx1nccsch5sll" path="res://Sprites/Exterior/Grass-Tile.png" id="9_76g1a"]
+[ext_resource type="Texture2D" uid="uid://bkp52or1lmpdk" path="res://Sprites/Exterior/Upper-Path.png" id="10_vdpel"]
+[ext_resource type="Texture2D" uid="uid://bcmret4ch8r7b" path="res://Sprites/Exterior/Lower-Path.png" id="11_mfeb2"]
+[ext_resource type="Texture2D" uid="uid://dhfhoeq8v5x31" path="res://Sprites/Exterior/Lower-Left-Path.png" id="12_m05ay"]
+[ext_resource type="Texture2D" uid="uid://dh2un4pu30iuj" path="res://Sprites/Exterior/Upper-Right-Grass.png" id="13_gk312"]
+[ext_resource type="PackedScene" uid="uid://br3otwqtdbona" path="res://Environment/Buildings/PlayerHome/PlayerHomeExternal.tscn" id="14_5mg18"]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_3mqji")]
+[node name="Player" parent="." instance=ExtResource("1_mbp3p")]
 
-[node name="Interactable" parent="." instance=ExtResource("3_rpqi1")]
+[node name="Interactable" parent="." instance=ExtResource("2_4eakb")]
 position = Vector2(416, 160)
 
-[node name="BuildingTemplate" parent="." instance=ExtResource("4_kc1jb")]
+[node name="BuildingTemplate" parent="." instance=ExtResource("3_qk0fn")]
 position = Vector2(512, 16)
 
 [node name="SpriteHolder" type="Node2D" parent="."]
@@ -36,7 +37,7 @@ region_rect = Rect2(0, 0, 32, 32)
 z_index = -2
 texture_repeat = 2
 position = Vector2(480, 192)
-texture = ExtResource("4_imrva")
+texture = ExtResource("4_3ihjs")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 160)
 
@@ -44,7 +45,7 @@ region_rect = Rect2(0, 0, 32, 160)
 z_index = -1
 texture_repeat = 2
 position = Vector2(512, 224)
-texture = ExtResource("5_gcfom")
+texture = ExtResource("5_6ue8r")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 224)
 
@@ -52,7 +53,7 @@ region_rect = Rect2(0, 0, 32, 224)
 z_index = -1
 texture_repeat = 2
 position = Vector2(544, 224)
-texture = ExtResource("6_m7htv")
+texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 224)
 
@@ -60,7 +61,7 @@ region_rect = Rect2(0, 0, 32, 224)
 z_index = -1
 texture_repeat = 2
 position = Vector2(544, 352)
-texture = ExtResource("7_m7htv")
+texture = ExtResource("7_16s2r")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
@@ -68,7 +69,7 @@ region_rect = Rect2(0, 0, 32, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(480, 288)
-texture = ExtResource("8_vnvxs")
+texture = ExtResource("8_a44ly")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
@@ -76,7 +77,7 @@ region_rect = Rect2(0, 0, 32, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(272, 192)
-texture = ExtResource("9_8xx6d")
+texture = ExtResource("9_76g1a")
 region_enabled = true
 region_rect = Rect2(0, 0, 384, 160)
 
@@ -84,7 +85,7 @@ region_rect = Rect2(0, 0, 384, 160)
 z_index = -1
 texture_repeat = 2
 position = Vector2(640, 192)
-texture = ExtResource("9_8xx6d")
+texture = ExtResource("9_76g1a")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 160)
 
@@ -92,7 +93,7 @@ region_rect = Rect2(0, 0, 160, 160)
 z_index = -1
 texture_repeat = 2
 position = Vector2(272, 288)
-texture = ExtResource("10_ovgwe")
+texture = ExtResource("10_vdpel")
 region_enabled = true
 region_rect = Rect2(0, 0, 384, 32)
 
@@ -100,7 +101,7 @@ region_rect = Rect2(0, 0, 384, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(272, 352)
-texture = ExtResource("11_gsado")
+texture = ExtResource("11_mfeb2")
 region_enabled = true
 region_rect = Rect2(0, 0, 512, 32)
 
@@ -108,7 +109,7 @@ region_rect = Rect2(0, 0, 512, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(272, 320)
-texture = ExtResource("5_gcfom")
+texture = ExtResource("5_6ue8r")
 region_enabled = true
 region_rect = Rect2(0, 0, 448, 32)
 
@@ -116,7 +117,7 @@ region_rect = Rect2(0, 0, 448, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(0, 352)
-texture = ExtResource("12_ovgwe")
+texture = ExtResource("12_m05ay")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
@@ -124,7 +125,7 @@ region_rect = Rect2(0, 0, 32, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(64, 288)
-texture = ExtResource("13_gsado")
+texture = ExtResource("13_gk312")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
@@ -132,7 +133,7 @@ region_rect = Rect2(0, 0, 32, 32)
 z_index = -1
 texture_repeat = 2
 position = Vector2(32, 16)
-texture = ExtResource("5_gcfom")
+texture = ExtResource("5_6ue8r")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 640)
 
@@ -140,7 +141,7 @@ region_rect = Rect2(0, 0, 32, 640)
 z_index = -1
 texture_repeat = 2
 position = Vector2(0, 16)
-texture = ExtResource("4_imrva")
+texture = ExtResource("4_3ihjs")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 640)
 
@@ -148,6 +149,9 @@ region_rect = Rect2(0, 0, 32, 640)
 z_index = -1
 texture_repeat = 2
 position = Vector2(64, -16)
-texture = ExtResource("6_m7htv")
+texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 576)
+
+[node name="BuildingTemplate2" parent="." instance=ExtResource("14_5mg18")]
+position = Vector2(32, -400)
