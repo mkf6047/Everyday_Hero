@@ -9,6 +9,10 @@ public partial class MoveableQuest : CharacterBody2D
     bool dragging;
     bool mouseIn = false;
     public bool chosen = false;
+    public bool Dragging
+    {
+        get { return dragging; }
+    }
     public override void _Input(InputEvent @event)
     {
         if (@event is InputEventMouseButton)

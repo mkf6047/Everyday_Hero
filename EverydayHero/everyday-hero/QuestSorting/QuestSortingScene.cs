@@ -20,8 +20,11 @@ public partial class QuestSortingScene : Node2D
     //press Interact Button (Z or Enter) to move to the save files
     public override void _Process(double delta)
     {
-        base._Process(delta);
         if (Input.IsActionPressed("Interact"))
+        {
+            GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn");
+        }
+        if (questStack.Count() <= 0)
         {
             GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn");
         }
@@ -43,5 +46,11 @@ public partial class QuestSortingScene : Node2D
     {
         questStack.Remove(quest);
         AddQuest(quest);
+    }
+
+    public void RemoveQuest(MoveableQuest quest)
+    {
+        questStack.Remove(quest);
+        quest.QueueFree();
     }
 }
