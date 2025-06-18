@@ -79,18 +79,26 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="Grass1" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(272, 192)
+position = Vector2(272, -16)
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 384, 160)
+region_rect = Rect2(0, 0, 384, 576)
 
 [node name="Grass2" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(640, 192)
+position = Vector2(672, 192)
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 160, 352)
+region_rect = Rect2(0, 0, 224, 352)
+
+[node name="Grass3" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(624, -144)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 320)
 
 [node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
