@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
 
-[node name="BuildingTemplate" type="Node2D"]
+[node name="Blacksmith" type="Node2D"]
 
 [node name="BuildingPolygon" type="RigidBody2D" parent="."]
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
-polygon = PackedVector2Array(64, -95, 64, 64, 0, 64, 0, -2, -72, -2, -72, 64, -101, 64, -105, -95)
+polygon = PackedVector2Array(64, -95, 64, 64, 0, 64, 0, -2, -72, -2, -72, 64, -100, 64, -100, -95)
 
 [node name="DoorPolygon" type="Area2D" parent="."]
 position = Vector2(0, 64)
