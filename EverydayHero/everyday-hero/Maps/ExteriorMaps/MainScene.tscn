@@ -90,7 +90,7 @@ texture_repeat = 2
 position = Vector2(640, 192)
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 160, 160)
+region_rect = Rect2(0, 0, 160, 352)
 
 [node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
