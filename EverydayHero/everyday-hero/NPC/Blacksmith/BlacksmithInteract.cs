@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CollideRight : Area2D
+public partial class BlacksmithInteract : Area2D
 {
     Sprite2D NPCsprite;
 
@@ -10,7 +10,7 @@ public partial class CollideRight : Area2D
     public override void _Ready()
     {
         base._Ready();
-        NPCsprite = (Sprite2D)GetNode("/root/MainScene/Interactable/RigidBody2D/InteractiveSprite");
+        NPCsprite = (Sprite2D)GetNode("../RigidBody2D/InteractiveSprite");
         isColliding = false;
     }
 

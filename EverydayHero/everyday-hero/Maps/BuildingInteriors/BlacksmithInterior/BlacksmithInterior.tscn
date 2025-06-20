@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cipmln7tjrcoy"]
+[gd_scene load_steps=8 format=3 uid="uid://cipmln7tjrcoy"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_3ik7k"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_x11fk"]
-[ext_resource type="Texture2D" uid="uid://b8skafytaq0fh" path="res://Sprites/Interior/Carpet-Tiles.png" id="3_i23g1"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_4uehh"]
+[ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="4_geaaf"]
+[ext_resource type="Texture2D" uid="uid://cti7cc0vybeio" path="res://Sprites/Interior/Furnace.png" id="5_j5q7u"]
+[ext_resource type="PackedScene" uid="uid://dly5kvsokanx4" path="res://NPC/Blacksmith/Blacksmith.tscn" id="6_b0ks8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]
 size = Vector2(40, 20)
@@ -26,22 +28,61 @@ script = ExtResource("1_3ik7k")
 shape = SubResource("RectangleShape2D_vpuan")
 
 [node name="Player" parent="." instance=ExtResource("2_x11fk")]
-position = Vector2(576, 324)
+position = Vector2(576, 512)
 
-[node name="Carpet" type="Sprite2D" parent="."]
-z_index = -1
-texture_repeat = 2
-position = Vector2(576, 408)
-texture = ExtResource("3_i23g1")
-region_enabled = true
-region_rect = Rect2(0, 0, 192, 480)
-
-[node name="WoodFloor" type="Sprite2D" parent="."]
+[node name="StoneFloor" type="Sprite2D" parent="."]
 z_index = -2
 texture_repeat = 2
 position = Vector2(576, 324)
-texture = ExtResource("4_4uehh")
+texture = ExtResource("4_geaaf")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="WoodenFlooring" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(576, 628)
+texture = ExtResource("4_4uehh")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 40)
+
+[node name="WoodenFlooring2" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(576, 16)
+texture = ExtResource("4_4uehh")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 32)
+
+[node name="WoodenFlooring3" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(16, 320)
+texture = ExtResource("4_4uehh")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 576)
+
+[node name="WoodenFlooring4" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1136, 320)
+texture = ExtResource("4_4uehh")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 576)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(576, 96)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Furnace" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("5_j5q7u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(40, -16, 68, -14, 68, 90, -86, 90, -86, -16, -48, -16, -48, -86, 40, -86)
+
+[node name="Blacksmith" parent="." instance=ExtResource("6_b0ks8")]
+position = Vector2(576, 288)
 
 [connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dly5kvsokanx4"]
+
+[ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="1_i1hjv"]
+[ext_resource type="Script" uid="uid://bx8v2y8q0jk2m" path="res://NPC/Blacksmith/BlacksmithInteract.cs" id="2_ysaus"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20814"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgbf5"]
+size = Vector2(64, 64)
+
+[node name="Blacksmith" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+physics_interpolation_mode = 2
+collision_layer = 4
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_20814")
+
+[node name="InteractiveSprite" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("1_i1hjv")
+
+[node name="BlacksmithInteract" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("2_ysaus")
+
+[node name="CollisionShapeInteract" type="CollisionShape2D" parent="BlacksmithInteract"]
+shape = SubResource("RectangleShape2D_rgbf5")
+
+[connection signal="body_entered" from="BlacksmithInteract" to="BlacksmithInteract" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="BlacksmithInteract" to="BlacksmithInteract" method="OnArea2DBodyExited"]
