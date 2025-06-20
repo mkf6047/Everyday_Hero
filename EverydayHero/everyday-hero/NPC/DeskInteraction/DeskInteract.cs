@@ -34,7 +34,7 @@ public partial class DeskInteract : Area2D
         }
         catch
         {
-            GD.PrintErr("Interactive item just collided with something other than a Player.");
+            GD.PrintErr("Desk just collided with something other than a Player.");
         }
     }
 
@@ -49,7 +49,7 @@ public partial class DeskInteract : Area2D
         }
         catch
         {
-            GD.PrintErr("Interactive item just stopped colliding with something other than a Player.");
+            GD.PrintErr("Desk just stopped colliding with something other than a Player.");
         }
     }
 }

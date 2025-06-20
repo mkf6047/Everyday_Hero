@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_0rwas")
 [node name="PlayerCamera2D" type="Camera2D" parent="PlayerBody2D"]
 
 [node name="Notice" type="Sprite2D" parent="PlayerBody2D"]
+z_index = 12
 position = Vector2(0, -40)
 texture = ExtResource("3_tok1r")
 script = ExtResource("4_ddoul")

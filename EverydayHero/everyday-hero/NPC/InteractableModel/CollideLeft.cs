@@ -20,7 +20,7 @@ public partial class CollideLeft : Area2D
         if (isColliding) {
             if (Input.IsActionPressed("Interact"))
             {
-                NPCsprite.Texture = GD.Load<Texture2D>("res://Sprites/Interacted.png");
+                NPCsprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Interacted.png");
             }
         }
     }

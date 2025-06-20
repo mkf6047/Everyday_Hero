@@ -9,11 +9,12 @@ public partial class ExitBuilding : Area2D
         try
         {
             Player player = (Player)body;
-            GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn"); 
+            GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn"); 
         }
         catch
         {
             GD.PrintErr("Door just collided with something other than a Player.");
+            GD.PrintErr(body);
         }
         
     }
