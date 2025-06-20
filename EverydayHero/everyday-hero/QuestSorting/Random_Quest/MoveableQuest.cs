@@ -23,11 +23,13 @@ public partial class MoveableQuest : CharacterBody2D
                 dir = (GetViewport().GetMousePosition() - Position).Normalized();
                 dragging = true;
                 newPosition = GetViewport().GetMousePosition() - draggingDistance * dir;
+                GD.Print("dragging");
             }
             else
             {
                 dragging = false;
                 chosen = false;
+                GD.Print("not dragging");
             }
         }
         else if (@event is InputEventMouseMotion)
@@ -35,6 +37,7 @@ public partial class MoveableQuest : CharacterBody2D
             if (dragging)
             {
                 newPosition = GetViewport().GetMousePosition() - draggingDistance * dir;
+                GD.Print("dragging");
             }
         }
     }

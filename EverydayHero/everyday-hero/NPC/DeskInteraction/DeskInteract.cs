@@ -7,7 +7,6 @@ public partial class DeskInteract : Area2D
 
     public override void _Ready()
     {
-        base._Ready();
         isColliding = false;
     }
 
@@ -16,7 +15,7 @@ public partial class DeskInteract : Area2D
         if (isColliding) {
             if (Input.IsActionPressed("Interact"))
             {
-                GetTree().ChangeSceneToFile("res://QuestSorting/QuestSortingScene.tscn");
+                GetTree().CallDeferred("change_scene_to_file", "res://QuestSorting/QuestSortingScene.tscn");
             }
         }
     }
