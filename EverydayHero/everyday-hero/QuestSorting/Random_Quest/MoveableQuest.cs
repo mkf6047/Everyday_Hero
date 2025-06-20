@@ -15,9 +15,9 @@ public partial class MoveableQuest : CharacterBody2D
     }
     public override void _Input(InputEvent @event)
     {
-        if (@event is InputEventMouseButton)
+        if (@event.IsActionPressed("mouse_click"))
         {
-            if (chosen && (@event.IsPressed() && mouseIn))
+            if (chosen && mouseIn)
             {
                 draggingDistance = Position.DistanceTo(GetViewport().GetMousePosition());
                 dir = (GetViewport().GetMousePosition() - Position).Normalized();
@@ -30,6 +30,7 @@ public partial class MoveableQuest : CharacterBody2D
                 dragging = false;
                 chosen = false;
                 GD.Print("not dragging");
+                GD.Print(mouseIn + " - " + @event.IsPressed());
             }
         }
         else if (@event is InputEventMouseMotion)
@@ -61,14 +62,16 @@ public partial class MoveableQuest : CharacterBody2D
         chosen = false;
     }
 
-    public void mouseEnter()
+    public void MouseEnter()
     {
         mouseIn = true;
+        GD.Print("mousein = true");
     }
 
-    public void mouseExit()
+    public void MouseExit()
     {
         mouseIn = false;
+        GD.Print("mousein = false");
     }
 
 }

@@ -22,10 +22,10 @@ public partial class QuestSortingScene : Node2D
     //press Interact Button (Z or Enter) to move to the save files
     public override void _Process(double delta)
     {
-        // if (Input.IsActionPressed("Interact"))
-        // {
-        //     GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
-        // }
+        if (Input.IsActionJustPressed("Interact"))
+        {
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
+        }
         // if (questStack.Count() <= 0)
         // {
         //     GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");

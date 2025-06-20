@@ -16,3 +16,6 @@ texture = ExtResource("2_w37uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tebf4")
+
+[connection signal="mouse_entered" from="." to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="." to="." method="MouseExit"]
