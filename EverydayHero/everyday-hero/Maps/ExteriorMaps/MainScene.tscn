@@ -129,6 +129,22 @@ texture = ExtResource("9_76g1a")
 region_enabled = true
 region_rect = Rect2(0, 0, 1600, 288)
 
+[node name="Grass7" type="Sprite2D" parent="SpriteHolder"]
+z_index = -2
+texture_repeat = 2
+position = Vector2(-368, 32)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 672)
+
+[node name="Grass7" type="Sprite2D" parent="SpriteHolder/Grass7"]
+z_index = -2
+texture_repeat = 2
+position = Vector2(1424, 0)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 672)
+
 [node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
