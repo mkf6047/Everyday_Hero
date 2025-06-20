@@ -31,7 +31,7 @@ z_index = 1
 position = Vector2(32, -400)
 
 [node name="Blacksmith" parent="." instance=ExtResource("5_mbp3p")]
-position = Vector2(-280, -112)
+position = Vector2(-283, -112)
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 
