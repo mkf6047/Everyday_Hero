@@ -10,6 +10,7 @@ size = Vector2(64, 64)
 [node name="PlayerHomeExternal" type="Node2D"]
 
 [node name="BuildingPolygon" type="RigidBody2D" parent="."]
+z_index = 1
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]

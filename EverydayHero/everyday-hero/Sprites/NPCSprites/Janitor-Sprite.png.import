@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://44w7rx57j37l"
-path="res://.godot/imported/Mailbox.png-3717d33bb5b970113818000cf6928f11.ctex"
+uid="uid://b32tn5jiahfth"
+path="res://.godot/imported/Janitor-Sprite.png-03051546cbf7801e8b3edccca7ed48c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mailbox.png"
-dest_files=["res://.godot/imported/Mailbox.png-3717d33bb5b970113818000cf6928f11.ctex"]
+source_file="res://Sprites/NPCSprites/Janitor-Sprite.png"
+dest_files=["res://.godot/imported/Janitor-Sprite.png-03051546cbf7801e8b3edccca7ed48c4.ctex"]
 
 [params]
 

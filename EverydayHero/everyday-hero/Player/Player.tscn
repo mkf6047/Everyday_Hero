@@ -1,11 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="2_q3lat"]
+[ext_resource type="Texture2D" uid="uid://8vc0dxurnek6" path="res://Sprites/Player-Front.png" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://crufstaywgad" path="res://Sprites/notice_v2.png" id="3_tok1r"]
 [ext_resource type="Script" uid="uid://c33s0p2ktowga" path="res://Player/Notice.cs" id="4_ddoul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
+size = Vector2(20, 32)
 
 [node name="Player" type="Node2D"]
 
@@ -15,7 +16,7 @@ collision_mask = 7
 script = ExtResource("1_xhfnw")
 
 [node name="PlayerSprite" type="Sprite2D" parent="PlayerBody2D"]
-texture = ExtResource("2_q3lat")
+texture = ExtResource("2_ddoul")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody2D"]
 scale = Vector2(1.5, 1.5)
@@ -24,6 +25,6 @@ shape = SubResource("RectangleShape2D_0rwas")
 [node name="PlayerCamera2D" type="Camera2D" parent="PlayerBody2D"]
 
 [node name="Notice" type="Sprite2D" parent="PlayerBody2D"]
-position = Vector2(0, -35)
+position = Vector2(0, -40)
 texture = ExtResource("3_tok1r")
 script = ExtResource("4_ddoul")

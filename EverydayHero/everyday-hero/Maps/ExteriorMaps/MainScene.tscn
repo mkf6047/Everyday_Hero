@@ -1,12 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=16 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_mbp3p"]
 [ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="2_4eakb"]
 [ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="3_qk0fn"]
 [ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_6ue8r"]
+[ext_resource type="PackedScene" uid="uid://dly3brt5csfxn" path="res://Environment/Buildings/Blacksmith/BlacksmithExterior.tscn" id="5_mbp3p"]
 [ext_resource type="Texture2D" uid="uid://k2unh0g51sds" path="res://Sprites/Exterior/Right-Path.png" id="6_7s8ql"]
-[ext_resource type="Texture2D" uid="uid://drxgu84vbaxdh" path="res://Sprites/Exterior/Lower-Right-Path.png" id="7_16s2r"]
 [ext_resource type="Texture2D" uid="uid://drqq8hpfmwltw" path="res://Sprites/Exterior/Upper-Left-Grass.png" id="8_a44ly"]
 [ext_resource type="Texture2D" uid="uid://cx1nccsch5sll" path="res://Sprites/Exterior/Grass-Tile.png" id="9_76g1a"]
 [ext_resource type="Texture2D" uid="uid://bkp52or1lmpdk" path="res://Sprites/Exterior/Upper-Path.png" id="10_vdpel"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dhfhoeq8v5x31" path="res://Sprites/Exterior/Lower-Left-Path.png" id="12_m05ay"]
 [ext_resource type="Texture2D" uid="uid://dh2un4pu30iuj" path="res://Sprites/Exterior/Upper-Right-Grass.png" id="13_gk312"]
 [ext_resource type="PackedScene" uid="uid://br3otwqtdbona" path="res://Environment/Buildings/PlayerHome/PlayerHomeExternal.tscn" id="14_5mg18"]
+[ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="16_qk0fn"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -26,7 +27,11 @@ position = Vector2(416, 160)
 position = Vector2(512, 16)
 
 [node name="PlayerHomeExternal" parent="." instance=ExtResource("14_5mg18")]
+z_index = 1
 position = Vector2(32, -400)
+
+[node name="Blacksmith" parent="." instance=ExtResource("5_mbp3p")]
+position = Vector2(-280, -112)
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 
@@ -55,18 +60,10 @@ region_rect = Rect2(0, 0, 32, 224)
 [node name="RightPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(544, 224)
+position = Vector2(544, 192)
 texture = ExtResource("6_7s8ql")
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 224)
-
-[node name="ExternalCorner1" type="Sprite2D" parent="SpriteHolder"]
-z_index = -1
-texture_repeat = 2
-position = Vector2(544, 352)
-texture = ExtResource("7_16s2r")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
+region_rect = Rect2(0, 0, 32, 160)
 
 [node name="InternalCorner1" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
@@ -76,21 +73,61 @@ texture = ExtResource("8_a44ly")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
+[node name="InternalCorner3" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(544, 288)
+texture = ExtResource("13_gk312")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
 [node name="Grass1" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(272, 192)
+position = Vector2(272, -16)
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 384, 160)
+region_rect = Rect2(0, 0, 384, 576)
 
 [node name="Grass2" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(640, 192)
+position = Vector2(768, -16)
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 160, 352)
+region_rect = Rect2(0, 0, 416, 576)
+
+[node name="Grass3" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(512, -96)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 416)
+
+[node name="Grass4" type="Sprite2D" parent="SpriteHolder"]
+z_index = -2
+texture_repeat = 2
+position = Vector2(-144, -16)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 576)
+
+[node name="Grass5" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(336, -448)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 1600, 288)
+
+[node name="Grass6" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(336, 512)
+texture = ExtResource("9_76g1a")
+region_enabled = true
+region_rect = Rect2(0, 0, 1600, 288)
 
 [node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
@@ -103,23 +140,23 @@ region_rect = Rect2(0, 0, 384, 32)
 [node name="LowerPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(272, 352)
+position = Vector2(528, 352)
 texture = ExtResource("11_mfeb2")
 region_enabled = true
-region_rect = Rect2(0, 0, 512, 32)
+region_rect = Rect2(0, 0, 896, 32)
 
 [node name="CenterPathGuildhall2" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(272, 320)
+position = Vector2(512, 320)
 texture = ExtResource("5_6ue8r")
 region_enabled = true
-region_rect = Rect2(0, 0, 448, 32)
+region_rect = Rect2(0, 0, 928, 32)
 
 [node name="ExternalCorner2" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(0, 352)
+position = Vector2(-352, 352)
 texture = ExtResource("12_m05ay")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
@@ -143,10 +180,10 @@ region_rect = Rect2(0, 0, 32, 640)
 [node name="LeftPathPlayerHome" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(0, 16)
+position = Vector2(0, -16)
 texture = ExtResource("4_3ihjs")
 region_enabled = true
-region_rect = Rect2(0, 0, 32, 640)
+region_rect = Rect2(0, 0, 32, 576)
 
 [node name="RightPathPlayerHome" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
@@ -155,3 +192,83 @@ position = Vector2(64, -16)
 texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 576)
+
+[node name="UpperPathGuildhall2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(768, 288)
+texture = ExtResource("10_vdpel")
+region_enabled = true
+region_rect = Rect2(0, 0, 416, 32)
+
+[node name="InternalCorner4" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, 288)
+texture = ExtResource("8_a44ly")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="InternalCorner5" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-288, 288)
+texture = ExtResource("13_gk312")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CenterPathBlacksmith1" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-144, 320)
+texture = ExtResource("5_6ue8r")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 32)
+
+[node name="CenterPathBlacksmith2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-320, 144)
+texture = ExtResource("5_6ue8r")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 384)
+
+[node name="LowerPathGuildhall2" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-176, 352)
+texture = ExtResource("11_mfeb2")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 32)
+
+[node name="UpperPathBlacksmith" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-144, 288)
+texture = ExtResource("10_vdpel")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 32)
+
+[node name="Stone1" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-224, -128)
+texture = ExtResource("16_qk0fn")
+region_enabled = true
+region_rect = Rect2(0, 0, 160, 160)
+
+[node name="RightPathBlacksmith" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-288, 112)
+texture = ExtResource("6_7s8ql")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 320)
+
+[node name="LeftPathBlacksmith" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-352, 144)
+texture = ExtResource("4_3ihjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 384)
