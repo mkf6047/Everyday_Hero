@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://br3otwqtdbona"]
 
-[ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_3c3ll"]
+[ext_resource type="Script" uid="uid://3e0sgs4j5mis" path="res://Environment/Buildings/PlayerHome/PlayerDoorFunction.cs" id="1_dyns8"]
 [ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Interior/Door-Tile.png" id="2_7vt85"]
 [ext_resource type="Texture2D" uid="uid://uln4tw3qgt41" path="res://Sprites/BuildingSprites/PlayerHouse.png" id="3_dyns8"]
 
@@ -20,7 +20,7 @@ polygon = PackedVector2Array(40, -96, 40, 96, 35, 96, 35, 29, -35, 29, -35, 96, 
 position = Vector2(0, 64)
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_3c3ll")
+script = ExtResource("1_dyns8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorPolygon"]
 shape = SubResource("RectangleShape2D_bykni")
