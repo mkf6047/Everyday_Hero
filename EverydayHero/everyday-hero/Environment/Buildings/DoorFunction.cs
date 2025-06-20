@@ -9,7 +9,7 @@ public partial class DoorFunction : Area2D
         try
         {
             Player player = (Player)body;
-            GetTree().ChangeSceneToFile("res://Maps/BuildingInteriors/BuildingInterior.tscn");
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn");
         }
         catch
         {
