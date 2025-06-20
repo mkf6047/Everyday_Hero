@@ -137,10 +137,10 @@ texture = ExtResource("9_76g1a")
 region_enabled = true
 region_rect = Rect2(0, 0, 192, 672)
 
-[node name="Grass7" type="Sprite2D" parent="SpriteHolder/Grass7"]
+[node name="Grass8" type="Sprite2D" parent="SpriteHolder"]
 z_index = -2
 texture_repeat = 2
-position = Vector2(1424, 0)
+position = Vector2(1056, 32)
 texture = ExtResource("9_76g1a")
 region_enabled = true
 region_rect = Rect2(0, 0, 160, 672)
