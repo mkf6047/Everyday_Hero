@@ -8,6 +8,8 @@ public partial class QuestSortingScene : Node2D
 
     PackedScene questPreload = GD.Load<PackedScene>("res://QuestSorting/Random_Quest/RandomQuest.tscn");
 
+    bool readyComplete = false;
+
     public override void _Ready()
     {
         for (int i = 0; i <= 2; i++)
@@ -17,6 +19,7 @@ public partial class QuestSortingScene : Node2D
             quest.Position = new Vector2((i + 1) * 200, 400);
             AddQuest(quest);
         }
+        readyComplete = true;
     }
 
     //press Interact Button (Z or Enter) to move to the save files
@@ -26,10 +29,10 @@ public partial class QuestSortingScene : Node2D
         {
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
         }
-        // if (questStack.Count() <= 0)
-        // {
-        //     GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
-        // }
+        if ((questStack.Count() <= 0) && readyComplete)
+        {
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
+        }
     }
 
     public void AddQuest(MoveableQuest quest)
@@ -53,6 +56,7 @@ public partial class QuestSortingScene : Node2D
     public void RemoveQuest(MoveableQuest quest)
     {
         questStack.Remove(quest);
+        RemoveChild(quest);
         quest.QueueFree();
     }
 }

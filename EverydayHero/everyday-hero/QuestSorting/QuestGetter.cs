@@ -17,23 +17,11 @@ public partial class QuestGetter : Area2D
 
         if (count == 0)
         {
-            //GD.Print("no overlapping bodies");
         }
         else if (count == 1)
         {
-            // MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
-            // quest.isChosen();
-
-            //GetOverlappingBodies()[0].isChosen();
-
-            foreach (var body in GetOverlappingBodies())
-            {
-                MoveableQuest quest = body as MoveableQuest;
-                if (quest != null)
-                {
-                    quest.isChosen();
-                }
-            }
+            MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
+            quest.isChosen();
 
             if (Input.IsActionJustPressed("mouse_click"))
             {

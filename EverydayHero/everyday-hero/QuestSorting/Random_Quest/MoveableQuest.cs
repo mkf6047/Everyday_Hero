@@ -29,16 +29,16 @@ public partial class MoveableQuest : CharacterBody2D
             {
                 dragging = false;
                 chosen = false;
-                GD.Print("not dragging");
-                GD.Print(mouseIn + " - " + @event.IsPressed());
             }
+        }
+        else if (@event.IsActionReleased("mouse_click")) {
+            dragging = false;
         }
         else if (@event is InputEventMouseMotion)
         {
             if (dragging)
             {
                 newPosition = GetViewport().GetMousePosition() - draggingDistance * dir;
-                GD.Print("dragging");
             }
         }
     }
@@ -62,16 +62,13 @@ public partial class MoveableQuest : CharacterBody2D
         chosen = false;
     }
 
-    public void MouseEnter()
+    public virtual void MouseEnter()
     {
         mouseIn = true;
-        GD.Print("mousein = true");
     }
 
-    public void MouseExit()
+    public virtual void MouseExit()
     {
         mouseIn = false;
-        GD.Print("mousein = false");
     }
-
 }

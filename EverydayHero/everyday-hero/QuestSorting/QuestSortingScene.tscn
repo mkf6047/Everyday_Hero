@@ -24,7 +24,7 @@ size = Vector2(64, 64)
 script = ExtResource("1_qc3r1")
 
 [node name="QuestGetter" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("2_xmd7o")
 
@@ -35,7 +35,7 @@ shape = SubResource("CircleShape2D_xmd7o")
 
 [node name="Delay" type="Area2D" parent="."]
 position = Vector2(288, 50)
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_k7knd")
 
@@ -47,7 +47,7 @@ texture = ExtResource("3_c7i46")
 
 [node name="Accept" type="Area2D" parent="."]
 position = Vector2(576, 50)
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("5_3ky2r")
 
@@ -59,7 +59,7 @@ texture = ExtResource("4_q1cm5")
 
 [node name="Dispose" type="Area2D" parent="."]
 position = Vector2(864, 50)
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8
 script = ExtResource("7_gjghe")
 
@@ -68,3 +68,10 @@ shape = SubResource("RectangleShape2D_gjghe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dispose"]
 texture = ExtResource("5_jj7dt")
+
+[connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Delay" to="Delay" method="OnArea2DBodyExited"]
+[connection signal="body_entered" from="Accept" to="Accept" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Accept" to="Accept" method="OnArea2DBodyExited"]
+[connection signal="body_entered" from="Dispose" to="Dispose" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Dispose" to="Dispose" method="OnArea2DBodyExited"]

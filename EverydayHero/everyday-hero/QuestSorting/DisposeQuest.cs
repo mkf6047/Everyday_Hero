@@ -34,8 +34,10 @@ public partial class DisposeQuest : Area2D
     {
         try
         {
+            GD.Print("Dispose called");
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = true;
+            GD.Print("Dispose complete");
         }
         catch
         {
