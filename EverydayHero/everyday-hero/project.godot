@@ -20,6 +20,10 @@ config/windows_native_icon="res://EverydayHeroIcons.ico"
 
 PlayerStats="*res://Player/PlayerStats.cs"
 
+[display]
+
+window/size/mode=2
+
 [dotnet]
 
 project/assembly_name="Everyday Hero"

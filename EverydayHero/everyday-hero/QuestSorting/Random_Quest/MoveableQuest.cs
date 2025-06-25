@@ -3,6 +3,7 @@ using System;
 
 public partial class MoveableQuest : CharacterBody2D
 {
+    Sprite2D sprite;
     Vector2 newPosition;
     Vector2 dir;
     float draggingDistance;
@@ -12,6 +13,10 @@ public partial class MoveableQuest : CharacterBody2D
     public bool Dragging
     {
         get { return dragging; }
+    }
+    public override void _Ready()
+    {
+        sprite = (Sprite2D)GetNode("/QuestSprite");
     }
     public override void _Input(InputEvent @event)
     {
@@ -23,7 +28,6 @@ public partial class MoveableQuest : CharacterBody2D
                 dir = (GetViewport().GetMousePosition() - Position).Normalized();
                 dragging = true;
                 newPosition = GetViewport().GetMousePosition() - draggingDistance * dir;
-                GD.Print("dragging");
             }
             else
             {
@@ -31,7 +35,8 @@ public partial class MoveableQuest : CharacterBody2D
                 chosen = false;
             }
         }
-        else if (@event.IsActionReleased("mouse_click")) {
+        else if (@event.IsActionReleased("mouse_click"))
+        {
             dragging = false;
         }
         else if (@event is InputEventMouseMotion)
@@ -65,10 +70,12 @@ public partial class MoveableQuest : CharacterBody2D
     public virtual void MouseEnter()
     {
         mouseIn = true;
+        sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestSelected.png");
     }
 
     public virtual void MouseExit()
     {
         mouseIn = false;
+        sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestPaper.png");
     }
 }

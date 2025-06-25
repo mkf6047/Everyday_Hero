@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Specialized;
 using System.Linq;
 
 public partial class QuestSortingScene : Node2D
@@ -9,6 +10,8 @@ public partial class QuestSortingScene : Node2D
     PackedScene questPreload = GD.Load<PackedScene>("res://QuestSorting/Random_Quest/RandomQuest.tscn");
 
     bool readyComplete = false;
+
+    int numofquest = 0;
 
     public override void _Ready()
     {
@@ -25,11 +28,7 @@ public partial class QuestSortingScene : Node2D
     //press Interact Button (Z or Enter) to move to the save files
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("Interact"))
-        {
-            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
-        }
-        if ((questStack.Count() <= 0) && readyComplete)
+        if ((numofquest <= 0) && readyComplete)
         {
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
         }
@@ -45,12 +44,14 @@ public partial class QuestSortingScene : Node2D
             q.ZIndex = count;
             count++;
         }
+        numofquest++;
     }
 
     public void PushQuestToTop(MoveableQuest quest)
     {
         questStack.Remove(quest);
         AddQuest(quest);
+        numofquest--;
     }
 
     public void RemoveQuest(MoveableQuest quest)
@@ -58,5 +59,6 @@ public partial class QuestSortingScene : Node2D
         questStack.Remove(quest);
         RemoveChild(quest);
         quest.QueueFree();
+        numofquest--;
     }
 }

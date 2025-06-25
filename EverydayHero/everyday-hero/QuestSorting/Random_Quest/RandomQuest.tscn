@@ -14,7 +14,7 @@ collision_layer = 8
 collision_mask = 16
 script = ExtResource("1_mupi5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="QuestSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_w37uj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
