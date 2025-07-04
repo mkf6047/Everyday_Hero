@@ -9,9 +9,18 @@ public partial class SellItems : Node2D
 
     Godot.Collections.Array<string> options = [];
     Godot.Collections.Array<int> prices = [];
+    ItemList sellList;
+    ItemList sellPrice;
 
-    public bool IsActive{ get{ return isActive; } set { isActive = value; } }
+    public bool IsActive { get { return isActive; } set { isActive = value; } }
     public int NumOfItems{ get{ return numOfItems; } set{ numOfItems = value; } }
+
+    public override void _Ready()
+    {
+        sellList = (ItemList)GetNode("./Inventory");
+        sellPrice = (ItemList)GetNode("./SellPrices");
+    }
+
     public override void _Process(double delta)
     {
         if (isActive)
@@ -34,7 +43,15 @@ public partial class SellItems : Node2D
             }
             if (Input.IsActionJustPressed("Interact"))
             {
-                
+                string item = sellList.GetItemText(selection);
+                int price = int.Parse(sellPrice.GetItemText(selection));
+            }
+            if (Input.IsActionJustPressed("cancel"))
+            {
+                TransactionSelect select = (TransactionSelect)GetNode("../TransactionSelect");
+                select.IsActive = true;
+                this.isActive = false;
+                this.Hide();
             }
         }
     }
@@ -44,10 +61,12 @@ public partial class SellItems : Node2D
         foreach (string a in incomingItems)
         {
             options.Add(a);
+            sellList.AddItem(a);
         }
         foreach (int a in incomingPrices)
         {
             prices.Add(a);
+            sellPrice.AddItem(a.ToString());
         }
     }
 }

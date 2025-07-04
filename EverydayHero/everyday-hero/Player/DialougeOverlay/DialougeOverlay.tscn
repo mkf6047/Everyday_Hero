@@ -12,6 +12,7 @@ offset_left = 64.0
 offset_top = 456.0
 offset_right = 1088.0
 offset_bottom = 616.0
+bbcode_enabled = true
 
 [node name="TextboxSprite" type="Sprite2D" parent="."]
 texture_repeat = 2
