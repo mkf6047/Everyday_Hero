@@ -1,8 +1,74 @@
-[gd_scene load_steps=2 format=3 uid="uid://bipiq17tl5kl2"]
+[gd_scene load_steps=5 format=3 uid="uid://bipiq17tl5kl2"]
 
 [ext_resource type="Script" uid="uid://e4ua2jan3xr6" path="res://NPC/ShopOverlay/ShopOverlay.cs" id="1_7h5dp"]
+[ext_resource type="Script" uid="uid://bx5vvmjmfgkxd" path="res://NPC/ShopOverlay/TransactionSelect.cs" id="2_tafle"]
+[ext_resource type="Script" uid="uid://i61d2hsienaj" path="res://NPC/ShopOverlay/BuyItems.cs" id="3_jt2qf"]
+[ext_resource type="Script" uid="uid://cidgruxodgkk2" path="res://NPC/ShopOverlay/SellItems.cs" id="4_7oarg"]
 
 [node name="ShopOverlay" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7h5dp")
+
+[node name="TransactionSelect" type="Node2D" parent="."]
+script = ExtResource("2_tafle")
+
+[node name="Options" type="ItemList" parent="TransactionSelect"]
+offset_left = 536.0
+offset_top = 64.0
+offset_right = 616.0
+offset_bottom = 180.0
+item_count = 4
+item_0/text = "Buy"
+item_1/text = "Sell"
+item_2/text = "Talk"
+item_3/text = "Cancel"
+
+[node name="Buy" type="Node2D" parent="."]
+position = Vector2(80, 160)
+script = ExtResource("3_jt2qf")
+
+[node name="ItemsSold" type="ItemList" parent="Buy"]
+offset_right = 160.0
+offset_bottom = 256.0
+item_count = 3
+item_0/text = "sword"
+item_1/text = "bow"
+item_2/text = "shield"
+
+[node name="BuyPrices" type="ItemList" parent="Buy"]
+offset_left = 160.0
+offset_right = 240.0
+offset_bottom = 256.0
+item_count = 3
+item_0/text = "10"
+item_1/text = "25"
+item_2/text = "30"
+
+[node name="Sell" type="Node2D" parent="."]
+position = Vector2(832, 160)
+script = ExtResource("4_7oarg")
+
+[node name="Inventory" type="ItemList" parent="Sell"]
+offset_right = 160.0
+offset_bottom = 256.0
+max_text_lines = 3
+text_overrun_behavior = 0
+item_count = 3
+max_columns = 2
+item_0/text = "Good Lunch"
+item_1/text = "Smart Clothes"
+item_2/text = "Confidential Documents"
+
+[node name="SellPrices" type="ItemList" parent="Sell"]
+offset_left = 160.0
+offset_right = 240.0
+offset_bottom = 256.0
+item_count = 3
+item_0/text = "10"
+item_1/text = "25"
+item_2/text = "100"

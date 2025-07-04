@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://tqigc2qvs4rv"]
+[gd_scene load_steps=8 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://8vc0dxurnek6" path="res://Sprites/Player-Front.png" id="2_ddoul"]
 [ext_resource type="Texture2D" uid="uid://crufstaywgad" path="res://Sprites/notice_v2.png" id="3_tok1r"]
 [ext_resource type="Script" uid="uid://c33s0p2ktowga" path="res://Player/Notice.cs" id="4_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bipiq17tl5kl2" path="res://NPC/ShopOverlay/ShopOverlay.tscn" id="5_8g4oa"]
+[ext_resource type="PackedScene" uid="uid://dpjn6jbk3s3gy" path="res://Player/DialougeOverlay/DialougeOverlay.tscn" id="6_6ysni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 32)
@@ -32,5 +33,8 @@ texture = ExtResource("3_tok1r")
 script = ExtResource("4_ddoul")
 
 [node name="Overlays" type="Node2D" parent="."]
+position = Vector2(-576, -324)
 
 [node name="ShopOverlay" parent="Overlays" instance=ExtResource("5_8g4oa")]
+
+[node name="DialougeOverlay" parent="Overlays" instance=ExtResource("6_6ysni")]
