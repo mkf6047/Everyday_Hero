@@ -61,10 +61,12 @@ public partial class BuyItems : Node2D
         foreach (string a in incomingItems)
         {
             options.Add(a);
+            buyList.AddItem(a);
         }
         foreach (int a in incomingPrices)
         {
             prices.Add(a);
+            buyPrice.AddItem(a.ToString());
         }
     }
 }
