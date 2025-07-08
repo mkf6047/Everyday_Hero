@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crg2u6r6ytqv7"
-path="res://.godot/imported/Rogue-Front.png-35d80112865ec0cce54ff603390efc08.ctex"
+uid="uid://bvr8kcet8crng"
+path="res://.godot/imported/Healer-Front.png-40a1ff05d4fdf84676204d32afd9d6a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Rogue-Front.png"
-dest_files=["res://.godot/imported/Rogue-Front.png-35d80112865ec0cce54ff603390efc08.ctex"]
+source_file="res://Sprites/NPCSprites/Healer-Front.png"
+dest_files=["res://.godot/imported/Healer-Front.png-40a1ff05d4fdf84676204d32afd9d6a7.ctex"]
 
 [params]
 

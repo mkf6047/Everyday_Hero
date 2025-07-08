@@ -14,7 +14,7 @@ offset_right = 1088.0
 offset_bottom = 616.0
 bbcode_enabled = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Nameplate" type="RichTextLabel" parent="."]
 z_index = 3
 offset_left = 64.0
 offset_top = 406.0

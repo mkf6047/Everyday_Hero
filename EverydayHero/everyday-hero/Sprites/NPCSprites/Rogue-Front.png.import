@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkc6a7kobulty"
-path="res://.godot/imported/Smith-Front.png-d6690b460ced50fbf4b15418ef035657.ctex"
+uid="uid://crg2u6r6ytqv7"
+path="res://.godot/imported/Rogue-Front.png-2d26c8cf774eb907324110a01f007226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Smith-Front.png"
-dest_files=["res://.godot/imported/Smith-Front.png-d6690b460ced50fbf4b15418ef035657.ctex"]
+source_file="res://Sprites/NPCSprites/Rogue-Front.png"
+dest_files=["res://.godot/imported/Rogue-Front.png-2d26c8cf774eb907324110a01f007226.ctex"]
 
 [params]
 

@@ -1,12 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dly5kvsokanx4"]
 
-[ext_resource type="Texture2D" uid="uid://d0qob5vk2qeck" path="res://Sprites/TempPlayerSprite.png" id="1_i1hjv"]
+[ext_resource type="Texture2D" uid="uid://dkc6a7kobulty" path="res://Sprites/NPCSprites/Smith-Front.png" id="1_ysaus"]
 [ext_resource type="Script" uid="uid://bx8v2y8q0jk2m" path="res://NPC/Blacksmith/BlacksmithInteract.cs" id="2_ysaus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20814"]
+size = Vector2(20, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rgbf5"]
-size = Vector2(64, 64)
+size = Vector2(64, 96)
 
 [node name="Blacksmith" type="Node2D"]
 
@@ -21,7 +22,7 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_20814")
 
 [node name="InteractiveSprite" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("1_i1hjv")
+texture = ExtResource("1_ysaus")
 
 [node name="BlacksmithInteract" type="Area2D" parent="."]
 collision_layer = 0

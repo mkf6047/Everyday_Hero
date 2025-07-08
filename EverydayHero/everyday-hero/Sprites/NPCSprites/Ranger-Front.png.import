@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdb3wqlulh81f"
-path="res://.godot/imported/Knight-Front.png-5aaab60de8d0ef05361ec29ab19fce1d.ctex"
+uid="uid://dwjdhaylwoi4a"
+path="res://.godot/imported/Ranger-Front.png-6afe7016340d5fcbd7a213508cea5948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Knight-Front.png"
-dest_files=["res://.godot/imported/Knight-Front.png-5aaab60de8d0ef05361ec29ab19fce1d.ctex"]
+source_file="res://Sprites/NPCSprites/Ranger-Front.png"
+dest_files=["res://.godot/imported/Ranger-Front.png-6afe7016340d5fcbd7a213508cea5948.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvr8kcet8crng"
-path="res://.godot/imported/Healer-Front.png-b4d5b50efe8c69796cf2783da6bcbb4e.ctex"
+uid="uid://dkc6a7kobulty"
+path="res://.godot/imported/Smith-Front.png-e7b6dbc9336ebe52e3a6105389b7968c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Healer-Front.png"
-dest_files=["res://.godot/imported/Healer-Front.png-b4d5b50efe8c69796cf2783da6bcbb4e.ctex"]
+source_file="res://Sprites/NPCSprites/Smith-Front.png"
+dest_files=["res://.godot/imported/Smith-Front.png-e7b6dbc9336ebe52e3a6105389b7968c.ctex"]
 
 [params]
 
