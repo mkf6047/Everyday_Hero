@@ -11,6 +11,7 @@ public partial class BuyItems : Node2D
     Godot.Collections.Array<int> prices = [];
     ItemList buyList;
     ItemList buyPrice;
+    Texture2D pointer;
 
     public bool IsActive{ get{ return isActive; } set { isActive = value; } }
     public int NumOfItems{ get{ return numOfItems; } set{ numOfItems = value; } }
@@ -19,6 +20,7 @@ public partial class BuyItems : Node2D
     {
         buyList = (ItemList)GetNode("./Inventory");
         buyPrice = (ItemList)GetNode("./SellPrices");
+        pointer = GD.Load<Texture2D>("res://Sprites/OverlaySprites/MenuSelector.png");
     }
 
     public override void _Process(double delta)
@@ -27,19 +29,23 @@ public partial class BuyItems : Node2D
         {
             if (Input.IsActionJustPressed("up"))
             {
+                buyList.SetItemIcon(selection, null);
                 selection--;
                 if (selection < 0)
                 {
                     selection = numOfItems - 1;
                 }
+                buyList.SetItemIcon(selection, pointer);
             }
             if (Input.IsActionJustPressed("down"))
             {
+                buyList.SetItemIcon(selection, null);
                 selection++;
                 if (selection >= numOfItems)
                 {
                     selection = 0;
                 }
+                buyList.SetItemIcon(selection, pointer);
             }
             if (Input.IsActionJustPressed("Interact"))
             {

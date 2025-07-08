@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bipiq17tl5kl2"]
+[gd_scene load_steps=6 format=3 uid="uid://bipiq17tl5kl2"]
 
 [ext_resource type="Script" uid="uid://e4ua2jan3xr6" path="res://NPC/ShopOverlay/ShopOverlay.cs" id="1_7h5dp"]
 [ext_resource type="Script" uid="uid://bx5vvmjmfgkxd" path="res://NPC/ShopOverlay/TransactionSelect.cs" id="2_tafle"]
+[ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="3_7oarg"]
 [ext_resource type="Script" uid="uid://i61d2hsienaj" path="res://NPC/ShopOverlay/BuyItems.cs" id="3_jt2qf"]
 [ext_resource type="Script" uid="uid://cidgruxodgkk2" path="res://NPC/ShopOverlay/SellItems.cs" id="4_7oarg"]
 
@@ -24,6 +25,7 @@ offset_right = 616.0
 offset_bottom = 180.0
 item_count = 4
 item_0/text = "Buy"
+item_0/icon = ExtResource("3_7oarg")
 item_1/text = "Sell"
 item_2/text = "Talk"
 item_3/text = "Cancel"
@@ -37,6 +39,7 @@ offset_right = 160.0
 offset_bottom = 256.0
 item_count = 3
 item_0/text = "sword"
+item_0/icon = ExtResource("3_7oarg")
 item_1/text = "bow"
 item_2/text = "shield"
 
@@ -61,6 +64,7 @@ text_overrun_behavior = 0
 item_count = 3
 max_columns = 2
 item_0/text = "Good Lunch"
+item_0/icon = ExtResource("3_7oarg")
 item_1/text = "Smart Clothes"
 item_2/text = "Confidential Documents"
 
