@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=18 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_mbp3p"]
 [ext_resource type="PackedScene" uid="uid://djx64uhnvvqur" path="res://NPC/InteractableModel/Interactable.tscn" id="2_4eakb"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dhfhoeq8v5x31" path="res://Sprites/Exterior/Lower-Left-Path.png" id="12_m05ay"]
 [ext_resource type="Texture2D" uid="uid://dh2un4pu30iuj" path="res://Sprites/Exterior/Upper-Right-Grass.png" id="13_gk312"]
 [ext_resource type="PackedScene" uid="uid://br3otwqtdbona" path="res://Environment/Buildings/PlayerHome/PlayerHomeExternal.tscn" id="14_5mg18"]
+[ext_resource type="PackedScene" uid="uid://csx6ay7ocgq4" path="res://NPC/PatrollingNPC/MovingNPCTemplate.tscn" id="16_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="16_qk0fn"]
+[ext_resource type="Texture2D" uid="uid://b32tn5jiahfth" path="res://Sprites/NPCSprites/Janitor-Sprite.png" id="17_6ue8r"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -32,6 +34,11 @@ position = Vector2(32, -400)
 
 [node name="Blacksmith" parent="." instance=ExtResource("5_mbp3p")]
 position = Vector2(-283, -112)
+
+[node name="Janitor" parent="." instance=ExtResource("16_3ihjs")]
+position = Vector2(736, 176)
+Targets = Array[Vector2]([Vector2(0, 0), Vector2(-64, 32)])
+NPCTexture = ExtResource("17_6ue8r")
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 
