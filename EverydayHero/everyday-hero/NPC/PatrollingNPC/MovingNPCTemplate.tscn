@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csx6ay7ocgq4"]
+[gd_scene load_steps=8 format=3 uid="uid://csx6ay7ocgq4"]
 
 [ext_resource type="Texture2D" uid="uid://dkc6a7kobulty" path="res://Sprites/NPCSprites/Smith-Front.png" id="1_cg6hx"]
+[ext_resource type="Script" uid="uid://c4llryaghtoje" path="res://NPC/PatrollingNPC/MovingNpc.cs" id="1_npvc1"]
 [ext_resource type="Script" uid="uid://b7bmday06h3x0" path="res://NPC/PatrollingNPC/MovingNpcBody.cs" id="1_qxu1k"]
 [ext_resource type="Script" uid="uid://brhnhj20vtopt" path="res://NPC/PatrollingNPC/InteractionArea.cs" id="2_ntie6"]
 
@@ -16,15 +17,14 @@ size = Vector2(20, 36)
 size = Vector2(64, 96)
 
 [node name="MovingNPC" type="Node2D"]
+script = ExtResource("1_npvc1")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_qxu1k")
 
-[node name="MovingNPCBody" type="RigidBody2D" parent="."]
+[node name="MovingNPCBody" type="CharacterBody2D" parent="."]
 physics_interpolation_mode = 2
 collision_layer = 4
-mass = 0.001
-gravity_scale = 0.0
 script = ExtResource("1_qxu1k")
 
 [node name="NpcNavigationAgent" type="NavigationAgent2D" parent="MovingNPCBody"]

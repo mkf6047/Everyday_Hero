@@ -10,6 +10,10 @@ public partial class ShopOverlay : Control
         get { return isAvailable; }
         set { isAvailable = value; }
     }
+    public override void _Ready()
+    {
+        this.Hide();
+    }
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("cancel"))

@@ -18,8 +18,8 @@ public partial class BuyItems : Node2D
 
     public override void _Ready()
     {
-        buyList = (ItemList)GetNode("./Inventory");
-        buyPrice = (ItemList)GetNode("./SellPrices");
+        buyList = (ItemList)GetNode("./ItemsSold");
+        buyPrice = (ItemList)GetNode("./BuyPrices");
         pointer = GD.Load<Texture2D>("res://Sprites/OverlaySprites/MenuSelector.png");
     }
 

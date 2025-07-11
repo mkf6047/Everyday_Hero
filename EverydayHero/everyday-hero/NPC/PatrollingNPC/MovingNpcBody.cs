@@ -29,4 +29,5 @@ public partial class MovingNpcBody : CharacterBody2D
         movementTarget = targetPos;
         navAgent.TargetPosition = movementTarget;
     }
+    public bool NavigationStatus(){ return navAgent.IsNavigationFinished(); }
 }
