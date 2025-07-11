@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://csx6ay7ocgq4"]
+
+[ext_resource type="Texture2D" uid="uid://dkc6a7kobulty" path="res://Sprites/NPCSprites/Smith-Front.png" id="1_cg6hx"]
+[ext_resource type="Script" uid="uid://b7bmday06h3x0" path="res://NPC/PatrollingNPC/MovingNpcBody.cs" id="1_qxu1k"]
+[ext_resource type="Script" uid="uid://brhnhj20vtopt" path="res://NPC/PatrollingNPC/InteractionArea.cs" id="2_ntie6"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qxu1k"]
+vertices = PackedVector2Array(171, 108, -91, 108, -91, -41, 171, -41)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-101, -51, 181, -51, 181, 118, -101, 118)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20814"]
+size = Vector2(20, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgbf5"]
+size = Vector2(64, 96)
+
+[node name="MovingNPC" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_qxu1k")
+
+[node name="MovingNPCBody" type="RigidBody2D" parent="."]
+physics_interpolation_mode = 2
+collision_layer = 4
+mass = 0.001
+gravity_scale = 0.0
+script = ExtResource("1_qxu1k")
+
+[node name="NpcNavigationAgent" type="NavigationAgent2D" parent="MovingNPCBody"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingNPCBody"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_20814")
+
+[node name="InteractiveSprite" type="Sprite2D" parent="MovingNPCBody"]
+texture = ExtResource("1_cg6hx")
+
+[node name="InteractionArea" type="Area2D" parent="MovingNPCBody"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("2_ntie6")
+
+[node name="CollisionShapeInteract" type="CollisionShape2D" parent="MovingNPCBody/InteractionArea"]
+shape = SubResource("RectangleShape2D_rgbf5")
+
+[connection signal="body_entered" from="MovingNPCBody/InteractionArea" to="MovingNPCBody/InteractionArea" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="MovingNPCBody/InteractionArea" to="MovingNPCBody/InteractionArea" method="OnArea2DBodyExited"]
