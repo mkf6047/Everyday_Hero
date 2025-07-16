@@ -37,7 +37,8 @@ position = Vector2(-283, -112)
 
 [node name="Janitor" parent="." instance=ExtResource("16_3ihjs")]
 position = Vector2(736, 176)
-Targets = Array[Vector2]([Vector2(0, 0), Vector2(-64, 32)])
+Targets = Array[Vector2]([Vector2(736, 176), Vector2(768, 176)])
+Bounds = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 NPCTexture = ExtResource("17_6ue8r")
 
 [node name="SpriteHolder" type="Node2D" parent="."]

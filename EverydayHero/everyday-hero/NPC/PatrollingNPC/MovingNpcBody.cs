@@ -17,21 +17,22 @@ public partial class MovingNpcBody : CharacterBody2D
     {
         navAgent = (NavigationAgent2D)GetNode("./NpcNavigationAgent");
 
-        navAgent.PathDesiredDistance = 10.0f;
-        navAgent.TargetDesiredDistance = 10.0f;
+        navAgent.PathDesiredDistance = 4.0f;
+        navAgent.TargetDesiredDistance = 4.0f;
     }
     public override void _PhysicsProcess(double delta)
     {
-        if (navAgent.IsNavigationFinished() && (timer > 3.0))
+        if (navAgent.IsNavigationFinished() /*&& (timer > 3.0)*/)
         {
-            count++;
-            if (count >= pathfindingTargets.Count) { count = 0; }
-            movementTarget = pathfindingTargets[count];
-            navAgent.TargetPosition = movementTarget;
-            GD.Print(navAgent.TargetPosition);
-            timer = 0.0;
+            // count++;
+            // if (count >= pathfindingTargets.Count) { count = 0; }
+            // movementTarget = pathfindingTargets[count];
+            // navAgent.TargetPosition = movementTarget;
+            //GD.Print(navAgent.TargetPosition);
+            //timer = 0.0;
+            return;
         }
-        timer += delta;
+        //timer += delta;
         Vector2 nextPathPosition = navAgent.GetNextPathPosition();
         Vector2 direction = GlobalPosition.DirectionTo(nextPathPosition);
         Velocity = direction * MovementSpeed;
@@ -41,6 +42,7 @@ public partial class MovingNpcBody : CharacterBody2D
     {
         movementTarget = targetPos;
         navAgent.TargetPosition = movementTarget;
+        navAgent.GetNextPathPosition();
     }
     public void SetTargets(Godot.Collections.Array<Vector2> targets)
     {

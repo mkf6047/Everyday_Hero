@@ -33,6 +33,7 @@ texture = ExtResource("3_tok1r")
 script = ExtResource("4_ddoul")
 
 [node name="Overlays" type="Node2D" parent="."]
+z_index = 10
 position = Vector2(-576, -324)
 
 [node name="ShopOverlay" parent="Overlays" instance=ExtResource("5_8g4oa")]

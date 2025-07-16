@@ -32,23 +32,20 @@ public partial class MovingNpc : Node2D
     }
     public override void _Process(double delta)
     {
-        // timer += delta;
-        // if (!body.NavigationStatus()) { GD.Print("still navigating"); return; }
-        // if (count >= Targets.Count) { count = 0; }
-        // GD.Print(count + " " + Targets.Count);
-        // if (timer >= 1.0)
-        // {
-        //     SetNewTarget(Targets[count]);
-        //     count++;
-        //     timer = 0.0;
-        // }
+        timer += delta;
+        if (count >= Targets.Count) { count = 0; }
+        if (timer >= 3.0)
+        {
+            SetNewTarget(Targets[count]);
+            count++;
+            timer = 0.0;
+        }
     }
 
 
     public void SetNewTarget(Vector2 newTarget)
     {
         body.SetTargetVector(newTarget);
-        GD.Print(newTarget);
     }
     public void SetNewTargets()
     {
