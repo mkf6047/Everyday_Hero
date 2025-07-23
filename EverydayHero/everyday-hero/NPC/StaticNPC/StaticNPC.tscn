@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmorych4f0lm0"]
+
+[ext_resource type="Script" uid="uid://l5gokr7owm4r" path="res://NPC/StaticNPC/StaticNpc.cs" id="1_twp7n"]
+[ext_resource type="Script" uid="uid://dgqoo14d8slf5" path="res://NPC/StaticNPC/NPCCollide.cs" id="3_eo1en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20814"]
+size = Vector2(24, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwxo3"]
+size = Vector2(96, 96)
+
+[node name="StaticNPC" type="Node2D"]
+script = ExtResource("1_twp7n")
+
+[node name="NPCRigidBody2D" type="RigidBody2D" parent="."]
+physics_interpolation_mode = 2
+collision_layer = 4
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCRigidBody2D"]
+z_index = 1
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_20814")
+
+[node name="NPCSprite" type="Sprite2D" parent="NPCRigidBody2D"]
+
+[node name="Collide" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("3_eo1en")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Collide"]
+shape = SubResource("RectangleShape2D_gwxo3")
+
+[connection signal="body_entered" from="Collide" to="Collide" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Collide" to="Collide" method="OnArea2DBodyExited"]
