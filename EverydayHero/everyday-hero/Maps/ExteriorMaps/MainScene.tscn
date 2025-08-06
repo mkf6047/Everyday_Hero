@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=21 format=3 uid="uid://dmcqk2d02maf2"]
 
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_mbp3p"]
 [ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="3_qk0fn"]
@@ -15,7 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://br3otwqtdbona" path="res://Environment/Buildings/PlayerHome/PlayerHomeExternal.tscn" id="14_5mg18"]
 [ext_resource type="PackedScene" uid="uid://csx6ay7ocgq4" path="res://NPC/PatrollingNPC/MovingNPCTemplate.tscn" id="16_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="16_qk0fn"]
+[ext_resource type="Texture2D" uid="uid://csr3a2xg7q16k" path="res://Sprites/Exterior/Fence-Left.png" id="17_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://b32tn5jiahfth" path="res://Sprites/NPCSprites/Janitor-Sprite.png" id="17_6ue8r"]
+[ext_resource type="Texture2D" uid="uid://j4prci7oie4" path="res://Sprites/Exterior/Fence-Right.png" id="18_6ue8r"]
+[ext_resource type="Texture2D" uid="uid://cymw0y20eg7ob" path="res://Sprites/Exterior/Fence-Back.png" id="19_16s2r"]
+[ext_resource type="Texture2D" uid="uid://de68w1xf43bml" path="res://Sprites/Exterior/Fence-Front.png" id="20_a44ly"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -90,7 +94,7 @@ z_index = -4
 texture_repeat = 2
 texture = ExtResource("9_76g1a")
 region_enabled = true
-region_rect = Rect2(0, 0, 4800, 3200)
+region_rect = Rect2(0, 0, 6400, 4000)
 
 [node name="UpperPathGuildhall" type="Sprite2D" parent="SpriteHolder"]
 z_index = -3
@@ -219,3 +223,35 @@ position = Vector2(-352, 128)
 texture = ExtResource("4_3ihjs")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 352)
+
+[node name="LeftFence" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(-2184, 0)
+texture = ExtResource("17_3ihjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 2912)
+
+[node name="RightFence" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(2184, 0)
+texture = ExtResource("18_6ue8r")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 2912)
+
+[node name="BottomFence" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, 1440)
+texture = ExtResource("19_16s2r")
+region_enabled = true
+region_rect = Rect2(0, 0, 4352, 32)
+
+[node name="TopFence" type="Sprite2D" parent="SpriteHolder"]
+z_index = -1
+texture_repeat = 2
+position = Vector2(0, -1440)
+texture = ExtResource("20_a44ly")
+region_enabled = true
+region_rect = Rect2(0, 0, 4352, 32)
