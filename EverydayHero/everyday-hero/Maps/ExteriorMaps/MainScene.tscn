@@ -41,6 +41,11 @@ Targets = Array[Vector2]([Vector2(736, 176), Vector2(768, 176)])
 Bounds = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 NPCTexture = ExtResource("17_6ue8r")
 
+[node name="Bounds" type="RigidBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
+polygon = PackedVector2Array(-2176, -1420, 2176, -1420, 2176, 1426, -2176, 1426, -2194, 1450, 2194, 1450, 2194, -1450, -2194, -1450, -2194, 1450, -2176, 1426)
+
 [node name="SpriteHolder" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="SpriteHolder"]
