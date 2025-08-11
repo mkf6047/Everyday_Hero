@@ -42,6 +42,8 @@ Bounds = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
 NPCTexture = ExtResource("17_6ue8r")
 
 [node name="Bounds" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
 polygon = PackedVector2Array(-2176, -1420, 2176, -1420, 2176, 1426, -2176, 1426, -2194, 1450, 2194, 1450, 2194, -1450, -2194, -1450, -2194, 1450, -2176, 1426)

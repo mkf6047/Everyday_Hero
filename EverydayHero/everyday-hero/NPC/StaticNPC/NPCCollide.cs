@@ -4,12 +4,17 @@ using System;
 public partial class NPCCollide : Area2D
 {
     bool isColliding;
+    StaticNpc thisNPC;
 
     public override void _Ready()
     {
-        base._Ready();
-        
+        thisNPC = (StaticNpc)GetParent();
+        Node node = GetTree().GetFirstNodeInGroup("Player");
+        if (node is PlayerFunctions playerNode)
+        {
+        }
         isColliding = false;
+        base._Ready();
     }
 
     public override void _Process(double delta)
@@ -18,7 +23,11 @@ public partial class NPCCollide : Area2D
         if (isColliding) {
             if (Input.IsActionPressed("Interact"))
             {
-                
+                Node node = GetTree().GetFirstNodeInGroup("Player");
+                if (node is PlayerFunctions playerNode)
+                {
+                    playerNode.LoadText(thisNPC.dialougeFilepath);
+                }
             }
         }
     }

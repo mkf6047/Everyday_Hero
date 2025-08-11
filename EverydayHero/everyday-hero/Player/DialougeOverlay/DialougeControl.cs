@@ -24,4 +24,8 @@ public partial class DialougeControl : Node2D
     {
         this.Hide();
     }
+    public void BeginText()
+    {
+        this.Show();
+    }
 }

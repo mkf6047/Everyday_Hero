@@ -16,7 +16,7 @@ public partial class ShopOverlay : Control
     }
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("cancel"))
+        if (Input.IsActionJustPressed("cancel") && isOpen)
         {
             CloseShop();
         }
