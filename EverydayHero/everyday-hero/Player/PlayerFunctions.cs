@@ -108,6 +108,6 @@ public partial class PlayerFunctions : Node2D
 
     public void SetShop()
     {
-        shopOverlay.SetBuyInventory();
+        shopOverlay.SetBuyInventory(shopItems, shopPrices);
     }
 }

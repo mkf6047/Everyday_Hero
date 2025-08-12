@@ -1,47 +1,66 @@
-[gd_scene load_steps=3 format=3 uid="uid://6a7g1tupy8aj"]
+[gd_scene load_steps=4 format=3 uid="uid://6a7g1tupy8aj"]
 
 [ext_resource type="Script" uid="uid://5nfc4j1k5ccj" path="res://Maps/Menus/CreateDataNode.cs" id="1_abl1n"]
 [ext_resource type="Script" uid="uid://bsj17osyu0ei1" path="res://Maps/Menus/Save.cs" id="2_abl1n"]
+[ext_resource type="Script" uid="uid://cqjpge1i8qk3r" path="res://Maps/Menus/SaveText.cs" id="3_b6hw1"]
 
 [node name="LoadSave" type="Node2D"]
 script = ExtResource("1_abl1n")
 
 [node name="Save1" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 100.0
-offset_right = 605.0
-offset_bottom = 131.0
+offset_left = 259.0
+offset_top = 150.0
+offset_right = 317.0
+offset_bottom = 181.0
 text = "Save 1"
 script = ExtResource("2_abl1n")
 saveFilepath = "user://save_game_1.dat"
 
 [node name="Save1Text" type="RichTextLabel" parent="Save1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
+script = ExtResource("3_b6hw1")
 
 [node name="Save2" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 200.0
-offset_right = 605.0
-offset_bottom = 231.0
+offset_left = 259.0
+offset_top = 250.0
+offset_right = 317.0
+offset_bottom = 281.0
 text = "Save 2"
 script = ExtResource("2_abl1n")
 saveFilepath = "user://save_game_2.dat"
 
 [node name="Save2Text" type="RichTextLabel" parent="Save2"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
 
 [node name="Save3" type="Button" parent="."]
-offset_left = 547.0
-offset_top = 300.0
-offset_right = 605.0
-offset_bottom = 331.0
+offset_left = 259.0
+offset_top = 350.0
+offset_right = 317.0
+offset_bottom = 381.0
 text = "Save 3"
 script = ExtResource("2_abl1n")
 saveFilepath = "user://save_game_3.dat"
 
 [node name="Save3Text" type="RichTextLabel" parent="Save3"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
+
+[node name="Directions" type="RichTextLabel" parent="."]
+offset_left = 326.0
+offset_top = 25.0
+offset_right = 826.0
+offset_bottom = 65.0
+bbcode_enabled = true
+text = "[center]Click on the save button to load the save![/center]"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

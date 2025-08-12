@@ -38,12 +38,12 @@ public partial class ShopOverlay : Control
         this.Hide();
         isOpen = false;
     }
-    public void SetBuyInventory()
+    public void SetBuyInventory(Godot.Collections.Array<string> incomingItems, Godot.Collections.Array<int> incomingPrices)
     {
-        
+        buyOverlay.SetList(incomingItems, incomingPrices);
     }
-    public void SetSellInventory()
+    public void SetSellInventory(Godot.Collections.Array<string> incomingItems, Godot.Collections.Array<int> incomingPrices)
     {
-        
+        sellOverlay.SetList(incomingItems, incomingPrices);
     }
 }
