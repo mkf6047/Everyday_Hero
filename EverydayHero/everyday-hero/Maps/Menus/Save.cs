@@ -1,9 +1,10 @@
 using Godot;
 using System;
 
-public partial class Save2 : Button
+public partial class Save : Button
 {
-    //save file 2
+    [Export]
+    public string saveFilepath;
     PlayerVariables PlayerInfo;
     public override void _Ready()
     {
@@ -15,10 +16,10 @@ public partial class Save2 : Button
     //when clicked, the below activates
     private void Clicked()
     {
-        using var file = FileAccess.Open("user://save_game_2.dat", FileAccess.ModeFlags.Read);
+        using var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read);
         string content = file.GetAsText();
         PlayerInfo.coin = Int32.Parse(content);
         GetTree().Root.AddChild(PlayerInfo);
-        GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn");
+        GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
     }
 }

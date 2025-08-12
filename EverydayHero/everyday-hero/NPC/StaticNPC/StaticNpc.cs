@@ -7,6 +7,10 @@ public partial class StaticNpc : Node2D
     public Texture2D sprite;
     [Export]
     public string dialougeFilepath;
+    [Export]
+    public bool isShopNPC;
+    [Export]
+    public string shopFilepath;
 
     Sprite2D npcSprite;
 

@@ -9,7 +9,7 @@ public partial class TitleScreen : Node2D
         base._Process(delta);
         if (Input.IsActionPressed("Interact"))
         {
-            GetTree().ChangeSceneToFile("res://Maps/MainScene.tscn");
+            GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
         }
     }
 }

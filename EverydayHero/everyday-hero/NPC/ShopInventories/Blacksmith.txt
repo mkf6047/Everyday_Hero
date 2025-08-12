@@ -1,0 +1,14 @@
+Bronze Sword^10
+Bronze Shield^10
+Bronze Bow^10
+Bronze Staff^10
+Bronze Axe^10
+Bronze Gauntlets^10
+Bronze Censer^10
+Iron Sword^15
+Iron Shield^15
+Iron Bow^15
+Iron Staff^15
+Iron Axe^15
+Iron Gauntlets^15
+Iron Censer^15

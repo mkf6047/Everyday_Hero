@@ -11,3 +11,8 @@ offset_right = 1152.0
 offset_bottom = 364.0
 bbcode_enabled = true
 text = "[center]Press Z / Enter to Continue.[/center]"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

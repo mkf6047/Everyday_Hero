@@ -10,9 +10,13 @@ public partial class ShopOverlay : Control
         get { return isAvailable; }
         set { isAvailable = value; }
     }
+    BuyItems buyOverlay;
+    SellItems sellOverlay;
     public override void _Ready()
     {
         this.Hide();
+        buyOverlay = (BuyItems)GetNode("./Buy");
+        sellOverlay = (SellItems)GetNode("./Sell");
     }
     public override void _Process(double delta)
     {
@@ -23,7 +27,7 @@ public partial class ShopOverlay : Control
     }
     public virtual void OpenShop()
     {
-        if(isAvailable == false){ return; }
+        if (isAvailable == false) { return; }
         GetTree().Paused = true;
         this.Show();
         isOpen = true;
@@ -33,5 +37,13 @@ public partial class ShopOverlay : Control
         GetTree().Paused = false;
         this.Hide();
         isOpen = false;
+    }
+    public void SetBuyInventory()
+    {
+        
+    }
+    public void SetSellInventory()
+    {
+        
     }
 }

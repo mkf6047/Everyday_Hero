@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://6a7g1tupy8aj"]
+[gd_scene load_steps=3 format=3 uid="uid://6a7g1tupy8aj"]
 
 [ext_resource type="Script" uid="uid://5nfc4j1k5ccj" path="res://Maps/Menus/CreateDataNode.cs" id="1_abl1n"]
-[ext_resource type="Script" uid="uid://rdd14o3t7hvq" path="res://Maps/Menus/Save1.cs" id="2_c8k57"]
-[ext_resource type="Script" uid="uid://c6o5xho3bb56t" path="res://Maps/Menus/Save2.cs" id="3_f0tng"]
-[ext_resource type="Script" uid="uid://b35hi481jnr5c" path="res://Maps/Menus/Save3.cs" id="4_rj6gu"]
+[ext_resource type="Script" uid="uid://bsj17osyu0ei1" path="res://Maps/Menus/Save.cs" id="2_abl1n"]
 
 [node name="LoadSave" type="Node2D"]
 script = ExtResource("1_abl1n")
@@ -14,7 +12,13 @@ offset_top = 100.0
 offset_right = 605.0
 offset_bottom = 131.0
 text = "Save 1"
-script = ExtResource("2_c8k57")
+script = ExtResource("2_abl1n")
+saveFilepath = "user://save_game_1.dat"
+
+[node name="Save1Text" type="RichTextLabel" parent="Save1"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Save2" type="Button" parent="."]
 offset_left = 547.0
@@ -22,7 +26,12 @@ offset_top = 200.0
 offset_right = 605.0
 offset_bottom = 231.0
 text = "Save 2"
-script = ExtResource("3_f0tng")
+script = ExtResource("2_abl1n")
+saveFilepath = "user://save_game_2.dat"
+
+[node name="Save2Text" type="RichTextLabel" parent="Save2"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Save3" type="Button" parent="."]
 offset_left = 547.0
@@ -30,4 +39,9 @@ offset_top = 300.0
 offset_right = 605.0
 offset_bottom = 331.0
 text = "Save 3"
-script = ExtResource("4_rj6gu")
+script = ExtResource("2_abl1n")
+saveFilepath = "user://save_game_3.dat"
+
+[node name="Save3Text" type="RichTextLabel" parent="Save3"]
+offset_right = 40.0
+offset_bottom = 40.0
