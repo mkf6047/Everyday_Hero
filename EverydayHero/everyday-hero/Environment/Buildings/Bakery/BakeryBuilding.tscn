@@ -16,7 +16,7 @@ texture = ExtResource("1_mxlxo")
 collision_layer = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
-polygon = PackedVector2Array(148, -40, 148, 128, 32, 128, 32, 16, -52, 16, -52, 128, -148, 128, -148, -40)
+polygon = PackedVector2Array(112, -40, 112, 128, 32, 128, 32, 16, -52, 16, -52, 128, -130, 128, -112, -40)
 
 [node name="EnterBakery" type="Area2D" parent="."]
 position = Vector2(0, 102)
