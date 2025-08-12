@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://upbkmgceo3fm"]
+
+[ext_resource type="Texture2D" uid="uid://cytv6pymb8ysl" path="res://Sprites/Bakery.png" id="1_mxlxo"]
+[ext_resource type="Script" uid="uid://dsd24v3v04ubb" path="res://Environment/Buildings/Bakery/EnterBakery.cs" id="2_jp0dd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h156v"]
+size = Vector2(40, 20)
+
+[node name="BakeryBuilding" type="Node2D"]
+
+[node name="BakerySprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_mxlxo")
+
+[node name="BuildingPolygon" type="RigidBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
+polygon = PackedVector2Array(148, -40, 148, 128, 32, 128, 32, 16, -52, 16, -52, 128, -148, 128, -148, -40)
+
+[node name="EnterBakery" type="Area2D" parent="."]
+position = Vector2(0, 102)
+collision_layer = 0
+script = ExtResource("2_jp0dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterBakery"]
+shape = SubResource("RectangleShape2D_h156v")
+
+[connection signal="body_entered" from="EnterBakery" to="EnterBakery" method="OnArea2DBodyEntered"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4l8cftgo5dyd"]
+
+[ext_resource type="Texture2D" uid="uid://c81411duwxlki" path="res://Sprites/Tavern-Sprite.png" id="1_k6nip"]
+[ext_resource type="Script" uid="uid://c5q7b1rtcmswt" path="res://Environment/Buildings/Tavern/EnterTavern.cs" id="2_qgkiw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_saymy"]
+size = Vector2(40, 20)
+
+[node name="TavernBuilding" type="Node2D"]
+
+[node name="TavernSprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_k6nip")
+
+[node name="BuildingPolygon" type="RigidBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BuildingPolygon"]
+polygon = PackedVector2Array(148, -40, 148, 128, 60, 128, 60, 16, -40, 16, -40, 128, -148, 128, -148, -40)
+
+[node name="EnterTavern" type="Area2D" parent="."]
+position = Vector2(8, 97)
+collision_layer = 0
+script = ExtResource("2_qgkiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterTavern"]
+shape = SubResource("RectangleShape2D_saymy")
+
+[connection signal="body_entered" from="EnterTavern" to="EnterTavern" method="OnArea2DBodyEntered"]

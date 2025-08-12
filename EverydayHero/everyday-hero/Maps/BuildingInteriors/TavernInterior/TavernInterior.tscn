@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://rdyjeuo3ojeq"]
+
+[ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_5tx5o"]
+[ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_o0q87"]
+[ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="3_5tx5o"]
+[ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_hg6fj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2iaj"]
+size = Vector2(40, 20)
+
+[node name="TavernInterior" type="Node2D"]
+
+[node name="Walls" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(-20, -20, 1172, -20, 1172, 668, -20, 668, -20, -20, 0, 0, 0, 648, 1152, 648, 1152, 0, 0, 0)
+
+[node name="ExitBuilding" type="Area2D" parent="."]
+position = Vector2(576, 618)
+collision_layer = 0
+script = ExtResource("1_5tx5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBuilding"]
+shape = SubResource("RectangleShape2D_u2iaj")
+
+[node name="Player" parent="." instance=ExtResource("2_o0q87")]
+position = Vector2(576, 324)
+
+[node name="StoneFlooring" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(576, 328)
+texture = ExtResource("3_5tx5o")
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 608)
+
+[node name="WoodFloor" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+position = Vector2(576, 324)
+texture = ExtResource("4_hg6fj")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
+
+[connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]
