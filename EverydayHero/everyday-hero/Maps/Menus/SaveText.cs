@@ -8,10 +8,23 @@ public partial class SaveText : RichTextLabel
     public override void _Ready()
     {
         base._Ready();
+        string coins = "Error";
+        string playtime = "Error";
+        string rank = "Error";
+        using (var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read))
+        {
+            if (file.IsOpen())
+            {
+                coins = file.GetLine();
+                playtime = file.GetLine();
+                rank = file.GetLine();
+            }
+            file.Close();
+        }
         this.Text =
-        "Playtime: " + PlayerStats.Instance.Playtime +
-        "\nRank: " + PlayerStats.Instance.Rank +
-        "\nCoins: " + PlayerStats.Instance.Coins;
+        "Playtime: " + playtime +
+        "\nRank: " + rank +
+        "\nCoins: " + coins;
     }
 
     //when clicked, the below activates

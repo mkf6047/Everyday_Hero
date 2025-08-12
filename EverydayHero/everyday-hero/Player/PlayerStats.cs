@@ -7,6 +7,7 @@ public partial class PlayerStats : Node
     private int coins = 0;
     private float playtime = 0;
     private char rank = 'F';
+    public Godot.Collections.Array<string> inventory;
     public int Coins
     {
         get { return coins; }
