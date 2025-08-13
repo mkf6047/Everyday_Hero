@@ -8,9 +8,9 @@ public partial class SaveText : RichTextLabel
     public override void _Ready()
     {
         base._Ready();
-        string coins = "Error";
-        string playtime = "Error";
-        string rank = "Error";
+        string coins = "0";
+        string playtime = "0";
+        string rank = "Unemployed";
         using (var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read))
         {
             if (file.IsOpen())
