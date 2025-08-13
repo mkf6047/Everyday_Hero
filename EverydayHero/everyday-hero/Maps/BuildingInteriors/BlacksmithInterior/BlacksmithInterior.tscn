@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cipmln7tjrcoy"]
+[gd_scene load_steps=10 format=3 uid="uid://cipmln7tjrcoy"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_3ik7k"]
+[ext_resource type="PackedScene" uid="uid://dmorych4f0lm0" path="res://NPC/StaticNPC/StaticNPC.tscn" id="2_g2nvj"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_x11fk"]
+[ext_resource type="Texture2D" uid="uid://dkc6a7kobulty" path="res://Sprites/NPCSprites/Smith-Front.png" id="3_heejw"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_4uehh"]
 [ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="4_geaaf"]
 [ext_resource type="Texture2D" uid="uid://cti7cc0vybeio" path="res://Sprites/Interior/Furnace.png" id="5_j5q7u"]
-[ext_resource type="PackedScene" uid="uid://dly5kvsokanx4" path="res://NPC/Blacksmith/Blacksmith.tscn" id="6_b0ks8"]
 [ext_resource type="Texture2D" uid="uid://210p81443qlh" path="res://Sprites/Interior/DoorOpeningDay.png" id="7_xru20"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]
@@ -16,8 +17,12 @@ size = Vector2(40, 20)
 [node name="Player" parent="." instance=ExtResource("2_x11fk")]
 position = Vector2(576, 512)
 
-[node name="Blacksmith" parent="." instance=ExtResource("6_b0ks8")]
+[node name="Blacksmith" parent="." instance=ExtResource("2_g2nvj")]
 position = Vector2(576, 288)
+sprite = ExtResource("3_heejw")
+dialougeFilepath = "res://NPC/NPC Dialouge/BlacksmithDialouge.txt"
+isShopNPC = true
+shopFilepath = "res://NPC/ShopInventories/Blacksmith.txt"
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_layer = 2
