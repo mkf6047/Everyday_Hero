@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Save : Button
+public partial class Load : Button
 {
     [Export]
     public string saveFilepath;

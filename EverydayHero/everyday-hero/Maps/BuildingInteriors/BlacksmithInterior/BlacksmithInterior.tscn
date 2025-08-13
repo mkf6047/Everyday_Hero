@@ -20,9 +20,9 @@ position = Vector2(576, 512)
 [node name="Blacksmith" parent="." instance=ExtResource("2_g2nvj")]
 position = Vector2(576, 288)
 sprite = ExtResource("3_heejw")
-dialougeFilepath = "res://NPC/NPC Dialouge/BlacksmithDialouge.txt"
+dialougeFilepath = "res://NPC/NPC_Dialouge/BlacksmithDialouge.txt"
 isShopNPC = true
-shopFilepath = "res://NPC/ShopInventories/Blacksmith.txt"
+shopFilepath = "Blacksmith.txt"
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_layer = 2

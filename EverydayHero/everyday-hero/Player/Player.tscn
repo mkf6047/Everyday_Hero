@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://tqigc2qvs4rv"]
+[gd_scene load_steps=10 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://bvdy3fieu12gt" path="res://Player/PlayerFunctions.cs" id="1_vlldt"]
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
@@ -7,14 +7,17 @@
 [ext_resource type="Script" uid="uid://c33s0p2ktowga" path="res://Player/Notice.cs" id="4_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bipiq17tl5kl2" path="res://NPC/ShopOverlay/ShopOverlay.tscn" id="5_8g4oa"]
 [ext_resource type="PackedScene" uid="uid://dpjn6jbk3s3gy" path="res://Player/DialougeOverlay/DialougeOverlay.tscn" id="6_6ysni"]
+[ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="8_s1rgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 32)
 
 [node name="Player" type="Node2D" groups=["Player"]]
+process_mode = 3
 script = ExtResource("1_vlldt")
 
 [node name="PlayerBody2D" type="CharacterBody2D" parent="."]
+process_mode = 1
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_xhfnw")
@@ -39,5 +42,11 @@ z_index = 10
 position = Vector2(-576, -324)
 
 [node name="ShopOverlay" parent="Overlays" instance=ExtResource("5_8g4oa")]
+process_mode = 3
 
 [node name="DialougeOverlay" parent="Overlays" instance=ExtResource("6_6ysni")]
+process_mode = 3
+
+[node name="PauseMenu" parent="Overlays" instance=ExtResource("8_s1rgi")]
+process_mode = 3
+z_index = 10

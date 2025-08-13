@@ -7,23 +7,31 @@ public partial class PlayerFunctions : Node2D
     DialougeControl dialouge;
     ShopOverlay shopOverlay;
     int dialougeLine = 0;
+    double timer = 0.0;
     List<string> lines;
     string dialougeNameplate;
     bool talking = false;
     bool isShop = false;
+    bool isBusy = false;
     Godot.Collections.Array<string> shopItems;
     Godot.Collections.Array<int> shopPrices;
+
+    public bool IsBusy{ get { return isBusy; } }
 
     public override void _Ready()
     {
         dialouge = (DialougeControl)GetNode("Overlays/DialougeOverlay");
         shopOverlay = (ShopOverlay)GetNode("Overlays/ShopOverlay");
+        lines = new List<string>();
+        shopItems = new Godot.Collections.Array<string>();
+        shopPrices = new Godot.Collections.Array<int>();
     }
     public override void _Process(double delta)
     {
+        timer += delta;
         if (talking)
         {
-            if (Input.IsActionJustPressed("Interact"))
+            if (Input.IsActionJustPressed("Interact") && timer > 1.5)
             {
                 AdvanceTextbox();
             }
@@ -32,7 +40,7 @@ public partial class PlayerFunctions : Node2D
 
     public void AdvanceTextbox()
     {
-        if (dialougeLine >= lines.Count)
+        if (lines[dialougeLine] == "")
         {
             EndTextbox();
             if (isShop)
@@ -47,6 +55,7 @@ public partial class PlayerFunctions : Node2D
 
     public void LoadText(string filepath, bool isShopNPC, string shopInventory)
     {
+        GetTree().Paused = true;
         using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Read))
         {
             if (file != null)
@@ -67,24 +76,40 @@ public partial class PlayerFunctions : Node2D
         AdvanceTextbox();
         dialouge.UpdateNameplate(dialougeNameplate);
         dialouge.BeginText();
-        talking = true;
+        talking = true; isBusy = true;
         isShop = isShopNPC;
         if (isShop)
         {
-            using (var file = FileAccess.Open(shopInventory, FileAccess.ModeFlags.Read))
+            using (var file = FileAccess.Open("res://NPC/ShopInventories/" + shopInventory, FileAccess.ModeFlags.Read))
             {
                 if (file != null)
                 {
                     shopItems.Clear();
                     string fileText;
-                    int split;
                     while (!file.EofReached())
                     {
                         fileText = file.GetLine();
-                        split = fileText.IndexOf('^');
-                        shopItems.Add(fileText.Substr(0, split + 1));
-                        fileText.Remove(0, split + 1);
-                        shopPrices.Add(int.Parse(fileText));
+                        shopItems.Add(fileText);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            using (var file = FileAccess.Open("res://NPC/ShopPrices/" + shopInventory, FileAccess.ModeFlags.Read))
+            {
+                if (file != null)
+                {
+                    shopPrices.Clear();
+                    string fileText;
+                    while (!file.EofReached())
+                    {
+                        fileText = file.GetLine();
+                        if (fileText != "")
+                        {
+                            shopPrices.Add(fileText.ToInt());
+                        }
                     }
                 }
                 else
@@ -99,10 +124,15 @@ public partial class PlayerFunctions : Node2D
     {
         dialouge.EndText();
         talking = false;
+        isBusy = false;
         dialougeLine = 0;
+        if (!isShop)
+        {
+            GetTree().Paused = false;
+        }
     }
 
-    public void OpenShop() { shopOverlay.OpenShop(); }
+    public void OpenShop() { shopOverlay.OpenShop(); isBusy = true; }
 
     public void SetShop()
     {

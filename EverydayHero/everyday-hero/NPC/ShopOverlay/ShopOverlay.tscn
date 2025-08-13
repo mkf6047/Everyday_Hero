@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cidgruxodgkk2" path="res://NPC/ShopOverlay/SellItems.cs" id="4_7oarg"]
 
 [node name="ShopOverlay" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

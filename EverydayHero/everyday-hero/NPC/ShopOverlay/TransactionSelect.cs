@@ -7,6 +7,8 @@ public partial class TransactionSelect : Node2D
     bool isActive = false;
     int selection = 0;
     int numOfItems = 4;
+    double timer = 0.0;
+    public bool inSubmenu = false;
 
     Godot.Collections.Array options = ["Buy","Sell","Talk","Cancel"];
     ItemList actionList;
@@ -24,6 +26,7 @@ public partial class TransactionSelect : Node2D
     {
         if (isActive)
         {
+            timer += delta;
             if (Input.IsActionJustPressed("up"))
             {
                 actionList.SetItemIcon(selection, null);
@@ -44,18 +47,21 @@ public partial class TransactionSelect : Node2D
                 }
                 actionList.SetItemIcon(selection, pointer);
             }
-            if (Input.IsActionJustPressed("Interact"))
+            if (Input.IsActionJustPressed("Interact") && (timer > 0.5))
             {
+                timer = 0.0;
                 switch (selection)
                 {
                     case 0:
                         BuyItems buyList = (BuyItems)GetNode("../Buy");
+                        inSubmenu = true;
                         buyList.IsActive = true;
                         this.isActive = false;
                         buyList.Show();
                         break;
                     case 1:
                         SellItems sellList = (SellItems)GetNode("../Sell");
+                        inSubmenu = true;
                         sellList.IsActive = true;
                         this.isActive = false;
                         sellList.Show();
@@ -69,8 +75,9 @@ public partial class TransactionSelect : Node2D
                         break;
                 }
             }
-            if (Input.IsActionJustPressed("cancel"))
+            if (Input.IsActionJustPressed("cancel") && !inSubmenu && (timer > 0.5))
             {
+                timer = 0.0;
                 ShopOverlay overlay = (ShopOverlay)GetParent();
                 overlay.CloseShop();
             }

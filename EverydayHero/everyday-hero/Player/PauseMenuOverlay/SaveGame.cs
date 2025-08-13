@@ -10,7 +10,7 @@ public partial class SaveGame : Button
     public override void _Ready()
     {
         this.Pressed += Clicked;
-        saveCompleteLabel = (SaveComplete)GetNode("../SaveComplete");
+        saveCompleteLabel = (SaveComplete)GetNode("../../SaveComplete");
         base._Ready();
     }
 

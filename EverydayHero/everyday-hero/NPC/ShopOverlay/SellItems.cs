@@ -7,6 +7,7 @@ public partial class SellItems : Node2D
     int selection = 0;
     int numOfItems = 4;
 
+    TransactionSelect transactionSelect;
     Godot.Collections.Array<string> options = [];
     Godot.Collections.Array<int> prices = [];
     ItemList sellList;
@@ -18,9 +19,11 @@ public partial class SellItems : Node2D
 
     public override void _Ready()
     {
+        transactionSelect = (TransactionSelect)GetNode("../TransactionSelect");
         sellList = (ItemList)GetNode("./Inventory");
         sellPrice = (ItemList)GetNode("./SellPrices");
         pointer = GD.Load<Texture2D>("res://Sprites/OverlaySprites/MenuSelector.png");
+        this.Hide();
     }
 
     public override void _Process(double delta)
@@ -54,8 +57,8 @@ public partial class SellItems : Node2D
             }
             if (Input.IsActionJustPressed("cancel"))
             {
-                TransactionSelect select = (TransactionSelect)GetNode("../TransactionSelect");
-                select.IsActive = true;
+                transactionSelect.IsActive = true;
+                transactionSelect.inSubmenu = false;
                 this.isActive = false;
                 this.Hide();
             }
@@ -64,6 +67,8 @@ public partial class SellItems : Node2D
     public void SetList(Godot.Collections.Array<string> incomingItems, Godot.Collections.Array<int> incomingPrices)
     {
         options.Clear();
+        sellList.Clear();
+        sellPrice.Clear();
         foreach (string a in incomingItems)
         {
             options.Add(a);

@@ -6,6 +6,12 @@ public partial class SaveComplete : Node2D
     bool saving = false;
     double timer = 0.0;
 
+    public override void _Ready()
+    {
+        this.Hide();
+        base._Ready();
+    }
+
     public override void _Process(double delta)
     {
         if (saving && (timer > 1.5))

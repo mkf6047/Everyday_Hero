@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhq048n6g1h0q"]
+[gd_scene load_steps=7 format=3 uid="uid://bhq048n6g1h0q"]
 
 [ext_resource type="Script" uid="uid://cbpnlwy0osagj" path="res://Player/PauseMenuOverlay/SaveGame.cs" id="1_b3xel"]
 [ext_resource type="Script" uid="uid://df4strnry4sf0" path="res://Player/PauseMenuOverlay/PauseMenu.cs" id="1_rnjad"]
 [ext_resource type="Script" uid="uid://cqjpge1i8qk3r" path="res://Maps/Menus/SaveText.cs" id="1_u6xfk"]
 [ext_resource type="Script" uid="uid://btxfw753ylmpm" path="res://Player/PauseMenuOverlay/RevealSaves.cs" id="2_fwkbl"]
 [ext_resource type="Script" uid="uid://cxofrsx3lmscr" path="res://Player/PauseMenuOverlay/SaveSlots.cs" id="2_sv6vm"]
+[ext_resource type="Script" uid="uid://bt53r432d7yh1" path="res://Player/PauseMenuOverlay/SaveComplete.cs" id="4_sv6vm"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +26,7 @@ text = "Save Game"
 script = ExtResource("2_fwkbl")
 
 [node name="SaveSlots" type="Node2D" parent="."]
+z_index = 10
 script = ExtResource("2_sv6vm")
 
 [node name="Save1" type="Button" parent="SaveSlots"]
@@ -36,6 +38,7 @@ text = "Save 1"
 script = ExtResource("1_b3xel")
 
 [node name="Save1Text" type="RichTextLabel" parent="SaveSlots/Save1"]
+layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
@@ -52,6 +55,7 @@ text = "Save 2"
 script = ExtResource("1_b3xel")
 
 [node name="Save2Text" type="RichTextLabel" parent="SaveSlots/Save2"]
+layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
@@ -68,6 +72,7 @@ text = "Save 3"
 script = ExtResource("1_b3xel")
 
 [node name="Save3Text" type="RichTextLabel" parent="SaveSlots/Save3"]
+layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
@@ -76,6 +81,7 @@ script = ExtResource("1_u6xfk")
 saveFilepath = "user://save_game_3.dat"
 
 [node name="SaveComplete" type="Node2D" parent="."]
+script = ExtResource("4_sv6vm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="SaveComplete"]
 offset_left = 496.0

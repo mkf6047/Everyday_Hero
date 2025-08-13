@@ -8,6 +8,7 @@
 script = ExtResource("1_gfslm")
 
 [node name="Textbox" type="RichTextLabel" parent="."]
+z_index = 10
 offset_left = 64.0
 offset_top = 456.0
 offset_right = 1088.0
