@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhq048n6g1h0q"]
+
+[ext_resource type="Script" uid="uid://cbpnlwy0osagj" path="res://Player/PauseMenuOverlay/SaveGame.cs" id="1_b3xel"]
+[ext_resource type="Script" uid="uid://df4strnry4sf0" path="res://Player/PauseMenuOverlay/PauseMenu.cs" id="1_rnjad"]
+[ext_resource type="Script" uid="uid://cqjpge1i8qk3r" path="res://Maps/Menus/SaveText.cs" id="1_u6xfk"]
+[ext_resource type="Script" uid="uid://btxfw753ylmpm" path="res://Player/PauseMenuOverlay/RevealSaves.cs" id="2_fwkbl"]
+[ext_resource type="Script" uid="uid://cxofrsx3lmscr" path="res://Player/PauseMenuOverlay/SaveSlots.cs" id="2_sv6vm"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rnjad")
+
+[node name="Save Game" type="Button" parent="."]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 308.0
+offset_right = 623.0
+offset_bottom = 340.0
+text = "Save Game"
+script = ExtResource("2_fwkbl")
+
+[node name="SaveSlots" type="Node2D" parent="."]
+script = ExtResource("2_sv6vm")
+
+[node name="Save1" type="Button" parent="SaveSlots"]
+offset_left = 259.0
+offset_top = 150.0
+offset_right = 317.0
+offset_bottom = 181.0
+text = "Save 1"
+script = ExtResource("1_b3xel")
+
+[node name="Save1Text" type="RichTextLabel" parent="SaveSlots/Save1"]
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
+script = ExtResource("1_u6xfk")
+saveFilepath = "user://save_game_1.dat"
+
+[node name="Save2" type="Button" parent="SaveSlots"]
+offset_left = 259.0
+offset_top = 250.0
+offset_right = 317.0
+offset_bottom = 281.0
+text = "Save 2"
+script = ExtResource("1_b3xel")
+
+[node name="Save2Text" type="RichTextLabel" parent="SaveSlots/Save2"]
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
+script = ExtResource("1_u6xfk")
+saveFilepath = "user://save_game_2.dat"
+
+[node name="Save3" type="Button" parent="SaveSlots"]
+offset_left = 259.0
+offset_top = 350.0
+offset_right = 317.0
+offset_bottom = 381.0
+text = "Save 3"
+script = ExtResource("1_b3xel")
+
+[node name="Save3Text" type="RichTextLabel" parent="SaveSlots/Save3"]
+offset_left = 64.0
+offset_right = 814.0
+offset_bottom = 75.0
+bbcode_enabled = true
+script = ExtResource("1_u6xfk")
+saveFilepath = "user://save_game_3.dat"
+
+[node name="SaveComplete" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SaveComplete"]
+offset_left = 496.0
+offset_top = 100.0
+offset_right = 656.0
+offset_bottom = 140.0
+bbcode_enabled = true
+text = "[center]Save Complete!"
