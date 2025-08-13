@@ -26,7 +26,6 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_mbp3p")]
-visible = false
 
 [node name="BuildingTemplate" parent="." instance=ExtResource("3_qk0fn")]
 position = Vector2(512, 16)
@@ -34,6 +33,12 @@ position = Vector2(512, 16)
 [node name="PlayerHomeExternal" parent="." instance=ExtResource("14_5mg18")]
 z_index = 1
 position = Vector2(32, -400)
+
+[node name="BakeryBuilding" parent="." instance=ExtResource("21_76g1a")]
+position = Vector2(-707, -176)
+
+[node name="TavernBuilding" parent="." instance=ExtResource("22_vdpel")]
+position = Vector2(1030, 112)
 
 [node name="Blacksmith" parent="." instance=ExtResource("5_mbp3p")]
 position = Vector2(-283, -112)
@@ -347,9 +352,3 @@ position = Vector2(-688, 112)
 texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 320)
-
-[node name="BakeryBuilding" parent="." instance=ExtResource("21_76g1a")]
-position = Vector2(-707, -176)
-
-[node name="TavernBuilding" parent="." instance=ExtResource("22_vdpel")]
-position = Vector2(1030, 112)
