@@ -51,16 +51,13 @@ public partial class PlayerFunctions : Node2D
         {
             if (file != null)
             {
-                string fileText = file.GetAsText();
-                int split = fileText.IndexOf('^');
-                dialougeNameplate = fileText.Substr(0, split + 1);
-                fileText.Remove(0, split + 1);
-                while ((split = fileText.IndexOf('^')) > 0)
+                string fileText = file.GetLine();
+                dialougeNameplate = fileText;
+                while (!file.EofReached())
                 {
-                    lines.Add(fileText.Substr(0, split + 1));
-                    fileText.Remove(0, split + 1);
+                    fileText = file.GetLine();
+                    lines.Add(fileText);
                 }
-                lines.Add(fileText);
             }
             else
             {
@@ -102,6 +99,7 @@ public partial class PlayerFunctions : Node2D
     {
         dialouge.EndText();
         talking = false;
+        dialougeLine = 0;
     }
 
     public void OpenShop() { shopOverlay.OpenShop(); }
