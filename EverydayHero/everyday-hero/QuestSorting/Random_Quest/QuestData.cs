@@ -67,9 +67,9 @@ public partial class QuestData : Node2D
         randomNum = GD.RandRange(0, questsToChoose.Count - 1);
         using (var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + randomQuestType + "/" + questsToChoose[randomNum] + ".txt", FileAccess.ModeFlags.Read))
         {
-            questLabel.AddText("[center][color=black]" + file.GetLine());
-            questDescription.AddText("[color=black]" + file.GetLine());
-            questRank.AddText("[color=black]Rank: " + file.GetLine());
+            questLabel.AppendText("[center][color=black]" + file.GetLine());
+            questDescription.AppendText("[color=black]" + file.GetLine());
+            questRank.AppendText("[color=black]Rank: " + file.GetLine());
             string value = file.GetLine();
             questValue.AddText("" + value);
             MoveableQuest parent = (MoveableQuest)GetParent();

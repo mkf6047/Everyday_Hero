@@ -10,6 +10,7 @@ public partial class PlayerStats : Node
     private bool isPlaying = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
+    public Vector2 playerLocationInterior, playerLocationExterior;
     public int Coins
     {
         get { return coins; }
@@ -36,6 +37,8 @@ public partial class PlayerStats : Node
     {
         inventory = new Godot.Collections.Array<string>();
         inventoryPrice = new Godot.Collections.Array<int>();
+        playerLocationInterior = new Vector2();
+        playerLocationExterior = new Vector2();
         Instance = this;
     }
     public override void _Process(double delta)
