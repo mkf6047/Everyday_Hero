@@ -4,6 +4,7 @@ using System;
 public partial class ShopOverlay : Control
 {
     bool isOpen = false;
+    double timer = 0.0;
     TransactionSelect selectTransaction;
     BuyItems buyOverlay;
     SellItems sellOverlay;
@@ -16,7 +17,8 @@ public partial class ShopOverlay : Control
     }
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("cancel") && isOpen)
+        if(isOpen) { timer += delta; }
+        if (Input.IsActionJustPressed("cancel") && isOpen && (timer > 0.5))
         {
             CloseShop();
         }
@@ -31,6 +33,8 @@ public partial class ShopOverlay : Control
     public virtual void CloseShop()
     {
         GetTree().Paused = false;
+        PlayerFunctions func = (PlayerFunctions)GetNode("../../../");
+        func.IsBusy = false;
         this.Hide();
         isOpen = false;
     }

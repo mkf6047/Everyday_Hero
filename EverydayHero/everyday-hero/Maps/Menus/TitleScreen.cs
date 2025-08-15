@@ -26,6 +26,10 @@ public partial class TitleScreen : Node2D
     }
     private void InitSaveFiles(string filepath)
     {
+        // string directorypath = ProjectSettings.GlobalizePath("user://");
+        // if (!DirAccess.DirExistsAbsolute(directorypath)) {
+        //     DirAccess.MakeDirRecursiveAbsolute(directorypath);
+        // }
         if (!FileAccess.FileExists(filepath))
         {
             using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Write))
@@ -33,6 +37,7 @@ public partial class TitleScreen : Node2D
                 file.StoreLine("0");
                 file.StoreLine("0.0");
                 file.StoreLine("Unemployed");
+                file.Close();
             }
         }
     }

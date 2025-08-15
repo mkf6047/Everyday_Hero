@@ -75,12 +75,16 @@ public partial class TransactionSelect : Node2D
                         break;
                 }
             }
-            if (Input.IsActionJustPressed("cancel") && !inSubmenu && (timer > 0.5))
+            if (Input.IsActionJustPressed("cancel"))
             {
                 timer = 0.0;
                 ShopOverlay overlay = (ShopOverlay)GetParent();
                 overlay.CloseShop();
             }
+        }
+        else if(timer > 1.0)
+        {
+            timer = 0.0;
         }
     }
 }

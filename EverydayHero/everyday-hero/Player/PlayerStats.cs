@@ -4,16 +4,18 @@ using System;
 public partial class PlayerStats : Node
 {
     public static PlayerStats Instance { get; private set; }
-    private int coins = 0;
-    private float playtime = 0;
+    private int coins = 100;
+    private double playtime = 0;
     private char rank = 'F';
+    private bool isPlaying = false;
     public Godot.Collections.Array<string> inventory;
+    public Godot.Collections.Array<int> inventoryPrice;
     public int Coins
     {
         get { return coins; }
         set { coins = value; }
     }
-    public float Playtime
+    public double Playtime
     {
         get { return playtime; }
         set { playtime = value; }
@@ -23,11 +25,25 @@ public partial class PlayerStats : Node
         get { return rank; }
         set { rank = value; }
     }
+    public bool IsPlaying
+    {
+        get { return isPlaying; }
+        set { isPlaying = value; }
+    }
 
 
     public override void _Ready()
     {
+        inventory = new Godot.Collections.Array<string>();
+        inventoryPrice = new Godot.Collections.Array<int>();
         Instance = this;
+    }
+    public override void _Process(double delta)
+    {
+        if (isPlaying)
+        {
+            playtime += delta;
+        }
     }
 
 }

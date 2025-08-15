@@ -10,6 +10,7 @@ public partial class MoveableQuest : CharacterBody2D
     bool dragging;
     bool mouseIn = false;
     public bool chosen = false;
+    public int questReward = 0;
     public bool Dragging
     {
         get { return dragging; }

@@ -19,6 +19,7 @@ public partial class AcceptQuest : Area2D
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
                 if (!quest.Dragging)
                 {
+                    PlayerStats.Instance.Coins += quest.questReward;
                     manager.RemoveQuest(quest);
                 }
             }

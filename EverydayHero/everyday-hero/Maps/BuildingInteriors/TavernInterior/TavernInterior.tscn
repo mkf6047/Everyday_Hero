@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://rdyjeuo3ojeq"]
+[gd_scene load_steps=8 format=3 uid="uid://rdyjeuo3ojeq"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_5tx5o"]
+[ext_resource type="PackedScene" uid="uid://dmorych4f0lm0" path="res://NPC/StaticNPC/StaticNPC.tscn" id="1_fc8qr"]
+[ext_resource type="Texture2D" uid="uid://bhped3snaijdy" path="res://Sprites/NPCSprites/Reese-Front.png" id="2_hg6fj"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_o0q87"]
 [ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="3_5tx5o"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_hg6fj"]
@@ -9,6 +11,13 @@
 size = Vector2(40, 20)
 
 [node name="TavernInterior" type="Node2D"]
+
+[node name="Barkeep" parent="." instance=ExtResource("1_fc8qr")]
+position = Vector2(576, 64)
+sprite = ExtResource("2_hg6fj")
+dialougeFilepath = "res://NPC/NPC_Dialouge/BarkeepDialouge.txt"
+isShopNPC = true
+shopFilepath = "Barkeep.txt"
 
 [node name="Walls" type="RigidBody2D" parent="."]
 collision_layer = 2

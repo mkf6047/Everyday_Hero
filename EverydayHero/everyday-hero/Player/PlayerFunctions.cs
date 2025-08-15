@@ -16,12 +16,12 @@ public partial class PlayerFunctions : Node2D
     Godot.Collections.Array<string> shopItems;
     Godot.Collections.Array<int> shopPrices;
 
-    public bool IsBusy{ get { return isBusy; } }
+    public bool IsBusy { get { return isBusy; } set { isBusy = value; } }
 
     public override void _Ready()
     {
-        dialouge = (DialougeControl)GetNode("Overlays/DialougeOverlay");
-        shopOverlay = (ShopOverlay)GetNode("Overlays/ShopOverlay");
+        dialouge = (DialougeControl)GetNode("PlayerBody2D/Overlays/DialougeOverlay");
+        shopOverlay = (ShopOverlay)GetNode("PlayerBody2D/Overlays/ShopOverlay");
         lines = new List<string>();
         shopItems = new Godot.Collections.Array<string>();
         shopPrices = new Godot.Collections.Array<int>();
@@ -132,10 +132,14 @@ public partial class PlayerFunctions : Node2D
         }
     }
 
-    public void OpenShop() { shopOverlay.OpenShop(); isBusy = true; }
+    public void OpenShop() { shopOverlay.OpenShop(); isBusy = true; SetShop(); }
 
     public void SetShop()
     {
         shopOverlay.SetBuyInventory(shopItems, shopPrices);
+    }
+    public void SetSell()
+    {
+        shopOverlay.SetSellInventory(PlayerStats.Instance.inventory, PlayerStats.Instance.inventoryPrice);
     }
 }

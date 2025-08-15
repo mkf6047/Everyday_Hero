@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bipiq17tl5kl2"]
+[gd_scene load_steps=7 format=3 uid="uid://bipiq17tl5kl2"]
 
 [ext_resource type="Script" uid="uid://e4ua2jan3xr6" path="res://NPC/ShopOverlay/ShopOverlay.cs" id="1_7h5dp"]
 [ext_resource type="Script" uid="uid://bx5vvmjmfgkxd" path="res://NPC/ShopOverlay/TransactionSelect.cs" id="2_tafle"]
 [ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="3_7oarg"]
 [ext_resource type="Script" uid="uid://i61d2hsienaj" path="res://NPC/ShopOverlay/BuyItems.cs" id="3_jt2qf"]
 [ext_resource type="Script" uid="uid://cidgruxodgkk2" path="res://NPC/ShopOverlay/SellItems.cs" id="4_7oarg"]
+[ext_resource type="Script" uid="uid://bmttpykmo7q4o" path="res://NPC/ShopOverlay/ConfirmItem.cs" id="5_7oarg"]
 
 [node name="ShopOverlay" type="Control"]
 z_index = 5
@@ -53,6 +54,37 @@ item_0/text = "10"
 item_1/text = "25"
 item_2/text = "30"
 
+[node name="ConfirmItem" type="Node2D" parent="Buy"]
+script = ExtResource("5_7oarg")
+
+[node name="Item" type="ItemList" parent="Buy/ConfirmItem"]
+offset_left = 352.0
+offset_top = 32.0
+offset_right = 512.0
+offset_bottom = 72.0
+item_count = 1
+item_0/text = "Sword"
+
+[node name="Price" type="ItemList" parent="Buy/ConfirmItem"]
+offset_left = 512.0
+offset_top = 32.0
+offset_right = 592.0
+offset_bottom = 72.0
+item_count = 1
+item_0/text = "10"
+
+[node name="Yes-No" type="ItemList" parent="Buy/ConfirmItem"]
+offset_left = 352.0
+offset_top = 68.0
+offset_right = 592.0
+offset_bottom = 108.0
+item_count = 2
+max_columns = 2
+fixed_column_width = 100
+icon_mode = 0
+item_0/text = "Yes"
+item_1/text = "No"
+
 [node name="Sell" type="Node2D" parent="."]
 position = Vector2(832, 160)
 script = ExtResource("4_7oarg")
@@ -77,3 +109,35 @@ item_count = 3
 item_0/text = "10"
 item_1/text = "25"
 item_2/text = "100"
+
+[node name="ConfirmItem" type="Node2D" parent="Sell"]
+position = Vector2(-751, 0)
+script = ExtResource("5_7oarg")
+
+[node name="Item" type="ItemList" parent="Sell/ConfirmItem"]
+offset_left = 352.0
+offset_top = 32.0
+offset_right = 512.0
+offset_bottom = 72.0
+item_count = 1
+item_0/text = "Sword"
+
+[node name="Price" type="ItemList" parent="Sell/ConfirmItem"]
+offset_left = 512.0
+offset_top = 32.0
+offset_right = 592.0
+offset_bottom = 72.0
+item_count = 1
+item_0/text = "10"
+
+[node name="Yes-No" type="ItemList" parent="Sell/ConfirmItem"]
+offset_left = 352.0
+offset_top = 68.0
+offset_right = 592.0
+offset_bottom = 108.0
+item_count = 2
+max_columns = 2
+fixed_column_width = 100
+icon_mode = 0
+item_0/text = "Yes"
+item_1/text = "No"

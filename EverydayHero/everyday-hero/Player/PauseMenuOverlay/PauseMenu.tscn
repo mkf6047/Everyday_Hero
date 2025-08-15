@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhq048n6g1h0q"]
+[gd_scene load_steps=10 format=3 uid="uid://bhq048n6g1h0q"]
 
 [ext_resource type="Script" uid="uid://cbpnlwy0osagj" path="res://Player/PauseMenuOverlay/SaveGame.cs" id="1_b3xel"]
 [ext_resource type="Script" uid="uid://df4strnry4sf0" path="res://Player/PauseMenuOverlay/PauseMenu.cs" id="1_rnjad"]
@@ -6,6 +6,9 @@
 [ext_resource type="Script" uid="uid://btxfw753ylmpm" path="res://Player/PauseMenuOverlay/RevealSaves.cs" id="2_fwkbl"]
 [ext_resource type="Script" uid="uid://cxofrsx3lmscr" path="res://Player/PauseMenuOverlay/SaveSlots.cs" id="2_sv6vm"]
 [ext_resource type="Script" uid="uid://bt53r432d7yh1" path="res://Player/PauseMenuOverlay/SaveComplete.cs" id="4_sv6vm"]
+[ext_resource type="Script" uid="uid://jwq1o2gdq4u8" path="res://Player/PauseMenuOverlay/MenuInfo.cs" id="7_s4yxm"]
+[ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="8_8dvts"]
+[ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="9_v5ixs"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -17,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_rnjad")
 
 [node name="Save Game" type="Button" parent="."]
+z_index = 2
 layout_mode = 0
 offset_left = 529.0
 offset_top = 308.0
@@ -36,6 +40,7 @@ offset_right = 317.0
 offset_bottom = 181.0
 text = "Save 1"
 script = ExtResource("1_b3xel")
+filepath = "user://save_game_1.dat"
 
 [node name="Save1Text" type="RichTextLabel" parent="SaveSlots/Save1"]
 layout_mode = 0
@@ -53,6 +58,7 @@ offset_right = 317.0
 offset_bottom = 281.0
 text = "Save 2"
 script = ExtResource("1_b3xel")
+filepath = "user://save_game_2.dat"
 
 [node name="Save2Text" type="RichTextLabel" parent="SaveSlots/Save2"]
 layout_mode = 0
@@ -70,6 +76,7 @@ offset_right = 317.0
 offset_bottom = 381.0
 text = "Save 3"
 script = ExtResource("1_b3xel")
+filepath = "user://save_game_3.dat"
 
 [node name="Save3Text" type="RichTextLabel" parent="SaveSlots/Save3"]
 layout_mode = 0
@@ -81,6 +88,7 @@ script = ExtResource("1_u6xfk")
 saveFilepath = "user://save_game_3.dat"
 
 [node name="SaveComplete" type="Node2D" parent="."]
+z_index = 2
 script = ExtResource("4_sv6vm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="SaveComplete"]
@@ -90,3 +98,31 @@ offset_right = 656.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]Save Complete!"
+
+[node name="MenuInfo" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(416, 128)
+script = ExtResource("7_s4yxm")
+
+[node name="MenuInfoText" type="RichTextLabel" parent="MenuInfo"]
+offset_right = 320.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "[center]wao
+socool"
+
+[node name="Menubox" type="Sprite2D" parent="."]
+position = Vector2(576, 272)
+scale = Vector2(25, 2)
+texture = ExtResource("8_8dvts")
+
+[node name="Leftbox" type="Sprite2D" parent="."]
+position = Vector2(175, 272)
+scale = Vector2(1, 2)
+texture = ExtResource("9_v5ixs")
+
+[node name="Rightbox" type="Sprite2D" parent="."]
+position = Vector2(977, 272)
+rotation = 3.14159
+scale = Vector2(1, 2)
+texture = ExtResource("9_v5ixs")
