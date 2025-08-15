@@ -8,6 +8,7 @@ public partial class PlayerStats : Node
     private double playtime = 0;
     private char rank = 'F';
     private bool isPlaying = false;
+    private bool isInside = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocationInterior, playerLocationExterior;
