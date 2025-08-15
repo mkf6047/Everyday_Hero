@@ -27,6 +27,22 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_w37uj")
 
+[node name="QuestLabel" type="RichTextLabel" parent="."]
+offset_left = -50.0
+offset_top = -120.0
+offset_right = 50.0
+offset_bottom = -80.0
+bbcode_enabled = true
+text = "[center][color=black]Filler Text"
+
+[node name="QuestValue" type="RichTextLabel" parent="."]
+offset_left = 15.0
+offset_top = 100.0
+offset_right = 75.0
+offset_bottom = 140.0
+bbcode_enabled = true
+text = "[center][color=black]1000"
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="MouseEnter"]
