@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5301sk4katea"]
+
+[ext_resource type="Texture2D" uid="uid://dhgq5ncn4uv44" path="res://Sprites/Interior/Chair-Left.png" id="1_ghdmb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o5tt"]
+
+[node name="ObjectTemplate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ghdmb")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("RectangleShape2D_2o5tt")
