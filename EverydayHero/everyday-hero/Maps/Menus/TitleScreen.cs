@@ -21,15 +21,11 @@ public partial class TitleScreen : Node2D
         base._Process(delta);
         if (Input.IsActionPressed("Interact"))
         {
-            GetTree().ChangeSceneToFile("res://Maps/Menus/LoadSave.tscn");
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/LoadSave.tscn");
         }
     }
     private void InitSaveFiles(string filepath)
     {
-        // string directorypath = ProjectSettings.GlobalizePath("user://");
-        // if (!DirAccess.DirExistsAbsolute(directorypath)) {
-        //     DirAccess.MakeDirRecursiveAbsolute(directorypath);
-        // }
         if (!FileAccess.FileExists(filepath))
         {
             using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Write))

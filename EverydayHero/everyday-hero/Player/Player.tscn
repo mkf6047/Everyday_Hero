@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvdy3fieu12gt" path="res://Player/PlayerFunctions.cs" id="1_vlldt"]
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://8vc0dxurnek6" path="res://Sprites/Player-Front.png" id="2_ddoul"]
+[ext_resource type="Texture2D" uid="uid://vcjwlmmpqtm7" path="res://Sprites/NPCSprites/Player-Front.png" id="3_s1rgi"]
 [ext_resource type="Texture2D" uid="uid://crufstaywgad" path="res://Sprites/notice_v2.png" id="3_tok1r"]
 [ext_resource type="Script" uid="uid://c33s0p2ktowga" path="res://Player/Notice.cs" id="4_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bipiq17tl5kl2" path="res://NPC/ShopOverlay/ShopOverlay.tscn" id="5_8g4oa"]
@@ -23,7 +23,7 @@ collision_mask = 7
 script = ExtResource("1_xhfnw")
 
 [node name="PlayerSprite" type="Sprite2D" parent="PlayerBody2D"]
-texture = ExtResource("2_ddoul")
+texture = ExtResource("3_s1rgi")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody2D"]
 scale = Vector2(1.5, 1.5)
