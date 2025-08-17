@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ce8hf4dajuws6"]
+[gd_scene load_steps=9 format=3 uid="uid://ce8hf4dajuws6"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_2nqeu"]
 [ext_resource type="PackedScene" uid="uid://dmorych4f0lm0" path="res://NPC/StaticNPC/StaticNPC.tscn" id="1_3pfok"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_3pfok"]
 [ext_resource type="Texture2D" uid="uid://duv8fqormbmvm" path="res://Sprites/NPCSprites/Gustauv-Front.png" id="2_5fd2h"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_dq4tq"]
+[ext_resource type="PackedScene" uid="uid://cekacfowupdf5" path="res://Environment/Objects/Tables/Table1.tscn" id="6_t6n8h"]
+[ext_resource type="PackedScene" uid="uid://d0gh0hvdudnee" path="res://Environment/Objects/Tables/Tableset1.tscn" id="7_dq4tq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6n8h"]
 size = Vector2(40, 20)
@@ -41,5 +43,113 @@ position = Vector2(576, 324)
 texture = ExtResource("4_dq4tq")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="Table" parent="." instance=ExtResource("6_t6n8h")]
+offset_left = 473.0
+offset_top = 134.0
+offset_right = 473.0
+offset_bottom = 134.0
+
+[node name="Table2" parent="." instance=ExtResource("6_t6n8h")]
+offset_left = 680.0
+offset_top = 132.0
+offset_right = 680.0
+offset_bottom = 132.0
+
+[node name="Tableset1" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 107.0
+offset_top = 210.0
+offset_right = 107.0
+offset_bottom = 210.0
+
+[node name="Tableset2" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 107.0
+offset_top = 299.0
+offset_right = 107.0
+offset_bottom = 299.0
+
+[node name="Tableset3" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 105.0
+offset_top = 378.0
+offset_right = 105.0
+offset_bottom = 378.0
+
+[node name="Tableset4" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 101.0
+offset_top = 468.0
+offset_right = 101.0
+offset_bottom = 468.0
+
+[node name="Tableset5" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 269.0
+offset_top = 205.0
+offset_right = 269.0
+offset_bottom = 205.0
+
+[node name="Tableset6" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 270.0
+offset_top = 297.0
+offset_right = 270.0
+offset_bottom = 297.0
+
+[node name="Tableset7" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 270.0
+offset_top = 380.0
+offset_right = 270.0
+offset_bottom = 380.0
+
+[node name="Tableset8" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 272.0
+offset_top = 467.0
+offset_right = 272.0
+offset_bottom = 467.0
+
+[node name="Tableset9" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 1037.0
+offset_top = 185.0
+offset_right = 1037.0
+offset_bottom = 185.0
+
+[node name="Tableset10" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 1032.0
+offset_top = 283.0
+offset_right = 1032.0
+offset_bottom = 283.0
+
+[node name="Tableset11" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 1033.0
+offset_top = 380.0
+offset_right = 1033.0
+offset_bottom = 380.0
+
+[node name="Tableset12" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 1037.0
+offset_top = 468.0
+offset_right = 1037.0
+offset_bottom = 468.0
+
+[node name="Tableset14" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 883.0
+offset_top = 283.0
+offset_right = 883.0
+offset_bottom = 283.0
+
+[node name="Tableset13" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 884.0
+offset_top = 195.0
+offset_right = 884.0
+offset_bottom = 195.0
+
+[node name="Tableset15" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 883.0
+offset_top = 387.0
+offset_right = 883.0
+offset_bottom = 387.0
+
+[node name="Tableset16" parent="." instance=ExtResource("7_dq4tq")]
+offset_left = 883.0
+offset_top = 472.0
+offset_right = 883.0
+offset_bottom = 472.0
 
 [connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]

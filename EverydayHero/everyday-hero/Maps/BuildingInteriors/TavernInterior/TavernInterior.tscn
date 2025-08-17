@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rdyjeuo3ojeq"]
+[gd_scene load_steps=11 format=3 uid="uid://rdyjeuo3ojeq"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_5tx5o"]
 [ext_resource type="PackedScene" uid="uid://dmorych4f0lm0" path="res://NPC/StaticNPC/StaticNPC.tscn" id="1_fc8qr"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_o0q87"]
 [ext_resource type="Texture2D" uid="uid://d3nk8rh2in7pe" path="res://Sprites/Interior/Stone-Tile.png" id="3_5tx5o"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_hg6fj"]
+[ext_resource type="PackedScene" uid="uid://d0gh0hvdudnee" path="res://Environment/Objects/Tables/Tableset1.tscn" id="7_u2iaj"]
+[ext_resource type="PackedScene" uid="uid://cekacfowupdf5" path="res://Environment/Objects/Tables/Table1.tscn" id="8_tfets"]
+[ext_resource type="PackedScene" uid="uid://brji5p03w0ucb" path="res://Environment/Objects/Chairs/chairBack1.tscn" id="9_tfets"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2iaj"]
 size = Vector2(40, 20)
@@ -52,5 +55,114 @@ position = Vector2(576, 324)
 texture = ExtResource("4_hg6fj")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="Tableset1" parent="." instance=ExtResource("7_u2iaj")]
+offset_left = 82.0
+offset_top = 79.0
+offset_right = 82.0
+offset_bottom = 79.0
+
+[node name="Tableset2" parent="." instance=ExtResource("7_u2iaj")]
+offset_left = 73.0
+offset_top = 433.0
+offset_right = 73.0
+offset_bottom = 433.0
+
+[node name="Tableset3" parent="." instance=ExtResource("7_u2iaj")]
+offset_left = 975.0
+offset_top = 73.0
+offset_right = 975.0
+offset_bottom = 73.0
+
+[node name="Tableset4" parent="." instance=ExtResource("7_u2iaj")]
+offset_left = 988.0
+offset_top = 234.0
+offset_right = 988.0
+offset_bottom = 234.0
+
+[node name="Tableset5" parent="." instance=ExtResource("7_u2iaj")]
+offset_left = 991.0
+offset_top = 434.0
+offset_right = 991.0
+offset_bottom = 434.0
+
+[node name="Table" parent="." instance=ExtResource("8_tfets")]
+offset_left = 101.0
+offset_top = 249.0
+offset_right = 101.0
+offset_bottom = 249.0
+
+[node name="Table2" parent="." instance=ExtResource("8_tfets")]
+offset_left = 456.0
+offset_top = 148.0
+offset_right = 456.0
+offset_bottom = 148.0
+
+[node name="Table3" parent="." instance=ExtResource("8_tfets")]
+offset_left = 365.0
+offset_top = 148.0
+offset_right = 365.0
+offset_bottom = 148.0
+
+[node name="Table4" parent="." instance=ExtResource("8_tfets")]
+offset_left = 688.0
+offset_top = 145.0
+offset_right = 688.0
+offset_bottom = 145.0
+
+[node name="Table5" parent="." instance=ExtResource("8_tfets")]
+offset_left = 783.0
+offset_top = 145.0
+offset_right = 783.0
+offset_bottom = 145.0
+
+[node name="ChairBack" parent="." instance=ExtResource("9_tfets")]
+offset_left = 343.0
+offset_top = 157.0
+offset_right = 343.0
+offset_bottom = 157.0
+
+[node name="ChairBack2" parent="." instance=ExtResource("9_tfets")]
+offset_left = 387.0
+offset_top = 155.0
+offset_right = 387.0
+offset_bottom = 155.0
+
+[node name="ChairBack3" parent="." instance=ExtResource("9_tfets")]
+offset_left = 439.0
+offset_top = 151.0
+offset_right = 439.0
+offset_bottom = 151.0
+
+[node name="ChairBack4" parent="." instance=ExtResource("9_tfets")]
+offset_left = 482.0
+offset_top = 187.0
+offset_right = 482.0
+offset_bottom = 187.0
+rotation = 1.5708
+
+[node name="ChairBack5" parent="." instance=ExtResource("9_tfets")]
+offset_left = 664.0
+offset_top = 161.0
+offset_right = 664.0
+offset_bottom = 161.0
+
+[node name="ChairBack6" parent="." instance=ExtResource("9_tfets")]
+offset_left = 708.0
+offset_top = 157.0
+offset_right = 708.0
+offset_bottom = 157.0
+
+[node name="ChairBack7" parent="." instance=ExtResource("9_tfets")]
+offset_left = 765.0
+offset_top = 155.0
+offset_right = 765.0
+offset_bottom = 155.0
+
+[node name="ChairBack8" parent="." instance=ExtResource("9_tfets")]
+offset_left = 804.0
+offset_top = 154.0
+offset_right = 804.0
+offset_bottom = 154.0
 
 [connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]

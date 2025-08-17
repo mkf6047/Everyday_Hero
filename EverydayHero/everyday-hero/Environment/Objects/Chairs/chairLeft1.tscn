@@ -4,7 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o5tt"]
 
-[node name="ObjectTemplate" type="Control"]
+[node name="ChairLeft" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

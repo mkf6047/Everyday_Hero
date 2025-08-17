@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0gh0hvdudnee"]
+
+[ext_resource type="PackedScene" uid="uid://b13e0foap6472" path="res://Environment/Objects/Chairs/chairFront1.tscn" id="1_p4n4y"]
+[ext_resource type="PackedScene" uid="uid://cekacfowupdf5" path="res://Environment/Objects/Tables/Table1.tscn" id="2_wg3lf"]
+[ext_resource type="PackedScene" uid="uid://brji5p03w0ucb" path="res://Environment/Objects/Chairs/chairBack1.tscn" id="3_4mxoi"]
+
+[node name="Tableset1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ObjectTemplate" parent="." instance=ExtResource("1_p4n4y")]
+layout_mode = 1
+
+[node name="ObjectTemplate2" parent="." instance=ExtResource("1_p4n4y")]
+layout_mode = 1
+offset_left = 38.0
+offset_right = 1012.0
+offset_bottom = 354.0
+
+[node name="Table3" parent="." instance=ExtResource("2_wg3lf")]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 19.0
+offset_bottom = 17.0
+
+[node name="ObjectTemplate4" parent="." instance=ExtResource("3_4mxoi")]
+layout_mode = 1
+offset_left = 37.0
+offset_top = 23.0
+offset_right = 1012.0
+offset_bottom = 386.0
+
+[node name="ObjectTemplate3" parent="." instance=ExtResource("3_4mxoi")]
+layout_mode = 1
+offset_top = 23.0
+offset_bottom = 23.0
