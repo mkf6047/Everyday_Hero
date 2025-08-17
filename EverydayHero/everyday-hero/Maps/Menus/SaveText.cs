@@ -8,6 +8,20 @@ public partial class SaveText : RichTextLabel
     public override void _Ready()
     {
         base._Ready();
+        ResetText();
+    }
+
+    //when clicked, the below activates
+    // private void Clicked()
+    // {
+    //     using var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read);
+    //     string content = file.GetAsText();
+    //     PlayerInfo.coin = Int32.Parse(content);
+    //     GetTree().Root.AddChild(PlayerInfo);
+    //     GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
+    // }
+    public void ResetText()
+    {
         string coins = "0";
         string playtime = "0";
         string rank = "Unemployed";
@@ -26,14 +40,4 @@ public partial class SaveText : RichTextLabel
         "\nRank: " + rank +
         "\nCoins: " + coins;
     }
-
-    //when clicked, the below activates
-    // private void Clicked()
-    // {
-    //     using var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read);
-    //     string content = file.GetAsText();
-    //     PlayerInfo.coin = Int32.Parse(content);
-    //     GetTree().Root.AddChild(PlayerInfo);
-    //     GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
-    // }
 }

@@ -21,7 +21,7 @@ public partial class TitleScreen : Node2D
         base._Process(delta);
         if (Input.IsActionPressed("Interact"))
         {
-            GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
+            GetTree().ChangeSceneToFile("res://Maps/Menus/LoadSave.tscn");
         }
     }
     private void InitSaveFiles(string filepath)

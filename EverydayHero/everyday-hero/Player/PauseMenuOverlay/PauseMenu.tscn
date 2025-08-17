@@ -41,6 +41,7 @@ offset_bottom = 181.0
 text = "Save 1"
 script = ExtResource("1_b3xel")
 filepath = "user://save_game_1.dat"
+childname = "Save1Text"
 
 [node name="Save1Text" type="RichTextLabel" parent="SaveSlots/Save1"]
 layout_mode = 0
@@ -59,6 +60,7 @@ offset_bottom = 281.0
 text = "Save 2"
 script = ExtResource("1_b3xel")
 filepath = "user://save_game_2.dat"
+childname = "Save2Text"
 
 [node name="Save2Text" type="RichTextLabel" parent="SaveSlots/Save2"]
 layout_mode = 0
@@ -77,6 +79,7 @@ offset_bottom = 381.0
 text = "Save 3"
 script = ExtResource("1_b3xel")
 filepath = "user://save_game_3.dat"
+childname = "Save3Text"
 
 [node name="Save3Text" type="RichTextLabel" parent="SaveSlots/Save3"]
 layout_mode = 0

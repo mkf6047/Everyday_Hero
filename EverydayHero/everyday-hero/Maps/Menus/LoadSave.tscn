@@ -35,6 +35,7 @@ script = ExtResource("2_b6hw1")
 saveFilepath = "user://save_game_2.dat"
 
 [node name="Save2Text" type="RichTextLabel" parent="Save2"]
+layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
@@ -52,6 +53,7 @@ script = ExtResource("2_b6hw1")
 saveFilepath = "user://save_game_3.dat"
 
 [node name="Save3Text" type="RichTextLabel" parent="Save3"]
+layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0

@@ -9,6 +9,8 @@ public partial class BlacksmithDoorFunction : Area2D
         try
         {
             Player player = (Player)body;
+            PlayerStats.Instance.isInside = true;
+            PlayerStats.Instance.playerLocationInterior = new Vector2(0, 58);
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BlacksmithInterior/BlacksmithInterior.tscn");
         }
         catch

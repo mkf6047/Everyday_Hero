@@ -20,7 +20,7 @@ public partial class Load : Button
         content = file.GetLine();
         PlayerStats.Instance.Playtime = float.Parse(content);
         content = file.GetLine();
-        PlayerStats.Instance.Rank = content[0];
+        PlayerStats.Instance.Rank = content;
         while (!file.EofReached())
         {
             content = file.GetLine();

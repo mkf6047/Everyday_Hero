@@ -31,6 +31,10 @@ public partial class QuestSortingScene : Node2D
         if ((numofquest <= 0) && readyComplete)
         {
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
+            if (PlayerStats.Instance.Rank == "Unemployed")
+            {
+                PlayerStats.Instance.Rank = "F";
+            }
         }
     }
 

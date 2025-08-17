@@ -9,7 +9,8 @@ public partial class ExitBuilding : Area2D
         try
         {
             Player player = (Player)body;
-            //GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
+            PlayerStats.Instance.isInside = false;
+            PlayerStats.Instance.playerLocationExterior.Y += 20;
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
         }
         catch

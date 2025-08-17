@@ -6,9 +6,9 @@ public partial class PlayerStats : Node
     public static PlayerStats Instance { get; private set; }
     private int coins = 100;
     private double playtime = 0;
-    private char rank = 'F';
+    private string rank = "F";
     private bool isPlaying = false;
-    private bool isInside = false;
+    public bool isInside = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocationInterior, playerLocationExterior;
@@ -22,7 +22,7 @@ public partial class PlayerStats : Node
         get { return playtime; }
         set { playtime = value; }
     }
-    public char Rank
+    public string Rank
     {
         get { return rank; }
         set { rank = value; }
@@ -38,8 +38,8 @@ public partial class PlayerStats : Node
     {
         inventory = new Godot.Collections.Array<string>();
         inventoryPrice = new Godot.Collections.Array<int>();
-        playerLocationInterior = new Vector2();
-        playerLocationExterior = new Vector2();
+        playerLocationInterior = new Vector2(0,0);
+        playerLocationExterior = new Vector2(0,0);
         Instance = this;
     }
     public override void _Process(double delta)

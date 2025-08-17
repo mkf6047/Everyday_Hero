@@ -9,6 +9,8 @@ public partial class DoorFunction : Area2D
         try
         {
             Player player = (Player)body;
+            PlayerStats.Instance.isInside = true;
+            PlayerStats.Instance.playerLocationInterior.Y -= 20;
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn");
         }
         catch
