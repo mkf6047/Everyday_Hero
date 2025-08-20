@@ -25,14 +25,17 @@ public partial class QuestData : Node2D
             while (!file.EofReached())
             {
                 fileLine = file.GetLine();
-                if (fileLine[0] == '-')
-                {
-                    questType = fileLine;
-                    questType.Replace("-", "");
-                }
-                else
-                {
-                    questlist.Add(fileLine, questType);
+                if (fileLine != "") {
+                    if (fileLine[0] == '-')
+                    {
+                        questType = fileLine.Substr(1, fileLine.Length - 1);
+                        questType.Replace("-", "");
+                    }
+                    else
+                    {
+                        questlist.Add(fileLine, questType);
+                        GD.Print(questlist[fileLine]);
+                    }
                 }
             }
         }
@@ -65,6 +68,8 @@ public partial class QuestData : Node2D
             }
         }
         randomNum = GD.RandRange(0, questsToChoose.Count - 1);
+        if(randomNum < 0){ randomNum = 0; }
+        GD.Print(randomNum);
         using (var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + randomQuestType + "/" + questsToChoose[randomNum] + ".txt", FileAccess.ModeFlags.Read))
         {
             questLabel.AppendText("[center][color=black]" + file.GetLine());

@@ -70,6 +70,7 @@ public partial class PlayerFunctions : Node2D
             }
             else
             {
+                GD.Print("Unable to open file: " + filepath);
                 return;
             }
         }
@@ -94,6 +95,7 @@ public partial class PlayerFunctions : Node2D
                 }
                 else
                 {
+                    GD.Print("unable to open file: res://NPC/ShopInventories/" + shopInventory);
                     return;
                 }
             }
@@ -114,6 +116,7 @@ public partial class PlayerFunctions : Node2D
                 }
                 else
                 {
+                    GD.Print("unable to open file: res://NPC/ShopPrices/" + shopInventory);
                     return;
                 }
             }

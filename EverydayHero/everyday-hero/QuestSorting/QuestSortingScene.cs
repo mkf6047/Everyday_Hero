@@ -25,16 +25,16 @@ public partial class QuestSortingScene : Node2D
         readyComplete = true;
     }
 
-    //press Interact Button (Z or Enter) to move to the save files
     public override void _Process(double delta)
     {
         if ((numofquest <= 0) && readyComplete)
         {
-            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn");
             if (PlayerStats.Instance.Rank == "Unemployed")
             {
                 PlayerStats.Instance.Rank = "F";
             }
+            PlayerStats.Instance.isInside = true;
         }
     }
 

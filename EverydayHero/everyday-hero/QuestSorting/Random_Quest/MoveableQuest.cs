@@ -17,7 +17,7 @@ public partial class MoveableQuest : CharacterBody2D
     }
     public override void _Ready()
     {
-        sprite = (Sprite2D)GetNode("/QuestSprite");
+        sprite = (Sprite2D)GetNode("QuestSprite");
     }
     public override void _Input(InputEvent @event)
     {

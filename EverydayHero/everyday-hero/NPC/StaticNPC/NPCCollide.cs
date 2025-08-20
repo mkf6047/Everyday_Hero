@@ -25,7 +25,9 @@ public partial class NPCCollide : Area2D
                 Node node = GetTree().GetFirstNodeInGroup("Player");
                 if (node is PlayerFunctions playerNode)
                 {
+                    GD.Print("1");
                     playerNode.LoadText(thisNPC.dialougeFilepath, isShopNPC, thisNPC.shopFilepath);
+                    GD.Print("2");
                 }
             }
         }
