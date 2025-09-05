@@ -3,17 +3,17 @@ using System;
 
 public partial class ExitBuilding : Area2D
 {
-
-    public virtual void OnArea2DBodyEntered(Node2D body)
+    //Code for exiting buildings
+    public virtual void OnArea2DBodyEntered(Node2D body)    //when an item collides with this object
     {
-        try
+        try         //if the item is a player, transition to exterior
         {
-            Player player = (Player)body;
-            PlayerStats.Instance.isInside = false;
-            PlayerStats.Instance.playerLocationExterior.Y += 20;
-            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");
+            Player player = (Player)body;           //checks colliding item is a player
+            PlayerStats.Instance.isInside = false;  //change bool signifying interior or exterior
+            PlayerStats.Instance.playerLocationExterior.Y += 20;    //move player last known location away from enterance to building
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");   //load new map
         }
-        catch
+        catch   //if not a player, output error & what collided.
         {
             GD.PrintErr("Door just collided with something other than a Player.");
             GD.PrintErr(body);

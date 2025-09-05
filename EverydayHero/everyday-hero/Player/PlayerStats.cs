@@ -9,6 +9,7 @@ public partial class PlayerStats : Node
     private string rank = "F";
     private bool isPlaying = false;
     public bool isInside = false;
+    public bool tutorialComplete = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocationInterior, playerLocationExterior;
