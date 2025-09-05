@@ -50,5 +50,8 @@ public partial class PlayerStats : Node
             playtime += delta;
         }
     }
-
+    public void TriggerTutorial(int tutorialNum)
+    {
+        TutorialInfo.Instance.ActivateTutorial(tutorialNum);
+    }
 }
