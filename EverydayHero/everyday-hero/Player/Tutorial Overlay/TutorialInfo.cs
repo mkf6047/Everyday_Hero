@@ -7,7 +7,7 @@ public partial class TutorialInfo : Node
     private Godot.Collections.Array<string> tutorialLines;
     private double epsilon = 0.000001;
     public int tutorialCount = 0;
-    bool tutorialComplete = true;
+    bool[] tutorialComplete = [false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
     double timer = 0.0;
     TutorialOverlay overlay;
@@ -29,7 +29,7 @@ public partial class TutorialInfo : Node
 
     public override void _Process(double delta)
     {
-        if (!tutorialComplete)
+        if (!tutorialComplete[tutorialCount])
         {
             this.CallDeferred(tutorialLines[tutorialCount], delta);
         }
@@ -58,17 +58,17 @@ public partial class TutorialInfo : Node
         {
             overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
         }
-        if (tutorialComplete)
+        if (tutorialComplete[tutorialCount])
         {
             tutorialCondition = false;
-            tutorialComplete = false;
+            tutorialComplete[tutorialCount] = false;
         }
         else
         {
             timer += delta;
             if (timer > 10.0 && tutorialCondition)
             {
-                tutorialComplete = true;
+                tutorialComplete[tutorialCount] = true;
                 timer = 0.0;
                 overlay.HideOverlay();
                 return;
@@ -84,17 +84,17 @@ public partial class TutorialInfo : Node
         {
             overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
         }
-        if (tutorialComplete)
+        if (tutorialComplete[tutorialCount])
         {
             tutorialCondition = false;
-            tutorialComplete = false;
+            tutorialComplete[tutorialCount] = false;
         }
         else
         {
             timer += delta;
             if (timer > 10.0 && tutorialCondition)
             {
-                tutorialComplete = true;
+                tutorialComplete[tutorialCount] = true;
                 timer = 0.0;
                 overlay.HideOverlay();
                 return;
