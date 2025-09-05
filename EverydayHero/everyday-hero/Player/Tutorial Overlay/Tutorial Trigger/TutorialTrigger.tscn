@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckxabvp1mud2h"]
+[gd_scene load_steps=4 format=3 uid="uid://ckxabvp1mud2h"]
 
+[ext_resource type="Script" uid="uid://bcrmitir8cpas" path="res://Player/Tutorial Overlay/Tutorial Trigger/TutorialTrigger.cs" id="1_mj02l"]
 [ext_resource type="Script" uid="uid://cll4o4x0vikpw" path="res://Player/Tutorial Overlay/Tutorial Trigger/TriggerArea.cs" id="1_xap11"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3sjoo"]
 
 [node name="TutorialTrigger" type="Node2D"]
+script = ExtResource("1_mj02l")
 
 [node name="TriggerArea" type="Area2D" parent="."]
 script = ExtResource("1_xap11")
+tutorialNum = 0
 
 [node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea"]
 shape = SubResource("RectangleShape2D_3sjoo")
