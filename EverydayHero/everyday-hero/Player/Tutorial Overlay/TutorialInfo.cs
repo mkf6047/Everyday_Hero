@@ -57,11 +57,11 @@ public partial class TutorialInfo : Node
         if (Math.Abs(delta - 0.0) < epsilon)
         {
             overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
-        }
-        if (tutorialComplete[tutorialCount])
-        {
             tutorialCondition = false;
-            tutorialComplete[tutorialCount] = false;
+        }
+        if (tutorialComplete[-1])       //replace -1 with actual corresponding int.
+        {
+            return;
         }
         else
         {
@@ -83,11 +83,11 @@ public partial class TutorialInfo : Node
         if (Math.Abs(delta - 0.0) < epsilon)
         {
             overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
-        }
-        if (tutorialComplete[tutorialCount])
-        {
             tutorialCondition = false;
-            tutorialComplete[tutorialCount] = false;
+        }
+        if (tutorialComplete[0])                //walking corresponds to 0 in list.
+        {
+            return;
         }
         else
         {
