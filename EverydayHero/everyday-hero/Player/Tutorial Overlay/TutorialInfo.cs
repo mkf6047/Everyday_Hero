@@ -5,10 +5,12 @@ public partial class TutorialInfo : Node
 {
     public static TutorialInfo Instance { get; private set; }
     private Godot.Collections.Array<string> tutorialLines;
+    private double epsilon = 0.000001;
     public int tutorialCount = 0;
     bool tutorialComplete = true;
     bool tutorialCondition = true;
     double timer = 0.0;
+    TutorialOverlay overlay;
     public override void _Ready()
     {
         tutorialLines = new Godot.Collections.Array<string>();
@@ -35,6 +37,12 @@ public partial class TutorialInfo : Node
 
     public void ActivateTutorial(int tutorialNum)
     {
+        var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
+        if (tutOver is TutorialOverlay incomingOverlay)
+        {
+            overlay = incomingOverlay;
+        }
+        else { GD.Print("Unable to load tutorial"); return; }
         int size = tutorialLines.Count;
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
         {
@@ -43,8 +51,13 @@ public partial class TutorialInfo : Node
         }
     }
 
-    private void Walking(double delta = 0.0)
+    #region TutorialTemplate
+    private void Template(double delta = 0.0)
     {
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
+        }
         if (tutorialComplete)
         {
             tutorialCondition = false;
@@ -56,6 +69,34 @@ public partial class TutorialInfo : Node
             if (timer > 10.0 && tutorialCondition)
             {
                 tutorialComplete = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            //tutorial processing goes here!!!!
+        }
+    }
+    #endregion
+
+    private void Walking(double delta = 0.0)    //walking tutorial
+    {
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
+        }
+        if (tutorialComplete)
+        {
+            tutorialCondition = false;
+            tutorialComplete = false;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 10.0 && tutorialCondition)
+            {
+                tutorialComplete = true;
+                timer = 0.0;
+                overlay.HideOverlay();
                 return;
             }
             if (Input.IsActionJustPressed("up") || Input.IsActionJustPressed("down") || Input.IsActionJustPressed("left") || Input.IsActionJustPressed("right"))
@@ -64,5 +105,4 @@ public partial class TutorialInfo : Node
             }
         }
     }
-
 }
