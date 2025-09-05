@@ -33,6 +33,22 @@ script = ExtResource("2_fwkbl")
 z_index = 10
 script = ExtResource("2_sv6vm")
 
+[node name="Menubox" type="Sprite2D" parent="SaveSlots"]
+position = Vector2(576, 272)
+scale = Vector2(25, 2)
+texture = ExtResource("8_8dvts")
+
+[node name="Leftbox" type="Sprite2D" parent="SaveSlots"]
+position = Vector2(175, 272)
+scale = Vector2(1, 2)
+texture = ExtResource("9_v5ixs")
+
+[node name="Rightbox" type="Sprite2D" parent="SaveSlots"]
+position = Vector2(977, 272)
+rotation = 3.14159
+scale = Vector2(1, 2)
+texture = ExtResource("9_v5ixs")
+
 [node name="Save1" type="Button" parent="SaveSlots"]
 offset_left = 259.0
 offset_top = 150.0
