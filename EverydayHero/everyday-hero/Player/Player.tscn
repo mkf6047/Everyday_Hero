@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tqigc2qvs4rv"]
+[gd_scene load_steps=11 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://bvdy3fieu12gt" path="res://Player/PlayerFunctions.cs" id="1_vlldt"]
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bipiq17tl5kl2" path="res://NPC/ShopOverlay/ShopOverlay.tscn" id="5_8g4oa"]
 [ext_resource type="PackedScene" uid="uid://dpjn6jbk3s3gy" path="res://Player/DialougeOverlay/DialougeOverlay.tscn" id="6_6ysni"]
 [ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="8_s1rgi"]
+[ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="9_j23h2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 32)
@@ -51,3 +52,6 @@ z_index = 5
 [node name="PauseMenu" parent="PlayerBody2D/Overlays" instance=ExtResource("8_s1rgi")]
 process_mode = 3
 z_index = 10
+
+[node name="TutorialOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("9_j23h2")]
+z_index = 6
