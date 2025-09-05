@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxabvp1mud2h"]
+
+[ext_resource type="Script" uid="uid://cll4o4x0vikpw" path="res://Player/Tutorial Overlay/Tutorial Trigger/TriggerArea.cs" id="1_xap11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sjoo"]
+
+[node name="TutorialTrigger" type="Node2D"]
+
+[node name="TriggerArea" type="Area2D" parent="."]
+script = ExtResource("1_xap11")
+
+[node name="TriggerShape" type="CollisionShape2D" parent="TriggerArea"]
+shape = SubResource("RectangleShape2D_3sjoo")
+
+[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="TriggerArea" to="TriggerArea" method="OnArea2DBodyExited"]
