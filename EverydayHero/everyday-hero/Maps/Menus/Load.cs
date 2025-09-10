@@ -23,6 +23,8 @@ public partial class Load : Button
             content = file.GetLine();
             PlayerStats.Instance.Rank = content;
             content = file.GetLine();
+            PlayerStats.Instance.QuestsSorted = int.Parse(content);
+            content = file.GetLine();
             PlayerStats.Instance.CurrentScene = content;
             while ((content = file.GetLine()) != ":")
             {

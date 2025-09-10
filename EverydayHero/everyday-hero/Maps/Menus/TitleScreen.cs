@@ -34,6 +34,7 @@ public partial class TitleScreen : Node2D
                 file.StoreLine("0");
                 file.StoreLine("0.0");
                 file.StoreLine("Unemployed");
+                file.StoreLine("0");
                 file.StoreLine("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");
                 file.StoreLine(":");
                 for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)

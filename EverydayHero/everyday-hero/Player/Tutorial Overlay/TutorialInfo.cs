@@ -6,6 +6,7 @@ public partial class TutorialInfo : Node
     public static TutorialInfo Instance { get; private set; }
     private Godot.Collections.Array<string> tutorialLines;
     private double epsilon = 0.000001;
+    private Vector2 previousMousePos;
     public int tutorialCount = 0;
     public bool[] tutorialComplete = [false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
@@ -23,6 +24,7 @@ public partial class TutorialInfo : Node
                 tutorialLines.Add(content);
             }
         }
+        previousMousePos = new Vector2();
 
         Instance = this;    //this line must go last!!!!!
     }
@@ -89,6 +91,57 @@ public partial class TutorialInfo : Node
             tutorialCondition = false;
         }
     }
+    public void ClickOnBuilding(double delta = 0.0)   //change from private to public
+    {
+        if (tutorialComplete[1])       //replace 0 with actual corresponding int.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 5.0 && tutorialCondition)
+            {
+                tutorialComplete[1] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            if (previousMousePos != GetViewport().GetMousePosition()) {
+                tutorialCondition = true;
+            }
+            previousMousePos = GetViewport().GetMousePosition();
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("Hover your mouse over the building you want to enter!");
+            tutorialCondition = false;
+        }
+    }
+    public void QSSIntro(double delta = 0.0)   //change from private to public
+    {
+        if (tutorialComplete[2])       //replace 0 with actual corresponding int.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 1.0 && tutorialCondition)
+            {
+                tutorialComplete[2] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            //tutorial processing goes here!!!!
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("Click and Hold to drag a quest over to one of the corresponding bins!");
+            tutorialCondition = false;
+        }
+    }
 
     //insert new tutorials here!!!!!
 
@@ -118,6 +171,13 @@ public partial class TutorialInfo : Node
             //     break;
             case 0:
                 Walking(delta);
+                break;
+            case 1:
+                previousMousePos = GetViewport().GetMousePosition();
+                ClickOnBuilding(delta);
+                break;
+            case 2:
+                QSSIntro(delta);
                 break;
             default:
                 GD.Print("Invalid Tutorial Number.");
