@@ -7,7 +7,7 @@ public partial class TutorialInfo : Node
     private Godot.Collections.Array<string> tutorialLines;
     private double epsilon = 0.000001;
     public int tutorialCount = 0;
-    bool[] tutorialComplete = [false, false];   //add one per tutorial, position corresponding with tutorial lines
+    public bool[] tutorialComplete = [false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
     double timer = 0.0;
     TutorialOverlay overlay;
@@ -31,9 +31,66 @@ public partial class TutorialInfo : Node
     {
         if (!tutorialComplete[tutorialCount])
         {
-            this.CallDeferred(tutorialLines[tutorialCount], delta);
+            CallTutorial(tutorialCount, delta);
         }
     }
+
+    #region TutorialTemplate
+    private void Template(double delta = 0.0)   //change from private to public
+    {
+        if (tutorialComplete[0])       //replace 0 with actual corresponding int.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 5.0 && tutorialCondition)
+            {
+                tutorialComplete[tutorialCount] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            //tutorial processing goes here!!!!
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
+            tutorialCondition = false;
+        }
+    }
+    #endregion
+
+    public void Walking(double delta = 0.0)    //walking tutorial
+    {
+        if (tutorialComplete[0])                //walking corresponds to 0 in list.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 5.0 && tutorialCondition)
+            {
+                tutorialComplete[0] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            if (Input.IsActionJustPressed("up") || Input.IsActionJustPressed("down") || Input.IsActionJustPressed("left") || Input.IsActionJustPressed("right"))
+            {
+                tutorialCondition = true;
+            }
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
+            tutorialCondition = false;
+        }
+    }
+
+    //insert new tutorials here!!!!!
 
     public void ActivateTutorial(int tutorialNum)
     {
@@ -47,62 +104,24 @@ public partial class TutorialInfo : Node
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
         {
             tutorialCount = tutorialNum;
-            this.Call(tutorialLines[tutorialCount]);
+            CallTutorial(tutorialCount);
         }
-    }
+    }   //do not put any tutorials after this function
 
-    #region TutorialTemplate
-    private void Template(double delta = 0.0)
+    public void CallTutorial(int tutorial, double delta = 0.0)
     {
-        if (Math.Abs(delta - 0.0) < epsilon)
+        switch (tutorial)
         {
-            overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
-            tutorialCondition = false;
-        }
-        if (tutorialComplete[-1])       //replace -1 with actual corresponding int.
-        {
-            return;
-        }
-        else
-        {
-            timer += delta;
-            if (timer > 10.0 && tutorialCondition)
-            {
-                tutorialComplete[tutorialCount] = true;
-                timer = 0.0;
-                overlay.HideOverlay();
-                return;
-            }
-            //tutorial processing goes here!!!!
-        }
-    }
-    #endregion
-
-    private void Walking(double delta = 0.0)    //walking tutorial
-    {
-        if (Math.Abs(delta - 0.0) < epsilon)
-        {
-            overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
-            tutorialCondition = false;
-        }
-        if (tutorialComplete[0])                //walking corresponds to 0 in list.
-        {
-            return;
-        }
-        else
-        {
-            timer += delta;
-            if (timer > 10.0 && tutorialCondition)
-            {
-                tutorialComplete[tutorialCount] = true;
-                timer = 0.0;
-                overlay.HideOverlay();
-                return;
-            }
-            if (Input.IsActionJustPressed("up") || Input.IsActionJustPressed("down") || Input.IsActionJustPressed("left") || Input.IsActionJustPressed("right"))
-            {
-                tutorialCondition = true;
-            }
+            //copy below template to add a tutorial to the list.
+            // case -1:             //change to correct case
+            //     Template(delta); //change this to the correct method
+            //     break;
+            case 0:
+                Walking(delta);
+                break;
+            default:
+                GD.Print("Invalid Tutorial Number.");
+                break;
         }
     }
 }

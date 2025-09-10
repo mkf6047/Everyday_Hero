@@ -15,14 +15,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
 	{
-		if (PlayerStats.Instance.isInside)
-		{
-			this.Position = PlayerStats.Instance.playerLocationInterior;
-		}
-		else
-		{
-			this.Position = PlayerStats.Instance.playerLocationExterior;
-		}
+		this.Position = PlayerStats.Instance.playerLocation;
     }
 
 
@@ -30,13 +23,6 @@ public partial class Player : CharacterBody2D
 	{
 		GetInput();
 		MoveAndSlide();
-		if (!PlayerStats.Instance.isInside)
-		{
-			PlayerStats.Instance.playerLocationExterior = this.Position;
-		}
-		else
-		{
-			PlayerStats.Instance.playerLocationInterior = this.Position;
-		}
+		PlayerStats.Instance.playerLocation = this.Position;
 	}
 }

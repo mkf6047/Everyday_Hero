@@ -10,7 +10,7 @@ public partial class EnterBakery : Area2D
         {
             Player player = (Player)body;
             PlayerStats.Instance.isInside = true;
-            PlayerStats.Instance.playerLocationInterior.Y -= 20;
+            PlayerStats.Instance.playerLocation.Y -= 20;
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BakeryInterior/BakeryInterior.tscn");
         }
         catch

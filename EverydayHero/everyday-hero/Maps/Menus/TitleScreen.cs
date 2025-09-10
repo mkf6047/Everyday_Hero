@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class TitleScreen : Node2D
 {
@@ -33,6 +34,12 @@ public partial class TitleScreen : Node2D
                 file.StoreLine("0");
                 file.StoreLine("0.0");
                 file.StoreLine("Unemployed");
+                file.StoreLine("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");
+                file.StoreLine(":");
+                for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)
+                {
+                    file.StoreLine(TutorialInfo.Instance.tutorialComplete[i].ToString());
+                }
                 file.Close();
             }
         }

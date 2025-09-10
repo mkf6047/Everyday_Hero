@@ -10,7 +10,7 @@ public partial class ExitBuilding : Area2D
         {
             Player player = (Player)body;           //checks colliding item is a player
             PlayerStats.Instance.isInside = false;  //change bool signifying interior or exterior
-            PlayerStats.Instance.playerLocationExterior.Y += 20;    //move player last known location away from enterance to building
+            PlayerStats.Instance.playerLocation.Y += 20;    //move player last known location away from enterance to building
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/ExteriorMaps/MainScene.tscn");   //load new map
         }
         catch   //if not a player, output error & what collided.

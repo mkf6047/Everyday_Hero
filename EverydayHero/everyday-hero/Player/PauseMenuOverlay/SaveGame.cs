@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Net;
 
 public partial class SaveGame : Button
 {
@@ -29,6 +30,11 @@ public partial class SaveGame : Button
             foreach (string a in PlayerStats.Instance.inventory)
             {
                 file.StoreLine(a);
+            }
+            file.StoreLine(":");
+            foreach (bool a in TutorialInfo.Instance.tutorialComplete)
+            {
+                file.StoreLine(a.ToString());
             }
             saveCompleteLabel.Saved();
             parent.Hide();

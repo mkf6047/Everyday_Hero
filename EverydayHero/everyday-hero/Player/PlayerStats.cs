@@ -9,10 +9,10 @@ public partial class PlayerStats : Node
     private string rank = "F";
     private bool isPlaying = false;
     public bool isInside = false;
-    public bool tutorialComplete = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
-    public Vector2 playerLocationInterior, playerLocationExterior;
+    public Vector2 playerLocation;
+    private string currentScene = "";
     public int Coins
     {
         get { return coins; }
@@ -28,6 +28,11 @@ public partial class PlayerStats : Node
         get { return rank; }
         set { rank = value; }
     }
+    public string CurrentScene
+    {
+        get { return currentScene; }
+        set { currentScene = value; }
+    }
     public bool IsPlaying
     {
         get { return isPlaying; }
@@ -39,8 +44,7 @@ public partial class PlayerStats : Node
     {
         inventory = new Godot.Collections.Array<string>();
         inventoryPrice = new Godot.Collections.Array<int>();
-        playerLocationInterior = new Vector2(0,0);
-        playerLocationExterior = new Vector2(0,0);
+        playerLocation = new Vector2(0,0);
         Instance = this;
     }
     public override void _Process(double delta)
@@ -49,9 +53,5 @@ public partial class PlayerStats : Node
         {
             playtime += delta;
         }
-    }
-    public void TriggerTutorial(int tutorialNum)
-    {
-        TutorialInfo.Instance.ActivateTutorial(tutorialNum);
     }
 }
