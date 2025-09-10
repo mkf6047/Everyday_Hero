@@ -27,6 +27,8 @@ public partial class SaveGame : Button
             file.StoreLine("" + PlayerStats.Instance.Coins);
             file.StoreLine("" + PlayerStats.Instance.Playtime);
             file.StoreLine("" + PlayerStats.Instance.Rank);
+            file.StoreLine("" + PlayerStats.Instance.QuestsSorted);
+            file.StoreLine("" + PlayerStats.Instance.CurrentScene);
             foreach (string a in PlayerStats.Instance.inventory)
             {
                 file.StoreLine(a);

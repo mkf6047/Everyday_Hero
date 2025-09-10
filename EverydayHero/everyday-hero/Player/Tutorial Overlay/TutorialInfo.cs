@@ -8,7 +8,7 @@ public partial class TutorialInfo : Node
     private double epsilon = 0.000001;
     private Vector2 previousMousePos;
     public int tutorialCount = 0;
-    public bool[] tutorialComplete = [false, false];   //add one per tutorial, position corresponding with tutorial lines
+    public bool[] tutorialComplete = [false, false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
     double timer = 0.0;
     TutorialOverlay overlay;
