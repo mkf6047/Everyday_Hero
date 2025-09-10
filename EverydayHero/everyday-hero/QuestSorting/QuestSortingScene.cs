@@ -15,7 +15,40 @@ public partial class QuestSortingScene : Node2D
 
     public override void _Ready()
     {
-        for (int i = 0; i <= 2; i++)
+        int questsMade = 3;
+        switch (PlayerStats.Instance.Rank)
+        {
+            case "SSS":
+                questsMade = 15;
+                break;
+            case "SS":
+                questsMade = 12;
+                break;
+            case "S":
+                questsMade = 10;
+                break;
+            case "A":
+                questsMade = 9;
+                break;
+            case "B":
+                questsMade = 8;
+                break;
+            case "C":
+                questsMade = 7;
+                break;
+            case "D":
+                questsMade = 6;
+                break;
+            case "E":
+                questsMade = 5;
+                break;
+            case "F":
+                questsMade = 4;
+                break;
+            default:
+                break;
+        }
+        for (int i = 0; i <= questsMade - 1; i++)
         {
             MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
             AddChild(quest);
