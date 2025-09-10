@@ -20,6 +20,7 @@ public partial class AcceptQuest : Area2D
                 if (!quest.Dragging)
                 {
                     PlayerStats.Instance.Coins += quest.questReward;
+                    PlayerStats.Instance.QuestsSorted += 1;
                     manager.RemoveQuest(quest);
                 }
             }
