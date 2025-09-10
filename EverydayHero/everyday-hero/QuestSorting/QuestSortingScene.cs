@@ -30,10 +30,15 @@ public partial class QuestSortingScene : Node2D
         if ((numofquest <= 0) && readyComplete)
         {
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn");
-            if (PlayerStats.Instance.Rank == "Unemployed")
-            {
-                PlayerStats.Instance.Rank = "F";
-            }
+            if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
+            if (PlayerStats.Instance.QuestsSorted >= 440) { PlayerStats.Instance.Rank = "SSS"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 210) { PlayerStats.Instance.Rank = "SS"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 130) { PlayerStats.Instance.Rank = "S"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 80) { PlayerStats.Instance.Rank = "A"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 50) { PlayerStats.Instance.Rank = "B"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 30) { PlayerStats.Instance.Rank = "C"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 20) { PlayerStats.Instance.Rank = "D"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 10) { PlayerStats.Instance.Rank = "E"; }
             PlayerStats.Instance.isInside = true;
         }
     }
