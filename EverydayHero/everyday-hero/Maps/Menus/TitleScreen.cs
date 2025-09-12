@@ -31,17 +31,17 @@ public partial class TitleScreen : Node2D
         {
             using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Write))
             {
-                file.StoreLine("0");
-                file.StoreLine("0.0");
-                file.StoreLine("Unemployed");
-                file.StoreLine("0");
-                file.StoreLine("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");
-                file.StoreLine(":");
-                for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)
+                file.StoreLine("0");            //coins
+                file.StoreLine("0.0");          //playtime
+                file.StoreLine("Unemployed");   //player rank
+                file.StoreLine("0");            //quests completed
+                file.StoreLine("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");    //current scene
+                file.StoreLine(":");            //deliminator - separate inventory from tutorials completed.
+                for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)    //create storage for tutorial booleans
                 {
                     file.StoreLine(TutorialInfo.Instance.tutorialComplete[i].ToString());
                 }
-                file.Close();
+                file.Close();                   //close file
             }
         }
     }
