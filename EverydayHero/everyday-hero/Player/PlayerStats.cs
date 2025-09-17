@@ -4,16 +4,16 @@ using System;
 public partial class PlayerStats : Node
 {
     public static PlayerStats Instance { get; private set; }
-    private int coins = 100;
+    private int coins = 0;
     private int questsSorted = 0;
     private double playtime = 0;
-    private string rank = "F";
+    private string rank = "Unemployed";
     private bool isPlaying = false;
     public bool isInside = false;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocation;
-    private string currentScene = "";
+    private string currentScene = "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn";
     public int Coins
     {
         get { return coins; }

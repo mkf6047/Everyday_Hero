@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk6lo2mprn42k"]
+
+[ext_resource type="Script" uid="uid://cako6jfp7u8if" path="res://Maps/Menus/ToNewGame.cs" id="1_6aa38"]
+[ext_resource type="Script" uid="uid://btqjmauyb4x0h" path="res://Maps/Menus/ToLoadMenu.cs" id="2_y7ovg"]
+
+[node name="LoadType" type="Node2D"]
+
+[node name="ToNewGame" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 125.0
+offset_right = 381.0
+offset_bottom = 156.0
+text = "New Game"
+script = ExtResource("1_6aa38")
+
+[node name="ToLoadMenu" type="Button" parent="."]
+offset_left = 672.0
+offset_top = 125.0
+offset_right = 768.0
+offset_bottom = 156.0
+text = "Load Game"
+script = ExtResource("2_y7ovg")

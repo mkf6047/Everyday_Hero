@@ -22,7 +22,7 @@ public partial class TitleScreen : Node2D
         base._Process(delta);
         if (Input.IsActionPressed("Interact"))
         {
-            GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/LoadSave.tscn");
+            GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/LoadType.tscn");
         }
     }
     private void InitSaveFiles(string filepath)
@@ -31,11 +31,11 @@ public partial class TitleScreen : Node2D
         {
             using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Write))
             {
-                file.StoreLine("0");            //coins
-                file.StoreLine("0.0");          //playtime
-                file.StoreLine("Unemployed");   //player rank
-                file.StoreLine("0");            //quests completed
-                file.StoreLine("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");    //current scene
+                file.StoreLine("" + PlayerStats.Instance.Coins);            //coins
+                file.StoreLine("" + PlayerStats.Instance.Playtime);         //playtime
+                file.StoreLine("" + PlayerStats.Instance.Rank);   //player rank
+                file.StoreLine("" + PlayerStats.Instance.QuestsSorted);            //quests completed
+                file.StoreLine("" + PlayerStats.Instance.CurrentScene);    //current scene
                 file.StoreLine(":");            //deliminator - separate inventory from tutorials completed.
                 for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)    //create storage for tutorial booleans
                 {

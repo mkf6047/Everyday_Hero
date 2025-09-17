@@ -10,6 +10,7 @@ public partial class TutorialInfo : Node
     public int tutorialCount = 0;
     public bool[] tutorialComplete = [false, false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
+    bool tutorialFound = false;
     double timer = 0.0;
     TutorialOverlay overlay;
     public override void _Ready()
@@ -147,12 +148,16 @@ public partial class TutorialInfo : Node
 
     public void ActivateTutorial(int tutorialNum)
     {
-        var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
-        if (tutOver is TutorialOverlay incomingOverlay)
+        if (!tutorialFound)
         {
-            overlay = incomingOverlay;
+            var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
+            if (tutOver is TutorialOverlay incomingOverlay)
+            {
+                overlay = incomingOverlay;
+                tutorialFound = true;
+            }
+            else { GD.Print("Unable to load tutorial"); return; }
         }
-        else { GD.Print("Unable to load tutorial"); return; }
         int size = tutorialLines.Count;
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
         {
@@ -163,6 +168,12 @@ public partial class TutorialInfo : Node
 
     public void CallTutorial(int tutorial, double delta = 0.0)
     {
+        var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
+        if (tutOver is TutorialOverlay incomingOverlay)
+        {
+            overlay = incomingOverlay;
+        }
+        else { GD.Print("Unable to load tutorial"); return; }
         switch (tutorial)
         {
             //copy below template to add a tutorial to the list.
