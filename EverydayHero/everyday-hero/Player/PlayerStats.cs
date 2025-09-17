@@ -4,7 +4,7 @@ using System;
 public partial class PlayerStats : Node
 {
     public static PlayerStats Instance { get; private set; }
-    private int coins = 100;
+    private int coins = 0;
     private int questsSorted = 0;
     private double playtime = 0;
     private string rank = "F";
