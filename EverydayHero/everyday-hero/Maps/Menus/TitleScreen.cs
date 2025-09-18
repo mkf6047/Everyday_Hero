@@ -33,9 +33,9 @@ public partial class TitleScreen : Node2D
             {
                 file.StoreLine("" + PlayerStats.Instance.Coins);            //coins
                 file.StoreLine("" + PlayerStats.Instance.Playtime);         //playtime
-                file.StoreLine("" + PlayerStats.Instance.Rank);   //player rank
-                file.StoreLine("" + PlayerStats.Instance.QuestsSorted);            //quests completed
-                file.StoreLine("" + PlayerStats.Instance.CurrentScene);    //current scene
+                file.StoreLine("" + PlayerStats.Instance.Rank);             //player rank
+                file.StoreLine("" + PlayerStats.Instance.QuestsSorted);     //quests completed
+                file.StoreLine("" + PlayerStats.Instance.CurrentScene);     //current scene
                 file.StoreLine(":");            //deliminator - separate inventory from tutorials completed.
                 for (int i = 0; i < TutorialInfo.Instance.tutorialComplete.Count(); i++)    //create storage for tutorial booleans
                 {

@@ -315,6 +315,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 32, 320)
 
 [node name="Player" parent="." instance=ExtResource("1_mbp3p")]
+visible = false
 position = Vector2(-724, 66)
 
 [node name="BuildingTemplate" parent="." instance=ExtResource("3_qk0fn")]
