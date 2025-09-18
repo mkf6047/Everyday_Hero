@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://drhne4rxavvvr"]
+[gd_scene load_steps=6 format=3 uid="uid://drhne4rxavvvr"]
 
 [ext_resource type="Script" uid="uid://d4l3krm2n41af" path="res://Environment/Buildings/DoorFunction.cs" id="1_5p7bx"]
 [ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Interior/Door-Tile.png" id="2_htv7f"]
 [ext_resource type="Texture2D" uid="uid://ccpl3f4v2pgto" path="res://Sprites/BuildingSprites/Guild_Hall_V2.png" id="3_np2sf"]
+[ext_resource type="PackedScene" uid="uid://dgmp6kfs383lc" path="res://Environment/Buildings/EnterBuilding/BuildingArea.tscn" id="4_wdp60"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
@@ -39,5 +40,10 @@ position = Vector2(5, -32)
 texture = ExtResource("3_np2sf")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 256)
+
+[node name="BuildingArea" parent="." instance=ExtResource("4_wdp60")]
+buildingScene = "res://Maps/BuildingInteriors/BuildingInterior.tscn"
+buildingWidth = 320
+buildingHeight = 256
 
 [connection signal="body_entered" from="DoorPolygon" to="DoorPolygon" method="OnArea2DBodyEntered"]
