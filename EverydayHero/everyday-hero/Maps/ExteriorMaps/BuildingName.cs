@@ -13,7 +13,7 @@ public partial class BuildingName : Node2D
 
     public void UpdateText(string text)
     {
-        textbox.Text = "[center]" + text;
+        textbox.Text = "[center][font_size=30]" + text;
         this.Show();
     }
 

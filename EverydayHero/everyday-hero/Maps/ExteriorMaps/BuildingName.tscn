@@ -14,7 +14,7 @@ offset_top = 18.0
 offset_right = 701.8
 offset_bottom = 66.0
 bbcode_enabled = true
-text = "[center]Test Text[center]"
+text = "[center][font_size=30]Test Text[center]"
 
 [node name="TextboxSprite" type="Sprite2D" parent="."]
 z_index = 2
