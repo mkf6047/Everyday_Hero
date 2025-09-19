@@ -5,19 +5,22 @@ public partial class Player : CharacterBody2D
 {
 	float speed = 250;
 	public Vector2 direction = new Vector2();
-	private Sprite2D playerSprite;
+	private Vector2 zero = new Vector2(0,0);
+	private AnimatedSprite2D playerSprite;
+	public override void _Ready()
+	{
+		playerSprite = (AnimatedSprite2D)GetNode("PlayerSpriteAni");
+		this.Position = PlayerStats.Instance.playerLocation;
+    }
+
 	public void GetInput()
 	{
 		var input_direction = Input.GetVector("left", "right", "up", "down");
 		direction = input_direction;
 		Velocity = input_direction * speed;
+		if (direction == zero) { playerSprite.Play("Walking"); }
+		else { playerSprite.Play("Standing"); }
 	}
-
-	public override void _Ready()
-	{
-		this.Position = PlayerStats.Instance.playerLocation;
-    }
-
 
 	public override void _Process(double delta)
 	{

@@ -1,14 +1,38 @@
-[gd_scene load_steps=11 format=3 uid="uid://tqigc2qvs4rv"]
+[gd_scene load_steps=14 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://bvdy3fieu12gt" path="res://Player/PlayerFunctions.cs" id="1_vlldt"]
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://vcjwlmmpqtm7" path="res://Sprites/NPCSprites/Player-Front.png" id="3_s1rgi"]
 [ext_resource type="Texture2D" uid="uid://crufstaywgad" path="res://Sprites/notice_v2.png" id="3_tok1r"]
+[ext_resource type="Texture2D" uid="uid://bt5um1686k0h7" path="res://Sprites/NPCSprites/Player-Walking1.png" id="3_v0k0e"]
+[ext_resource type="Texture2D" uid="uid://diojqojxt8gtq" path="res://Sprites/NPCSprites/Player-Walking2.png" id="4_5wa8t"]
 [ext_resource type="Script" uid="uid://c33s0p2ktowga" path="res://Player/Notice.cs" id="4_ddoul"]
 [ext_resource type="PackedScene" uid="uid://bipiq17tl5kl2" path="res://NPC/ShopOverlay/ShopOverlay.tscn" id="5_8g4oa"]
 [ext_resource type="PackedScene" uid="uid://dpjn6jbk3s3gy" path="res://Player/DialougeOverlay/DialougeOverlay.tscn" id="6_6ysni"]
 [ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="8_s1rgi"]
 [ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="9_j23h2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7tob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s1rgi")
+}],
+"loop": true,
+"name": &"Standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_v0k0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5wa8t")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(20, 32)
@@ -22,6 +46,10 @@ process_mode = 1
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_xhfnw")
+
+[node name="PlayerSpriteAni" type="AnimatedSprite2D" parent="PlayerBody2D"]
+sprite_frames = SubResource("SpriteFrames_p7tob")
+animation = &"Standing"
 
 [node name="PlayerSprite" type="Sprite2D" parent="PlayerBody2D"]
 texture = ExtResource("3_s1rgi")
