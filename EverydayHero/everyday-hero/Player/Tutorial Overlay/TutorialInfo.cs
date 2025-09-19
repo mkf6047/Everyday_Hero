@@ -156,6 +156,7 @@ public partial class TutorialInfo : Node
                 overlay = incomingOverlay;
                 tutorialFound = true;
             }
+            else if(tutOver is null){ return; }
             else { GD.Print("Unable to load tutorial"); return; }
         }
         int size = tutorialLines.Count;

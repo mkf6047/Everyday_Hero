@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgmp6kfs383lc"]
+
+[ext_resource type="Script" uid="uid://de63s76wnr6nu" path="res://Environment/Buildings/EnterBuilding/BuildingArea.cs" id="1_s61pn"]
+[ext_resource type="Script" uid="uid://v31b1g0oblb3" path="res://Environment/Buildings/EnterBuilding/BuildingHitbox.cs" id="2_vc1r2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l8m5"]
+
+[node name="BuildingArea" type="Node2D"]
+z_index = 16
+script = ExtResource("1_s61pn")
+
+[node name="BuildingHitbox" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("2_vc1r2")
+
+[node name="BuildingHitboxShape" type="CollisionShape2D" parent="BuildingHitbox"]
+shape = SubResource("RectangleShape2D_2l8m5")
+
+[connection signal="mouse_entered" from="BuildingHitbox" to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="BuildingHitbox" to="." method="MouseExit"]

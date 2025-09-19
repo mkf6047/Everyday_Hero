@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dly3brt5csfxn"]
+[gd_scene load_steps=5 format=3 uid="uid://dly3brt5csfxn"]
 
 [ext_resource type="Script" uid="uid://bgjmsm4n68btt" path="res://Environment/Buildings/Blacksmith/BlacksmithDoorFunction.cs" id="1_842m5"]
 [ext_resource type="Texture2D" uid="uid://dqbl2yuriknv6" path="res://Sprites/BuildingSprites/Blacksmith.png" id="2_842m5"]
+[ext_resource type="PackedScene" uid="uid://dgmp6kfs383lc" path="res://Environment/Buildings/EnterBuilding/BuildingArea.tscn" id="3_emupr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
@@ -30,5 +31,11 @@ z_index = 2
 position = Vector2(5, -32)
 texture = ExtResource("2_842m5")
 region_rect = Rect2(0, 0, 320, 256)
+
+[node name="BuildingArea" parent="." instance=ExtResource("3_emupr")]
+buildingScene = "res://Maps/BuildingInteriors/BlacksmithInterior/BlacksmithInterior.tscn"
+buildingName = "Blacksmith's"
+buildingWidth = 224
+buildingHeight = 192
 
 [connection signal="body_entered" from="DoorPolygon" to="DoorPolygon" method="OnArea2DBodyEntered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://br3otwqtdbona"]
+[gd_scene load_steps=6 format=3 uid="uid://br3otwqtdbona"]
 
 [ext_resource type="Script" uid="uid://3e0sgs4j5mis" path="res://Environment/Buildings/PlayerHome/PlayerDoorFunction.cs" id="1_dyns8"]
 [ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Interior/Door-Tile.png" id="2_7vt85"]
 [ext_resource type="Texture2D" uid="uid://uln4tw3qgt41" path="res://Sprites/BuildingSprites/PlayerHouse.png" id="3_dyns8"]
+[ext_resource type="PackedScene" uid="uid://dgmp6kfs383lc" path="res://Environment/Buildings/EnterBuilding/BuildingArea.tscn" id="4_7psdt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bykni"]
 size = Vector2(64, 64)
@@ -40,5 +41,12 @@ position = Vector2(5, -32)
 texture = ExtResource("3_dyns8")
 region_enabled = true
 region_rect = Rect2(0, 0, 320, 256)
+
+[node name="BuildingArea" parent="." instance=ExtResource("4_7psdt")]
+position = Vector2(-40, 0)
+buildingScene = "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn"
+buildingName = "Home"
+buildingWidth = 160
+buildingHeight = 256
 
 [connection signal="body_entered" from="DoorPolygon" to="DoorPolygon" method="OnArea2DBodyEntered"]
