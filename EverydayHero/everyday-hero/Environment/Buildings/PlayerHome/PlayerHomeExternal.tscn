@@ -45,6 +45,7 @@ region_rect = Rect2(0, 0, 320, 256)
 [node name="BuildingArea" parent="." instance=ExtResource("4_7psdt")]
 position = Vector2(-40, 0)
 buildingScene = "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn"
+buildingName = "Home"
 buildingWidth = 160
 buildingHeight = 256
 

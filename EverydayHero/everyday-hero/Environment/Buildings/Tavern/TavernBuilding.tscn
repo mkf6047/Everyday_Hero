@@ -29,6 +29,7 @@ shape = SubResource("RectangleShape2D_saymy")
 
 [node name="BuildingArea" parent="." instance=ExtResource("3_saymy")]
 buildingScene = "res://Maps/BuildingInteriors/TavernInterior/TavernInterior.tscn"
+buildingName = "Tavern"
 buildingWidth = 320
 buildingHeight = 256
 

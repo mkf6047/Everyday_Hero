@@ -43,6 +43,7 @@ region_rect = Rect2(0, 0, 320, 256)
 
 [node name="BuildingArea" parent="." instance=ExtResource("4_wdp60")]
 buildingScene = "res://Maps/BuildingInteriors/BuildingInterior.tscn"
+buildingName = "Guild Hall"
 buildingWidth = 320
 buildingHeight = 256
 

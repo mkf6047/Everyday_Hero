@@ -1,6 +1,5 @@
 [gd_scene load_steps=23 format=3 uid="uid://dmcqk2d02maf2"]
 
-[ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="1_mbp3p"]
 [ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="3_qk0fn"]
 [ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_6ue8r"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cymw0y20eg7ob" path="res://Sprites/Exterior/Fence-Back.png" id="19_16s2r"]
 [ext_resource type="Texture2D" uid="uid://de68w1xf43bml" path="res://Sprites/Exterior/Fence-Front.png" id="20_a44ly"]
 [ext_resource type="PackedScene" uid="uid://upbkmgceo3fm" path="res://Environment/Buildings/Bakery/BakeryBuilding.tscn" id="21_76g1a"]
+[ext_resource type="PackedScene" uid="uid://b5c2xhbrwa2el" path="res://Maps/ExteriorMaps/BuildingName.tscn" id="22_76g1a"]
 [ext_resource type="PackedScene" uid="uid://d4l8cftgo5dyd" path="res://Environment/Buildings/Tavern/TavernBuilding.tscn" id="22_vdpel"]
 
 [node name="MainScene" type="Node2D"]
@@ -314,10 +314,6 @@ texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 320)
 
-[node name="Player" parent="." instance=ExtResource("1_mbp3p")]
-visible = false
-position = Vector2(-724, 66)
-
 [node name="BuildingTemplate" parent="." instance=ExtResource("3_qk0fn")]
 position = Vector2(288, 16)
 
@@ -347,3 +343,9 @@ collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Bounds"]
 polygon = PackedVector2Array(-2176, -1420, 2176, -1420, 2176, 1426, -2176, 1426, -2194, 1450, 2194, 1450, 2194, -1450, -2194, -1450, -2194, 1450, -2176, 1426)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="BuildingName" parent="." instance=ExtResource("22_76g1a")]
+position = Vector2(-550, -616)

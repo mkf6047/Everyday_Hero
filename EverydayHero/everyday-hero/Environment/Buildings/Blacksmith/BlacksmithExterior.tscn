@@ -34,6 +34,7 @@ region_rect = Rect2(0, 0, 320, 256)
 
 [node name="BuildingArea" parent="." instance=ExtResource("3_emupr")]
 buildingScene = "res://Maps/BuildingInteriors/BlacksmithInterior/BlacksmithInterior.tscn"
+buildingName = "Blacksmith's"
 buildingWidth = 224
 buildingHeight = 192
 
