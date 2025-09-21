@@ -174,6 +174,7 @@ public partial class TutorialInfo : Node
         {
             overlay = incomingOverlay;
         }
+        else if(tutOver is null){ return; }
         else { GD.Print("Unable to load tutorial"); return; }
         switch (tutorial)
         {

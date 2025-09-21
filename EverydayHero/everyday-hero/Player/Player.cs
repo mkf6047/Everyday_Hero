@@ -18,8 +18,8 @@ public partial class Player : CharacterBody2D
 		var input_direction = Input.GetVector("left", "right", "up", "down");
 		direction = input_direction;
 		Velocity = input_direction * speed;
-		if (direction == zero) { playerSprite.Play("Walking"); }
-		else { playerSprite.Play("Standing"); }
+		if (direction == zero) { playerSprite.Play("Standing"); }
+		else { playerSprite.Play("Walking"); }
 	}
 
 	public override void _Process(double delta)

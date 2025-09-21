@@ -6,17 +6,20 @@
 [node name="LoadType" type="Node2D"]
 
 [node name="ToNewGame" type="Button" parent="."]
-offset_left = 288.0
+offset_left = 338.0
 offset_top = 125.0
-offset_right = 381.0
+offset_right = 431.0
 offset_bottom = 156.0
 text = "New Game"
 script = ExtResource("1_6aa38")
 
 [node name="ToLoadMenu" type="Button" parent="."]
-offset_left = 672.0
+offset_left = 720.0
 offset_top = 125.0
-offset_right = 768.0
+offset_right = 816.0
 offset_bottom = 156.0
 text = "Load Game"
 script = ExtResource("2_y7ovg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

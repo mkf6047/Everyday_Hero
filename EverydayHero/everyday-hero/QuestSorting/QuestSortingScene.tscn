@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=16 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
 [ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/QuestSprites/DisposeQuest.png" id="5_jj7dt"]
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
+[ext_resource type="Script" uid="uid://ja6qwldklccn" path="res://QuestSorting/QssResults.cs" id="9_18a2g"]
+[ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="9_gjghe"]
+[ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="10_18a2g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -68,6 +71,51 @@ shape = SubResource("RectangleShape2D_gjghe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dispose"]
 texture = ExtResource("5_jj7dt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="QSSResults" type="Node2D" parent="."]
+script = ExtResource("9_18a2g")
+
+[node name="Textbox" type="RichTextLabel" parent="QSSResults"]
+z_index = 10
+offset_left = 64.0
+offset_top = 200.0
+offset_right = 1088.0
+offset_bottom = 600.0
+bbcode_enabled = true
+
+[node name="TextboxSprite" type="Sprite2D" parent="QSSResults"]
+z_index = 2
+texture_repeat = 2
+position = Vector2(576, 400)
+scale = Vector2(1, 2.5)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="QSSResults"]
+z_index = 2
+position = Vector2(48, 400)
+scale = Vector2(1, 2.5)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="QSSResults"]
+z_index = 2
+position = Vector2(1104, 400)
+scale = Vector2(1, 2.5)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="PressZtoContinue" type="RichTextLabel" parent="QSSResults"]
+z_index = 10
+offset_left = 64.0
+offset_top = 575.0
+offset_right = 1088.0
+offset_bottom = 609.0
+bbcode_enabled = true
+text = "[right]Press 'Z' to Continue..."
 
 [connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Delay" to="Delay" method="OnArea2DBodyExited"]

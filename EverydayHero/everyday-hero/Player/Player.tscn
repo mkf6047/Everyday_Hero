@@ -31,7 +31,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walking",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
@@ -49,9 +49,11 @@ script = ExtResource("1_xhfnw")
 
 [node name="PlayerSpriteAni" type="AnimatedSprite2D" parent="PlayerBody2D"]
 sprite_frames = SubResource("SpriteFrames_p7tob")
-animation = &"Standing"
+animation = &"Walking"
+frame_progress = 0.846982
 
 [node name="PlayerSprite" type="Sprite2D" parent="PlayerBody2D"]
+visible = false
 texture = ExtResource("3_s1rgi")
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="PlayerBody2D"]

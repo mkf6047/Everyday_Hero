@@ -12,7 +12,7 @@ z_index = 10
 offset_left = 64.0
 offset_top = 456.0
 offset_right = 1088.0
-offset_bottom = 616.0
+offset_bottom = 576.0
 bbcode_enabled = true
 
 [node name="Nameplate" type="RichTextLabel" parent="."]
@@ -51,3 +51,12 @@ position = Vector2(144, 425)
 rotation = 1.5708
 scale = Vector2(1.5, 1)
 texture = ExtResource("3_6kdxt")
+
+[node name="PressZtoContinue" type="RichTextLabel" parent="."]
+z_index = 10
+offset_left = 64.0
+offset_top = 580.0
+offset_right = 1088.0
+offset_bottom = 614.0
+bbcode_enabled = true
+text = "[right]Press 'Z' to Continue..."
