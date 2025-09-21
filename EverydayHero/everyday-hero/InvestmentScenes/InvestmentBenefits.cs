@@ -5,7 +5,7 @@ public partial class InvestmentBenefits : Node
 {
     public static InvestmentBenefits Instance;
     private string loadFile = "";
-    Godot.Collections.Dictionary<string, int> buildingLevels;
+    public Godot.Collections.Dictionary<string, int> buildingLevels;
 
     public string LoadFile
     {
@@ -19,4 +19,13 @@ public partial class InvestmentBenefits : Node
         Instance = this;
     }
 
+    public void UpdateLevel(string building, int modify)
+    {
+        buildingLevels[building] += modify;
+    }
+
+    public void LoadLevels()
+    {
+        
+    }
 }
