@@ -21,6 +21,7 @@ config/windows_native_icon="res://EverydayHeroIcons.ico"
 PlayerStats="*res://Player/PlayerStats.cs"
 TutorialInfo="*res://Player/Tutorial Overlay/TutorialInfo.cs"
 QssTracker="*res://QuestSorting/QSSTracker.cs"
+InvestmentBenefits="*res://InvestmentScenes/InvestmentBenefits.cs"
 
 [display]
 
