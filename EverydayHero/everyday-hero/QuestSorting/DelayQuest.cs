@@ -19,6 +19,7 @@ public partial class DelayQuest : Area2D
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
                 if (!quest.Dragging)
                 {
+                    QSSTracker.Instance.delayedQuests++;
                     manager.RemoveQuest(quest);
                 }
             }

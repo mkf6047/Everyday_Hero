@@ -19,6 +19,7 @@ public partial class DisposeQuest : Area2D
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
                 if (!quest.Dragging)
                 {
+                    QSSTracker.Instance.rejectedQuests++;
                     manager.RemoveQuest(quest);
                 }
             }

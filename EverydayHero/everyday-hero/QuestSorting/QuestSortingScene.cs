@@ -9,6 +9,8 @@ public partial class QuestSortingScene : Node2D
 
     PackedScene questPreload = GD.Load<PackedScene>("res://QuestSorting/Random_Quest/RandomQuest.tscn");
 
+    QssResults resultsDisplay;
+
     bool readyComplete, calculateOnce = false;
 
     int numofquest = 0;
@@ -55,6 +57,8 @@ public partial class QuestSortingScene : Node2D
             quest.Position = new Vector2((i + 1) * 200, 400);
             AddQuest(quest);
         }
+        resultsDisplay = (QssResults)GetNode("QSSResults");
+        QSSTracker.Instance.ResetCounts();
         readyComplete = true;
     }
 
@@ -73,6 +77,10 @@ public partial class QuestSortingScene : Node2D
             else if (PlayerStats.Instance.QuestsSorted >= 20) { PlayerStats.Instance.Rank = "D"; }
             else if (PlayerStats.Instance.QuestsSorted >= 10) { PlayerStats.Instance.Rank = "E"; }
             PlayerStats.Instance.isInside = true;
+            resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";" +
+                                            QSSTracker.Instance.delayedQuests + ";" +
+                                            QSSTracker.Instance.rejectedQuests + ";" +
+                                            QSSTracker.Instance.rewards + ";");
             calculateOnce = true;
         }
     }

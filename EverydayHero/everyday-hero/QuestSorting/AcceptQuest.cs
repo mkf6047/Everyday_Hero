@@ -21,6 +21,8 @@ public partial class AcceptQuest : Area2D
                 {
                     PlayerStats.Instance.Coins += quest.questReward;
                     PlayerStats.Instance.QuestsSorted += 1;
+                    QSSTracker.Instance.acceptedQuests++;
+                    QSSTracker.Instance.rewards += quest.questReward;
                     manager.RemoveQuest(quest);
                 }
             }
