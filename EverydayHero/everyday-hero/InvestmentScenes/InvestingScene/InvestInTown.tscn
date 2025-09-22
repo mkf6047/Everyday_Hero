@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://barn5n103d2i4"]
+[gd_scene load_steps=11 format=3 uid="uid://barn5n103d2i4"]
 
 [ext_resource type="Texture2D" uid="uid://ccpl3f4v2pgto" path="res://Sprites/BuildingSprites/Guild_Hall_V2.png" id="1_bq6w8"]
 [ext_resource type="Script" uid="uid://cwgn7nmeipfty" path="res://InvestmentScenes/InvestingScene/BuildingIdentity.cs" id="1_x4lqr"]
 [ext_resource type="Script" uid="uid://bd4u7yf02ua21" path="res://InvestmentScenes/InvestingScene/IncreaseInvestment.cs" id="3_eu34m"]
 [ext_resource type="Script" uid="uid://dgfvd58xec1yl" path="res://InvestmentScenes/InvestingScene/DecreaseInvestment.cs" id="4_vka8m"]
 [ext_resource type="Script" uid="uid://2gxul3rw81qu" path="res://InvestmentScenes/InvestingScene/ConfirmChoices.cs" id="5_eu34m"]
+[ext_resource type="Texture2D" uid="uid://rtk2ung3tkjf" path="res://Sprites/Interior/Door-Tile.png" id="6_tofti"]
 [ext_resource type="Texture2D" uid="uid://dqbl2yuriknv6" path="res://Sprites/BuildingSprites/Blacksmith.png" id="6_vka8m"]
 [ext_resource type="Texture2D" uid="uid://cytv6pymb8ysl" path="res://Sprites/Bakery.png" id="7_cts18"]
 [ext_resource type="Texture2D" uid="uid://uln4tw3qgt41" path="res://Sprites/BuildingSprites/PlayerHouse.png" id="8_6vs2s"]
@@ -63,6 +64,17 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Guildhall"]
+position = Vector2(-10, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tofti")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Guildhall"]
+position = Vector2(6, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tofti")
+flip_h = true
 
 [node name="Blacksmith" type="Node2D" parent="."]
 position = Vector2(350, 100)
@@ -185,6 +197,11 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Home"]
+position = Vector2(26, 56)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tofti")
 
 [node name="Tavern" type="Node2D" parent="."]
 position = Vector2(1025, 100)
