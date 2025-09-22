@@ -26,6 +26,7 @@ script = ExtResource("5_eu34m")
 [node name="Guildhall" type="Node2D" parent="."]
 position = Vector2(125, 100)
 script = ExtResource("1_x4lqr")
+buildingName = "Guildhall"
 
 [node name="BuildingSprite" type="Sprite2D" parent="Guildhall"]
 scale = Vector2(0.5, 0.5)
@@ -66,6 +67,7 @@ text = "[center]0"
 [node name="Blacksmith" type="Node2D" parent="."]
 position = Vector2(350, 100)
 script = ExtResource("1_x4lqr")
+buildingName = "Blacksmith"
 
 [node name="BuildingSprite" type="Sprite2D" parent="Blacksmith"]
 scale = Vector2(0.75, 0.75)
@@ -106,6 +108,7 @@ text = "[center]0"
 [node name="Bakery" type="Node2D" parent="."]
 position = Vector2(575, 100)
 script = ExtResource("1_x4lqr")
+buildingName = "Bakery"
 
 [node name="BuildingSprite" type="Sprite2D" parent="Bakery"]
 texture = ExtResource("7_cts18")
@@ -145,6 +148,7 @@ text = "[center]0"
 [node name="Home" type="Node2D" parent="."]
 position = Vector2(800, 100)
 script = ExtResource("1_x4lqr")
+buildingName = "Home"
 
 [node name="BuildingSprite" type="Sprite2D" parent="Home"]
 scale = Vector2(0.5, 0.75)
@@ -185,6 +189,7 @@ text = "[center]0"
 [node name="Tavern" type="Node2D" parent="."]
 position = Vector2(1025, 100)
 script = ExtResource("1_x4lqr")
+buildingName = "Tavern"
 
 [node name="BuildingSprite" type="Sprite2D" parent="Tavern"]
 texture = ExtResource("9_tofti")
