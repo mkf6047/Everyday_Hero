@@ -10,6 +10,6 @@ public partial class ConfirmChoices : Button
 
     public void Clicked()
     {
-        GetTree().ChangeSceneToFile("");
+        GetTree().ChangeSceneToFile("res://Maps/BuildingInteriors/BuildingInterior.tscn");
     }
 }
