@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://barn5n103d2i4"]
+[gd_scene load_steps=12 format=3 uid="uid://barn5n103d2i4"]
 
 [ext_resource type="Texture2D" uid="uid://ccpl3f4v2pgto" path="res://Sprites/BuildingSprites/Guild_Hall_V2.png" id="1_bq6w8"]
 [ext_resource type="Script" uid="uid://cwgn7nmeipfty" path="res://InvestmentScenes/InvestingScene/BuildingIdentity.cs" id="1_x4lqr"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cytv6pymb8ysl" path="res://Sprites/Bakery.png" id="7_cts18"]
 [ext_resource type="Texture2D" uid="uid://uln4tw3qgt41" path="res://Sprites/BuildingSprites/PlayerHouse.png" id="8_6vs2s"]
 [ext_resource type="Texture2D" uid="uid://c81411duwxlki" path="res://Sprites/Tavern-Sprite.png" id="9_tofti"]
+[ext_resource type="Script" uid="uid://bphxhsffn0cl0" path="res://InvestmentScenes/InvestingScene/CurrentFunds.cs" id="11_cng34"]
 
 [node name="InvestInTown" type="Node2D"]
 
@@ -64,6 +65,14 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="PriceDisplay" type="RichTextLabel" parent="Guildhall"]
+offset_left = -80.0
+offset_top = 150.0
+offset_right = 80.0
+offset_bottom = 190.0
+bbcode_enabled = true
+text = "[center]Price: 0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Guildhall"]
 position = Vector2(-10, 48)
@@ -242,3 +251,12 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="Current Funds" type="RichTextLabel" parent="."]
+offset_left = 456.0
+offset_top = 500.0
+offset_right = 696.0
+offset_bottom = 540.0
+bbcode_enabled = true
+text = "[center]Current Funds:"
+script = ExtResource("11_cng34")
