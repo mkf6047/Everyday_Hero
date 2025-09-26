@@ -126,6 +126,14 @@ offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
 
+[node name="PriceDisplay" type="RichTextLabel" parent="Blacksmith"]
+offset_left = -80.0
+offset_top = 150.0
+offset_right = 80.0
+offset_bottom = 190.0
+bbcode_enabled = true
+text = "[center]Price: 0"
+
 [node name="Bakery" type="Node2D" parent="."]
 position = Vector2(575, 100)
 script = ExtResource("1_x4lqr")
@@ -165,6 +173,14 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="PriceDisplay" type="RichTextLabel" parent="Bakery"]
+offset_left = -80.0
+offset_top = 150.0
+offset_right = 80.0
+offset_bottom = 190.0
+bbcode_enabled = true
+text = "[center]Price: 0"
 
 [node name="Home" type="Node2D" parent="."]
 position = Vector2(800, 100)
@@ -212,6 +228,14 @@ position = Vector2(26, 56)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_tofti")
 
+[node name="PriceDisplay" type="RichTextLabel" parent="Home"]
+offset_left = -80.0
+offset_top = 150.0
+offset_right = 80.0
+offset_bottom = 190.0
+bbcode_enabled = true
+text = "[center]Price: 0"
+
 [node name="Tavern" type="Node2D" parent="."]
 position = Vector2(1025, 100)
 script = ExtResource("1_x4lqr")
@@ -251,6 +275,14 @@ offset_right = 25.0
 offset_bottom = 140.0
 bbcode_enabled = true
 text = "[center]0"
+
+[node name="PriceDisplay" type="RichTextLabel" parent="Tavern"]
+offset_left = -80.0
+offset_top = 150.0
+offset_right = 80.0
+offset_bottom = 190.0
+bbcode_enabled = true
+text = "[center]Price: 0"
 
 [node name="Current Funds" type="RichTextLabel" parent="."]
 offset_left = 456.0

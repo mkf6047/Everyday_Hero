@@ -18,6 +18,7 @@ public partial class DecreaseInvestment : Button
 
     public void Clicked()
     {
+        if(InvestmentBenefits.Instance.buildingLevels[identity.buildingName] <= 1){ return; }
         InvestmentBenefits.Instance.buildingLevels[identity.buildingName]--;
         PlayerStats.Instance.Coins += 50 * InvestmentBenefits.Instance.buildingLevels[identity.buildingName];
         price = 50 * InvestmentBenefits.Instance.buildingLevels[identity.buildingName];
