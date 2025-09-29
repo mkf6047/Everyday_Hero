@@ -53,7 +53,7 @@ shape = SubResource("CircleShape2D_xmd7o")
 [node name="Sprite2D" type="Sprite2D" parent="QuestGetter"]
 
 [node name="Delay" type="Area2D" parent="."]
-position = Vector2(288, 50)
+position = Vector2(224, 50)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_k7knd")
@@ -65,7 +65,7 @@ shape = SubResource("RectangleShape2D_k7knd")
 texture = ExtResource("3_c7i46")
 
 [node name="Accept" type="Area2D" parent="."]
-position = Vector2(576, 50)
+position = Vector2(496, 50)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("5_3ky2r")
@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_3ky2r")
 texture = ExtResource("4_q1cm5")
 
 [node name="Dispose" type="Area2D" parent="."]
-position = Vector2(864, 50)
+position = Vector2(766, 50)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("7_gjghe")
