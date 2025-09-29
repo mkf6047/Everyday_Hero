@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cva4bmc4jvvm5"]
+
+[ext_resource type="Script" uid="uid://bxp5mx8pa5rip" path="res://Player/AreaNoticeOverlay/AreaNoticeOverlay.cs" id="1_0myvm"]
+[ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="1_gtcrl"]
+
+[node name="AreaNoticeOverlay" type="Node2D"]
+script = ExtResource("1_0myvm")
+
+[node name="Namebox" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1017, 24)
+rotation = -1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_gtcrl")
+
+[node name="NewArea" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 897.0
+offset_top = 4.0
+offset_right = 1137.0
+offset_bottom = 36.0
+bbcode_enabled = true
+text = "[center]TestText
+"

@@ -26,6 +26,8 @@ InvestmentBenefits="*res://InvestmentScenes/InvestmentBenefits.cs"
 [display]
 
 window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
 
 [dotnet]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tqigc2qvs4rv"]
+[gd_scene load_steps=15 format=3 uid="uid://tqigc2qvs4rv"]
 
 [ext_resource type="Script" uid="uid://bvdy3fieu12gt" path="res://Player/PlayerFunctions.cs" id="1_vlldt"]
 [ext_resource type="Script" uid="uid://cedwfiushsn2y" path="res://Player/Player.cs" id="1_xhfnw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dpjn6jbk3s3gy" path="res://Player/DialougeOverlay/DialougeOverlay.tscn" id="6_6ysni"]
 [ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="8_s1rgi"]
 [ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="9_j23h2"]
+[ext_resource type="PackedScene" uid="uid://cva4bmc4jvvm5" path="res://Player/AreaNoticeOverlay/AreaNoticeOverlay.tscn" id="12_5wa8t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p7tob"]
 animations = [{
@@ -84,3 +85,5 @@ z_index = 10
 
 [node name="TutorialOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("9_j23h2")]
 z_index = 6
+
+[node name="AreaNoticeOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("12_5wa8t")]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c37ns1seoply3"]
+[gd_scene load_steps=11 format=3 uid="uid://c37ns1seoply3"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_qen5a"]
 [ext_resource type="Script" uid="uid://c8qkbb8tv5171" path="res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseTutorial.cs" id="1_rtsel"]
 [ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="2_k0e2o"]
 [ext_resource type="Texture2D" uid="uid://b8skafytaq0fh" path="res://Sprites/Interior/Carpet-Tiles.png" id="3_8suwj"]
+[ext_resource type="Texture2D" uid="uid://210p81443qlh" path="res://Sprites/Interior/DoorOpeningDay.png" id="3_y5uyc"]
 [ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="4_r2e52"]
 [ext_resource type="PackedScene" uid="uid://c5301sk4katea" path="res://Environment/Objects/Chairs/chairLeft1.tscn" id="5_4acv2"]
 [ext_resource type="PackedScene" uid="uid://bwyg7uj42cidx" path="res://Environment/Objects/Chairs/chairRight1.tscn" id="6_rtsel"]
@@ -29,6 +30,11 @@ script = ExtResource("1_qen5a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBuilding"]
 shape = SubResource("RectangleShape2D_vpuan")
+
+[node name="Sprite2D" type="Sprite2D" parent="ExitBuilding"]
+self_modulate = Color(1, 1, 1, 0.588235)
+scale = Vector2(2, 2)
+texture = ExtResource("3_y5uyc")
 
 [node name="Player" parent="." instance=ExtResource("2_k0e2o")]
 position = Vector2(575, 491)

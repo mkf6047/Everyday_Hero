@@ -68,14 +68,14 @@ public partial class QuestSortingScene : Node2D
         {
             if (calculateOnce) { return; }
             if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
-            if (PlayerStats.Instance.QuestsSorted >= 440) { PlayerStats.Instance.Rank = "SSS"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 210) { PlayerStats.Instance.Rank = "SS"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 130) { PlayerStats.Instance.Rank = "S"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 80) { PlayerStats.Instance.Rank = "A"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 50) { PlayerStats.Instance.Rank = "B"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 30) { PlayerStats.Instance.Rank = "C"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 20) { PlayerStats.Instance.Rank = "D"; }
-            else if (PlayerStats.Instance.QuestsSorted >= 10) { PlayerStats.Instance.Rank = "E"; }
+            if (PlayerStats.Instance.QuestsSorted >= 440 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 10)) { PlayerStats.Instance.Rank = "SSS"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 210 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 9)) { PlayerStats.Instance.Rank = "SS"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 130 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 8)) { PlayerStats.Instance.Rank = "S"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 80 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 6)) { PlayerStats.Instance.Rank = "A"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 50 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 5)) { PlayerStats.Instance.Rank = "B"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 30 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 4)) { PlayerStats.Instance.Rank = "C"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 20 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 3)) { PlayerStats.Instance.Rank = "D"; }
+            else if (PlayerStats.Instance.QuestsSorted >= 10 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 2)) { PlayerStats.Instance.Rank = "E"; }
             PlayerStats.Instance.isInside = true;
             resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";" +
                                             QSSTracker.Instance.delayedQuests + ";" +
