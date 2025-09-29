@@ -155,7 +155,7 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="InternalCorner5" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-288, 288)
+position = Vector2(-352, 288)
 texture = ExtResource("13_gk312")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
@@ -171,7 +171,7 @@ region_rect = Rect2(0, 0, 784, 32)
 [node name="CenterPathBlacksmith2" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-320, 144)
+position = Vector2(-384, 144)
 texture = ExtResource("5_6ue8r")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 384)
@@ -187,7 +187,7 @@ region_rect = Rect2(0, 0, 160, 160)
 [node name="RightPathBlacksmith" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-288, 112)
+position = Vector2(-352, 112)
 texture = ExtResource("6_7s8ql")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 320)
@@ -195,7 +195,7 @@ region_rect = Rect2(0, 0, 32, 320)
 [node name="LeftPathBlacksmith" type="Sprite2D" parent="SpriteHolder"]
 z_index = -2
 texture_repeat = 2
-position = Vector2(-352, 128)
+position = Vector2(-416, 128)
 texture = ExtResource("4_3ihjs")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 352)
@@ -243,7 +243,7 @@ region_rect = Rect2(0, 0, 32, 32)
 [node name="InternalCorner7" type="Sprite2D" parent="SpriteHolder"]
 z_index = -1
 texture_repeat = 2
-position = Vector2(-352, 288)
+position = Vector2(-416, 288)
 rotation = 4.71239
 texture = ExtResource("13_gk312")
 region_enabled = true
@@ -322,7 +322,7 @@ z_index = 1
 position = Vector2(-719, -78)
 
 [node name="BakeryBuilding" parent="." instance=ExtResource("21_76g1a")]
-position = Vector2(-313, -25)
+position = Vector2(-375, -31)
 
 [node name="TavernBuilding" parent="." instance=ExtResource("22_vdpel")]
 position = Vector2(623, -14)
