@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=24 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://dk12oyiia3853" path="res://QuestSorting/PartyInformation.cs" id="13_yg7ko"]
 [ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="14_yaefm"]
 [ext_resource type="Script" uid="uid://3nneh3hpe5j1" path="res://QuestSorting/ClosePartyInfo.cs" id="16_0ut16"]
+[ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
+[ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -93,7 +95,7 @@ position = Vector2(576, 324)
 
 [node name="QSSResults" type="Node2D" parent="."]
 visible = false
-z_index = 5
+z_index = 15
 script = ExtResource("9_18a2g")
 
 [node name="Textbox" type="RichTextLabel" parent="QSSResults"]
@@ -176,12 +178,14 @@ scale = Vector2(1.5, 3)
 texture = ExtResource("14_yaefm")
 
 [node name="RevealPartyInfo" type="Area2D" parent="PartyInformation/LeaderSprite/ExpandTab"]
+script = ExtResource("16_cdk84")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo"]
 shape = SubResource("RectangleShape2D_yaefm")
 
 [node name="Class&Rank" type="Node2D" parent="PartyInformation"]
 z_index = 2
+script = ExtResource("16_udyga")
 
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 10
@@ -191,7 +195,7 @@ offset_right = 764.0
 offset_bottom = 380.0
 bbcode_enabled = true
 text = "[font_size=22]Party Size: 5
-Class: 
+Class:
 Class: 
 Class: 
 Class: 
