@@ -191,15 +191,29 @@ script = ExtResource("16_udyga")
 z_index = 10
 offset_left = 204.0
 offset_top = 180.0
-offset_right = 764.0
+offset_right = 404.0
 offset_bottom = 380.0
 bbcode_enabled = true
 text = "[font_size=22]Party Size: 5
-Class:
-Class: 
+Class: Ranger
+Class: Knight
 Class: 
 Class: 
 Class: "
+
+[node name="RankDisplay" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
+z_index = 10
+offset_left = 404.0
+offset_top = 180.0
+offset_right = 604.0
+offset_bottom = 380.0
+bbcode_enabled = true
+text = "[font_size=22]
+Rank: 
+Rank: 
+Rank: 
+Rank: 
+Rank: "
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 2

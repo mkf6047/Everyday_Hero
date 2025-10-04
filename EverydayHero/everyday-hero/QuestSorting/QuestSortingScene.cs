@@ -11,60 +11,58 @@ public partial class QuestSortingScene : Node2D
 
     QssResults resultsDisplay;
 
-    bool readyComplete, calculateOnce = false;
+    ClassAndRank displayClassRank;
+
+    bool readyComplete, calculateOnce, allPartiesSorted = false;
 
     int numofquest = 0;
+    int partiesApplying, currentParty = 0;
 
     public override void _Ready()
     {
-        int questsMade = 3;
         switch (PlayerStats.Instance.Rank)
         {
             case "SSS":
-                questsMade = 15;
+                partiesApplying = 15;
                 break;
             case "SS":
-                questsMade = 12;
+                partiesApplying = 12;
                 break;
             case "S":
-                questsMade = 10;
+                partiesApplying = 10;
                 break;
             case "A":
-                questsMade = 9;
+                partiesApplying = 9;
                 break;
             case "B":
-                questsMade = 8;
+                partiesApplying = 8;
                 break;
             case "C":
-                questsMade = 7;
+                partiesApplying = 7;
                 break;
             case "D":
-                questsMade = 6;
+                partiesApplying = 6;
                 break;
             case "E":
-                questsMade = 5;
+                partiesApplying = 5;
                 break;
             case "F":
-                questsMade = 4;
+                partiesApplying = 4;
                 break;
             default:
                 break;
         }
-        for (int i = 0; i <= questsMade - 1; i++)
-        {
-            MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
-            AddChild(quest);
-            quest.Position = new Vector2((i + 1) * 200, 400);
-            AddQuest(quest);
-        }
         resultsDisplay = (QssResults)GetNode("QSSResults");
+        displayClassRank = (ClassAndRank)GetNode("PartyInformation/CLass&Rank");
+        GenerateQuests();
+        displayClassRank.LoadNextParty(currentParty);
         QSSTracker.Instance.ResetCounts();
         readyComplete = true;
     }
 
     public override void _Process(double delta)
     {
-        if ((numofquest <= 0) && readyComplete)
+        if ((numofquest <= 0) && readyComplete && allPartiesSorted)
         {
             if (calculateOnce) { return; }
             if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
@@ -82,6 +80,23 @@ public partial class QuestSortingScene : Node2D
                                             QSSTracker.Instance.rejectedQuests + ";" +
                                             QSSTracker.Instance.rewards + ";");
             calculateOnce = true;
+        }
+        if ((numofquest <= 0) && (currentParty >= (partiesApplying - 1)) && readyComplete)
+        {
+            currentParty++;
+            GenerateQuests();
+            displayClassRank.LoadNextParty(currentParty);
+        }
+    }
+
+    public void GenerateQuests()
+    {
+        for (int i = 0; i <= 3; i++)
+        {
+            MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
+            AddChild(quest);
+            quest.Position = new Vector2((i + 1) * 200, 400);
+            AddQuest(quest);
         }
     }
 
