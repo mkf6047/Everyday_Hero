@@ -60,6 +60,7 @@ public partial class QuestSortingScene : Node2D
         displayClassRank.LoadNextParty(currentParty);
         QSSTracker.Instance.ResetCounts();
         readyComplete = true;
+        TutorialInfo.Instance.ActivateTutorial(2);
     }
 
     public override void _Process(double delta)

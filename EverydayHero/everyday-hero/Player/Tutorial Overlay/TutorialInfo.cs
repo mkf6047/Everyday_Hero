@@ -8,6 +8,7 @@ public partial class TutorialInfo : Node
     private double epsilon = 0.000001;
     private Vector2 previousMousePos;
     public int tutorialCount = 0;
+    int currentLine = 0;
     public bool[] tutorialComplete = [false, false, false];   //add one per tutorial, position corresponding with tutorial lines
     bool tutorialCondition = true;
     bool tutorialFound = false;
@@ -148,17 +149,14 @@ public partial class TutorialInfo : Node
 
     public void ActivateTutorial(int tutorialNum)
     {
-        if (!tutorialFound)
+        var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
+        if (tutOver is TutorialOverlay incomingOverlay)
         {
-            var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
-            if (tutOver is TutorialOverlay incomingOverlay)
-            {
-                overlay = incomingOverlay;
-                tutorialFound = true;
-            }
-            else if(tutOver is null){ return; }
-            else { GD.Print("Unable to load tutorial"); return; }
+            overlay = incomingOverlay;
+            tutorialFound = true;
         }
+        else if(tutOver is null){ return; }
+        else { GD.Print("Unable to load tutorial"); return; }
         int size = tutorialLines.Count;
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
         {
