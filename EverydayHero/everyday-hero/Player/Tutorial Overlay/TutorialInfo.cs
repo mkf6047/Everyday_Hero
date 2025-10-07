@@ -10,12 +10,13 @@ public partial class TutorialInfo : Node
     private Vector2 previousMousePos;
     public int tutorialCount = 0;
     int currentLine = 0;
-    public bool[] tutorialComplete = [false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
+    public bool[] tutorialComplete = [false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
     private string[] tutorialDialougeFiles = [                  //make sure order of strings here corresponds with the order the related method appears in callTutorial method
         "res://Player/Tutorial Overlay/TutorialDialouge/Walking.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/ClickOnBuilding.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/InteractWithDesk.txt",
-        "res://Player/Tutorial Overlay/TutorialDialouge/QSSIntro.txt"
+        "res://Player/Tutorial Overlay/TutorialDialouge/QSSIntro.txt",
+        "res://Player/Tutorial Overlay/TutorialDialouge/SaveGame.txt"
     ];
     public bool tutorialCondition, canComplete = true;
     bool tutorialFound = false;
@@ -254,7 +255,43 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[3].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[3][currentLine]);
-                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
+                if(currentLine == tutorialLines[3].Count - 1){ canComplete = true; }
+            }
+            else{ canComplete = true; }
+        }
+    }
+    private void SaveGame(double delta = 0.0)   //change from private to public
+    {
+        if (tutorialComplete[4])       //replace 0 with actual corresponding int.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 2.0 && tutorialCondition)
+            {
+                tutorialComplete[tutorialCount] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            //tutorial processing goes here!!!!
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText(tutorialLines[4][0]);    //replace first 0 with tutorial index
+            currentLine = 0;
+            tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("cancel"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[4].Count - 2)
+            {
+                overlay.UpdateText(tutorialLines[4][currentLine]);
+                if(currentLine == tutorialLines[4].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
         }
@@ -303,10 +340,13 @@ public partial class TutorialInfo : Node
                 ClickOnBuilding(delta);
                 break;
             case 2:
-                QSSIntro(delta);
+                InteractWithDesk(delta);
                 break;
             case 3:
                 QSSIntro(delta);
+                break;
+            case 4:
+                SaveGame(delta);
                 break;
             default:
                 GD.Print("Invalid Tutorial Number.");

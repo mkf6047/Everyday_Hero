@@ -11,6 +11,6 @@ public partial class ToNewGame : Button
 
     private void Clicked()
     {
-        GetTree().ChangeSceneToFile("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");
+        GetTree().ChangeSceneToFile("res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouse2f.cs");
     }
 }

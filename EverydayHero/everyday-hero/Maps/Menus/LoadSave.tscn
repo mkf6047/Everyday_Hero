@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://6a7g1tupy8aj"]
+[gd_scene load_steps=4 format=3 uid="uid://6a7g1tupy8aj"]
 
 [ext_resource type="Script" uid="uid://kusf5iss6ul5" path="res://Maps/Menus/Load.cs" id="2_b6hw1"]
+[ext_resource type="Script" uid="uid://c1uqbnellerte" path="res://Maps/Menus/ReturnToMainMenu.cs" id="3_abl1n"]
 [ext_resource type="Script" uid="uid://cqjpge1i8qk3r" path="res://Maps/Menus/SaveText.cs" id="3_b6hw1"]
 
 [node name="LoadSave" type="Node2D"]
@@ -72,3 +73,11 @@ text = "[center]Click on the button to load the save![/center]"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="ReturnToMainMenu" type="Button" parent="."]
+offset_left = 488.0
+offset_top = 64.0
+offset_right = 664.0
+offset_bottom = 95.0
+text = "Return to Title Screen"
+script = ExtResource("3_abl1n")

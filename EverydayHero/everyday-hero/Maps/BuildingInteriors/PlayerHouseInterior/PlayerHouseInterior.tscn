@@ -45,7 +45,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_y5uyc")
 
 [node name="Player" parent="." instance=ExtResource("2_k0e2o")]
-visible = false
 position = Vector2(575, 491)
 
 [node name="Carpet" type="Sprite2D" parent="."]

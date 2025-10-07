@@ -20,6 +20,13 @@ offset_bottom = 364.0
 bbcode_enabled = true
 text = "[center][color=black]Press Z / Enter to Continue."
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_top = 364.0
+offset_right = 1152.0
+offset_bottom = 404.0
+bbcode_enabled = true
+text = "[center][color=black]Press X/Right Shift to Quit."
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(576, 324)

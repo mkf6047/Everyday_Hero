@@ -24,6 +24,10 @@ public partial class TitleScreen : Node2D
         {
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/LoadType.tscn");
         }
+        if (Input.IsActionPressed("cancel"))
+        {
+            GetTree().Quit();
+        }
     }
     private void InitSaveFiles(string filepath)
     {

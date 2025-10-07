@@ -13,7 +13,7 @@ public partial class PlayerStats : Node
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocation;
-    private string currentScene = "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn";
+    private string currentScene = "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouse2f.cs";
     public int Coins
     {
         get { return coins; }
