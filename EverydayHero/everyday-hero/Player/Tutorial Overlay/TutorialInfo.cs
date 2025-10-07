@@ -74,7 +74,7 @@ public partial class TutorialInfo : Node
         else
         {
             timer += delta;
-            if (timer > 5.0 && tutorialCondition)
+            if (timer > 2.0 && tutorialCondition)
             {
                 tutorialComplete[0] = true;
                 timer = 0.0;
@@ -101,7 +101,7 @@ public partial class TutorialInfo : Node
         else
         {
             timer += delta;
-            if (timer > 5.0 && tutorialCondition)
+            if (timer > 2.0 && tutorialCondition)
             {
                 tutorialComplete[1] = true;
                 timer = 0.0;
@@ -128,7 +128,7 @@ public partial class TutorialInfo : Node
         else
         {
             timer += delta;
-            if (timer > 1.0 && tutorialCondition)
+            if (timer > 2.0 && tutorialCondition)
             {
                 tutorialComplete[2] = true;
                 timer = 0.0;

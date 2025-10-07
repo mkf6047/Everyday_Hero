@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=26 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -15,9 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="13_o18v7"]
 [ext_resource type="Script" uid="uid://dk12oyiia3853" path="res://QuestSorting/PartyInformation.cs" id="13_yg7ko"]
 [ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="14_yaefm"]
+[ext_resource type="Script" uid="uid://bo2sm3rcpsu44" path="res://QuestSorting/LeaderSprite.cs" id="15_1eepb"]
 [ext_resource type="Script" uid="uid://3nneh3hpe5j1" path="res://QuestSorting/ClosePartyInfo.cs" id="16_0ut16"]
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
+[ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="20_soa40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -144,6 +146,7 @@ script = ExtResource("13_yg7ko")
 position = Vector2(1036, 300)
 scale = Vector2(4, 4)
 texture = ExtResource("12_k7deh")
+script = ExtResource("15_1eepb")
 
 [node name="LeaderBackground" type="Sprite2D" parent="PartyInformation/LeaderSprite"]
 z_index = -1
@@ -195,8 +198,8 @@ offset_right = 404.0
 offset_bottom = 380.0
 bbcode_enabled = true
 text = "[font_size=22]Party Size: 5
-Class: Ranger
-Class: Knight
+Class: 
+Class: 
 Class: 
 Class: 
 Class: "
@@ -273,9 +276,13 @@ position = Vector2(1104, 534)
 texture = ExtResource("10_18a2g")
 flip_h = true
 
+[node name="TutorialOverlay" parent="." instance=ExtResource("20_soa40")]
+
 [connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Delay" to="Delay" method="OnArea2DBodyExited"]
 [connection signal="body_entered" from="Accept" to="Accept" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Accept" to="Accept" method="OnArea2DBodyExited"]
 [connection signal="body_entered" from="Dispose" to="Dispose" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Dispose" to="Dispose" method="OnArea2DBodyExited"]
+[connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]

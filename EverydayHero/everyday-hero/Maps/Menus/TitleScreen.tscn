@@ -1,18 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://yra1xlevfyws"]
+[gd_scene load_steps=3 format=3 uid="uid://yra1xlevfyws"]
 
 [ext_resource type="Script" uid="uid://chrohqeso06v" path="res://Maps/Menus/TitleScreen.cs" id="1_3o3eu"]
+[ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_jbvtc"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_3o3eu")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_top = 80.0
+offset_right = 1152.0
+offset_bottom = 240.0
+bbcode_enabled = true
+text = "[center][color=black][font_size=96]Everyday Hero"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_top = 324.0
 offset_right = 1152.0
 offset_bottom = 364.0
 bbcode_enabled = true
-text = "[center]Press Z / Enter to Continue.[/center]"
+text = "[center][color=black]Press Z / Enter to Continue."
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(1.125, 1)
+texture = ExtResource("2_jbvtc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

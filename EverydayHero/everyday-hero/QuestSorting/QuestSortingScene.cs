@@ -13,6 +13,8 @@ public partial class QuestSortingScene : Node2D
 
     ClassAndRank displayClassRank;
 
+    
+
     bool readyComplete, calculateOnce, allPartiesSorted = false;
 
     int numofquest = 0;
@@ -53,7 +55,7 @@ public partial class QuestSortingScene : Node2D
                 break;
         }
         resultsDisplay = (QssResults)GetNode("QSSResults");
-        displayClassRank = (ClassAndRank)GetNode("PartyInformation/CLass&Rank");
+        displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
         GenerateQuests();
         displayClassRank.LoadNextParty(currentParty);
         QSSTracker.Instance.ResetCounts();
@@ -95,7 +97,7 @@ public partial class QuestSortingScene : Node2D
         {
             MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
             AddChild(quest);
-            quest.Position = new Vector2((i + 1) * 200, 400);
+            quest.Position = new Vector2((i + 1) * 200, 300);
             AddQuest(quest);
         }
     }

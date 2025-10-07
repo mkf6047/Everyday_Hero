@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://dmcqk2d02maf2"]
+[gd_scene load_steps=25 format=3 uid="uid://dmcqk2d02maf2"]
 
+[ext_resource type="Script" uid="uid://dverpnq6hwpou" path="res://Maps/ExteriorMaps/MainSceneTutorial.cs" id="1_mfeb2"]
 [ext_resource type="PackedScene" uid="uid://drhne4rxavvvr" path="res://Environment/Buildings/Building Template.tscn" id="3_qk0fn"]
 [ext_resource type="Texture2D" uid="uid://ckncamb7mratt" path="res://Sprites/Exterior/Left-Path.png" id="4_3ihjs"]
 [ext_resource type="Texture2D" uid="uid://ctb6nvcqerss3" path="res://Sprites/Exterior/Path-Tile.png" id="5_6ue8r"]
@@ -21,9 +22,11 @@
 [ext_resource type="Texture2D" uid="uid://de68w1xf43bml" path="res://Sprites/Exterior/Fence-Front.png" id="20_a44ly"]
 [ext_resource type="PackedScene" uid="uid://upbkmgceo3fm" path="res://Environment/Buildings/Bakery/BakeryBuilding.tscn" id="21_76g1a"]
 [ext_resource type="PackedScene" uid="uid://b5c2xhbrwa2el" path="res://Maps/ExteriorMaps/BuildingName.tscn" id="22_76g1a"]
+[ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="22_mfeb2"]
 [ext_resource type="PackedScene" uid="uid://d4l8cftgo5dyd" path="res://Environment/Buildings/Tavern/TavernBuilding.tscn" id="22_vdpel"]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_mfeb2")
 
 [node name="SpriteHolder" type="Node2D" parent="."]
 
@@ -346,6 +349,13 @@ polygon = PackedVector2Array(-2176, -1420, 2176, -1420, 2176, 1426, -2176, 1426,
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="TutorialOverlay" parent="Camera2D" instance=ExtResource("22_mfeb2")]
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = -1152.0
+offset_bottom = -648.0
+scale = Vector2(2, 2)
 
 [node name="BuildingName" parent="." instance=ExtResource("22_76g1a")]
 position = Vector2(-550, -616)
