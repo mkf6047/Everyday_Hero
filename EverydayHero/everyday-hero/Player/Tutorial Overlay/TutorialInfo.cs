@@ -17,7 +17,7 @@ public partial class TutorialInfo : Node
         "res://Player/Tutorial Overlay/TutorialDialouge/InteractWithDesk.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/QSSIntro.txt"
     ];
-    bool tutorialCondition = true;
+    public bool tutorialCondition, canComplete = true;
     bool tutorialFound = false;
     double timer = 0.0;
     TutorialOverlay overlay;
@@ -62,6 +62,7 @@ public partial class TutorialInfo : Node
                 content = file.GetLine();
                 lines.Add(content);
             }
+            lines.RemoveAt(lines.Count - 1);    //last line guranteed to be empty due to how textfiles are saved via godot, removed for convenience.
             tutorialLines.Add(lines);
         }
     }
@@ -87,15 +88,26 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText("ReplaceThisTextWithTutorialDialouge");
+            overlay.UpdateText(tutorialLines[0][0]);    //replace first 0 with tutorial index
+            currentLine = 0;
             tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("Interact"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[0].Count - 2)
+            {
+                overlay.UpdateText(tutorialLines[0][currentLine]);
+            }
+            else{ canComplete = true; }
         }
     }
     #endregion
 
-    public void Walking(double delta = 0.0)    //walking tutorial
+    public void Walking(double delta = 0.0)    //index 0
     {
-        if (tutorialComplete[0])                //walking corresponds to 0 in list.
+        if (tutorialComplete[0])               //walking corresponds to 0 in list.
         {
             return;
         }
@@ -109,51 +121,69 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            if (Input.IsActionJustPressed("up") || Input.IsActionJustPressed("down") || Input.IsActionJustPressed("left") || Input.IsActionJustPressed("right"))
+            if ((Input.IsActionJustPressed("up") || Input.IsActionJustPressed("down") || Input.IsActionJustPressed("left") || Input.IsActionJustPressed("right")) && canComplete)
             {
                 tutorialCondition = true;
             }
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText("Use the 'WASD' keys or the arrow keys to move!");
+            overlay.UpdateText(tutorialLines[0][0]);
+            currentLine = 0;
             tutorialCondition = false;
+            canComplete = false;
         }
-        else if (Input.IsActionJustPressed(""))
+        else if (Input.IsActionJustPressed("Interact"))
         {
-            
+            currentLine++;
+            if (currentLine <= tutorialLines[0].Count - 1)
+            {
+                overlay.UpdateText(tutorialLines[0][currentLine]);
+            }
+            else{ canComplete = true; }
         }
     }
-    public void ClickOnBuilding(double delta = 0.0)   //change from private to public
+    public void ClickOnBuilding(double delta = 0.0)  //index 1
     {
-        if (tutorialComplete[1])       //replace 0 with actual corresponding int.
+        if (tutorialComplete[1])       
         {
             return;
         }
         else
         {
             timer += delta;
-            if (timer > 2.0 && tutorialCondition)
+            if (timer > 1.0 && tutorialCondition)
             {
                 tutorialComplete[1] = true;
                 timer = 0.0;
                 overlay.HideOverlay();
                 return;
             }
-            if (previousMousePos != GetViewport().GetMousePosition()) {
+            if (previousMousePos != GetViewport().GetMousePosition() && canComplete) {
                 tutorialCondition = true;
             }
             previousMousePos = GetViewport().GetMousePosition();
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText("Hover your mouse over the building you want to enter!");
+            overlay.UpdateText(tutorialLines[1][0]);
+            currentLine = 0;
             tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("Interact"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[1].Count - 1)
+            {
+                overlay.UpdateText(tutorialLines[1][currentLine]);
+            }
+            else{ canComplete = true; }
         }
     }
     public void InteractWithDesk(double delta = 0.0)
     {
-        if (tutorialComplete[2])       
+        if (tutorialComplete[2])
         {
             return;
         }
@@ -167,12 +197,26 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            //tutorial processing goes here!!!!
+            if (Input.IsActionJustPressed("Interact") && canComplete)
+            {
+                tutorialCondition = true;
+            }
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText("Click and Hold to drag a quest over to one of the corresponding bins!");
+            overlay.UpdateText(tutorialLines[2][0]);
+            currentLine = 0;
             tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("Interact"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[2].Count - 1)
+            {
+                overlay.UpdateText(tutorialLines[2][currentLine]);
+            }
+            else{ canComplete = true; }
         }
     }
     public void QSSIntro(double delta = 0.0)   //change from private to public
@@ -191,12 +235,23 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            //tutorial processing goes here!!!!
+            if(canComplete && Input.IsMouseButtonPressed(MouseButton.Left)){ tutorialCondition = true; }
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText("Click and Hold to drag a quest over to one of the corresponding bins!");
+            overlay.UpdateText(tutorialLines[3][0]);
+            currentLine = 0;
             tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("Interact"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[3].Count - 1)
+            {
+                overlay.UpdateText(tutorialLines[3][currentLine]);
+            }
+            else{ canComplete = true; }
         }
     }
 
