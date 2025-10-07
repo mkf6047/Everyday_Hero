@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqmex7ej8wpn1"]
+
+[ext_resource type="Script" uid="uid://c8qkbb8tv5171" path="res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseTutorial.cs" id="1_p1i4a"]
+[ext_resource type="Script" uid="uid://dll0rgwu6egch" path="res://Maps/BuildingInteriors/PlayerHouseInterior/ToF1.cs" id="2_p1i4a"]
+[ext_resource type="Texture2D" uid="uid://c5py6l0ipnyaa" path="res://Sprites/Interior/Stair-Tiles.png" id="3_ndowg"]
+[ext_resource type="PackedScene" uid="uid://tqigc2qvs4rv" path="res://Player/Player.tscn" id="4_5ix5n"]
+[ext_resource type="Texture2D" uid="uid://b8skafytaq0fh" path="res://Sprites/Interior/Carpet-Tiles.png" id="5_s5al7"]
+[ext_resource type="Texture2D" uid="uid://du4jphc8mc2a8" path="res://Sprites/Interior/Wood-Floor.Tile.png" id="6_vimfn"]
+[ext_resource type="PackedScene" uid="uid://c5301sk4katea" path="res://Environment/Objects/Chairs/chairLeft1.tscn" id="7_sexi2"]
+[ext_resource type="PackedScene" uid="uid://bwyg7uj42cidx" path="res://Environment/Objects/Chairs/chairRight1.tscn" id="8_yuyxa"]
+[ext_resource type="PackedScene" uid="uid://cekacfowupdf5" path="res://Environment/Objects/Tables/Table1.tscn" id="9_dsbyv"]
+[ext_resource type="Texture2D" uid="uid://bhhiqkdcmyo1r" path="res://Sprites/Bed.png" id="10_ndowg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hokk"]
+size = Vector2(20, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]
+size = Vector2(100, 20)
+
+[node name="BuildingInterior" type="Node2D"]
+script = ExtResource("1_p1i4a")
+
+[node name="Walls" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(-20, -20, 1172, -20, 1172, 668, -20, 668, -20, -20, 0, 0, 0, 648, 1152, 648, 1152, 0, 0, 0)
+
+[node name="StairRailing" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairRailing"]
+position = Vector2(959, 554)
+shape = SubResource("RectangleShape2D_7hokk")
+
+[node name="ToF1" type="Area2D" parent="."]
+position = Vector2(1056, 618)
+collision_layer = 0
+script = ExtResource("2_p1i4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToF1"]
+shape = SubResource("RectangleShape2D_vpuan")
+
+[node name="Sprite2D" type="Sprite2D" parent="ToF1"]
+texture_repeat = 2
+position = Vector2(0, -64)
+scale = Vector2(2, 2)
+texture = ExtResource("3_ndowg")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="Carpet" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(576, 408)
+texture = ExtResource("5_s5al7")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 480)
+
+[node name="WoodFloor" type="Sprite2D" parent="."]
+z_index = -2
+texture_repeat = 2
+position = Vector2(576, 324)
+texture = ExtResource("6_vimfn")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="ChairLeft" parent="." instance=ExtResource("7_sexi2")]
+offset_left = 274.0
+offset_top = 164.0
+offset_right = 274.0
+offset_bottom = 164.0
+
+[node name="chairRight" parent="." instance=ExtResource("8_yuyxa")]
+offset_left = 371.0
+offset_top = 163.0
+offset_right = 371.0
+offset_bottom = 163.0
+
+[node name="Table" parent="." instance=ExtResource("9_dsbyv")]
+offset_left = 324.0
+offset_top = 173.0
+offset_right = 324.0
+offset_bottom = 173.0
+
+[node name="Player" parent="." instance=ExtResource("4_5ix5n")]
+position = Vector2(982, 72)
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(1110, 56)
+texture = ExtResource("10_ndowg")
+
+[connection signal="body_entered" from="ToF1" to="ToF1" method="OnArea2DBodyEntered"]

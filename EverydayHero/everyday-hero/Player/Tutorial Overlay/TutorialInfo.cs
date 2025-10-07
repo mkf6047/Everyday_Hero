@@ -77,7 +77,7 @@ public partial class TutorialInfo : Node
         else
         {
             timer += delta;
-            if (timer > 5.0 && tutorialCondition)
+            if (timer > 2.0 && tutorialCondition)
             {
                 tutorialComplete[tutorialCount] = true;
                 timer = 0.0;
@@ -99,6 +99,7 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[0].Count - 2)
             {
                 overlay.UpdateText(tutorialLines[0][currentLine]);
+                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
         }
@@ -139,6 +140,7 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[0].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[0][currentLine]);
+                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
         }
@@ -177,8 +179,9 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[1].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[1][currentLine]);
+                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
-            else{ canComplete = true; }
+            else { canComplete = true; }
         }
     }
     public void InteractWithDesk(double delta = 0.0)
@@ -215,6 +218,7 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[2].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[2][currentLine]);
+                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
         }
@@ -250,6 +254,7 @@ public partial class TutorialInfo : Node
             if (currentLine <= tutorialLines[3].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[3][currentLine]);
+                if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
         }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c37ns1seoply3"]
+[gd_scene load_steps=15 format=3 uid="uid://c37ns1seoply3"]
 
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_qen5a"]
 [ext_resource type="Script" uid="uid://c8qkbb8tv5171" path="res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseTutorial.cs" id="1_rtsel"]
@@ -9,9 +9,17 @@
 [ext_resource type="PackedScene" uid="uid://c5301sk4katea" path="res://Environment/Objects/Chairs/chairLeft1.tscn" id="5_4acv2"]
 [ext_resource type="PackedScene" uid="uid://bwyg7uj42cidx" path="res://Environment/Objects/Chairs/chairRight1.tscn" id="6_rtsel"]
 [ext_resource type="PackedScene" uid="uid://cekacfowupdf5" path="res://Environment/Objects/Tables/Table1.tscn" id="7_y5uyc"]
+[ext_resource type="Script" uid="uid://cyoh3h7jfluth" path="res://Maps/BuildingInteriors/PlayerHouseInterior/ToF2.cs" id="10_fq5jm"]
+[ext_resource type="Texture2D" uid="uid://c5py6l0ipnyaa" path="res://Sprites/Interior/Stair-Tiles.png" id="11_f4dv8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vpuan"]
 size = Vector2(40, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cnnr3"]
+size = Vector2(124, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fqfr"]
+size = Vector2(20, 192)
 
 [node name="BuildingInterior" type="Node2D"]
 script = ExtResource("1_rtsel")
@@ -37,6 +45,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("3_y5uyc")
 
 [node name="Player" parent="." instance=ExtResource("2_k0e2o")]
+visible = false
 position = Vector2(575, 491)
 
 [node name="Carpet" type="Sprite2D" parent="."]
@@ -73,4 +82,30 @@ offset_top = 173.0
 offset_right = 324.0
 offset_bottom = 173.0
 
+[node name="ToF2" type="Area2D" parent="."]
+position = Vector2(1056, 618)
+collision_layer = 0
+script = ExtResource("10_fq5jm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToF2"]
+position = Vector2(3, -594)
+shape = SubResource("RectangleShape2D_cnnr3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ToF2"]
+texture_repeat = 2
+position = Vector2(0, -522)
+scale = Vector2(2, 2)
+texture = ExtResource("11_f4dv8")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 96)
+
+[node name="StairRailing" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairRailing"]
+position = Vector2(958, 93)
+shape = SubResource("RectangleShape2D_3fqfr")
+
 [connection signal="body_entered" from="ExitBuilding" to="ExitBuilding" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="ToF2" to="ToF2" method="OnArea2DBodyEntered"]
