@@ -1,2 +1,3 @@
 Philip
-The desk is just to the right!
+The desk is just to the right.
+Press Z when you see the exlaimation point to interact with the desk.

@@ -20,7 +20,7 @@ public partial class NPCCollide : Area2D
     {
         base._Process(delta);
         if (isColliding) {
-            if (Input.IsActionPressed("Interact"))
+            if (Input.IsActionJustPressed("Interact"))
             {
                 Node node = GetTree().GetFirstNodeInGroup("Player");
                 if (node is PlayerFunctions playerNode)

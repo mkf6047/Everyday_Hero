@@ -14,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_0vlly")
 
 [node name="Textbox" type="RichTextLabel" parent="."]
-z_index = 10
+z_index = 1
 layout_mode = 0
 offset_left = 64.0
 offset_top = 456.0
@@ -23,7 +23,6 @@ offset_bottom = 616.0
 bbcode_enabled = true
 
 [node name="TextboxSprite" type="Sprite2D" parent="."]
-z_index = 2
 texture_repeat = 2
 position = Vector2(576, 534)
 texture = ExtResource("2_6ulci")
@@ -31,18 +30,16 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1024, 180)
 
 [node name="LeftEnd" type="Sprite2D" parent="."]
-z_index = 2
 position = Vector2(48, 534)
 texture = ExtResource("3_fsc1l")
 
 [node name="RightEnd" type="Sprite2D" parent="."]
-z_index = 2
 position = Vector2(1104, 534)
 texture = ExtResource("3_fsc1l")
 flip_h = true
 
 [node name="AdvanceTextPrompt" type="RichTextLabel" parent="."]
-z_index = 2
+z_index = 1
 layout_mode = 0
 offset_left = 953.0
 offset_top = 595.0

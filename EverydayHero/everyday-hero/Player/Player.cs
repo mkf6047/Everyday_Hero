@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		playerSprite = (AnimatedSprite2D)GetNode("PlayerSpriteAni");
-		this.Position = PlayerStats.Instance.playerLocation;
+		//this.Position = PlayerStats.Instance.playerLocation;
     }
 
 	public void GetInput()

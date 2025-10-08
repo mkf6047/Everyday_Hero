@@ -32,6 +32,7 @@ collision_mask = 0
 polygon = PackedVector2Array(-20, -20, 1172, -20, 1172, 668, -20, 668, -20, -20, 0, 0, 0, 648, 1152, 648, 1152, 0, 0, 0)
 
 [node name="ExitBuilding" type="Area2D" parent="."]
+z_index = 2
 position = Vector2(576, 618)
 collision_layer = 0
 script = ExtResource("1_qen5a")
@@ -44,11 +45,8 @@ self_modulate = Color(1, 1, 1, 0.588235)
 scale = Vector2(2, 2)
 texture = ExtResource("3_y5uyc")
 
-[node name="Player" parent="." instance=ExtResource("2_k0e2o")]
-position = Vector2(575, 491)
-
 [node name="Carpet" type="Sprite2D" parent="."]
-z_index = -1
+z_index = 1
 texture_repeat = 2
 position = Vector2(576, 408)
 texture = ExtResource("3_8suwj")
@@ -56,7 +54,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 192, 480)
 
 [node name="WoodFloor" type="Sprite2D" parent="."]
-z_index = -2
 texture_repeat = 2
 position = Vector2(576, 324)
 texture = ExtResource("4_r2e52")
@@ -97,6 +94,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_f4dv8")
 region_enabled = true
 region_rect = Rect2(0, 0, 96, 96)
+
+[node name="Player" parent="." instance=ExtResource("2_k0e2o")]
+z_index = 2
+position = Vector2(1100, 200)
 
 [node name="StairRailing" type="RigidBody2D" parent="."]
 collision_layer = 2

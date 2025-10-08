@@ -77,13 +77,13 @@ process_mode = 3
 
 [node name="DialougeOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("6_6ysni")]
 process_mode = 3
-z_index = 5
+z_index = 7
 
 [node name="PauseMenu" parent="PlayerBody2D/Overlays" instance=ExtResource("8_s1rgi")]
 process_mode = 3
 z_index = 10
 
 [node name="TutorialOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("9_j23h2")]
-z_index = 6
+z_index = 5
 
 [node name="AreaNoticeOverlay" parent="PlayerBody2D/Overlays" instance=ExtResource("12_5wa8t")]

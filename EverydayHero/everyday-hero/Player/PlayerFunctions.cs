@@ -31,9 +31,10 @@ public partial class PlayerFunctions : Node2D
         timer += delta;
         if (talking)
         {
-            if (Input.IsActionJustPressed("Interact") && timer > 1.5)
+            if (Input.IsActionJustPressed("Interact") && timer > 0.5)
             {
                 AdvanceTextbox();
+                timer = 0.0;
             }
         }
     }

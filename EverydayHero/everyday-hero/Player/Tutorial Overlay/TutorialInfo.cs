@@ -97,7 +97,7 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if (currentLine <= tutorialLines[0].Count - 2)
+            if (currentLine <= tutorialLines[0].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[0][currentLine]);
                 if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
@@ -276,6 +276,7 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
+            if(canComplete && Input.IsActionJustPressed("cancel")){ tutorialCondition = true; }
             //tutorial processing goes here!!!!
         }
         if (Math.Abs(delta - 0.0) < epsilon)
@@ -285,10 +286,10 @@ public partial class TutorialInfo : Node
             tutorialCondition = false;
             canComplete = false;
         }
-        else if (Input.IsActionJustPressed("cancel"))
+        else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if (currentLine <= tutorialLines[4].Count - 2)
+            if (currentLine <= tutorialLines[4].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[4][currentLine]);
                 if(currentLine == tutorialLines[4].Count - 1){ canComplete = true; }
@@ -313,6 +314,7 @@ public partial class TutorialInfo : Node
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
         {
             tutorialCount = tutorialNum;
+            canComplete = false; tutorialCondition = false;
             CallTutorial(tutorialCount);
         }
     }   //do not put any tutorials after this function

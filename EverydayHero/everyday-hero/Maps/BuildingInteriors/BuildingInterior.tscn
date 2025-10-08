@@ -36,7 +36,6 @@ script = ExtResource("1_rnaj1")
 shape = SubResource("RectangleShape2D_vpuan")
 
 [node name="Player" parent="." instance=ExtResource("2_qmvl8")]
-visible = false
 position = Vector2(576, 324)
 
 [node name="Carpet" type="Sprite2D" parent="."]

@@ -8,7 +8,6 @@ public partial class ToF1 : Area2D
         try         //if the item is a player, transition to exterior
         {
             Player player = (Player)body;           //checks colliding item is a player
-            PlayerStats.Instance.isInside = false;  //change bool signifying interior or exterior
             GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/PlayerHouseInterior/PlayerHouseInterior.tscn");   //load new map
         }
         catch   //if not a player, output error & what collided.
