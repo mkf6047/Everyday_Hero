@@ -277,6 +277,7 @@ texture = ExtResource("10_18a2g")
 flip_h = true
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("20_soa40")]
+z_index = 10
 
 [connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Delay" to="Delay" method="OnArea2DBodyExited"]

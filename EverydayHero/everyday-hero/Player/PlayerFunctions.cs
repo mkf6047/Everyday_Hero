@@ -128,7 +128,7 @@ public partial class PlayerFunctions : Node2D
     {
         dialouge.EndText();
         talking = false;
-        isBusy = false;
+        CallDeferred("NotBusy");
         dialougeLine = 0;
         if (!isShop)
         {
@@ -145,5 +145,9 @@ public partial class PlayerFunctions : Node2D
     public void SetSell()
     {
         shopOverlay.SetSellInventory(PlayerStats.Instance.inventory, PlayerStats.Instance.inventoryPrice);
+    }
+    public void NotBusy()
+    {
+        isBusy = false;
     }
 }

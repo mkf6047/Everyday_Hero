@@ -13,8 +13,6 @@ public partial class QuestSortingScene : Node2D
 
     ClassAndRank displayClassRank;
 
-    
-
     bool readyComplete, calculateOnce, allPartiesSorted = false;
 
     int numofquest = 0;
@@ -65,7 +63,7 @@ public partial class QuestSortingScene : Node2D
 
     public override void _Process(double delta)
     {
-        if ((numofquest <= 0) && readyComplete && allPartiesSorted)
+        if ((numofquest <= 0) && readyComplete)
         {
             if (calculateOnce) { return; }
             if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
@@ -78,17 +76,16 @@ public partial class QuestSortingScene : Node2D
             else if (PlayerStats.Instance.QuestsSorted >= 20 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 3)) { PlayerStats.Instance.Rank = "D"; }
             else if (PlayerStats.Instance.QuestsSorted >= 10 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 2)) { PlayerStats.Instance.Rank = "E"; }
             PlayerStats.Instance.isInside = true;
-            resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";" +
-                                            QSSTracker.Instance.delayedQuests + ";" +
-                                            QSSTracker.Instance.rejectedQuests + ";" +
-                                            QSSTracker.Instance.rewards + ";");
+            resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";\n" +
+                                            QSSTracker.Instance.delayedQuests + ";\n" +
+                                            QSSTracker.Instance.rejectedQuests + ";\n" +
+                                            QSSTracker.Instance.rewards + ";\n");
             calculateOnce = true;
+            if (Input.IsActionJustPressed("Interact")) { GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn"); }
         }
-        if ((numofquest <= 0) && (currentParty >= (partiesApplying - 1)) && readyComplete)
+        if (currentParty > partiesApplying - 1)
         {
-            currentParty++;
-            GenerateQuests();
-            displayClassRank.LoadNextParty(currentParty);
+            allPartiesSorted = true;
         }
     }
 
@@ -101,6 +98,12 @@ public partial class QuestSortingScene : Node2D
             quest.Position = new Vector2((i + 1) * 200, 300);
             AddQuest(quest);
         }
+    }
+
+    public void NewParty()
+    {
+        currentParty++;
+        displayClassRank.LoadNextParty(currentParty);
     }
 
     public void AddQuest(MoveableQuest quest)

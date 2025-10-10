@@ -24,6 +24,7 @@ public partial class AcceptQuest : Area2D
                     QSSTracker.Instance.acceptedQuests++;
                     QSSTracker.Instance.rewards += quest.questReward;
                     manager.RemoveQuest(quest);
+                    manager.NewParty();
                 }
             }
         }

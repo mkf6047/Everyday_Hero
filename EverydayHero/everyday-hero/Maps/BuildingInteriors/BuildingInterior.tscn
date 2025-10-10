@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bih5jqpk1bktm"]
+[gd_scene load_steps=14 format=3 uid="uid://bih5jqpk1bktm"]
 
 [ext_resource type="Script" uid="uid://b5xrk06lgfch1" path="res://Maps/BuildingInteriors/BuildingInteriorTutorial.cs" id="1_43032"]
 [ext_resource type="Script" uid="uid://c6fnpk0gqeq03" path="res://Maps/BuildingInteriors/ExitBuilding.cs" id="1_rnaj1"]
@@ -16,6 +16,9 @@ size = Vector2(40, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xeip2"]
 size = Vector2(128, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esur2"]
+size = Vector2(100, 200)
 
 [node name="BuildingInterior" type="Node2D"]
 script = ExtResource("1_43032")
@@ -72,6 +75,11 @@ script = ExtResource("7_43032")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvestmentCenter/InvestInteract"]
 shape = SubResource("RectangleShape2D_xeip2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="InvestmentCenter"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvestmentCenter/RigidBody2D"]
+shape = SubResource("RectangleShape2D_esur2")
 
 [node name="StaticNPC" parent="." instance=ExtResource("9_esur2")]
 position = Vector2(407, 108)
