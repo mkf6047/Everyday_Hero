@@ -17,6 +17,9 @@ public partial class Load : Button
         using (var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read))
         {
             string content = file.GetLine();
+            if(content == "-"){ return; }
+            PlayerStats.Instance.PlayerName = content;
+            content = file.GetLine();
             PlayerStats.Instance.Coins = int.Parse(content);
             content = file.GetLine();
             PlayerStats.Instance.Playtime = float.Parse(content);

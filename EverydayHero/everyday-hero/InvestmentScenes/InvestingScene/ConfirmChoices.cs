@@ -11,5 +11,6 @@ public partial class ConfirmChoices : Button
     public void Clicked()
     {
         GetTree().ChangeSceneToFile("res://Maps/BuildingInteriors/BuildingInterior.tscn");
+        if(InvestmentBenefits.Instance.firstInvest){ InvestmentBenefits.Instance.firstInvest = false; }
     }
 }

@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdm10lkjgrd7l"]
+
+[ext_resource type="Script" uid="uid://cdxnhw0b1n2qp" path="res://Maps/Menus/ConfirmName.cs" id="1_ig5ih"]
+
+[node name="NamingPlayer" type="Node2D"]
+
+[node name="Prompt" type="RichTextLabel" parent="."]
+offset_top = 30.0
+offset_right = 1152.0
+offset_bottom = 70.0
+bbcode_enabled = true
+text = "[center][font_size=22]What is your name?"
+
+[node name="PlayerName" type="LineEdit" parent="."]
+offset_left = 380.0
+offset_top = 90.0
+offset_right = 620.0
+offset_bottom = 122.0
+placeholder_text = "Type name here"
+max_length = 16
+
+[node name="ButtonGenerator" type="Node2D" parent="."]
+position = Vector2(100, 160)
+
+[node name="ConfirmName" type="Button" parent="."]
+offset_left = 660.0
+offset_top = 90.0
+offset_right = 782.0
+offset_bottom = 121.0
+text = "Confirm Name"
+script = ExtResource("1_ig5ih")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)

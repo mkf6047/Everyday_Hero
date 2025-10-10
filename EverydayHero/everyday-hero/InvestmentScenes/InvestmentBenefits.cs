@@ -6,6 +6,7 @@ public partial class InvestmentBenefits : Node
     public static InvestmentBenefits Instance;
     private string loadFile = "";
     public Godot.Collections.Dictionary<string, int> buildingLevels;
+    public bool firstInvest = true;
 
     public string LoadFile
     {

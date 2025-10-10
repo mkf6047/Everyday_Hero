@@ -47,3 +47,21 @@ offset_right = 1113.0
 offset_bottom = 635.0
 bbcode_enabled = true
 text = "[font_size=12][center]Press Z/enter to continue"
+
+[node name="Nameplate" type="RichTextLabel" parent="."]
+z_index = 1
+offset_left = 64.0
+offset_top = 406.0
+offset_right = 224.0
+offset_bottom = 446.0
+bbcode_enabled = true
+text = "sample"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Namebox" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(144, 425)
+rotation = 1.5708
+scale = Vector2(1.5, 1)
+texture = ExtResource("3_fsc1l")

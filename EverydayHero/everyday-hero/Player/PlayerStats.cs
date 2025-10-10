@@ -8,6 +8,7 @@ public partial class PlayerStats : Node
     private int questsSorted = 0;
     private double playtime = 0;
     private string rank = "Unemployed";
+    private string playerName = "-";
     private bool isPlaying = false;
     public bool isInside = false;
     public Godot.Collections.Array<string> inventory;
@@ -44,13 +45,19 @@ public partial class PlayerStats : Node
         get { return isPlaying; }
         set { isPlaying = value; }
     }
+    
+    public string PlayerName
+    {
+        get { return playerName; }
+        set { playerName = value; }
+    }
 
 
     public override void _Ready()
     {
         inventory = new Godot.Collections.Array<string>();
         inventoryPrice = new Godot.Collections.Array<int>();
-        playerLocation = new Vector2(0,0);
+        playerLocation = new Vector2(0, 0);
         Instance = this;
     }
     public override void _Process(double delta)

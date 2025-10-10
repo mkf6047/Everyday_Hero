@@ -2,9 +2,14 @@ using Godot;
 using System;
 using System.Linq;
 
-public partial class TitleScreen : Node2D
+public partial class Yes : Button
 {
     public override void _Ready()
+    {
+        this.Pressed += Clicked;
+    }
+
+    public void Clicked()
     {
         string save1 = "user://save_game_1.dat";
         string save2 = "user://save_game_2.dat";
@@ -12,23 +17,8 @@ public partial class TitleScreen : Node2D
         InitSaveFiles(save1);
         InitSaveFiles(save2);
         InitSaveFiles(save3);
-
-        base._Ready();
     }
-
-    //press Interact Button (Z or Enter) to move to the save files
-    public override void _Process(double delta)
-    {
-        base._Process(delta);
-        if (Input.IsActionPressed("Interact"))
-        {
-            GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/LoadType.tscn");
-        }
-        if (Input.IsActionPressed("cancel"))
-        {
-            GetTree().Quit();
-        }
-    }
+    
     private void InitSaveFiles(string filepath)
     {
         if (!FileAccess.FileExists(filepath))

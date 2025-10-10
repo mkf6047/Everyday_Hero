@@ -69,14 +69,14 @@ public partial class QuestData : Node2D
         }
         randomNum = GD.RandRange(0, questsToChoose.Count - 1);
         if(randomNum < 0){ randomNum = 0; }
-        GD.Print(randomNum);
+        //GD.Print(randomNum);
         using (var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + randomQuestType + "/" + questsToChoose[randomNum] + ".txt", FileAccess.ModeFlags.Read))
         {
             questLabel.AppendText("[center][color=black]" + file.GetLine());
             questDescription.AppendText("[color=black]" + file.GetLine());
             questRank.AppendText("[color=black]Rank: " + file.GetLine());
             string value = file.GetLine();
-            questValue.AddText("" + value);
+            questValue.AppendText("[color=black]" + value);
             MoveableQuest parent = (MoveableQuest)GetParent();
             parent.questReward = value.ToInt();
         }

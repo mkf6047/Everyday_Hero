@@ -22,6 +22,7 @@ public partial class SaveText : RichTextLabel
     // }
     public void ResetText()
     {
+        string name = "-";
         string coins = "0";
         string playtime = "0";
         string rank = "Unemployed";
@@ -29,14 +30,21 @@ public partial class SaveText : RichTextLabel
         {
             if (file.IsOpen())
             {
+                name = file.GetLine();
                 coins = file.GetLine();
                 playtime = file.GetLine();
                 rank = file.GetLine();
             }
             file.Close();
         }
+        if (name == "-")
+        {
+            this.Text = "no data to load!";
+            return;
+        }
         this.Text =
-        "Playtime: " + playtime +
+        "Name: " + name +
+        "\nPlaytime: " + playtime +
         "\nRank: " + rank +
         "\nCoins: " + coins;
     }
