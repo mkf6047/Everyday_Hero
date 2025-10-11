@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=29 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -19,7 +19,9 @@
 [ext_resource type="Script" uid="uid://3nneh3hpe5j1" path="res://QuestSorting/ClosePartyInfo.cs" id="16_0ut16"]
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
+[ext_resource type="Script" uid="uid://b3oy871merbc2" path="res://QuestSorting/CharacterInfo.cs" id="20_qvrdk"]
 [ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="20_soa40"]
+[ext_resource type="Script" uid="uid://rpcatfysos27" path="res://QuestSorting/ClassInformation.cs" id="21_b74tf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -254,10 +256,15 @@ script = ExtResource("16_0ut16")
 
 [node name="CharacterInfo1" type="Area2D" parent="PartyInformation/Class&Rank"]
 position = Vector2(480, 225)
+script = ExtResource("20_qvrdk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/Class&Rank/CharacterInfo1"]
 z_index = 3
 shape = SubResource("RectangleShape2D_soa40")
+
+[node name="ClassInformation" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo1"]
+position = Vector2(-480, -225)
+script = ExtResource("21_b74tf")
 
 [node name="CharacterInfo2" type="Area2D" parent="PartyInformation/Class&Rank"]
 position = Vector2(480, 256)
