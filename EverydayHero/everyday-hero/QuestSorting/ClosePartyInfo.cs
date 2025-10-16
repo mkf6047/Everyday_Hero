@@ -3,16 +3,16 @@ using System;
 
 public partial class ClosePartyInfo : Button
 {
-    Node2D parent;
-    public override void _Ready()
-    {
-        parent = (Node2D)GetParent();
-        this.Pressed += Clicked;
-    }
+	Control parent;
+	public override void _Ready()
+	{
+		parent = (Control)GetParent();
+		this.Pressed += Clicked;
+	}
 
-    public void Clicked()
-    {
-        parent.Hide();
-    }
+	public void Clicked()
+	{
+		parent.Hide();
+	}
 
 }

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ClassAndRank : Node2D
+public partial class ClassAndRank : Control
 {
 	RichTextLabel textbox, rankDisplay;
 	LeaderSprite leaderSprite;
