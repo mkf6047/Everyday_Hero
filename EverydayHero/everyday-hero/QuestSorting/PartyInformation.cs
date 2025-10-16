@@ -3,12 +3,12 @@ using System;
 
 public partial class PartyInformation : Node2D
 {
-    RichTextLabel leaderSpeech;
+	RichTextLabel leaderSpeech;
 
 
-    public override void _Ready()
-    {
-        
-    }
+	public override void _Ready()
+	{
+		
+	}
 
 }
