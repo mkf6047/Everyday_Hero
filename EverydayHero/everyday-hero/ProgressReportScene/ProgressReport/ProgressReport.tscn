@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://hsuwry2j43hj"]
+
+[ext_resource type="Script" uid="uid://cqk3os8ce4qow" path="res://ProgressReportScene/ProgressReport/MovingProgressReport.cs" id="1_d28lk"]
+[ext_resource type="Texture2D" uid="uid://c6atyep8si700" path="res://Sprites/QuestSprites/QuestPaper.png" id="2_floxv"]
+[ext_resource type="Script" uid="uid://brps0gjh21jj" path="res://ProgressReportScene/ProgressReport/ProgressData.cs" id="3_d28lk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tebf4"]
+size = Vector2(160, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w37uj"]
+size = Vector2(160, 256)
+
+[node name="ProgressReport" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 16
+script = ExtResource("1_d28lk")
+
+[node name="QuestSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_floxv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tebf4")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_w37uj")
+
+[node name="ProgressData" type="Node2D" parent="."]
+script = ExtResource("3_d28lk")
+
+[node name="QuestProgress" type="RichTextLabel" parent="ProgressData"]
+offset_left = -60.0
+offset_top = -120.0
+offset_right = 60.0
+offset_bottom = 120.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center][color=black]"
+scroll_active = false
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="Area2D" to="." method="MouseEnter"]
+[connection signal="mouse_exited" from="Area2D" to="." method="MouseExit"]

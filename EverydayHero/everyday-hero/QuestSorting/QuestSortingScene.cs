@@ -9,6 +9,8 @@ public partial class QuestSortingScene : Node2D
 
 	PackedScene questPreload = GD.Load<PackedScene>("res://QuestSorting/Random_Quest/RandomQuest.tscn");
 
+	LeaderSprite currentHeroSprite;
+
 	QssResults resultsDisplay;
 	
 	Node2D questHolder;
@@ -19,6 +21,7 @@ public partial class QuestSortingScene : Node2D
 
 	int numofquest = 0;
 	int partiesApplying, currentParty = 0;
+	int currentHero = 1;
 
 	public override void _Ready()
 	{
@@ -57,8 +60,9 @@ public partial class QuestSortingScene : Node2D
 		}
 		resultsDisplay = (QssResults)GetNode("QSSResults");
 		displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
+		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
 		GenerateQuests();
-		displayClassRank.LoadNextParty(currentParty);
+		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
 		TutorialInfo.Instance.ActivateTutorial(3);
@@ -103,11 +107,11 @@ public partial class QuestSortingScene : Node2D
 		}
 	}
 
-	public void NewParty()
-	{
-		currentParty++;
-		displayClassRank.LoadNextParty(currentParty);
-	}
+	// public void NewParty()
+	// {
+	// 	currentParty++;
+	// 	displayClassRank.LoadNextParty(currentParty);
+	// }
 
 	public void AddQuest(MoveableQuest quest)
 	{
@@ -136,4 +140,33 @@ public partial class QuestSortingScene : Node2D
 		quest.QueueFree();
 		numofquest--;
 	}
+
+	public void ChangeActiveHero(int change)
+    {
+		currentHero = change;
+		switch (change)
+			{
+				case 1:
+					currentHeroSprite.ReplaceSprite("Knight");
+					break;
+				case 2:
+					currentHeroSprite.ReplaceSprite("Cleric");
+					break;
+				case 3:
+					currentHeroSprite.ReplaceSprite("Mage");
+					break;
+				case 4:
+					currentHeroSprite.ReplaceSprite("Monk");
+					break;
+				case 5:
+					currentHeroSprite.ReplaceSprite("Ranger");
+					break;
+				case 6:
+					currentHeroSprite.ReplaceSprite("Rogue");
+					break;
+				default:
+					currentHeroSprite.ReplaceSprite("Knight");
+					break;
+			}
+    }
 }

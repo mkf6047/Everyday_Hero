@@ -50,6 +50,7 @@ text = "[font_size=12][center]Press Z/enter to continue"
 
 [node name="Nameplate" type="RichTextLabel" parent="."]
 z_index = 1
+layout_mode = 0
 offset_left = 64.0
 offset_top = 406.0
 offset_right = 224.0

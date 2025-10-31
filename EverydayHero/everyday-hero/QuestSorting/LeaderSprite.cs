@@ -39,7 +39,7 @@ public partial class LeaderSprite : Sprite2D
                 this.Texture = ranTex;
                 break;
             default:
-                this.Texture = kniTex;
+                GD.Print("Error: Invalid Sprite");
                 break;
         }
     }

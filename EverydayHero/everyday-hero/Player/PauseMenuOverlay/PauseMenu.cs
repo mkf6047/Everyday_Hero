@@ -9,14 +9,16 @@ public partial class PauseMenu : Control
     public override void _Ready()
     {
         this.Hide();
-        playerFunctions = (PlayerFunctions)GetNode("../../../");
+        //playerFunctions = (PlayerFunctions)GetNode("../../../");
         base._Ready();
     }
 
     public override void _Process(double delta)
     {
-        if(!playerFunctions.IsBusy){ timer += delta; } else if(timer > 1.0){ timer = 0.0; }
-        if (Input.IsActionJustPressed("cancel") && (!playerFunctions.IsBusy) && (timer > 0.5))
+        //if(!playerFunctions.IsBusy){ timer += delta; } else
+        timer += delta;
+        if (timer > 1.0) { timer = 0.0; }
+        if (Input.IsActionJustPressed("cancel") /*&& (!playerFunctions.IsBusy)*/ && (timer > 0.5))
         {
             if (isMenuOpen)
             {

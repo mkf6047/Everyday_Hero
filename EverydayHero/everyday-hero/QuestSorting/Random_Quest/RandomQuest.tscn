@@ -38,7 +38,7 @@ offset_right = 50.0
 offset_bottom = -60.0
 mouse_filter = 1
 bbcode_enabled = true
-text = "[center][color=black]VIP to Walla Village"
+text = "[center][color=black]"
 scroll_active = false
 autowrap_mode = 2
 

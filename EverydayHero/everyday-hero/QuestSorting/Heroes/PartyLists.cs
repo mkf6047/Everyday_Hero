@@ -9,6 +9,9 @@ public partial class PartyLists : Node
 	public override void _Ready()
 	{
 		parties = new Godot.Collections.Array<Godot.Collections.Array<HeroStats>>();
+		Godot.Collections.Array<HeroStats> newParty = new Godot.Collections.Array<HeroStats>();
+		MakeStaticParty();
+
 		Instance = this;    //last line of function
 	}
 
@@ -23,24 +26,31 @@ public partial class PartyLists : Node
 			{
 				case 0:
 					newPartyMember.heroClass = "Knight";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Front.png");
 					break;
 				case 1:
 					newPartyMember.heroClass = "Mage";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Wizard-Front.png");
 					break;
 				case 2:
 					newPartyMember.heroClass = "Monk";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Monk-Front.png");
 					break;
 				case 3:
 					newPartyMember.heroClass = "Rogue";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Rogue-Front.png");
 					break;
 				case 4:
 					newPartyMember.heroClass = "Cleric";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Healer-Front.png");
 					break;
 				case 5:
 					newPartyMember.heroClass = "Ranger";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Ranger-Front.png");
 					break;
 				default:
 					newPartyMember.heroClass = "Knight";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Front.png");
 					break;
 			}
 			rand = GD.RandRange(0, 99);
@@ -51,6 +61,50 @@ public partial class PartyLists : Node
 			else if (rand >= 60) { newPartyMember.heroRank = "D"; }
 			else if (rand >= 45) { newPartyMember.heroRank = "E"; }
 			else { newPartyMember.heroRank = "F"; }
+			newParty.Add(newPartyMember);
+		}
+		parties.Add(newParty);
+	}
+	
+
+	public void MakeStaticParty()
+	{
+		Godot.Collections.Array<HeroStats> newParty = new Godot.Collections.Array<HeroStats>();
+		for (int i = 0; i <= 5; i++)
+		{
+			HeroStats newPartyMember = new HeroStats();
+			switch (i)
+			{
+				case 0:
+					newPartyMember.heroClass = "Knight";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Front.png");
+					break;
+				case 1:
+					newPartyMember.heroClass = "Cleric";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Healer-Front.png");
+					break;
+				case 2:
+					newPartyMember.heroClass = "Mage";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Wizard-Front.png");
+					break;
+				case 3:
+					newPartyMember.heroClass = "Monk";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Monk-Front.png");
+					break;
+				case 4:
+					newPartyMember.heroClass = "Ranger";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Ranger-Front.png");
+					break;
+				case 5:
+					newPartyMember.heroClass = "Rogue";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Rogue-Front.png");
+					break;
+				default:
+					newPartyMember.heroClass = "Knight";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Front.png");
+					break;
+			}
+			newPartyMember.heroRank = "F";
 			newParty.Add(newPartyMember);
 		}
 		parties.Add(newParty);

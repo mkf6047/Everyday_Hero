@@ -34,7 +34,7 @@ public partial class QuestData : Node2D
                     else
                     {
                         questlist.Add(fileLine, questType);
-                        GD.Print(questlist[fileLine]);
+                        //GD.Print(questlist[fileLine]);
                     }
                 }
             }

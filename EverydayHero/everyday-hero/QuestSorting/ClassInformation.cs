@@ -4,8 +4,11 @@ using System;
 public partial class ClassInformation : Node2D
 {
 	RichTextLabel textbox;
+	CharacterInfo charInfo;
 	public override void _Ready(){
 		textbox = (RichTextLabel)GetNode("ClassInfoTextbox");
+		charInfo = (CharacterInfo)GetParent();
+		UpdateCharInfo(PartyLists.Instance.parties[0][charInfo.charOrder - 1].heroClass);
 		this.Hide();
 	}
 	
@@ -30,7 +33,7 @@ public partial class ClassInformation : Node2D
 				textbox.AppendText("- Due to energy expended, the party takes longer to recover after a quest.");
 				textbox.AppendText("- Lowers the chance of complications occuring during quests.");
 				break;
-			case "Rouge":
+			case "Rogue":
 				textbox.AppendText("- Able to disarm traps and complex mechanisms");
 				textbox.AppendText("- Lighter armour leads to heavier injuries, party takes longer to recover after a quest");
 				textbox.AppendText("- Able to identify and discover monetary spoils.");

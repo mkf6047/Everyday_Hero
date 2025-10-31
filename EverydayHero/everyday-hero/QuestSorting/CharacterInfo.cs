@@ -4,28 +4,38 @@ using System;
 public partial class CharacterInfo : Area2D
 {
 	[Export]
-	int charOrder = 0;
+	public int charOrder = 0;
 	public int partySize = 6;
 	ClassInformation classInfo;
+	QuestSortingScene scene;
+	bool mouseIn = false;
 	public override void _Ready()
 	{
 		classInfo = (ClassInformation)GetNode("ClassInformation2");
+		scene = (QuestSortingScene)GetNode("../../../");
 	}
+
+    public override void _Process(double delta)
+    {
+        if (Input.IsMouseButtonPressed(MouseButton.Left) && mouseIn)
+        {
+			scene.ChangeActiveHero(charOrder);
+        }
+    }
+
 	public void updateInfo(string questerClass)
 	{
 		classInfo.UpdateCharInfo(questerClass);
 	}
 	public void MouseEnter()
 	{
-		if (charOrder <= partySize)
-		{
-			GD.Print("enter");
-			classInfo.Show();
-		}
+		classInfo.Show();
+		mouseIn = true;
 	}
 	public void MouseExit()
 	{
 		classInfo.Hide();
-		GD.Print("exit");
+		mouseIn = false;
+		//GD.Print("exit");
 	}
 }
