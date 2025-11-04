@@ -1,5 +1,6 @@
 -Collection
 Gather Folly Herbs
+Recover Purse
 -Complex
 Unlock Our Vault
 -Conquest

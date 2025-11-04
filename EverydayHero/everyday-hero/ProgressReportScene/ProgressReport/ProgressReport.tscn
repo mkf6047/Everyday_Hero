@@ -33,7 +33,7 @@ script = ExtResource("3_d28lk")
 
 [node name="QuestProgress" type="RichTextLabel" parent="ProgressData"]
 offset_left = -60.0
-offset_top = -120.0
+offset_top = -80.0
 offset_right = 60.0
 offset_bottom = 120.0
 mouse_filter = 1
@@ -41,6 +41,14 @@ bbcode_enabled = true
 text = "[center][color=black]"
 scroll_active = false
 autowrap_mode = 2
+
+[node name="QuesterName" type="RichTextLabel" parent="ProgressData"]
+offset_left = -60.0
+offset_top = -120.0
+offset_right = 60.0
+offset_bottom = -80.0
+bbcode_enabled = true
+text = "[center][color=black]"
 
 [connection signal="mouse_entered" from="Area2D" to="." method="MouseEnter"]
 [connection signal="mouse_exited" from="Area2D" to="." method="MouseExit"]

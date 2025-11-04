@@ -3,9 +3,12 @@ using System;
 
 public partial class MovingProgressReport : CharacterBody2D
 {
+    [Export]
+    string QuesterName;
 	Sprite2D sprite;
 	Vector2 newPosition;
-	Vector2 dir;
+    Vector2 dir;
+    ProgressData data;
 	float draggingDistance;
 	bool dragging;
 	bool mouseIn = false;
@@ -17,7 +20,39 @@ public partial class MovingProgressReport : CharacterBody2D
 	}
 	public override void _Ready()
 	{
-		sprite = (Sprite2D)GetNode("QuestSprite");
+        sprite = (Sprite2D)GetNode("QuestSprite");
+        data = (ProgressData)GetNode("ProgressData");
+        switch (QuesterName)
+        {
+            case "Knight":
+				data.UpdateName("Allistrad von Leopold");
+				if(!PartyLists.Instance.parties[0][0].onQuest){ this.Hide(); }
+				break;
+			case "Mage":
+                data.UpdateName("Lucy Fern");
+				if(!PartyLists.Instance.parties[0][2].onQuest){ this.Hide(); }
+				break;
+			case "Monk":
+                data.UpdateName("Rashao Kahan");
+				if(!PartyLists.Instance.parties[0][3].onQuest){ this.Hide(); }
+				break;
+			case "Rogue":
+                data.UpdateName("Jack Decker");
+				if(!PartyLists.Instance.parties[0][5].onQuest){ this.Hide(); }
+				break;
+			case "Cleric":
+                data.UpdateName("Rosalind Deacon");
+				if(!PartyLists.Instance.parties[0][1].onQuest){ this.Hide(); }
+				break;
+			case "Ranger":
+                data.UpdateName("Thornton Breyer");
+				if(!PartyLists.Instance.parties[0][4].onQuest){ this.Hide(); }
+				break;
+            default:
+                data.UpdateName("unknown");
+				if(!PartyLists.Instance.parties[0][0].onQuest){ this.Hide(); }
+				break;
+        }
 	}
 	public override void _Input(InputEvent @event)
 	{

@@ -4,13 +4,15 @@ using System;
 public partial class MoveableQuest : CharacterBody2D
 {
 	Sprite2D sprite;
+	QuestData data;
 	Vector2 newPosition;
 	Vector2 dir;
 	float draggingDistance;
 	bool dragging;
 	bool mouseIn = false;
 	public bool chosen = false;
-	public int questReward = 0;
+	public int questReward, questDuration = 0;
+	public string questName, questType, questRank = "";
 	public bool Dragging
 	{
 		get { return dragging; }
@@ -18,6 +20,7 @@ public partial class MoveableQuest : CharacterBody2D
 	public override void _Ready()
 	{
 		sprite = (Sprite2D)GetNode("QuestSprite");
+		data = (QuestData)GetNode("QuestData");
 	}
 	public override void _Input(InputEvent @event)
 	{

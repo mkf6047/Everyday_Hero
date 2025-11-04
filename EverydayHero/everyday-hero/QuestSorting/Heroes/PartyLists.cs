@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class PartyLists : Node
 {
@@ -61,9 +62,9 @@ public partial class PartyLists : Node
 			else if (rand >= 60) { newPartyMember.heroRank = "D"; }
 			else if (rand >= 45) { newPartyMember.heroRank = "E"; }
 			else { newPartyMember.heroRank = "F"; }
-			newParty.Add(newPartyMember);
+			newParty.Append(newPartyMember);
 		}
-		parties.Add(newParty);
+		parties.Append(newParty);
 	}
 	
 

@@ -17,7 +17,7 @@ public partial class CharacterInfo : Area2D
 
     public override void _Process(double delta)
     {
-        if (Input.IsMouseButtonPressed(MouseButton.Left) && mouseIn)
+        if (Input.IsMouseButtonPressed(MouseButton.Left) && mouseIn && !PartyLists.Instance.parties[0][charOrder -1].onQuest)
         {
 			scene.ChangeActiveHero(charOrder);
         }

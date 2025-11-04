@@ -21,7 +21,7 @@ public partial class QuestSortingScene : Node2D
 
 	int numofquest = 0;
 	int partiesApplying, currentParty = 0;
-	int currentHero = 1;
+	public int currentHero = 1;
 
 	public override void _Ready()
 	{
@@ -72,6 +72,7 @@ public partial class QuestSortingScene : Node2D
 	{
 		if ((numofquest <= 0) && readyComplete)
 		{
+			if (Input.IsActionJustPressed("Interact") && calculateOnce) { GetTree().CallDeferred("change_scene_to_file", "res://ProgressReportScene/AllPartyProgressReport.tscn"); }
 			if (calculateOnce) { return; }
 			if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
 			if (PlayerStats.Instance.QuestsSorted >= 440 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 10)) { PlayerStats.Instance.Rank = "SSS"; }
@@ -88,7 +89,6 @@ public partial class QuestSortingScene : Node2D
 											QSSTracker.Instance.rejectedQuests + ";\n" +
 											QSSTracker.Instance.rewards + ";\n");
 			calculateOnce = true;
-			if (Input.IsActionJustPressed("Interact")) { GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn"); }
 		}
 		if (currentParty > partiesApplying - 1)
 		{

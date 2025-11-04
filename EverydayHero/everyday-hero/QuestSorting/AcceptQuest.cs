@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class AcceptQuest : Area2D
 {
@@ -19,7 +20,16 @@ public partial class AcceptQuest : Area2D
 				MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
 				if (!quest.Dragging)
 				{
-					PlayerStats.Instance.Coins += quest.questReward;
+					//PlayerStats.Instance.Coins += quest.questReward;
+					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes.Append(quest.questType);
+					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames.Append(quest.questName);
+					PartyLists.Instance.parties[0][manager.currentHero - 1].completionByRank[quest.questRank] += 1;
+					if (PartyLists.Instance.parties[0][manager.currentHero - 1].daysRemainingOnQuest < quest.questDuration) 
+					{
+						PartyLists.Instance.parties[0][manager.currentHero - 1].daysRemainingOnQuest = quest.questDuration; 
+					}
+					PartyLists.Instance.parties[0][manager.currentHero - 1].questCompletionRewards.Add(quest.questReward);
+					PartyLists.Instance.parties[0][manager.currentHero - 1].onQuest = true;
 					PlayerStats.Instance.QuestsSorted += 1;
 					QSSTracker.Instance.acceptedQuests++;
 					QSSTracker.Instance.rewards += quest.questReward;
@@ -28,9 +38,9 @@ public partial class AcceptQuest : Area2D
 				}
 			}
 		}
-		catch
+		catch (Exception ex)
 		{
-
+			GD.PrintErr("unable to complete process. error: " + ex.Message);
 		}
 	}
 

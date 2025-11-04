@@ -5,7 +5,7 @@ public partial class PlayerStats : Node
 {
     public static PlayerStats Instance { get; private set; }
     private int coins = 0;
-    private int questsSorted = 0;
+    private int questsSorted, daysPassed = 0;
     private double playtime = 0;
     private string rank = "Unemployed";
     private string playerName = "-";
@@ -24,6 +24,11 @@ public partial class PlayerStats : Node
     {
         get { return questsSorted; }
         set { questsSorted = value; }
+    }
+    public int DaysPassed
+    {
+        get { return daysPassed; }
+        set { daysPassed = value; }
     }
     public double Playtime
     {

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 public partial class QuestData : Node2D
 {
-    RichTextLabel questLabel, questValue, questDescription, questRank;
+    RichTextLabel questLabel, questValue, questDescription, questRank, questDuration;
     Dictionary<string, string> questlist;
     //for^^:   quest name, quest type    
-    Godot.Collections.Array<string> questsToChoose;     
+    Godot.Collections.Array<string> questsToChoose;
+
+    MoveableQuest parent;
 
     public override void _Ready()
     {
@@ -15,6 +17,8 @@ public partial class QuestData : Node2D
         questValue = (RichTextLabel)GetNode("QuestValue");
         questDescription = (RichTextLabel)GetNode("QuestDescription");
         questRank = (RichTextLabel)GetNode("QuestRank");
+        questDuration = (RichTextLabel)GetNode("QuestDuration");
+        parent = (MoveableQuest)GetParent();
         questlist = new Dictionary<string, string>();
         questsToChoose = new Godot.Collections.Array<string>();
 
@@ -46,15 +50,19 @@ public partial class QuestData : Node2D
         {
             case 0: //collection
                 randomQuestType = "Collection";
+                this.parent.questType = "Collection";
                 break;
             case 1: //complex
                 randomQuestType = "Complex";
+                this.parent.questType = "Complex";
                 break;
             case 2: //conquest
                 randomQuestType = "Conquest";
+                this.parent.questType = "Conquest";
                 break;
             case 3: //escort
                 randomQuestType = "Escort";
+                this.parent.questType = "Escort";
                 break;
             default:
                 break;
@@ -72,13 +80,27 @@ public partial class QuestData : Node2D
         //GD.Print(randomNum);
         using (var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + randomQuestType + "/" + questsToChoose[randomNum] + ".txt", FileAccess.ModeFlags.Read))
         {
-            questLabel.AppendText("[center][color=black]" + file.GetLine());
-            questDescription.AppendText("[color=black]" + file.GetLine());
-            questRank.AppendText("[color=black]Rank: " + file.GetLine());
             string value = file.GetLine();
-            questValue.AppendText("[color=black]" + value);
+            questLabel.AppendText("[center][color=black]" + value);
+            this.parent.questName = value;
+            value = file.GetLine();
+            questDescription.AppendText("[color=black][font_size=14]" + value);
+            value = file.GetLine();
+            questRank.AppendText("[color=black][font_size=14]Rank:");
+            questRank.Newline();
+            questRank.AppendText(value);
+            this.parent.questRank = value;
+            value = file.GetLine();
+            questValue.AppendText("[color=black]" + value + "G");
+            this.parent.questReward = int.Parse(value);
+            value = file.GetLine();
+            questDuration.AppendText("[font_size=14][color=black][center]Days:");
+            questDuration.Newline();
+            questDuration.AppendText(value);
+            this.parent.questDuration = int.Parse(value);
             MoveableQuest parent = (MoveableQuest)GetParent();
             parent.questReward = value.ToInt();
+            GD.Print("quest information ported sucessfully.");
         }
 
         base._Ready();
