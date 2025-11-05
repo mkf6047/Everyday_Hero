@@ -218,9 +218,9 @@ script = ExtResource("16_udyga")
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 6
 layout_mode = 0
-offset_left = 204.0
+offset_left = 134.0
 offset_top = 180.0
-offset_right = 454.0
+offset_right = 384.0
 offset_bottom = 420.0
 mouse_filter = 2
 bbcode_enabled = true
@@ -235,13 +235,30 @@ Jack Decker"
 [node name="RankDisplay" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 8
 layout_mode = 0
-offset_left = 574.0
+offset_left = 484.0
 offset_top = 180.0
-offset_right = 774.0
+offset_right = 684.0
 offset_bottom = 420.0
 mouse_filter = 2
 bbcode_enabled = true
 text = "[font_size=22]Adventurer Rank:
+Rank: 
+Rank: 
+Rank: 
+Rank: 
+Rank: 
+Rank:"
+
+[node name="In-Out" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
+z_index = 8
+layout_mode = 0
+offset_left = 704.0
+offset_top = 180.0
+offset_right = 904.0
+offset_bottom = 420.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font_size=22]Status:
 Rank: 
 Rank: 
 Rank: 
@@ -286,7 +303,7 @@ shape = SubResource("RectangleShape2D_soa40")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo1"]
 z_index = 7
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo1/ClassInformation2"]
@@ -337,7 +354,7 @@ shape = SubResource("RectangleShape2D_qvrdk")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo2"]
 z_index = 9
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo2/ClassInformation2"]
@@ -388,7 +405,7 @@ shape = SubResource("RectangleShape2D_b74tf")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo3"]
 z_index = 11
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo3/ClassInformation2"]
@@ -439,7 +456,7 @@ shape = SubResource("RectangleShape2D_oe7wh")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo4"]
 z_index = 13
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo4/ClassInformation2"]
@@ -490,7 +507,7 @@ shape = SubResource("RectangleShape2D_24ced")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo5"]
 z_index = 15
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo5/ClassInformation2"]
@@ -541,7 +558,7 @@ shape = SubResource("RectangleShape2D_2hr8c")
 
 [node name="ClassInformation2" type="Node2D" parent="PartyInformation/Class&Rank/CharacterInfo6"]
 z_index = 15
-position = Vector2(-960, -545)
+position = Vector2(-980, -545)
 script = ExtResource("21_b74tf")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo6/ClassInformation2"]

@@ -3,14 +3,30 @@ using System;
 
 public partial class ClassAndRank : Control
 {
-	RichTextLabel textbox, rankDisplay;
+	RichTextLabel textbox, rankDisplay, isOnQuest;
 	LeaderSprite leaderSprite;
 
 	public override void _Ready()
 	{
 		textbox = (RichTextLabel)GetNode("Textbox");
 		rankDisplay = (RichTextLabel)GetNode("RankDisplay");
+		isOnQuest = (RichTextLabel)GetNode("In-Out");
 		leaderSprite = (LeaderSprite)GetNode("../LeaderSprite");
+
+		rankDisplay.Text = "";
+		isOnQuest.Text = "";
+		rankDisplay.AppendText("[font_size=22]Adventurer Rank:");
+		isOnQuest.AppendText("[font_size=22]Status:");
+
+		for(int i = 0; i < 6; i++)
+        {
+			rankDisplay.Newline();
+			isOnQuest.Newline();
+			rankDisplay.AppendText("Rank: " + PartyLists.Instance.parties[0][i].heroRank);
+			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest"); }
+			else{ isOnQuest.AppendText("Present"); }
+        }
+
 		this.Hide();
 	}
 

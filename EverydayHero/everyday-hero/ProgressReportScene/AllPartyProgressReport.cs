@@ -60,41 +60,12 @@ public partial class AllPartyProgressReport : Node2D
 		numofreports--;
 	}
 
-	public void RemoveQuest(MovingProgressReport report)
+	public void RemoveReport(MovingProgressReport report)
 	{
 		reportStack.Remove(report);
 		reportHolder.RemoveChild(report);
 		report.QueueFree();
 		numofreports--;
 	}
-
-	// public void ChangeActiveHero(int change)
-    // {
-	// 	currentHero = change;
-	// 	switch (change)
-	// 	{
-	// 		case 1:
-	// 			currentHeroSprite.ReplaceSprite("Knight");
-	// 			break;
-	// 		case 2:
-	// 			currentHeroSprite.ReplaceSprite("Cleric");
-	// 			break;
-	// 		case 3:
-	// 			currentHeroSprite.ReplaceSprite("Mage");
-	// 			break;
-	// 		case 4:
-	// 			currentHeroSprite.ReplaceSprite("Monk");
-	// 			break;
-	// 		case 5:
-	// 			currentHeroSprite.ReplaceSprite("Ranger");
-	// 			break;
-	// 		case 6:
-	// 			currentHeroSprite.ReplaceSprite("Rogue");
-	// 			break;
-	// 		default:
-	// 			currentHeroSprite.ReplaceSprite("Knight");
-	// 			break;
-	// 	}
-    // }
 }
 
