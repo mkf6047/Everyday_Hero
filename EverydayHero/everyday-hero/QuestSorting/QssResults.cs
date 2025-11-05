@@ -26,13 +26,15 @@ public partial class QssResults : Node2D
     public void RevealResults(string resultString)
     {
         string[] brokenResults = resultString.Split(';');
-        resultsScreen.Text = "[center]Quests Accepted: " + brokenResults[0];
+        resultsScreen.Text = "";
         resultsScreen.Newline();
-        resultsScreen.Text += "Quests Delayed: " + brokenResults[1];
+        resultsScreen.AppendText("[center]Quests Accepted: " + brokenResults[0]);
         resultsScreen.Newline();
-        resultsScreen.Text += "Quests Rejected: " + brokenResults[2];
+        resultsScreen.AppendText("Quests Delayed: " + brokenResults[1]);
         resultsScreen.Newline();
-        resultsScreen.Text += "Income: " + brokenResults[3];
+        resultsScreen.AppendText("Quests Rejected: " + brokenResults[2]);
+        resultsScreen.Newline();
+        resultsScreen.AppendText("Income: " + brokenResults[3]);
         resultsScreen.Newline();
         this.Show();
     }

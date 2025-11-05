@@ -84,10 +84,10 @@ public partial class QuestSortingScene : Node2D
 			else if (PlayerStats.Instance.QuestsSorted >= 20 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 3)) { PlayerStats.Instance.Rank = "D"; }
 			else if (PlayerStats.Instance.QuestsSorted >= 10 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 2)) { PlayerStats.Instance.Rank = "E"; }
 			PlayerStats.Instance.isInside = true;
-			resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";\n" +
-											QSSTracker.Instance.delayedQuests + ";\n" +
-											QSSTracker.Instance.rejectedQuests + ";\n" +
-											QSSTracker.Instance.rewards + ";\n");
+			resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";" +
+											QSSTracker.Instance.delayedQuests + ";" +
+											QSSTracker.Instance.rejectedQuests + ";" +
+											QSSTracker.Instance.rewards + ";");
 			calculateOnce = true;
 		}
 		if (currentParty > partiesApplying - 1)

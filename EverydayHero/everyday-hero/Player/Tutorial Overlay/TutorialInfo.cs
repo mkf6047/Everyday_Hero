@@ -89,7 +89,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[0][0]);    //replace first 0 with tutorial index
+            overlay.UpdateText(tutorialLines[0][0], "");    //replace first 0 with tutorial index
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -99,7 +99,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[0].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[0][currentLine]);
+                overlay.UpdateText(tutorialLines[0][currentLine], "");
                 if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
@@ -130,7 +130,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[0][0]);
+            overlay.UpdateText(tutorialLines[0][0], PlayerStats.Instance.PlayerName);
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -140,7 +140,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[0].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[0][currentLine]);
+                overlay.UpdateText(tutorialLines[0][currentLine], PlayerStats.Instance.PlayerName);
                 if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
@@ -169,7 +169,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[1][0]);
+            overlay.UpdateText(tutorialLines[1][0], PlayerStats.Instance.PlayerName);
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -179,7 +179,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[1].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[1][currentLine]);
+                overlay.UpdateText(tutorialLines[1][currentLine], PlayerStats.Instance.PlayerName);
                 if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else { canComplete = true; }
@@ -208,7 +208,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[2][0]);
+            overlay.UpdateText(tutorialLines[2][0], "Phillip");
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -218,7 +218,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[2].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[2][currentLine]);
+                overlay.UpdateText(tutorialLines[2][currentLine], "Phillip");
                 if(currentLine == tutorialLines[1].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
@@ -244,7 +244,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[3][0]);
+            overlay.UpdateText(tutorialLines[3][0], "Phillip");
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -254,7 +254,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[3].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[3][currentLine]);
+                overlay.UpdateText(tutorialLines[3][currentLine], "Phillip");
                 if(currentLine == tutorialLines[3].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
@@ -281,7 +281,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[4][0]);    //replace first 0 with tutorial index
+            overlay.UpdateText(tutorialLines[4][0], PlayerStats.Instance.PlayerName);    //replace first 0 with tutorial index
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -291,7 +291,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[4].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[4][currentLine]);
+                overlay.UpdateText(tutorialLines[4][currentLine], PlayerStats.Instance.PlayerName);
                 if(currentLine == tutorialLines[4].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
