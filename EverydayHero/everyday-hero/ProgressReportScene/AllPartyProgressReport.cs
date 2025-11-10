@@ -37,7 +37,10 @@ public partial class AllPartyProgressReport : Node2D
 
 	public override void _Process(double delta)
 	{
-        
+        if(numofreports <= 0)
+        {
+            GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn");
+        }
 	}
 
 	public void AddReport(MovingProgressReport report)

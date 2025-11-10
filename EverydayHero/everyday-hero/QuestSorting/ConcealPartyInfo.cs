@@ -18,7 +18,7 @@ public partial class ConcealPartyInfo : Area2D
     {
         if (mouseIn)
         {
-            if (Input.IsMouseButtonPressed(MouseButton.Left))
+            if (Input.IsActionJustPressed("mouse_click"))
             {
                 classAndRank.Hide();
             }

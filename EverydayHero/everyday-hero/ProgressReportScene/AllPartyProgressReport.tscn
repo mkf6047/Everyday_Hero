@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cfof7ugbjah0m"]
+[gd_scene load_steps=11 format=3 uid="uid://cfof7ugbjah0m"]
 
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="1_nj0hl"]
 [ext_resource type="Script" uid="uid://xmsllh3odeyr" path="res://ProgressReportScene/AllPartyProgressReport.cs" id="1_x2cy7"]
 [ext_resource type="PackedScene" uid="uid://hsuwry2j43hj" path="res://ProgressReportScene/ProgressReport/ProgressReport.tscn" id="2_qgf1u"]
 [ext_resource type="Script" uid="uid://h1w8hdbqd6rs" path="res://ProgressReportScene/ReportGetter.cs" id="2_tjnon"]
-[ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="5_l7gry"]
 [ext_resource type="Script" uid="uid://c83uw6xqqqvci" path="res://ProgressReportScene/ReinforceAdventurer.cs" id="5_wd07a"]
 [ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/QuestSprites/DisposeQuest.png" id="6_wd07a"]
+[ext_resource type="Script" uid="uid://c814u7xie6khw" path="res://ProgressReportScene/ProgressAccepted.cs" id="7_l7gry"]
+[ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="8_wd07a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjnon"]
 
@@ -15,6 +16,9 @@ size = Vector2(64, 64)
 
 [node name="ProgressReport" type="Node2D"]
 script = ExtResource("1_x2cy7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
 
 [node name="ReportGetter" type="Area2D" parent="."]
 collision_layer = 8
@@ -73,16 +77,16 @@ shape = SubResource("RectangleShape2D_6wbnv")
 texture = ExtResource("6_wd07a")
 
 [node name="GoodProgress" type="Area2D" parent="."]
-position = Vector2(766, 50)
+position = Vector2(866, 50)
 collision_layer = 8
 collision_mask = 8
-script = ExtResource("5_l7gry")
+script = ExtResource("7_l7gry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoodProgress"]
 shape = SubResource("RectangleShape2D_6wbnv")
 
 [node name="Sprite2D" type="Sprite2D" parent="GoodProgress"]
-texture = ExtResource("6_wd07a")
+texture = ExtResource("8_wd07a")
 
 [connection signal="body_entered" from="Reinforce" to="Reinforce" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Reinforce" to="Reinforce" method="OnArea2DBodyExited"]
