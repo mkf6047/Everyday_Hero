@@ -10,6 +10,8 @@ public partial class QuitGame : Button
 
     public void Clicked()
     {
-        GetTree().CallDeferred("change_scene_to_file", "res://Maps/Menus/TitleScreen.tscn");
+        GD.Print("it works");
+        GetTree().Paused = false;
+        GetTree().ChangeSceneToFile("res://Maps/Menus/TitleScreen.tscn");
     }
 }

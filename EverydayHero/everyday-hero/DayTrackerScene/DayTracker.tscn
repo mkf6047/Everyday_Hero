@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlmjxj0ksn07f"]
+[gd_scene load_steps=5 format=3 uid="uid://dlmjxj0ksn07f"]
 
 [ext_resource type="Script" uid="uid://bgsdkugr33bn4" path="res://DayTrackerScene/DayTracker.cs" id="1_3ejqq"]
 [ext_resource type="Texture2D" uid="uid://d2u768ui4u2c5" path="res://Sprites/Black_background.png" id="1_av8su"]
 [ext_resource type="Script" uid="uid://dr625u8sa3mny" path="res://DayTrackerScene/DayCount.cs" id="3_v2557"]
+[ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="4_v2557"]
 
 [node name="DayTracker" type="Node2D"]
 script = ExtResource("1_3ejqq")
@@ -31,3 +32,7 @@ offset_right = 1152.0
 offset_bottom = 440.0
 bbcode_enabled = true
 text = "[center]Press 'Z' or Enter to continue..."
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_v2557")]
+visible = false
+z_index = 50
