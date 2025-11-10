@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk6lo2mprn42k"]
+[gd_scene load_steps=9 format=3 uid="uid://bk6lo2mprn42k"]
 
 [ext_resource type="Script" uid="uid://cako6jfp7u8if" path="res://Maps/Menus/ToNewGame.cs" id="1_6aa38"]
 [ext_resource type="Script" uid="uid://btqjmauyb4x0h" path="res://Maps/Menus/ToLoadMenu.cs" id="2_y7ovg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="5_yvbdb"]
 [ext_resource type="Script" uid="uid://biyrsjq1402pg" path="res://Maps/Menus/Yes.cs" id="6_q5do8"]
 [ext_resource type="Script" uid="uid://drie1xm52q50i" path="res://Maps/Menus/No.cs" id="7_ai7d0"]
+[ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="8_ai7d0"]
 
 [node name="LoadType" type="Node2D"]
 
@@ -79,3 +80,9 @@ offset_right = 812.0
 offset_bottom = 598.0
 text = "   No   "
 script = ExtResource("7_ai7d0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(1.125, 1)
+texture = ExtResource("8_ai7d0")

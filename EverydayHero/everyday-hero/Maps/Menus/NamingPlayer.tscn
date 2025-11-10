@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdm10lkjgrd7l"]
+[gd_scene load_steps=3 format=3 uid="uid://cdm10lkjgrd7l"]
 
 [ext_resource type="Script" uid="uid://cdxnhw0b1n2qp" path="res://Maps/Menus/ConfirmName.cs" id="1_ig5ih"]
+[ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_58we6"]
 
 [node name="NamingPlayer" type="Node2D"]
 
@@ -9,7 +10,7 @@ offset_top = 30.0
 offset_right = 1152.0
 offset_bottom = 70.0
 bbcode_enabled = true
-text = "[center][font_size=22]What is your name?"
+text = "[center][font_size=22][color=black]What is your name?"
 
 [node name="PlayerName" type="LineEdit" parent="."]
 offset_left = 380.0
@@ -32,3 +33,9 @@ script = ExtResource("1_ig5ih")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(1.125, 1)
+texture = ExtResource("2_58we6")

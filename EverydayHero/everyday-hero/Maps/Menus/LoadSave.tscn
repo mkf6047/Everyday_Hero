@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6a7g1tupy8aj"]
+[gd_scene load_steps=5 format=3 uid="uid://6a7g1tupy8aj"]
 
 [ext_resource type="Script" uid="uid://kusf5iss6ul5" path="res://Maps/Menus/Load.cs" id="2_b6hw1"]
 [ext_resource type="Script" uid="uid://c1uqbnellerte" path="res://Maps/Menus/ReturnToMainMenu.cs" id="3_abl1n"]
 [ext_resource type="Script" uid="uid://cqjpge1i8qk3r" path="res://Maps/Menus/SaveText.cs" id="3_b6hw1"]
+[ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="4_abl1n"]
 
 [node name="LoadSave" type="Node2D"]
 
@@ -69,7 +70,7 @@ offset_top = 25.0
 offset_right = 826.0
 offset_bottom = 65.0
 bbcode_enabled = true
-text = "[center]Click on the button to load the save![/center]"
+text = "[center][color=black]Click on the button to load the save!"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -81,3 +82,9 @@ offset_right = 664.0
 offset_bottom = 95.0
 text = "Return to Title Screen"
 script = ExtResource("3_abl1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(576, 324)
+scale = Vector2(1.125, 1)
+texture = ExtResource("4_abl1n")
