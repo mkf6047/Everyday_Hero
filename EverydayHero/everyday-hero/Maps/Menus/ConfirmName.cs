@@ -15,7 +15,7 @@ public partial class ConfirmName : Button
         if (playername.Text != "")
         {
             PlayerStats.Instance.PlayerName = playername.Text;
-            GetTree().ChangeSceneToFile("res://QuestSorting/QuestSortingScene.tscn");
+            GetTree().ChangeSceneToFile("res://DayTrackerScene/DayTracker.tscn");
         }
     }
 }
