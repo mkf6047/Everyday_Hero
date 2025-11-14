@@ -15,7 +15,7 @@ public partial class ProgressData : Node2D
     public void UpdateName(string name)
     {
         questerName.Text = "";
-        questerName.AppendText("[center][color=black]" + name);
+        questerName.AppendText("[center][color=black][font_size=14]" + name);
     }
     
     public void UpdateProgress(string condition)

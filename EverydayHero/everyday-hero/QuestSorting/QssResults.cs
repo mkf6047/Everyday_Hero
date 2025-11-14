@@ -28,7 +28,7 @@ public partial class QssResults : Node2D
         string[] brokenResults = resultString.Split(';');
         resultsScreen.Text = "";
         resultsScreen.Newline();
-        resultsScreen.AppendText("[center]Quests Accepted: " + brokenResults[0]);
+        resultsScreen.AppendText("[center][font_size=30]Quests Accepted: " + brokenResults[0]);
         resultsScreen.Newline();
         resultsScreen.AppendText("Quests Delayed: " + brokenResults[1]);
         resultsScreen.Newline();
