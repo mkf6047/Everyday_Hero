@@ -102,7 +102,7 @@ public partial class QuestSortingScene : Node2D
 		{
 			MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
 			questHolder.AddChild(quest);
-			quest.Position = new Vector2((i + 1) * 200, 300);
+			quest.Position = new Vector2((i + 1) * 200, 425);
 			AddQuest(quest);
 		}
 	}
