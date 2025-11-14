@@ -15,7 +15,7 @@ public partial class ConfirmName : Button
         if (playername.Text != "")
         {
             PlayerStats.Instance.PlayerName = playername.Text;
-            GetTree().ChangeSceneToFile("res://DayTrackerScene/DayTracker.tscn");
+            GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn");
         }
     }
 }

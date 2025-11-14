@@ -78,7 +78,7 @@ shape = SubResource("RectangleShape2D_6wbnv")
 texture = ExtResource("6_wd07a")
 
 [node name="GoodProgress" type="Area2D" parent="."]
-position = Vector2(866, 50)
+position = Vector2(966, 50)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("7_l7gry")

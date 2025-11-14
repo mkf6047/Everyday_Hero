@@ -8,7 +8,8 @@ public partial class DayCount : RichTextLabel
     {
         this.Text = "";
         AppendText("[center][font_size=150]Day " + PlayerStats.Instance.DaysPassed);
-        base._Ready();
+        //GD.Print("All done!");
+        //base._Ready();
     }
 
 }
