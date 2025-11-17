@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=36 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bo2sm3rcpsu44" path="res://QuestSorting/LeaderSprite.cs" id="15_1eepb"]
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="19_oe7wh"]
 [ext_resource type="Script" uid="uid://b3oy871merbc2" path="res://QuestSorting/CharacterInfo.cs" id="20_qvrdk"]
 [ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="20_soa40"]
 [ext_resource type="Script" uid="uid://rpcatfysos27" path="res://QuestSorting/ClassInformation.cs" id="21_b74tf"]
@@ -230,8 +231,9 @@ offset_top = 180.0
 offset_right = 384.0
 offset_bottom = 420.0
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
-text = "[font_size=22]Adventurers:
+text = "[font_size=20]Adventurers:
 Allistrad von Leopoldo
 Rosalind Deacon
 Lucy Fern
@@ -247,8 +249,9 @@ offset_top = 180.0
 offset_right = 684.0
 offset_bottom = 420.0
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
-text = "[font_size=22]Adventurer Rank:
+text = "[font_size=20]Adventurer Rank:
 Rank: 
 Rank: 
 Rank: 
@@ -264,8 +267,9 @@ offset_top = 180.0
 offset_right = 904.0
 offset_bottom = 420.0
 mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
-text = "[font_size=22]Status:
+text = "[font_size=20]Status:
 Rank: 
 Rank: 
 Rank: 
@@ -624,7 +628,8 @@ z_index = 10
 offset_left = 320.0
 offset_top = 64.0
 offset_right = 1088.0
-offset_bottom = 184.0
+offset_bottom = 192.0
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://hsuwry2j43hj"]
+[gd_scene load_steps=7 format=3 uid="uid://hsuwry2j43hj"]
 
 [ext_resource type="Script" uid="uid://cqk3os8ce4qow" path="res://ProgressReportScene/ProgressReport/MovingProgressReport.cs" id="1_d28lk"]
 [ext_resource type="Texture2D" uid="uid://c6atyep8si700" path="res://Sprites/QuestSprites/QuestPaper.png" id="2_floxv"]
 [ext_resource type="Script" uid="uid://brps0gjh21jj" path="res://ProgressReportScene/ProgressReport/ProgressData.cs" id="3_d28lk"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="4_auhop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tebf4"]
 size = Vector2(160, 256)
@@ -37,6 +38,7 @@ offset_top = -80.0
 offset_right = 60.0
 offset_bottom = 120.0
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_auhop")
 bbcode_enabled = true
 text = "[center][color=black]"
 scroll_active = false
@@ -47,6 +49,7 @@ offset_left = -60.0
 offset_top = -120.0
 offset_right = 60.0
 offset_bottom = -80.0
+theme_override_fonts/normal_font = ExtResource("4_auhop")
 bbcode_enabled = true
 text = "[center][color=black]"
 

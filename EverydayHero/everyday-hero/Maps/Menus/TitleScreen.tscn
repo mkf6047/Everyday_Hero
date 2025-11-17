@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://yra1xlevfyws"]
+[gd_scene load_steps=5 format=3 uid="uid://yra1xlevfyws"]
 
 [ext_resource type="Script" uid="uid://chrohqeso06v" path="res://Maps/Menus/TitleScreen.cs" id="1_3o3eu"]
 [ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_jbvtc"]
+[ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="2_lc4ij"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="3_scf63"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_3o3eu")
@@ -10,6 +12,7 @@ script = ExtResource("1_3o3eu")
 offset_top = 80.0
 offset_right = 1152.0
 offset_bottom = 240.0
+theme_override_fonts/normal_font = ExtResource("2_lc4ij")
 bbcode_enabled = true
 text = "[center][color=black][font_size=96]Everyday Hero"
 
@@ -17,6 +20,8 @@ text = "[center][color=black][font_size=96]Everyday Hero"
 offset_top = 324.0
 offset_right = 1152.0
 offset_bottom = 364.0
+theme_override_fonts/normal_font = ExtResource("3_scf63")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center][color=black]Press Z / Enter to Continue."
 
@@ -24,6 +29,8 @@ text = "[center][color=black]Press Z / Enter to Continue."
 offset_top = 364.0
 offset_right = 1152.0
 offset_bottom = 404.0
+theme_override_fonts/normal_font = ExtResource("3_scf63")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center][color=black]Press X/Right Shift to Quit."
 

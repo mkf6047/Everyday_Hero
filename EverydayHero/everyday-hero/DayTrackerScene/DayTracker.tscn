@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlmjxj0ksn07f"]
+[gd_scene load_steps=7 format=3 uid="uid://dlmjxj0ksn07f"]
 
 [ext_resource type="Script" uid="uid://bgsdkugr33bn4" path="res://DayTrackerScene/DayTracker.cs" id="1_3ejqq"]
 [ext_resource type="Texture2D" uid="uid://d2u768ui4u2c5" path="res://Sprites/Black_background.png" id="1_av8su"]
+[ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="3_576s0"]
 [ext_resource type="Script" uid="uid://dr625u8sa3mny" path="res://DayTrackerScene/DayCount.cs" id="3_v2557"]
 [ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="4_v2557"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="5_qh23m"]
 
 [node name="DayTracker" type="Node2D"]
 script = ExtResource("1_3ejqq")
@@ -21,6 +23,7 @@ position = Vector2(576, 324)
 offset_top = 100.0
 offset_right = 1152.0
 offset_bottom = 350.0
+theme_override_fonts/normal_font = ExtResource("3_576s0")
 bbcode_enabled = true
 text = "[center][font_size=150]Day 1"
 scroll_active = false
@@ -30,6 +33,8 @@ script = ExtResource("3_v2557")
 offset_top = 400.0
 offset_right = 1152.0
 offset_bottom = 440.0
+theme_override_fonts/normal_font = ExtResource("5_qh23m")
+theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "[center]Press 'Z' or Enter to continue..."
 

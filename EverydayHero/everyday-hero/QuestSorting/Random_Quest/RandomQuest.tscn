@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://yhbdyofw3n7k"]
+[gd_scene load_steps=7 format=3 uid="uid://yhbdyofw3n7k"]
 
 [ext_resource type="Script" uid="uid://bdcwmogegcsh7" path="res://QuestSorting/Random_Quest/MoveableQuest.cs" id="1_mupi5"]
 [ext_resource type="Texture2D" uid="uid://c6atyep8si700" path="res://Sprites/QuestSprites/QuestPaper.png" id="2_w37uj"]
 [ext_resource type="Script" uid="uid://vhcqwsewfmvp" path="res://QuestSorting/Random_Quest/QuestData.cs" id="3_h5he3"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="4_lsw17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tebf4"]
 size = Vector2(160, 256)
@@ -37,6 +38,7 @@ offset_top = -120.0
 offset_right = 60.0
 offset_bottom = -60.0
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[center][color=black]"
 scroll_active = false
@@ -48,6 +50,7 @@ offset_top = 85.0
 offset_right = 70.0
 offset_bottom = 125.0
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
 
@@ -57,6 +60,7 @@ offset_top = -70.0
 offset_right = 65.0
 offset_bottom = 80.0
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 scroll_active = false
 
@@ -66,6 +70,7 @@ offset_top = 85.0
 offset_right = -35.0
 offset_bottom = 125.0
 mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
 
@@ -74,6 +79,7 @@ offset_left = -30.0
 offset_top = 85.0
 offset_right = 10.0
 offset_bottom = 125.0
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
 
