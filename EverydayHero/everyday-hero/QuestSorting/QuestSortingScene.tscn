@@ -93,7 +93,7 @@ texture = ExtResource("3_c7i46")
 
 [node name="Accept" type="Area2D" parent="."]
 z_index = -6
-position = Vector2(125, 225)
+position = Vector2(150, 225)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("5_3ky2r")
@@ -168,8 +168,8 @@ script = ExtResource("13_yg7ko")
 
 [node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
 z_index = -4
-position = Vector2(125, 300)
-scale = Vector2(5, 5)
+position = Vector2(150, 300)
+scale = Vector2(6, 6)
 texture = ExtResource("12_k7deh")
 script = ExtResource("15_1eepb")
 
@@ -216,6 +216,10 @@ visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
+offset_left = 190.0
+offset_top = -110.0
+offset_right = 190.0
+offset_bottom = -110.0
 script = ExtResource("16_udyga")
 
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
@@ -599,7 +603,8 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 
 [node name="Collapse Tab" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 3
-position = Vector2(932, 300)
+position = Vector2(59, 300)
+rotation = 3.14159
 scale = Vector2(1.4, 1)
 texture = ExtResource("10_18a2g")
 
@@ -615,33 +620,29 @@ script = ExtResource("21_oe7wh")
 shape = SubResource("RectangleShape2D_yaefm")
 
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation"]
-visible = false
 z_index = 10
-offset_left = 64.0
-offset_top = 456.0
+offset_left = 320.0
+offset_top = 64.0
 offset_right = 1088.0
-offset_bottom = 576.0
+offset_bottom = 184.0
 bbcode_enabled = true
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation"]
-visible = false
 z_index = 2
 texture_repeat = 2
-position = Vector2(576, 534)
+position = Vector2(704, 128)
 texture = ExtResource("9_gjghe")
 region_enabled = true
-region_rect = Rect2(0, 0, 1024, 180)
+region_rect = Rect2(0, 0, 768, 180)
 
 [node name="TextboxLeftEnd" type="Sprite2D" parent="PartyInformation"]
-visible = false
 z_index = 2
-position = Vector2(48, 534)
+position = Vector2(304, 128)
 texture = ExtResource("10_18a2g")
 
 [node name="TextboxRightEnd" type="Sprite2D" parent="PartyInformation"]
-visible = false
 z_index = 2
-position = Vector2(1104, 534)
+position = Vector2(1104, 128)
 texture = ExtResource("10_18a2g")
 flip_h = true
 

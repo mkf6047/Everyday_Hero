@@ -8,11 +8,13 @@ public partial class CharacterInfo : Area2D
 	public int partySize = 6;
 	ClassInformation classInfo;
 	QuestSortingScene scene;
+	ClassAndRank parent;
 	bool mouseIn = false;
 	public override void _Ready()
 	{
 		classInfo = (ClassInformation)GetNode("ClassInformation2");
 		scene = (QuestSortingScene)GetNode("../../../");
+		parent = (ClassAndRank)GetParent();
 	}
 
     public override void _Process(double delta)
@@ -20,6 +22,7 @@ public partial class CharacterInfo : Area2D
         if (Input.IsMouseButtonPressed(MouseButton.Left) && mouseIn && !PartyLists.Instance.parties[0][charOrder -1].onQuest)
         {
 			scene.ChangeActiveHero(charOrder);
+			parent.Hide();
         }
     }
 

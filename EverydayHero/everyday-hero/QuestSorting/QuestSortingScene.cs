@@ -58,6 +58,8 @@ public partial class QuestSortingScene : Node2D
 			default:
 				break;
 		}
+		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
+		ChangeActiveHero(currentHero);
 		resultsDisplay = (QssResults)GetNode("QSSResults");
 		displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
@@ -101,6 +103,22 @@ public partial class QuestSortingScene : Node2D
 		for (int i = 0; i <= 3; i++)
 		{
 			MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
+			// bool isUnique = true;
+			// do
+			// {
+			// 	if (numofquest > 0)
+			// 	{
+			// 		foreach (MoveableQuest a in questStack)
+			// 		{
+			// 			if (quest.questName == a.questName)
+			// 			{
+			// 				isUnique = false;
+			// 			}
+			// 		}
+			// 		if (!isUnique) { quest = (MoveableQuest)questPreload.Instantiate(); }
+			// 	}
+			// 	else { isUnique = true; GD.Print(isUnique); }
+			// } while (isUnique == false);
 			questHolder.AddChild(quest);
 			quest.Position = new Vector2((i + 1) * 200, 425);
 			AddQuest(quest);
