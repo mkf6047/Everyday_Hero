@@ -40,9 +40,9 @@ public partial class DelayQuest : Area2D
     {
         try
         {
+            mySprite.Texture = collidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = true;
-            mySprite.Texture = collidingSprite;
         }
         catch
         {
@@ -54,9 +54,9 @@ public partial class DelayQuest : Area2D
     {
         try
         {
+            mySprite.Texture = notCollidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = false;
-            mySprite.Texture = notCollidingSprite;
         }
         catch
         {
