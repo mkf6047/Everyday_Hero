@@ -44,7 +44,7 @@ public partial class SaveText : RichTextLabel
         }
         this.Text =
         "Name: " + name +
-        "\nPlaytime: " + playtime +
+        "\nDays Passed: " + playtime +
         "\nRank: " + rank +
         "\nCoins: " + coins;
     }
