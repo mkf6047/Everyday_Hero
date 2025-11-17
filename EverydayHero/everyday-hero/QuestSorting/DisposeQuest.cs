@@ -5,9 +5,14 @@ public partial class DisposeQuest : Area2D
 {
     bool isColliding = false;
     QuestSortingScene manager;
+    Sprite2D mySprite;
+    Texture2D collidingSprite, notCollidingSprite;
     public override void _Ready()
     {
         manager = (QuestSortingScene)GetParent();
+        mySprite = (Sprite2D)GetNode("Sprite2D");
+        collidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/Trash-Can-Hover.png");
+        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/DisposeQuest.png");
     }
 
     public override void _Process(double delta)
@@ -37,6 +42,7 @@ public partial class DisposeQuest : Area2D
         {
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = true;
+            mySprite.Texture = collidingSprite;
         }
         catch
         {
@@ -50,6 +56,7 @@ public partial class DisposeQuest : Area2D
         {
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = false;
+            mySprite.Texture = notCollidingSprite;
         }
         catch
         {
