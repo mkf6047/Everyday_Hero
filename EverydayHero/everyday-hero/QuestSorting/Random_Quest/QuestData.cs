@@ -86,7 +86,7 @@ public partial class QuestData : Node2D
             value = file.GetLine();
             questDescription.AppendText("[color=black][font_size=14]" + value);
             value = file.GetLine();
-            questRank.AppendText("[color=black][font_size=14]Rank:");
+            questRank.AppendText("[color=black][font_size=13]Rank:");
             questRank.Newline();
             questRank.AppendText(value);
             this.parent.questRank = value;
@@ -94,7 +94,7 @@ public partial class QuestData : Node2D
             questValue.AppendText("[color=black]" + value + "G");
             this.parent.questReward = int.Parse(value);
             value = file.GetLine();
-            questDuration.AppendText("[font_size=14][color=black][center]Days:");
+            questDuration.AppendText("[font_size=13][color=black][center]Days:");
             questDuration.Newline();
             questDuration.AppendText(value);
             this.parent.questDuration = int.Parse(value);

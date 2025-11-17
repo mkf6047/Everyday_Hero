@@ -59,7 +59,6 @@ public partial class QuestSortingScene : Node2D
 				break;
 		}
 		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
-		ChangeActiveHero(currentHero);
 		resultsDisplay = (QssResults)GetNode("QSSResults");
 		displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
@@ -68,6 +67,7 @@ public partial class QuestSortingScene : Node2D
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
 		TutorialInfo.Instance.ActivateTutorial(3);
+		ChangeActiveHero(currentHero);
 	}
 
 	public override void _Process(double delta)

@@ -15,8 +15,8 @@ public partial class ClassAndRank : Control
 
 		rankDisplay.Text = "";
 		isOnQuest.Text = "";
-		rankDisplay.AppendText("[font_size=20]Adventurer Rank:");
-		isOnQuest.AppendText("[font_size=20]Status:");
+		rankDisplay.AppendText("[font_size=20][b]Adventurer Rank:[/b]");
+		isOnQuest.AppendText("[font_size=20][b]Status:[/b]");
 
 		for(int i = 0; i < 6; i++)
         {

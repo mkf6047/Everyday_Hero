@@ -53,6 +53,7 @@ mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
+scroll_active = false
 
 [node name="QuestDescription" type="RichTextLabel" parent="QuestData"]
 offset_left = -65.0
@@ -73,6 +74,7 @@ mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
+scroll_active = false
 
 [node name="QuestDuration" type="RichTextLabel" parent="QuestData"]
 offset_left = -30.0
@@ -82,6 +84,7 @@ offset_bottom = 125.0
 theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"
+scroll_active = false
 
 [connection signal="mouse_entered" from="Area2D" to="." method="MouseEnter"]
 [connection signal="mouse_exited" from="Area2D" to="." method="MouseExit"]

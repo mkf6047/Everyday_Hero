@@ -121,7 +121,6 @@ texture = ExtResource("5_jj7dt")
 position = Vector2(576, 324)
 
 [node name="QSSResults" type="Node2D" parent="."]
-visible = false
 z_index = 15
 script = ExtResource("9_18a2g")
 
@@ -131,7 +130,9 @@ offset_left = 64.0
 offset_top = 200.0
 offset_right = 1088.0
 offset_bottom = 600.0
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
+scroll_active = false
 
 [node name="TextboxSprite" type="Sprite2D" parent="QSSResults"]
 z_index = 2
@@ -161,8 +162,11 @@ offset_left = 64.0
 offset_top = 575.0
 offset_right = 1088.0
 offset_bottom = 609.0
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[right]Press 'Z' to Continue..."
+scroll_active = false
 
 [node name="PartyInformation" type="Node2D" parent="."]
 script = ExtResource("13_yg7ko")

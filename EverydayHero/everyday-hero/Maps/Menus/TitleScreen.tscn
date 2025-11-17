@@ -15,6 +15,7 @@ offset_bottom = 240.0
 theme_override_fonts/normal_font = ExtResource("2_lc4ij")
 bbcode_enabled = true
 text = "[center][color=black][font_size=96]Everyday Hero"
+scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_top = 324.0
