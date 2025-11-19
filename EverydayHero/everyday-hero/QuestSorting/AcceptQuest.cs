@@ -23,6 +23,7 @@ public partial class AcceptQuest : Area2D
 					//PlayerStats.Instance.Coins += quest.questReward;
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes.Append(quest.questType);
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames.Append(quest.questName);
+					PartyLists.Instance.parties[0][manager.currentHero - 1].goodbadprogress.Append(0);
 					PartyLists.Instance.parties[0][manager.currentHero - 1].completionByRank[quest.questRank] += 1;
 					if (PartyLists.Instance.parties[0][manager.currentHero - 1].daysRemainingOnQuest < quest.questDuration) 
 					{
@@ -32,7 +33,7 @@ public partial class AcceptQuest : Area2D
 					PartyLists.Instance.parties[0][manager.currentHero - 1].onQuest = true;
 					PlayerStats.Instance.QuestsSorted += 1;
 					QSSTracker.Instance.acceptedQuests++;
-					QSSTracker.Instance.rewards += quest.questReward;
+
 					manager.RemoveQuest(quest);
 					//manager.NewParty();
 				}

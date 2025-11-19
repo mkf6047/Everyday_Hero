@@ -110,4 +110,17 @@ public partial class PartyLists : Node
 		}
 		parties.Add(newParty);
 	}
+
+	public void CalculateFailure(int partyMember)
+    {
+		for(int i = 0; i < parties[0][partyMember].currentQuestsNames.Count; i++)
+        {
+            string questType = parties[0][partyMember].currentQuestsTypes[i];
+			string questName = parties[0][partyMember].currentQuestsNames[i];
+			using(var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + questType +"/"+questName+".txt", FileAccess.ModeFlags.Read))
+            {
+                
+            }
+        }
+    }
 }
