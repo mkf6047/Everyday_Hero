@@ -22,5 +22,6 @@ public partial class HeroStats : Node
     };
     public bool onQuest = false;
     public int daysRemainingOnQuest = 0;
+    public int goodbadprogress = 0;
     public Sprite2D sprite = new Sprite2D();
 }

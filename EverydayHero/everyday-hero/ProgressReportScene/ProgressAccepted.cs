@@ -5,9 +5,14 @@ public partial class ProgressAccepted : Area2D
 {
     bool isColliding = false;
     AllPartyProgressReport manager;
+    Sprite2D mySprite;
+    Texture2D collidingSprite, notCollidingSprite;
     public override void _Ready()
     {
         manager = (AllPartyProgressReport)GetParent();
+        mySprite = (Sprite2D)GetNode("Sprite2D");
+        collidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/Trash-Can-Hover.png");
+        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/DisposeQuest.png");
     }
 
     public override void _Process(double delta)
@@ -35,6 +40,7 @@ public partial class ProgressAccepted : Area2D
     {
         try
         {
+            mySprite.Texture = collidingSprite;
             MovingProgressReport report = (MovingProgressReport)body;
             isColliding = true;
         }
@@ -48,6 +54,7 @@ public partial class ProgressAccepted : Area2D
     {
         try
         {
+            mySprite.Texture = notCollidingSprite;
             MovingProgressReport report = (MovingProgressReport)body;
             isColliding = false;
         }

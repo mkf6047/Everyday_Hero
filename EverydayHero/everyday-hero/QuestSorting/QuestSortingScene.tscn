@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=35 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="10_18a2g"]
 [ext_resource type="Texture2D" uid="uid://cdb3wqlulh81f" path="res://Sprites/NPCSprites/Knight-Front.png" id="12_k7deh"]
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="13_o18v7"]
-[ext_resource type="Script" uid="uid://dk12oyiia3853" path="res://QuestSorting/PartyInformation.cs" id="13_yg7ko"]
 [ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="14_yaefm"]
 [ext_resource type="Script" uid="uid://bo2sm3rcpsu44" path="res://QuestSorting/LeaderSprite.cs" id="15_1eepb"]
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
@@ -170,7 +169,6 @@ text = "[right]Press 'Z' to Continue..."
 scroll_active = false
 
 [node name="PartyInformation" type="Node2D" parent="."]
-script = ExtResource("13_yg7ko")
 
 [node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
 z_index = -4
@@ -218,7 +216,6 @@ script = ExtResource("16_cdk84")
 shape = SubResource("RectangleShape2D_yaefm")
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
-visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 0

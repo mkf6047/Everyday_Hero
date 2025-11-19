@@ -34,8 +34,8 @@ public partial class QssResults : Node2D
         resultsScreen.Newline();
         resultsScreen.AppendText("Quests Rejected: " + brokenResults[2]);
         resultsScreen.Newline();
-        resultsScreen.AppendText("Income: " + brokenResults[3]);
-        resultsScreen.Newline();
+        //resultsScreen.AppendText("Income: " + brokenResults[3]);
+        //resultsScreen.Newline();
         this.Show();
     }
     
