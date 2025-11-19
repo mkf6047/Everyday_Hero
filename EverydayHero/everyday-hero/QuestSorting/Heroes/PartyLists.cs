@@ -117,13 +117,15 @@ public partial class PartyLists : Node
         {
             string questType = parties[0][partyMember].currentQuestsTypes[i];
 			string questName = parties[0][partyMember].currentQuestsNames[i];
+			int questRank = 0;
+			int heroRank = 0;
 			using(var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + questType +"/"+questName+".txt", FileAccess.ModeFlags.Read))
             {
                 string value = file.GetLine(); 	//Value = Quest Name
 				value = file.GetLine();			//value = quest description
 				value = file.GetLine();			//value = quest rank
-				int questRank = RankToInt(value);
-				int heroRank = RankToInt(parties[0][partyMember].heroRank);
+				questRank = RankToInt(value);
+				heroRank = RankToInt(parties[0][partyMember].heroRank);
             }
         }
     }
