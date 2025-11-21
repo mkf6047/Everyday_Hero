@@ -127,11 +127,60 @@ public partial class PartyLists : Node
 				questRank = RankToInt(value);
 				heroRank = RankToInt(parties[0][partyMember].heroRank);
             }
+			if(heroRank == questRank)
+            {
+                parties[0][partyMember].goodbadprogress[i] = 90;
+            }
+			else if (heroRank < questRank)
+            {
+                int difference = questRank - heroRank;
+				double holder = 90;
+				for(int j = 0; j < difference; j++){ holder *= 0.75; }
+				parties[0][partyMember].goodbadprogress[i] = (int)Math.Round(holder);
+            }
+            else
+            {
+                parties[0][partyMember].goodbadprogress[i] = 100;
+            }
         }
     }
 
 	int RankToInt(string rank)
     {
-        return 0;
+		int returnVal = 0;
+		switch (rank)
+		{
+			case "SSS":
+				returnVal = 9;
+				break;
+			case "SS":
+				returnVal = 8;
+				break;
+			case "S":
+				returnVal = 7;
+				break;
+			case "A":
+				returnVal = 6;
+				break;
+			case "B":
+				returnVal = 5;
+				break;
+			case "C":
+				returnVal = 4;
+				break;
+			case "D":
+				returnVal = 3;
+				break;
+			case "E":
+				returnVal = 2;
+				break;
+			case "F":
+				returnVal = 1;
+				break;
+			default:
+				returnVal = 0;
+				break;
+		}
+        return returnVal;
     }
 }
