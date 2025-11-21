@@ -14,7 +14,7 @@ public partial class MovingProgressReport : CharacterBody2D
 	bool dragging;
 	bool mouseIn = false;
 	public bool chosen = false;
-	public int questReward, thisQuester = 0;
+	public int questReward, thisQuester, failChance = 0;
 	public bool Dragging
 	{
 		get { return dragging; }
@@ -61,6 +61,15 @@ public partial class MovingProgressReport : CharacterBody2D
 				thisQuester = 0;
 				break;
         }
+		PartyLists.Instance.CalculateFailure(thisQuester);
+		double chanceOfFailure = 0;
+		for(int i = 0; i < PartyLists.Instance.parties[0][thisQuester].goodbadprogress.Count; i++)
+        {
+            chanceOfFailure += PartyLists.Instance.parties[0][thisQuester].goodbadprogress[i];
+        }
+		chanceOfFailure /= PartyLists.Instance.parties[0][thisQuester].goodbadprogress.Count;
+		failChance = (int)Math.Round(chanceOfFailure);
+		data.UpdateProgress(thisQuester, failChance);
 	}
 	public override void _Input(InputEvent @event)
 	{
