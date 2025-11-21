@@ -11,6 +11,8 @@ public partial class QuestSortingScene : Node2D
 
 	LeaderSprite currentHeroSprite;
 
+	RichTextLabel heroDialouge;
+
 	QssResults resultsDisplay;
 	
 	Node2D questHolder;
@@ -67,6 +69,7 @@ public partial class QuestSortingScene : Node2D
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
 		TutorialInfo.Instance.ActivateTutorial(3);
+		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		ChangeActiveHero(currentHero);
 	}
 
@@ -162,28 +165,36 @@ public partial class QuestSortingScene : Node2D
 	public void ChangeActiveHero(int change)
     {
 		currentHero = change;
+		heroDialouge.Text = "";
 		switch (change)
 			{
 				case 1:
 					currentHeroSprite.ReplaceSprite("Knight");
+					heroDialouge.AppendText("Provide me with your most challenging quest");
 					break;
 				case 2:
 					currentHeroSprite.ReplaceSprite("Cleric");
+					heroDialouge.AppendText("Where is my aid needed?");
 					break;
 				case 3:
 					currentHeroSprite.ReplaceSprite("Mage");
+					heroDialouge.AppendText("Who can I exper… HELP! Yeah help that’s what I meant");
 					break;
 				case 4:
 					currentHeroSprite.ReplaceSprite("Monk");
+					heroDialouge.AppendText("My fists hunger for victory");
 					break;
 				case 5:
 					currentHeroSprite.ReplaceSprite("Ranger");
+					heroDialouge.AppendText("What business do you have with the woods?");
 					break;
 				case 6:
 					currentHeroSprite.ReplaceSprite("Rogue");
+					heroDialouge.AppendText("So… Whatcha need done?");
 					break;
 				default:
 					currentHeroSprite.ReplaceSprite("Knight");
+					heroDialouge.AppendText("Provide me with your most challenging quest");
 					break;
 			}
     }
