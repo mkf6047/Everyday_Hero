@@ -298,6 +298,44 @@ public partial class TutorialInfo : Node
         }
     }
 
+    
+    public void ProgressReportIntro(double delta = 0.0)   //change from private to public
+    {
+        if (tutorialComplete[5])       //replace 0 with actual corresponding int.
+        {
+            return;
+        }
+        else
+        {
+            timer += delta;
+            if (timer > 2.0 && tutorialCondition)
+            {
+                tutorialComplete[5] = true;
+                timer = 0.0;
+                overlay.HideOverlay();
+                return;
+            }
+            if(canComplete && Input.IsMouseButtonPressed(MouseButton.Left)){ tutorialCondition = true; }
+        }
+        if (Math.Abs(delta - 0.0) < epsilon)
+        {
+            overlay.UpdateText(tutorialLines[5][0], "Phillip");
+            currentLine = 0;
+            tutorialCondition = false;
+            canComplete = false;
+        }
+        else if (Input.IsActionJustPressed("Interact"))
+        {
+            currentLine++;
+            if (currentLine <= tutorialLines[5].Count - 1)
+            {
+                overlay.UpdateText(tutorialLines[5][currentLine], "Phillip");
+                if(currentLine == tutorialLines[5].Count - 1){ canComplete = true; }
+            }
+            else{ canComplete = true; }
+        }
+    }
+
     //insert new tutorials here!!!!!
 
     public void ActivateTutorial(int tutorialNum)

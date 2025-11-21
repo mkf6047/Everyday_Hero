@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfof7ugbjah0m"]
+[gd_scene load_steps=32 format=3 uid="uid://cfof7ugbjah0m"]
 
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="1_nj0hl"]
 [ext_resource type="Script" uid="uid://xmsllh3odeyr" path="res://ProgressReportScene/AllPartyProgressReport.cs" id="1_x2cy7"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://jbjxnil1q3a4" path="res://ProgressReportScene/ProgressCharacterInfo.cs" id="18_oplcg"]
 [ext_resource type="Script" uid="uid://b6jfqy25yeija" path="res://ProgressReportScene/ClassInformationProgress.cs" id="19_x5idr"]
 [ext_resource type="Script" uid="uid://cb3gf6vqeqlj4" path="res://QuestSorting/ConcealPartyInfo.cs" id="19_x88em"]
+[ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="22_oplcg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjnon"]
 
@@ -583,6 +584,9 @@ shape = SubResource("RectangleShape2D_px6gx")
 [node name="PauseMenu" parent="." instance=ExtResource("9_6wbnv")]
 visible = false
 z_index = 50
+
+[node name="TutorialOverlay" parent="." instance=ExtResource("22_oplcg")]
+z_index = 24
 
 [connection signal="body_entered" from="Reinforce" to="Reinforce" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Reinforce" to="Reinforce" method="OnArea2DBodyExited"]
