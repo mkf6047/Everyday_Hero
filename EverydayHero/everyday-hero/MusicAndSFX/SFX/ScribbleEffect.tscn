@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://r8v2r8o3yce2"]
+
+[ext_resource type="Script" uid="uid://c8x58xogmjjch" path="res://MusicAndSFX/SFX/ScribbleEffect.cs" id="1_y7e4b"]
+[ext_resource type="AudioStream" uid="uid://cmdyk3hfi2inl" path="res://MusicAndSFX/SFX/075682_scribbling_1-2aif-91260.mp3" id="2_l6lv1"]
+[ext_resource type="AudioStream" uid="uid://dgaqunpi1v5r5" path="res://MusicAndSFX/SFX/scribble-6144.mp3" id="3_gwcgc"]
+[ext_resource type="AudioStream" uid="uid://bk2455wvyaush" path="res://MusicAndSFX/SFX/scribble_short-104286.mp3" id="4_x0irw"]
+[ext_resource type="AudioStream" uid="uid://brh0erbhfibl6" path="res://MusicAndSFX/SFX/scribbling-81928.mp3" id="5_5qn06"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_l6lv1"]
+streams_count = 4
+stream_0/stream = ExtResource("2_l6lv1")
+stream_1/stream = ExtResource("3_gwcgc")
+stream_2/stream = ExtResource("4_x0irw")
+stream_3/stream = ExtResource("5_5qn06")
+
+[node name="ScribbleEffect" type="Node2D"]
+script = ExtResource("1_y7e4b")
+
+[node name="ScribbleSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_l6lv1")

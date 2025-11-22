@@ -16,7 +16,8 @@ public partial class TutorialInfo : Node
         "res://Player/Tutorial Overlay/TutorialDialouge/ClickOnBuilding.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/InteractWithDesk.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/QSSIntro.txt",
-        "res://Player/Tutorial Overlay/TutorialDialouge/SaveGame.txt"
+        "res://Player/Tutorial Overlay/TutorialDialouge/SaveGame.txt",
+        "res://Player/Tutorial Overlay/TutorialDialouge/ProgressReportIntro.txt"
     ];
     public bool tutorialCondition, canComplete = true;
     bool tutorialFound = false;

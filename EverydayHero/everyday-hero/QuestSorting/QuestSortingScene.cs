@@ -178,7 +178,7 @@ public partial class QuestSortingScene : Node2D
 					break;
 				case 3:
 					currentHeroSprite.ReplaceSprite("Mage");
-					heroDialouge.AppendText("Who can I exper… HELP! Yeah help that’s what I meant");
+					heroDialouge.AppendText("Who can I experim... HELP! Yeah help that's what I meant.");
 					break;
 				case 4:
 					currentHeroSprite.ReplaceSprite("Monk");

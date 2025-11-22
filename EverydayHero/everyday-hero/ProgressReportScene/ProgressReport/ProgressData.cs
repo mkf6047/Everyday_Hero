@@ -34,7 +34,7 @@ public partial class ProgressData : Node2D
                 else{ updateText = "Whoof… This is harder than I thought"; }
                 break;
             case 1:     //rosalind
-                if(passFail){ updateText = "Oh thank the heavens…"; }
+                if(passFail){ updateText = "Oh thank the heavens! Everything went well."; }
                 else{ updateText = "Do my prayers go unanswered?"; }
                 break;
             case 2:     //lucy

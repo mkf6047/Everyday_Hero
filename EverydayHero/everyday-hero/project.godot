@@ -23,6 +23,8 @@ TutorialInfo="*res://Player/Tutorial Overlay/TutorialInfo.cs"
 QssTracker="*res://QuestSorting/QSSTracker.cs"
 InvestmentBenefits="*res://InvestmentScenes/InvestmentBenefits.cs"
 PartyLists="*res://QuestSorting/Heroes/PartyLists.cs"
+BackgroundNoise="*res://MusicAndSFX/Music/BackgroundNoise.tscn"
+ScribbleEffect="*res://MusicAndSFX/SFX/ScribbleEffect.tscn"
 
 [display]
 

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3bccles35ihs"]
+
+[ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
+
+[node name="BackgroundNoise" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_pof3t")
+volume_db = -18.0
+autoplay = true
+parameters/looping = true

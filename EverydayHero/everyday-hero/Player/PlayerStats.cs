@@ -9,7 +9,7 @@ public partial class PlayerStats : Node
     private int daysPassed = 1;
     private double playtime = 0;
     private string rank = "Unemployed";
-    private string playerName = "-";
+    private string playerName = "Reginald";
     private bool isPlaying = false;
     public bool isInside = false;
     public Godot.Collections.Array<string> inventory;

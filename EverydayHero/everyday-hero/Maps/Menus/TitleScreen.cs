@@ -35,7 +35,7 @@ public partial class TitleScreen : Node2D
         {
             using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Write))
             {
-                file.StoreLine("" + PlayerStats.Instance.Name);             //player name
+                file.StoreLine("" + PlayerStats.Instance.PlayerName);             //player name
                 file.StoreLine("" + PlayerStats.Instance.Coins);            //coins
                 file.StoreLine("" + PlayerStats.Instance.Playtime);         //playtime
                 file.StoreLine("" + PlayerStats.Instance.Rank);             //player rank

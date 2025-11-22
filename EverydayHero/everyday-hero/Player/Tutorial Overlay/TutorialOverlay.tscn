@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmqmfwc5wdeaf"]
+[gd_scene load_steps=5 format=3 uid="uid://dmqmfwc5wdeaf"]
 
 [ext_resource type="Script" uid="uid://cq74h2phqhan7" path="res://Player/Tutorial Overlay/TutorialOverlay.cs" id="1_0vlly"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="2_6ulci"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="2_fsc1l"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="3_fsc1l"]
 
 [node name="TutorialOverlay" type="Control" groups=["TutorialNode"]]
@@ -20,6 +21,7 @@ offset_left = 64.0
 offset_top = 456.0
 offset_right = 1088.0
 offset_bottom = 616.0
+theme_override_fonts/normal_font = ExtResource("2_fsc1l")
 bbcode_enabled = true
 
 [node name="TextboxSprite" type="Sprite2D" parent="."]
@@ -45,6 +47,7 @@ offset_left = 953.0
 offset_top = 595.0
 offset_right = 1113.0
 offset_bottom = 635.0
+theme_override_fonts/normal_font = ExtResource("2_fsc1l")
 bbcode_enabled = true
 text = "[font_size=12][center]Press Z/enter to continue"
 
@@ -55,6 +58,7 @@ offset_left = 64.0
 offset_top = 406.0
 offset_right = 224.0
 offset_bottom = 446.0
+theme_override_fonts/normal_font = ExtResource("2_fsc1l")
 bbcode_enabled = true
 text = "sample"
 horizontal_alignment = 1

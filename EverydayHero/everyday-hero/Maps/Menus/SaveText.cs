@@ -11,15 +11,6 @@ public partial class SaveText : RichTextLabel
         ResetText();
     }
 
-    //when clicked, the below activates
-    // private void Clicked()
-    // {
-    //     using var file = FileAccess.Open(saveFilepath, FileAccess.ModeFlags.Read);
-    //     string content = file.GetAsText();
-    //     PlayerInfo.coin = Int32.Parse(content);
-    //     GetTree().Root.AddChild(PlayerInfo);
-    //     GetTree().ChangeSceneToFile("res://Maps/ExteriorMaps/MainScene.tscn");
-    // }
     public void ResetText()
     {
         string name = "-";
@@ -42,10 +33,10 @@ public partial class SaveText : RichTextLabel
             this.Text = "no data to load!";
             return;
         }
-        this.Text =
-        "Name: " + name +
+        this.Text ="";
+        AppendText("[color=black]Name: " + name +
         "\nDays Passed: " + playtime +
-        "\nRank: " + rank +
-        "\nCoins: " + coins;
+        "\nRank: " + rank);
+        
     }
 }
