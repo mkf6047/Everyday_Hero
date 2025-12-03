@@ -12,7 +12,7 @@ public partial class TitleScreen : Node2D
         InitSaveFiles(save1);
         InitSaveFiles(save2);
         InitSaveFiles(save3);
-
+        BackgroundNoise.Instance.MainMusic();
         base._Ready();
     }
 

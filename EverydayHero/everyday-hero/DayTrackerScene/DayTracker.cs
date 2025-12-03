@@ -3,6 +3,11 @@ using System;
 
 public partial class DayTracker : Node2D
 {
+    public override void _Ready()
+    {
+        BackgroundNoise.Instance.NighttimeMusic();
+    }
+
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("Interact"))

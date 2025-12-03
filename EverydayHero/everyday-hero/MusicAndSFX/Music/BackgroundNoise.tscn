@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3bccles35ihs"]
+[gd_scene load_steps=3 format=3 uid="uid://c3bccles35ihs"]
 
+[ext_resource type="Script" uid="uid://2qpdfw3lbk0i" path="res://MusicAndSFX/Music/BackgroundNoise.cs" id="1_2atvq"]
 [ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
 
 [node name="BackgroundNoise" type="Node2D"]
+script = ExtResource("1_2atvq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_pof3t")

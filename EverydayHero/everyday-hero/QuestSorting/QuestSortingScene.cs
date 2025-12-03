@@ -72,6 +72,7 @@ public partial class QuestSortingScene : Node2D
 		if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		ChangeActiveHero(currentHero);
+		BackgroundNoise.Instance.MainMusic();
 	}
 
 	public override void _Process(double delta)
