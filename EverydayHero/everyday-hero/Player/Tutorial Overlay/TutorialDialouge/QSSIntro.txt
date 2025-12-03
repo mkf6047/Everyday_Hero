@@ -1,9 +1,11 @@
 So, every day new quests will come in for us. It’s your job to decide how the guild will handle each of them.
 Of course, the best way to handle quests is to have our guild’s fine heroes complete them. 
 Each day heroes will come in looking for work. Take a look at their stats and abilities to assign a quest they will excel at.
-You can use the arrow above the heroes to call different heroes up to the counter, to give them quests.
-For example this quest wants us to retrieve a stolen purse. As such this rogue would be better suited for the quest than this knight despite the knight having higher stats.
-If you don’t have a good way of handling a certain quest at present you can always place it here to delay it until the following day, and make it tomorrow you’s problem.
-This doesn’t decrease the amount of quests you will receive the next day however so don’t use this too liberally or your backlog will get to large to handle.
-Lastly, we occasionally receive quests that simply aren’t worth our time or effort to complete. When you receive these kind of quests, don’t feel guilty about just throwing them in the garbage here.
+You can use the arrow above the heroes to view the different heroes.
+Clicking on the hero's name will call them up to the counter. Then, just drag the quest over to them to send them off!
+If you don’t have a good way of handling a certain quest at present, you can always place it in the pink delay bin to delay it until the following day, and make it tomorrow you’s problem.
+This doesn’t decrease the amount of quests you will receive the next day however, so don’t use this too liberally - or your backlog will get to large to handle!
+Lastly, we occasionally receive quests that simply aren’t worth our time or effort to complete. When you receive these kind of quests, don’t feel guilty about just throwing them in the trash can.
 Be careful though! If you throw away any actually legitimate quests, the consequences will come out of your paycheck.
+Alright now, have fun on your first day!
+.
