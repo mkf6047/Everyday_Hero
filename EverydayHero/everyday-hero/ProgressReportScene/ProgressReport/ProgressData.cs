@@ -30,32 +30,32 @@ public partial class ProgressData : Node2D
         switch (hero)
         {
             case 0:     //Allistrad
-                if(passFail){ updateText = "Nothing a worthy hero like ME can't handle"; }
-                else{ updateText = "Whoof… This is harder than I thought"; }
+                if(passFail){ updateText = "Nothing a worthy hero like ME can't handle!"; }
+                else{ updateText = "Whoof… This quest is harder than I thought."; }
                 break;
             case 1:     //rosalind
                 if(passFail){ updateText = "Oh thank the heavens! Everything went well."; }
-                else{ updateText = "Do my prayers go unanswered?"; }
+                else{ updateText = "Do my prayers go unanswered? Why is everything going wrong."; }
                 break;
             case 2:     //lucy
-                if(passFail){ updateText = "This has been a very enlightening experience"; }
-                else{ updateText = "Note: the blast radius is large and I am a squishy mage"; }
+                if(passFail){ updateText = "This has been a very enlightening experience!"; }
+                else{ updateText = "Note: the blast radius is large and I am a squishy mage. I could use some support!"; }
                 break;
             case 3:     //rashao
                 if(passFail){ updateText = "I haven’t lost my touch at all!"; }
-                else{ updateText = "I might be getting too old for this"; }
+                else{ updateText = "I might be getting too old for this - send me backup on the double!"; }
                 break;
             case 4:     //thornton
                 if(passFail){ updateText = "Mother Earth has blessed my efforts"; }
-                else{ updateText = "The forest is angry today"; }
+                else{ updateText = "The forest is angry today. I need help!"; }
                 break;
             case 5:     //jack
-                if(passFail){ updateText = "Its been done"; }
-                else{ updateText = "..... Things didn’t go well"; }
+                if(passFail){ updateText = "Its been done."; }
+                else{ updateText = "..... Things didn’t go well. Send some help?"; }
                 break;
             default:
-                if(passFail){ updateText = "[i]*the note is covered in splotches of ink.*"; }
-                else{ updateText = "[i]*the note is covered in splotches of blood.*"; }
+                if(passFail){ updateText = "[i]*the note is covered in splotches of ink, making it illegible.*"; }
+                else{ updateText = "[i]*the note is covered in splotches of blood, making it illegible.*"; }
                 break;
         }
         questProgress.AppendText(updateText);

@@ -123,6 +123,8 @@ public partial class PartyLists : Node
 			string questName = parties[0][partyMember].currentQuestsNames[i];
 			int questRank = 0;
 			int heroRank = 0;
+			double compatability = 1.15;
+			if(!parties[0][partyMember].compatableWithQuest) { compatability = 0.75; }
 			using(var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + questType +"/"+questName+".txt", FileAccess.ModeFlags.Read))
             {
                 string value = file.GetLine(); 	//Value = Quest Name
@@ -133,13 +135,14 @@ public partial class PartyLists : Node
             }
 			if(heroRank == questRank)
             {
-                parties[0][partyMember].goodbadprogress[i] = 90;
+                parties[0][partyMember].goodbadprogress[i] = (int)Math.Round(90 * compatability);
             }
 			else if (heroRank < questRank)
             {
                 int difference = questRank - heroRank;
 				double holder = 90;
 				for(int j = 0; j < difference; j++){ holder *= 0.75; }
+				holder *= compatability;
 				parties[0][partyMember].goodbadprogress[i] = (int)Math.Round(holder);
             }
             else

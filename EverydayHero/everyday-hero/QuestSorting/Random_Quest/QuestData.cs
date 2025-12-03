@@ -135,6 +135,9 @@ public partial class QuestData : Node2D
             questDuration.Newline();
             questDuration.AppendText(value);
             this.parent.questDuration = int.Parse(value);
+
+            value = file.GetLine();
+            this.parent.bestHeroes = value.Split(',');
             //GD.Print("quest information ported sucessfully.");
         }
     }

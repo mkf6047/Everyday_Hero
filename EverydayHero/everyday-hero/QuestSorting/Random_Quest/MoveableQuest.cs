@@ -13,6 +13,7 @@ public partial class MoveableQuest : CharacterBody2D
 	public bool chosen = false;
 	public int questReward, questDuration = 0;
 	public string questName, questType, questRank = "";
+	public string[] bestHeroes = [];
 	public bool Dragging
 	{
 		get { return dragging; }

@@ -62,14 +62,7 @@ public partial class MovingProgressReport : CharacterBody2D
 				break;
         }
 		PartyLists.Instance.CalculateFailure(thisQuester);
-		double chanceOfFailure = 0;
-		for(int i = 0; i < PartyLists.Instance.parties[0][thisQuester].goodbadprogress.Count; i++)
-        {
-            chanceOfFailure += PartyLists.Instance.parties[0][thisQuester].goodbadprogress[i];
-        }
-		chanceOfFailure /= PartyLists.Instance.parties[0][thisQuester].goodbadprogress.Count;
-		failChance = (int)Math.Round(chanceOfFailure);
-		data.UpdateProgress(thisQuester, failChance);
+		data.UpdateProgress(thisQuester, PartyLists.Instance.parties[0][thisQuester].goodbadprogress[0]);
 	}
 	public override void _Input(InputEvent @event)
 	{

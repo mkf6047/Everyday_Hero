@@ -32,6 +32,12 @@ public partial class AcceptQuest : Area2D
 					}
 					PartyLists.Instance.parties[0][manager.currentHero - 1].questCompletionRewards.Add(quest.questReward);
 					PartyLists.Instance.parties[0][manager.currentHero - 1].onQuest = true;
+					bool iscompatable = false;
+					foreach(string a in quest.bestHeroes)
+                    {
+                        if(a.Contains(PartyLists.Instance.parties[0][manager.currentHero - 1].heroClass)){ iscompatable = true; }
+                    }
+					PartyLists.Instance.parties[0][manager.currentHero - 1].compatableWithQuest = iscompatable;
 					PlayerStats.Instance.QuestsSorted += 1;
 					QSSTracker.Instance.acceptedQuests++;
 
