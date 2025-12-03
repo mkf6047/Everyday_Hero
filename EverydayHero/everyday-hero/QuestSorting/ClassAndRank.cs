@@ -23,12 +23,24 @@ public partial class ClassAndRank : Control
 			rankDisplay.Newline();
 			isOnQuest.Newline();
 			rankDisplay.AppendText("Rank: " + PartyLists.Instance.parties[0][i].heroRank);
-			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest"); }
+			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest For " + PartyLists.Instance.parties[0][i].daysRemainingOnQuest + " More Day(s)"); }
 			else{ isOnQuest.AppendText("Present"); }
         }
 
 		this.Hide();
 	}
+
+	public void UpdateQuesterStatus()
+    {
+		isOnQuest.Text = "";
+		isOnQuest.AppendText("[font_size=20][b]Status:[/b]");
+        for(int i = 0; i < 6; i++)
+        {
+			isOnQuest.Newline();
+			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest"); }
+			else{ isOnQuest.AppendText("Present"); }
+        }
+    }
 
 	// public void LoadNextParty(int partyNum)
 	// {

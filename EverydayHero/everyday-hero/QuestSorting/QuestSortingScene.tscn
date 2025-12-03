@@ -216,7 +216,6 @@ script = ExtResource("16_cdk84")
 shape = SubResource("RectangleShape2D_yaefm")
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
-visible = false
 z_index = 2
 layout_mode = 3
 anchors_preset = 0
@@ -247,9 +246,9 @@ Jack Decker"
 [node name="RankDisplay" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 8
 layout_mode = 0
-offset_left = 484.0
+offset_left = 434.0
 offset_top = 180.0
-offset_right = 684.0
+offset_right = 634.0
 offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
@@ -265,9 +264,9 @@ Rank:"
 [node name="In-Out" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 8
 layout_mode = 0
-offset_left = 704.0
+offset_left = 648.0
 offset_top = 180.0
-offset_right = 904.0
+offset_right = 923.0
 offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")

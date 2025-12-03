@@ -162,6 +162,14 @@ public partial class QuestSortingScene : Node2D
 		numofquest--;
 	}
 
+	public void UpdateQuesters()
+    {
+        currentHero = 1;
+		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
+		ChangeActiveHero(currentHero);
+		displayClassRank.UpdateQuesterStatus();
+    }
+
 	public void ChangeActiveHero(int change)
     {
 		currentHero = change;
@@ -170,7 +178,7 @@ public partial class QuestSortingScene : Node2D
 			{
 				case 1:
 					currentHeroSprite.ReplaceSprite("Knight");
-					heroDialouge.AppendText("Provide me with your most challenging quest");
+					heroDialouge.AppendText("Provide me with your most challenging quest!");
 					break;
 				case 2:
 					currentHeroSprite.ReplaceSprite("Cleric");
@@ -182,7 +190,7 @@ public partial class QuestSortingScene : Node2D
 					break;
 				case 4:
 					currentHeroSprite.ReplaceSprite("Monk");
-					heroDialouge.AppendText("My fists hunger for victory");
+					heroDialouge.AppendText("My fists hunger for victory!");
 					break;
 				case 5:
 					currentHeroSprite.ReplaceSprite("Ranger");
@@ -193,8 +201,8 @@ public partial class QuestSortingScene : Node2D
 					heroDialouge.AppendText("So… Whatcha need done?");
 					break;
 				default:
-					currentHeroSprite.ReplaceSprite("Knight");
-					heroDialouge.AppendText("Provide me with your most challenging quest");
+					currentHeroSprite.ReplaceSprite("Phillip");
+					heroDialouge.AppendText("Looks like everyone is out right now! You're gonna have to delay or toss out today's quests.");
 					break;
 			}
     }

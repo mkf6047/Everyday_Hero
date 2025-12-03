@@ -20,6 +20,7 @@ public partial class AcceptQuest : Area2D
 				MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
 				if (!quest.Dragging)
 				{
+					if(manager.currentHero == 7) { return; }
 					//PlayerStats.Instance.Coins += quest.questReward;
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes.Append(quest.questType);
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames.Append(quest.questName);
@@ -35,6 +36,7 @@ public partial class AcceptQuest : Area2D
 					QSSTracker.Instance.acceptedQuests++;
 
 					manager.RemoveQuest(quest);
+                    manager.UpdateQuesters();
 					//manager.NewParty();
 				}
 			}

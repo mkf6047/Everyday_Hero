@@ -241,7 +241,7 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            if(canComplete && Input.IsMouseButtonPressed(MouseButton.Left)){ tutorialCondition = true; }
+            if(canComplete && Input.IsActionPressed("Interact")){ tutorialCondition = true; }
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {

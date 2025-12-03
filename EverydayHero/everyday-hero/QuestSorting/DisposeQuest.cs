@@ -26,6 +26,7 @@ public partial class DisposeQuest : Area2D
                 {
                     QSSTracker.Instance.rejectedQuests++;
                     manager.RemoveQuest(quest);
+                    manager.UpdateQuesters();
                 }
             }
         }

@@ -100,6 +100,10 @@ public partial class PartyLists : Node
 					newPartyMember.heroClass = "Rogue";
 					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Rogue-Front.png");
 					break;
+				case 6:
+					newPartyMember.heroClass = "Phillip";
+					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Philip-Sprite.png");
+					break;
 				default:
 					newPartyMember.heroClass = "Knight";
 					newPartyMember.sprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Front.png");

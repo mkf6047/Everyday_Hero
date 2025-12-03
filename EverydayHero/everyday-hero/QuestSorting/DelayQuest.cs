@@ -26,6 +26,7 @@ public partial class DelayQuest : Area2D
                 {
                     QSSTracker.Instance.delayedQuests++;
                     manager.RemoveQuest(quest);
+                    manager.UpdateQuesters();
                 }
             }
         }

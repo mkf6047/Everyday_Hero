@@ -28,10 +28,14 @@ public partial class AllPartyProgressReport : Node2D
             if (PartyLists.Instance.parties[0][i].onQuest)
             {
                 PartyLists.Instance.parties[0][i].daysRemainingOnQuest--;
+				if(PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0)
+                {
+                    PartyLists.Instance.parties[0][i].onQuest = false;
+                }
             }
         }
 		readyComplete = true;
-        TutorialInfo.Instance.ActivateTutorial(3);
+        TutorialInfo.Instance.ActivateTutorial(4);
         PlayerStats.Instance.DaysPassed += 1;
 	}
 
