@@ -31,29 +31,17 @@ public partial class QuestSortingScene : Node2D
 		switch (PlayerStats.Instance.Rank)
 		{
 			case "SSS":
-				partiesApplying = 15;
-				break;
 			case "SS":
-				partiesApplying = 12;
-				break;
 			case "S":
-				partiesApplying = 10;
-				break;
-			case "A":
-				partiesApplying = 9;
-				break;
-			case "B":
-				partiesApplying = 8;
-				break;
-			case "C":
-				partiesApplying = 7;
-				break;
-			case "D":
 				partiesApplying = 6;
 				break;
-			case "E":
+			case "A":
+			case "B":
+			case "C":
 				partiesApplying = 5;
 				break;
+			case "D":
+			case "E":
 			case "F":
 				partiesApplying = 4;
 				break;
