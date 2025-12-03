@@ -3,3 +3,4 @@ Goblins have been raiding our town. Get rid of them!
 E
 20
 2
+Rogue, Ranger, Mage, Monk, Knight

@@ -11,7 +11,7 @@ public partial class QuestSortingScene : Node2D
 
 	LeaderSprite currentHeroSprite;
 
-	RichTextLabel heroDialouge;
+	RichTextLabel heroDialouge, heroName;
 
 	QssResults resultsDisplay;
 	
@@ -71,6 +71,7 @@ public partial class QuestSortingScene : Node2D
 		TutorialInfo.Instance.ActivateTutorial(3);
 		if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
+		heroName = (RichTextLabel)GetNode("PartyInformation/HeroName");
 		ChangeActiveHero(currentHero);
 		BackgroundNoise.Instance.MainMusic();
 	}
@@ -176,35 +177,43 @@ public partial class QuestSortingScene : Node2D
     {
 		currentHero = change;
 		heroDialouge.Text = "";
+		heroName.Text = "";
 		switch (change)
 			{
 				case 1:
 					currentHeroSprite.ReplaceSprite("Knight");
 					heroDialouge.AppendText("Provide me with your most challenging quest!");
+					heroName.AppendText("[center]Allistrad von Leopoldo");
 					break;
 				case 2:
 					currentHeroSprite.ReplaceSprite("Cleric");
 					heroDialouge.AppendText("Where is my aid needed?");
+					heroName.AppendText("[center]Rosalind Deacon");
 					break;
 				case 3:
 					currentHeroSprite.ReplaceSprite("Mage");
 					heroDialouge.AppendText("Who can I experim... HELP! Yeah help that's what I meant.");
+					heroName.AppendText("[center]Lucy Fern");
 					break;
 				case 4:
 					currentHeroSprite.ReplaceSprite("Monk");
 					heroDialouge.AppendText("My fists hunger for victory!");
+					heroName.AppendText("[center]Rashao Kahan");
 					break;
 				case 5:
 					currentHeroSprite.ReplaceSprite("Ranger");
 					heroDialouge.AppendText("What business do you have with the woods?");
+					heroName.AppendText("[center]Thornton Breyer");
 					break;
 				case 6:
 					currentHeroSprite.ReplaceSprite("Rogue");
 					heroDialouge.AppendText("So… Whatcha need done?");
+					heroName.AppendText("[center]Jack Decker");
 					break;
 				default:
 					currentHeroSprite.ReplaceSprite("Phillip");
 					heroDialouge.AppendText("Looks like everyone is out right now! You're gonna have to delay or toss out today's quests.");
+					heroName.AppendText("[center]Phillip");
 					break;
 			}
     }

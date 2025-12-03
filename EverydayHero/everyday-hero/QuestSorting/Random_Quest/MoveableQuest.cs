@@ -82,4 +82,9 @@ public partial class MoveableQuest : CharacterBody2D
 		mouseIn = false;
 		sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestPaper.png");
 	}
+
+	public void SpecificQuest(string filepath)
+    {
+        data.SpecificQuest(filepath);
+    }
 }

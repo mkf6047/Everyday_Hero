@@ -98,11 +98,44 @@ public partial class QuestData : Node2D
             questDuration.Newline();
             questDuration.AppendText(value);
             this.parent.questDuration = int.Parse(value);
-            MoveableQuest parent = (MoveableQuest)GetParent();
-            parent.questReward = value.ToInt();
-            GD.Print("quest information ported sucessfully.");
+            //GD.Print("quest information ported sucessfully.");
         }
 
         base._Ready();
+    }
+
+    public void SpecificQuest(string filepath)
+    {
+        using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Read))
+        {
+            string value = file.GetLine();
+            questLabel.Text = "";
+            questLabel.AppendText("[center][color=black]" + value);
+            this.parent.questName = value;
+
+            value = file.GetLine();
+            questDescription.Text = "";
+            questDescription.AppendText("[color=black][font_size=14]" + value);
+
+            value = file.GetLine();
+            questRank.Text = "";
+            questRank.AppendText("[color=black][font_size=13]Rank:");
+            questRank.Newline();
+            questRank.AppendText(value);
+            this.parent.questRank = value;
+
+            value = file.GetLine();
+            questValue.Text = "";
+            questValue.AppendText("[color=black]" + value + "G");
+            this.parent.questReward = int.Parse(value);
+
+            value = file.GetLine();
+            questDuration.Text = "";
+            questDuration.AppendText("[font_size=13][color=black][center]Days:");
+            questDuration.Newline();
+            questDuration.AppendText(value);
+            this.parent.questDuration = int.Parse(value);
+            //GD.Print("quest information ported sucessfully.");
+        }
     }
 }
