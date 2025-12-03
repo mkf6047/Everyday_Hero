@@ -3,7 +3,7 @@ using System;
 
 public partial class PartyInformation : Node2D
 {
-	int currentHero = 1;
+	public int currentHero = 1;
 	LeaderSprite currentHeroSprite;
 	public override void _Ready()
 	{

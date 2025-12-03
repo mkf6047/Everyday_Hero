@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bk6lo2mprn42k"]
+[gd_scene load_steps=10 format=3 uid="uid://bk6lo2mprn42k"]
 
 [ext_resource type="Script" uid="uid://cako6jfp7u8if" path="res://Maps/Menus/ToNewGame.cs" id="1_6aa38"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="1_r5od4"]
 [ext_resource type="Script" uid="uid://btqjmauyb4x0h" path="res://Maps/Menus/ToLoadMenu.cs" id="2_y7ovg"]
 [ext_resource type="Script" uid="uid://c64m63q48fext" path="res://Maps/Menus/DeleteSaveFiles.cs" id="3_y7ovg"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="4_l6t6g"]
@@ -16,6 +17,7 @@ offset_left = 338.0
 offset_top = 125.0
 offset_right = 431.0
 offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("1_r5od4")
 text = "New Game"
 script = ExtResource("1_6aa38")
 
@@ -24,6 +26,7 @@ offset_left = 720.0
 offset_top = 125.0
 offset_right = 816.0
 offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("1_r5od4")
 text = "Load Game"
 script = ExtResource("2_y7ovg")
 
@@ -32,6 +35,7 @@ offset_left = 720.0
 offset_top = 230.0
 offset_right = 826.0
 offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("1_r5od4")
 text = "Delete Saves"
 script = ExtResource("3_y7ovg")
 
@@ -46,6 +50,7 @@ offset_left = 64.0
 offset_top = 456.0
 offset_right = 1088.0
 offset_bottom = 616.0
+theme_override_fonts/normal_font = ExtResource("1_r5od4")
 bbcode_enabled = true
 text = "[center][font_size=22]Are you sure you want to delete your save data?"
 
@@ -70,6 +75,7 @@ offset_left = 368.0
 offset_top = 564.0
 offset_right = 428.0
 offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("1_r5od4")
 text = "   Yes   "
 script = ExtResource("6_q5do8")
 
@@ -78,6 +84,7 @@ offset_left = 756.0
 offset_top = 567.0
 offset_right = 812.0
 offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("1_r5od4")
 text = "   No   "
 script = ExtResource("7_ai7d0")
 

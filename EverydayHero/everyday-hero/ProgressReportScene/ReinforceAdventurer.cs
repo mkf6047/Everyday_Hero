@@ -19,6 +19,9 @@ public partial class ReinforceAdventurer : Area2D
                 MovingProgressReport report = (MovingProgressReport)GetOverlappingBodies()[0];
                 if (!report.Dragging)
                 {
+                    PartyLists.Instance.parties[0][report.thisQuester].goodbadprogress[0] *= 2;
+                    if(PartyLists.Instance.parties[0][report.thisQuester].goodbadprogress[0] > 100){PartyLists.Instance.parties[0][report.thisQuester].goodbadprogress[0] = 100;}
+                    manager.NextAvailableHero();
                     //QSSTracker.Instance.rejectedQuests++;
                     manager.RemoveReport(report);
                 }

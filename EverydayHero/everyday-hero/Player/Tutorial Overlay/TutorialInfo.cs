@@ -277,7 +277,7 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            if(canComplete && Input.IsActionJustPressed("cancel")){ tutorialCondition = true; }
+            if(canComplete && Input.IsActionJustPressed("Interact")){ tutorialCondition = true; }
             //tutorial processing goes here!!!!
         }
         if (Math.Abs(delta - 0.0) < epsilon)
@@ -316,7 +316,7 @@ public partial class TutorialInfo : Node
                 overlay.HideOverlay();
                 return;
             }
-            if(canComplete && Input.IsMouseButtonPressed(MouseButton.Left)){ tutorialCondition = true; }
+            if(canComplete && Input.IsActionJustPressed("Interact")){ tutorialCondition = true; }
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
@@ -388,6 +388,9 @@ public partial class TutorialInfo : Node
                 break;
             case 4:
                 SaveGame(delta);
+                break;
+            case 5:
+                ProgressReportIntro(delta);
                 break;
             default:
                 GD.Print("Invalid Tutorial Number.");

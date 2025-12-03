@@ -9,6 +9,8 @@ public partial class AllPartyProgressReport : Node2D
 	
 	Node2D reportHolder;
 
+	PartyInformation partyInfo;
+
 	bool readyComplete, calculateOnce, allPartiesSorted = false;
 
 	int numofreports = 6;
@@ -34,8 +36,9 @@ public partial class AllPartyProgressReport : Node2D
                 }
             }
         }
+		partyInfo = (PartyInformation)GetNode("PartyInformation");
 		readyComplete = true;
-        TutorialInfo.Instance.ActivateTutorial(4);
+        TutorialInfo.Instance.ActivateTutorial(5);
         PlayerStats.Instance.DaysPassed += 1;
 	}
 
@@ -46,6 +49,18 @@ public partial class AllPartyProgressReport : Node2D
             GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn");
         }
 	}
+
+	public void ChangeActiveHero(int input)
+    {
+        partyInfo.ChangeActiveHero(input);
+    }
+
+	public void NextAvailableHero()
+    {
+		currentHero = 1;
+		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
+        ChangeActiveHero(currentHero);
+    }
 
 	public void AddReport(MovingProgressReport report)
     {
