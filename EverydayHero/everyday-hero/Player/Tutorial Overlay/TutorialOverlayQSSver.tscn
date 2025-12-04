@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="2_b6i00"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="3_n2684"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="4_q7uqf"]
-[ext_resource type="Texture2D" uid="uid://bsknckox40ile" path="res://Sprites/NPCSprites/Philip-Sprite.png" id="5_n2684"]
+[ext_resource type="Texture2D" uid="uid://3rar4aefnacy" path="res://Sprites/NPCSprites/Manager-Philip.png" id="5_n2684"]
 [ext_resource type="Script" uid="uid://bo2sm3rcpsu44" path="res://QuestSorting/LeaderSprite.cs" id="6_q7uqf"]
 
 [node name="TutorialOverlay" type="Control" groups=["TutorialNode"]]
@@ -30,6 +30,7 @@ text = "[font_size=12][center]Press Z/enter to continue"
 
 [node name="Textbox" type="RichTextLabel" parent="."]
 z_index = 3
+layout_mode = 0
 offset_left = 320.0
 offset_top = 64.0
 offset_right = 1088.0
@@ -41,6 +42,7 @@ bbcode_enabled = true
 
 [node name="Nameplate" type="RichTextLabel" parent="."]
 z_index = 10
+layout_mode = 0
 offset_left = 315.0
 offset_top = 225.0
 offset_right = 515.0
@@ -79,26 +81,25 @@ texture = ExtResource("4_q7uqf")
 [node name="LeaderSprite" type="Sprite2D" parent="."]
 z_index = -4
 position = Vector2(150, 300)
-scale = Vector2(6, 6)
 texture = ExtResource("5_n2684")
 script = ExtResource("6_q7uqf")
 
 [node name="LeaderBackground" type="Sprite2D" parent="LeaderSprite"]
 z_index = -1
 position = Vector2(0, 1.5)
-scale = Vector2(0.75, 0.3375)
+scale = Vector2(4, 2.028)
 texture = ExtResource("3_n2684")
 region_rect = Rect2(0, 0, 128, 224)
 
 [node name="LeaderBckgndLeftEnd" type="Sprite2D" parent="LeaderSprite"]
 z_index = -1
-position = Vector2(-16, 1.5)
-scale = Vector2(0.25, 0.3375)
+position = Vector2(-88, 1.5)
+scale = Vector2(2, 2.028)
 texture = ExtResource("4_q7uqf")
 
 [node name="LeaderBckgndRightEnd" type="Sprite2D" parent="LeaderSprite"]
 z_index = -1
-position = Vector2(16, 1.5)
-scale = Vector2(0.25, 0.3375)
+position = Vector2(88, 1.5)
+scale = Vector2(2, 2.028)
 texture = ExtResource("4_q7uqf")
 flip_h = true
