@@ -29,32 +29,32 @@ public partial class MovingProgressReport : CharacterBody2D
             case "Knight":
 				data.UpdateName("Allistrad von Leopold");
 				thisQuester = 0;
-				if(!PartyLists.Instance.parties[0][0].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][0].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
 			case "Mage":
                 data.UpdateName("Lucy Fern");
 				thisQuester = 2;
-				if(!PartyLists.Instance.parties[0][2].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][2].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
 			case "Monk":
                 data.UpdateName("Rashao Kahan");
 				thisQuester = 3;
-				if(!PartyLists.Instance.parties[0][3].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][3].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
 			case "Rogue":
                 data.UpdateName("Jack Decker");
 				thisQuester = 5;
-				if(!PartyLists.Instance.parties[0][5].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][5].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
 			case "Cleric":
                 data.UpdateName("Rosalind Deacon");
 				thisQuester = 1;
-				if(!PartyLists.Instance.parties[0][1].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][1].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
 			case "Ranger":
                 data.UpdateName("Thornton Breyer");
 				thisQuester = 4;
-				if(!PartyLists.Instance.parties[0][4].onQuest){ removalHub.CallDeferred("RemoveReport", this); }
+				if(!PartyLists.Instance.parties[0][4].onQuest){ removalHub.CallDeferred("RemoveReport", this); return; }
 				break;
             default:
                 data.UpdateName("unknown");
@@ -62,7 +62,8 @@ public partial class MovingProgressReport : CharacterBody2D
 				break;
         }
 		PartyLists.Instance.CalculateFailure(thisQuester);
-		data.UpdateProgress(thisQuester, PartyLists.Instance.parties[0][thisQuester].goodbadprogress[0]);
+		data.CallDeferred("UpdateProgress", thisQuester, PartyLists.Instance.parties[0][thisQuester].goodbadprogress[0]);
+		//data.UpdateProgress(thisQuester, PartyLists.Instance.parties[0][thisQuester].goodbadprogress[0]);
 	}
 	public override void _Input(InputEvent @event)
 	{

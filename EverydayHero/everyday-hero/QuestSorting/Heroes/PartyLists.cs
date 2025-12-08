@@ -149,6 +149,7 @@ public partial class PartyLists : Node
             {
                 parties[0][partyMember].goodbadprogress[i] = 100;
             }
+			GD.Print("D4C");
         }
     }
 

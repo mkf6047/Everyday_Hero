@@ -10,7 +10,7 @@ public partial class TutorialInfo : Node
     private Vector2 previousMousePos;
     public int tutorialCount = 0;
     int currentLine = 0;
-    public bool[] tutorialComplete = [false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
+    public bool[] tutorialComplete = [false, false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
     private string[] tutorialDialougeFiles = [                  //make sure order of strings here corresponds with the order the related method appears in callTutorial method
         "res://Player/Tutorial Overlay/TutorialDialouge/Walking.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/ClickOnBuilding.txt",
@@ -245,7 +245,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[3][0], "Phillip");
+            overlay.UpdateText(tutorialLines[3][0], "[center]Manager Phillip");
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -255,7 +255,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[3].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[3][currentLine], "Phillip");
+                overlay.UpdateText(tutorialLines[3][currentLine], "[center]Manager Phillip");
                 if(currentLine == tutorialLines[3].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
@@ -320,7 +320,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[5][0], "Phillip");
+            overlay.UpdateText(tutorialLines[5][0], "[center]Manager Phillip");
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -330,7 +330,7 @@ public partial class TutorialInfo : Node
             currentLine++;
             if (currentLine <= tutorialLines[5].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[5][currentLine], "Phillip");
+                overlay.UpdateText(tutorialLines[5][currentLine], "[center]Manager Phillip");
                 if(currentLine == tutorialLines[5].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }

@@ -1,13 +1,184 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3bccles35ihs"]
+[gd_scene load_steps=14 format=3 uid="uid://c3bccles35ihs"]
 
 [ext_resource type="Script" uid="uid://2qpdfw3lbk0i" path="res://MusicAndSFX/Music/BackgroundNoise.cs" id="1_2atvq"]
 [ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
+[ext_resource type="AudioStream" uid="uid://cmdyk3hfi2inl" path="res://MusicAndSFX/SFX/075682_scribbling_1-2aif-91260.mp3" id="3_cc1jn"]
+[ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="3_ecidf"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="3_u4c7l"]
+[ext_resource type="AudioStream" uid="uid://dgaqunpi1v5r5" path="res://MusicAndSFX/SFX/scribble-6144.mp3" id="4_s7lxk"]
+[ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="4_u4c7l"]
+[ext_resource type="Script" uid="uid://bjgklur5ro0fa" path="res://MusicAndSFX/Music/MasterSlider.cs" id="4_wyhvt"]
+[ext_resource type="Script" uid="uid://cqtxwjluf6ogl" path="res://MusicAndSFX/Music/MusicSlider.cs" id="5_72mk8"]
+[ext_resource type="AudioStream" uid="uid://bk2455wvyaush" path="res://MusicAndSFX/SFX/scribble_short-104286.mp3" id="5_n7612"]
+[ext_resource type="AudioStream" uid="uid://brh0erbhfibl6" path="res://MusicAndSFX/SFX/scribbling-81928.mp3" id="6_0yvqy"]
+[ext_resource type="Script" uid="uid://fu5bj1i34p7a" path="res://MusicAndSFX/Music/SfxSlider.cs" id="10_13auq"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2xbjh"]
+streams_count = 4
+stream_0/stream = ExtResource("3_cc1jn")
+stream_1/stream = ExtResource("4_s7lxk")
+stream_2/stream = ExtResource("5_n7612")
+stream_3/stream = ExtResource("6_0yvqy")
 
 [node name="BackgroundNoise" type="Node2D"]
 script = ExtResource("1_2atvq")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_pof3t")
-volume_db = -18.0
 autoplay = true
 parameters/looping = true
+
+[node name="ScribbleSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_2xbjh")
+
+[node name="ControlMenu" type="Node2D" parent="."]
+
+[node name="Text" type="Node2D" parent="ControlMenu"]
+z_index = 1
+
+[node name="Title" type="RichTextLabel" parent="ControlMenu/Text"]
+offset_left = 496.0
+offset_top = 110.0
+offset_right = 656.0
+offset_bottom = 170.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "[center]Audio Settings"
+
+[node name="Master Volume" type="RichTextLabel" parent="ControlMenu/Text"]
+offset_left = 200.0
+offset_top = 150.0
+offset_right = 400.0
+offset_bottom = 210.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Master Volume"
+
+[node name="Music Volume" type="RichTextLabel" parent="ControlMenu/Text"]
+offset_left = 200.0
+offset_top = 225.0
+offset_right = 400.0
+offset_bottom = 285.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Music Volume"
+
+[node name="SFX Audio" type="RichTextLabel" parent="ControlMenu/Text"]
+offset_left = 200.0
+offset_top = 300.0
+offset_right = 400.0
+offset_bottom = 360.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Sound Effect Volume"
+
+[node name="Sliders" type="Node2D" parent="ControlMenu"]
+z_index = 1
+
+[node name="MasterSlider" type="HSlider" parent="ControlMenu/Sliders"]
+offset_left = 276.0
+offset_top = 190.0
+offset_right = 876.0
+offset_bottom = 210.0
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+script = ExtResource("4_wyhvt")
+
+[node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/MasterSlider"]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "0"
+
+[node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/MasterSlider"]
+offset_left = 580.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "100"
+
+[node name="MusicSlider" type="HSlider" parent="ControlMenu/Sliders"]
+offset_left = 276.0
+offset_top = 265.0
+offset_right = 876.0
+offset_bottom = 285.0
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+script = ExtResource("5_72mk8")
+
+[node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/MusicSlider"]
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "0"
+
+[node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/MusicSlider"]
+offset_left = 580.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "100"
+
+[node name="SFXSlider" type="HSlider" parent="ControlMenu/Sliders"]
+offset_left = 276.0
+offset_top = 340.0
+offset_right = 876.0
+offset_bottom = 360.0
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 21
+ticks_on_borders = true
+script = ExtResource("10_13auq")
+
+[node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/SFXSlider"]
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "0"
+
+[node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/SFXSlider"]
+offset_left = 580.0
+offset_top = 20.0
+offset_right = 620.0
+offset_bottom = 60.0
+theme_override_fonts/normal_font = ExtResource("3_u4c7l")
+bbcode_enabled = true
+text = "100"
+
+[node name="Menubox" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(576, 272)
+scale = Vector2(25, 2)
+texture = ExtResource("3_ecidf")
+
+[node name="Leftbox" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(175, 272)
+scale = Vector2(1, 2)
+texture = ExtResource("4_u4c7l")
+
+[node name="Rightbox" type="Sprite2D" parent="ControlMenu"]
+position = Vector2(977, 272)
+rotation = 3.14159
+scale = Vector2(1, 2)
+texture = ExtResource("4_u4c7l")

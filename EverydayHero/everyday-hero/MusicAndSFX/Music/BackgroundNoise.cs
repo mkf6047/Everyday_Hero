@@ -4,26 +4,68 @@ using System;
 public partial class BackgroundNoise : Node2D
 {
     public static BackgroundNoise Instance {get; private set;}
+    //for background music
+    AudioStreamPlayer musicSpeaker;
 
-    AudioStreamPlayer speaker;
+    //for sound effects
+    AudioStreamPlayer sfxOutput;
+    bool isPlaying = false;
+    double timer = 0.0;
+    float masterVolumeValue = 50.0f;
 
     public override void _Ready()
     {
-        speaker = (AudioStreamPlayer)GetNode("AudioStreamPlayer");
+        musicSpeaker = (AudioStreamPlayer)GetNode("MusicStreamPlayer");
+        sfxOutput = (AudioStreamPlayer)GetNode("ScribbleSoundEffect");
+        Hide();
         Instance = this;
+    }
+
+    public override void _Process(double delta)     //SFX processing
+    {
+        if(Input.IsActionJustPressed("Interact") || Input.IsActionJustPressed("cancel") || Input.IsActionJustPressed("mouse_click"))
+        {
+            timer = 0.0;
+            sfxOutput.Play();
+            isPlaying = true;
+        }
+        if (isPlaying)
+        {
+            timer += delta;
+            if(timer > 0.5)
+            {
+                sfxOutput.Stop();
+            }
+        }
     }
 
     public void NighttimeMusic()
     {
         AudioStream newStream = ResourceLoader.Load<AudioStream>("res://MusicAndSFX/Music/Everyday Hero - Night Loop.mp3");
-        speaker.Stream = newStream;
-        speaker.Play();
+        musicSpeaker.Stream = newStream;
+        musicSpeaker.Play();
     }
 
     public void MainMusic()
     {
         AudioStream newStream = ResourceLoader.Load<AudioStream>("res://MusicAndSFX/Music/Everyday Hero Title Music.mp3");
-        speaker.Stream = newStream;
-        speaker.Play();
+        musicSpeaker.Stream = newStream;
+        musicSpeaker.Play();
+    }
+
+    public void SetMusicValue(float newVal)
+    {
+        musicSpeaker.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
+    }
+
+    public void SetSFXValue(float newVal)
+    {
+        sfxOutput.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
+    }
+    public void SetMasterVolume(float newVal)
+    {
+        masterVolumeValue = newVal;
+        SetSFXValue(sfxOutput.VolumeLinear * 100.0f);
+        SetMusicValue(musicSpeaker.VolumeLinear * 100.0f);
     }
 }

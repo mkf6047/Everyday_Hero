@@ -22,9 +22,9 @@ public partial class AcceptQuest : Area2D
 				{
 					if(manager.currentHero == 7) { return; }
 					//PlayerStats.Instance.Coins += quest.questReward;
-					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes.Append(quest.questType);
-					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames.Append(quest.questName);
-					PartyLists.Instance.parties[0][manager.currentHero - 1].goodbadprogress.Append(0);
+					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes[0] = quest.questType;
+					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames[0] = quest.questName;
+					PartyLists.Instance.parties[0][manager.currentHero - 1].goodbadprogress[0] = 0;
 					PartyLists.Instance.parties[0][manager.currentHero - 1].completionByRank[quest.questRank] += 1;
 					if (PartyLists.Instance.parties[0][manager.currentHero - 1].daysRemainingOnQuest < quest.questDuration) 
 					{

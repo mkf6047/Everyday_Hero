@@ -5,10 +5,10 @@ public partial class HeroStats : Node
 {
     public string heroClass = "";
     public string heroRank = "F";
-    public Godot.Collections.Array<string> currentQuestsTypes = new Godot.Collections.Array<string>(); //
-    public Godot.Collections.Array<string> currentQuestsNames = new Godot.Collections.Array<string>();
+    public Godot.Collections.Array<string> currentQuestsTypes = [""]; //
+    public Godot.Collections.Array<string> currentQuestsNames = [""];
     public Godot.Collections.Array<int> questCompletionRewards = new Godot.Collections.Array<int>();
-    public Godot.Collections.Array<int> goodbadprogress = new Godot.Collections.Array<int>();
+    public Godot.Collections.Array<int> goodbadprogress = [0];
     public Godot.Collections.Dictionary<string, int> completionByRank = new Godot.Collections.Dictionary<string, int>
     {
         {"SSS", 0},

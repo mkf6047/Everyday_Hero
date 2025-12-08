@@ -14,7 +14,8 @@ public partial class TutorialOverlay : Control
     public void UpdateText(string incomingText, string incomingName)
     {
         textbox.Text = incomingText;
-        nameplate.Text = incomingName;
+        nameplate.Text = "";
+        nameplate.AppendText(incomingName);
         ShowOverlay();
     }
     public void HideOverlay(){ this.Hide(); }
