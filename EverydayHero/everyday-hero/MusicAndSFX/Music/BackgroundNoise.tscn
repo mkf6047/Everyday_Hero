@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3bccles35ihs"]
+[gd_scene load_steps=15 format=3 uid="uid://c3bccles35ihs"]
 
 [ext_resource type="Script" uid="uid://2qpdfw3lbk0i" path="res://MusicAndSFX/Music/BackgroundNoise.cs" id="1_2atvq"]
 [ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bk2455wvyaush" path="res://MusicAndSFX/SFX/scribble_short-104286.mp3" id="5_n7612"]
 [ext_resource type="AudioStream" uid="uid://brh0erbhfibl6" path="res://MusicAndSFX/SFX/scribbling-81928.mp3" id="6_0yvqy"]
 [ext_resource type="Script" uid="uid://fu5bj1i34p7a" path="res://MusicAndSFX/Music/SfxSlider.cs" id="10_13auq"]
+[ext_resource type="Script" uid="uid://2a0s5k8cs7g3" path="res://MusicAndSFX/Music/CloseAudioMenu.cs" id="13_s7lxk"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2xbjh"]
 streams_count = 4
@@ -182,3 +183,13 @@ position = Vector2(977, 272)
 rotation = 3.14159
 scale = Vector2(1, 2)
 texture = ExtResource("4_u4c7l")
+
+[node name="CloseAudioMenu" type="Button" parent="ControlMenu"]
+offset_left = 516.0
+offset_top = 390.0
+offset_right = 636.0
+offset_bottom = 436.0
+theme_override_fonts/font = ExtResource("3_u4c7l")
+theme_override_font_sizes/font_size = 24
+text = "Close Menu"
+script = ExtResource("13_s7lxk")

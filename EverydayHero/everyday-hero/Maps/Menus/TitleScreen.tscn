@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://yra1xlevfyws"]
+[gd_scene load_steps=7 format=3 uid="uid://yra1xlevfyws"]
 
 [ext_resource type="Script" uid="uid://chrohqeso06v" path="res://Maps/Menus/TitleScreen.cs" id="1_3o3eu"]
 [ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_jbvtc"]
 [ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="2_lc4ij"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="3_scf63"]
+[ext_resource type="Texture2D" uid="uid://b3bv8ya3m7lwv" path="res://Sprites/Button-Hover.png" id="5_4wqe6"]
+[ext_resource type="Script" uid="uid://vf04v15t4vkx" path="res://Maps/Menus/RevealAudioSettings.cs" id="6_nixvr"]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource("1_3o3eu")
@@ -43,3 +45,12 @@ texture = ExtResource("2_jbvtc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+
+[node name="RevealAudioSettings" type="Button" parent="."]
+z_index = 5
+offset_left = 10.0
+offset_top = 566.0
+offset_right = 82.0
+offset_bottom = 638.0
+icon = ExtResource("5_4wqe6")
+script = ExtResource("6_nixvr")
