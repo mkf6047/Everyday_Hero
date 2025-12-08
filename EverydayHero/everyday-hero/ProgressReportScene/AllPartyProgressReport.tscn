@@ -173,8 +173,7 @@ script = ExtResource("14_hkxp0")
 shape = SubResource("RectangleShape2D_xqv5e")
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
-visible = false
-z_index = 2
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 offset_left = -25.0
@@ -583,7 +582,6 @@ script = ExtResource("19_x88em")
 shape = SubResource("RectangleShape2D_px6gx")
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_6wbnv")]
-visible = false
 z_index = 50
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("22_oplcg")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=37 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://bo2sm3rcpsu44" path="res://QuestSorting/LeaderSprite.cs" id="15_1eepb"]
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="16_cdk84"]
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
+[ext_resource type="Script" uid="uid://cbuajbd7lcmr3" path="res://QuestSorting/ChangeColorCollide.cs" id="18_oe7wh"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="19_oe7wh"]
 [ext_resource type="Script" uid="uid://b3oy871merbc2" path="res://QuestSorting/CharacterInfo.cs" id="20_qvrdk"]
 [ext_resource type="Script" uid="uid://rpcatfysos27" path="res://QuestSorting/ClassInformation.cs" id="21_b74tf"]
@@ -37,6 +38,9 @@ size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yaefm"]
 size = Vector2(36, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpoqg"]
+size = Vector2(200, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soa40"]
 size = Vector2(750, 26)
@@ -227,6 +231,15 @@ theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[center]Heroes"
+
+[node name="ChangeColorCollide" type="Area2D" parent="PartyInformation/LeaderSprite"]
+position = Vector2(0, -80)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("18_oe7wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
+shape = SubResource("RectangleShape2D_lpoqg")
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
 z_index = 13
@@ -708,6 +721,8 @@ visible = false
 [connection signal="body_exited" from="Dispose" to="Dispose" method="OnArea2DBodyExited"]
 [connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]
+[connection signal="body_entered" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyExited"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo2" to="PartyInformation/Class&Rank/CharacterInfo2" method="MouseEnter"]

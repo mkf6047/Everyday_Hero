@@ -5,6 +5,8 @@ public partial class LeaderSprite : Sprite2D
 {
     Texture2D kniTex, magTex, monTex, rogTex, cleTex, ranTex, philTex;
 
+    Sprite2D left, right, back;
+
     public override void _Ready()
     {
         kniTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Updated.png");
@@ -14,6 +16,9 @@ public partial class LeaderSprite : Sprite2D
         cleTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Healer-Updated.png");
         ranTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Ranger-Updated.png");
         philTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Manager-Philip.png");
+        left = (Sprite2D)GetNode("LeaderBckgndLeftEnd");
+        right = (Sprite2D)GetNode("LeaderBckgndRightEnd");
+        back = (Sprite2D)GetNode("LeaderBackground");
     }
 
 
@@ -46,5 +51,18 @@ public partial class LeaderSprite : Sprite2D
                 GD.Print("Error: Invalid Sprite");
                 break;
         }
+    }
+    public void Collision()
+    {
+        left.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/BoxSelected.png");
+        right.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/BoxSelected.png");
+        back.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/CenterSelected.png");
+    }
+
+    public void NoCollision()
+    {
+        left.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/TextboxEnd.png");
+        right.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/TextboxEnd.png");
+        back.Texture = GD.Load<Texture2D>("res://Sprites/OverlaySprites/TextboxCenter.png");
     }
 }
