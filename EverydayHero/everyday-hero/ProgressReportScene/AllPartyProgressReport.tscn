@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cfof7ugbjah0m"]
+[gd_scene load_steps=34 format=3 uid="uid://cfof7ugbjah0m"]
 
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="1_nj0hl"]
 [ext_resource type="Script" uid="uid://xmsllh3odeyr" path="res://ProgressReportScene/AllPartyProgressReport.cs" id="1_x2cy7"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bm4uxuysdv366" path="res://QuestSorting/RevealPartyInfo.cs" id="14_hkxp0"]
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="15_6dl4k"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="16_olxtf"]
+[ext_resource type="Script" uid="uid://bi080nkxif1ks" path="res://ProgressReportScene/HeroDisplayName.cs" id="17_xqv5e"]
 [ext_resource type="Script" uid="uid://jbjxnil1q3a4" path="res://ProgressReportScene/ProgressCharacterInfo.cs" id="18_oplcg"]
 [ext_resource type="Script" uid="uid://b6jfqy25yeija" path="res://ProgressReportScene/ClassInformationProgress.cs" id="19_x5idr"]
 [ext_resource type="Script" uid="uid://cb3gf6vqeqlj4" path="res://QuestSorting/ConcealPartyInfo.cs" id="19_x88em"]
@@ -172,7 +173,20 @@ script = ExtResource("14_hkxp0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo"]
 shape = SubResource("RectangleShape2D_xqv5e")
 
+[node name="HeroDisplayName" type="RichTextLabel" parent="PartyInformation/LeaderSprite"]
+offset_left = -100.0
+offset_top = 125.0
+offset_right = 100.0
+offset_bottom = 165.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("16_olxtf")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Allisrad Von Leopold"
+script = ExtResource("17_xqv5e")
+
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
+visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
@@ -582,6 +596,7 @@ script = ExtResource("19_x88em")
 shape = SubResource("RectangleShape2D_px6gx")
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_6wbnv")]
+visible = false
 z_index = 50
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("22_oplcg")]
@@ -591,6 +606,7 @@ z_index = 24
 [connection signal="body_exited" from="Reinforce" to="Reinforce" method="OnArea2DBodyExited"]
 [connection signal="body_entered" from="GoodProgress" to="GoodProgress" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="GoodProgress" to="GoodProgress" method="OnArea2DBodyExited"]
+[connection signal="texture_changed" from="PartyInformation/LeaderSprite" to="PartyInformation/LeaderSprite/HeroDisplayName" method="ChangeName"]
 [connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseEnter"]
