@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cfof7ugbjah0m"]
+[gd_scene load_steps=40 format=3 uid="uid://cfof7ugbjah0m"]
 
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="1_nj0hl"]
 [ext_resource type="Script" uid="uid://xmsllh3odeyr" path="res://ProgressReportScene/AllPartyProgressReport.cs" id="1_x2cy7"]
@@ -22,7 +22,13 @@
 [ext_resource type="Script" uid="uid://jbjxnil1q3a4" path="res://ProgressReportScene/ProgressCharacterInfo.cs" id="18_oplcg"]
 [ext_resource type="Script" uid="uid://b6jfqy25yeija" path="res://ProgressReportScene/ClassInformationProgress.cs" id="19_x5idr"]
 [ext_resource type="Script" uid="uid://cb3gf6vqeqlj4" path="res://QuestSorting/ConcealPartyInfo.cs" id="19_x88em"]
+[ext_resource type="Texture2D" uid="uid://nfrn0gdg2th5" path="res://Sprites/NPCSprites/Knight-Icon.png" id="21_e5yos"]
 [ext_resource type="PackedScene" uid="uid://dmqmfwc5wdeaf" path="res://Player/Tutorial Overlay/TutorialOverlay.tscn" id="22_oplcg"]
+[ext_resource type="Texture2D" uid="uid://qobtf6wq8fie" path="res://Sprites/NPCSprites/Healer-Icon.png" id="22_x88em"]
+[ext_resource type="Texture2D" uid="uid://dtucq3tmtfbgn" path="res://Sprites/NPCSprites/Wizard-Icon.png" id="23_px6gx"]
+[ext_resource type="Texture2D" uid="uid://dv4i6ek3i80vc" path="res://Sprites/NPCSprites/Monk-Icon.png" id="24_v4dvq"]
+[ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="25_dfst0"]
+[ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="26_as0jk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjnon"]
 
@@ -186,7 +192,6 @@ text = "[center]Allisrad Von Leopold"
 script = ExtResource("17_xqv5e")
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 0
@@ -323,6 +328,10 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 - Slow. Party takes longer to complete quests
 -"
 
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo1"]
+position = Vector2(-365, 0)
+texture = ExtResource("21_e5yos")
+
 [node name="CharacterInfo2" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 6
 position = Vector2(480, 256)
@@ -373,6 +382,10 @@ bbcode_enabled = true
 text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
 - Slow. Party takes longer to complete quests
 -"
+
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo2"]
+position = Vector2(-365, 0)
+texture = ExtResource("22_x88em")
 
 [node name="CharacterInfo3" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 7
@@ -425,6 +438,10 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 - Slow. Party takes longer to complete quests
 -"
 
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo3"]
+position = Vector2(-365, 0)
+texture = ExtResource("23_px6gx")
+
 [node name="CharacterInfo4" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 8
 position = Vector2(480, 320)
@@ -475,6 +492,10 @@ bbcode_enabled = true
 text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
 - Slow. Party takes longer to complete quests
 -"
+
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo4"]
+position = Vector2(-365, 0)
+texture = ExtResource("24_v4dvq")
 
 [node name="CharacterInfo5" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 9
@@ -527,6 +548,10 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 - Slow. Party takes longer to complete quests
 -"
 
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo5"]
+position = Vector2(-365, 0)
+texture = ExtResource("25_dfst0")
+
 [node name="CharacterInfo6" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 12
 position = Vector2(480, 384)
@@ -577,6 +602,10 @@ bbcode_enabled = true
 text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
 - Slow. Party takes longer to complete quests
 -"
+
+[node name="HeroIcon" type="Sprite2D" parent="PartyInformation/Class&Rank/CharacterInfo6"]
+position = Vector2(-365, 0)
+texture = ExtResource("26_as0jk")
 
 [node name="Collapse Tab" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 3

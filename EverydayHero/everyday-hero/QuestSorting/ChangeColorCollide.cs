@@ -4,9 +4,11 @@ using System;
 public partial class ChangeColorCollide : Area2D
 {
     LeaderSprite parent;
+    ClassInformation classInfo;
     public override void _Ready()
     {
         parent = (LeaderSprite)GetParent();
+        classInfo = (ClassInformation)GetNode("ClassInformation2");
     }
 
     public virtual void OnArea2DBodyEntered(Node2D body)
@@ -34,6 +36,19 @@ public partial class ChangeColorCollide : Area2D
 		{
 			GD.PrintErr("Deposite area just collided with something other than a Quest.");
 		}
-        
     }
+
+    public void UpdateClassInfo(string questerClass)
+    {
+        classInfo.UpdateCharInfo(questerClass);
+    }
+
+	public void MouseEnter()
+	{
+		classInfo.Show();
+	}
+	public void MouseExit()
+	{
+		classInfo.Hide();
+	}
 }

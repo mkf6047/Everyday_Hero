@@ -18,13 +18,23 @@ public partial class ClassAndRank : Control
 		rankDisplay.AppendText("[font_size=20][b]Adventurer Rank:[/b]");
 		isOnQuest.AppendText("[font_size=20][b]Status:[/b]");
 
+		string pre ="", post = "";
+
 		for(int i = 0; i < 6; i++)
         {
 			rankDisplay.Newline();
+			if (PartyLists.Instance.parties[0][i].onQuest) {
+				pre = "[color=black]";
+				post = "[/color]";
+				isOnQuest.AppendText(pre + "Out On Quest For " + PartyLists.Instance.parties[0][i].daysRemainingOnQuest + " More Day(s)" + post); 
+			}
+			else{
+				pre = "";
+				post = "";
+				isOnQuest.AppendText(pre + "Present" + post); 
+			}
 			isOnQuest.Newline();
-			rankDisplay.AppendText("Rank: " + PartyLists.Instance.parties[0][i].heroRank);
-			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest For " + PartyLists.Instance.parties[0][i].daysRemainingOnQuest + " More Day(s)"); }
-			else{ isOnQuest.AppendText("Present"); }
+			rankDisplay.AppendText(pre + "Rank: " + PartyLists.Instance.parties[0][i].heroRank + post);
         }
 
 		this.Hide();

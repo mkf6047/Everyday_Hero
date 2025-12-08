@@ -13,29 +13,32 @@
 [node name="LoadType" type="Node2D"]
 
 [node name="ToNewGame" type="Button" parent="."]
-offset_left = 338.0
-offset_top = 125.0
-offset_right = 431.0
-offset_bottom = 156.0
+offset_left = 516.0
+offset_top = 100.0
+offset_right = 636.0
+offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("1_r5od4")
+theme_override_font_sizes/font_size = 26
 text = "New Game"
 script = ExtResource("1_6aa38")
 
 [node name="ToLoadMenu" type="Button" parent="."]
-offset_left = 720.0
-offset_top = 125.0
-offset_right = 816.0
-offset_bottom = 156.0
+offset_left = 512.0
+offset_top = 175.0
+offset_right = 640.0
+offset_bottom = 225.0
 theme_override_fonts/font = ExtResource("1_r5od4")
+theme_override_font_sizes/font_size = 27
 text = "Load Game"
 script = ExtResource("2_y7ovg")
 
 [node name="DeleteSaveFiles" type="Button" parent="."]
-offset_left = 720.0
-offset_top = 230.0
-offset_right = 826.0
-offset_bottom = 261.0
+offset_left = 511.0
+offset_top = 250.0
+offset_right = 641.0
+offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("1_r5od4")
+theme_override_font_sizes/font_size = 26
 text = "Delete Saves"
 script = ExtResource("3_y7ovg")
 

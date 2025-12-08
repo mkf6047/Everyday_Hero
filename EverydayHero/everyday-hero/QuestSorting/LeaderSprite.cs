@@ -7,6 +7,8 @@ public partial class LeaderSprite : Sprite2D
 
     Sprite2D left, right, back;
 
+    ChangeColorCollide collisionDetection;
+
     public override void _Ready()
     {
         kniTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Updated.png");
@@ -19,6 +21,7 @@ public partial class LeaderSprite : Sprite2D
         left = (Sprite2D)GetNode("LeaderBckgndLeftEnd");
         right = (Sprite2D)GetNode("LeaderBckgndRightEnd");
         back = (Sprite2D)GetNode("LeaderBackground");
+        collisionDetection = (ChangeColorCollide)GetNode("ChangeColorCollide");
     }
 
 
@@ -51,6 +54,7 @@ public partial class LeaderSprite : Sprite2D
                 GD.Print("Error: Invalid Sprite");
                 break;
         }
+        collisionDetection.UpdateClassInfo(charClass);
     }
     public void Collision()
     {
