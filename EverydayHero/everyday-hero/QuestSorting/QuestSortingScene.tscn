@@ -288,6 +288,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 -"
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
+visible = false
 z_index = 13
 layout_mode = 3
 anchors_preset = 0

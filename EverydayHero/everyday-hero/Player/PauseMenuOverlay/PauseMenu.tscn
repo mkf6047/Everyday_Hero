@@ -49,9 +49,12 @@ text = "Quit Game"
 script = ExtResource("3_gs41k")
 
 [node name="AudioSettings" type="Button" parent="."]
+z_index = 2
 layout_mode = 0
-offset_right = 111.0
-offset_bottom = 37.0
+offset_left = 520.0
+offset_top = 250.0
+offset_right = 632.0
+offset_bottom = 290.0
 theme_override_fonts/font = ExtResource("8_rmvl3")
 theme_override_font_sizes/font_size = 18
 text = "Audio Settings"
