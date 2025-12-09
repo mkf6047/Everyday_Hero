@@ -12,7 +12,7 @@ public partial class DisposeQuest : Area2D
         manager = (QuestSortingScene)GetParent();
         mySprite = (Sprite2D)GetNode("Sprite2D");
         collidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/Trash-Can-Hover.png");
-        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/DisposeQuest.png");
+        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/Trash-Updated.png");
     }
 
     public override void _Process(double delta)

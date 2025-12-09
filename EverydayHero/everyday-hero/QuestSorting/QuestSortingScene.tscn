@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
-[ext_resource type="Texture2D" uid="uid://cigrd2q5q7ajn" path="res://Sprites/QuestSprites/DelayQuest.png" id="3_c7i46"]
 [ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
 [ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="4_q1cm5"]
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
-[ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/QuestSprites/DisposeQuest.png" id="5_jj7dt"]
+[ext_resource type="Texture2D" uid="uid://cogswfxlyt11b" path="res://Sprites/Updated-DelayBin.png" id="5_xxd73"]
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
 [ext_resource type="Script" uid="uid://ja6qwldklccn" path="res://QuestSorting/QssResults.cs" id="9_18a2g"]
+[ext_resource type="Texture2D" uid="uid://b2hfkhaubun8y" path="res://Sprites/Trash-Updated.png" id="9_ala2y"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="9_gjghe"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="10_18a2g"]
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="13_o18v7"]
@@ -35,13 +35,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7knd"]
-size = Vector2(64, 32)
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ky2r"]
 size = Vector2(64, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjghe"]
-size = Vector2(64, 64)
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpoqg"]
 size = Vector2(200, 150)
@@ -92,7 +92,6 @@ shape = SubResource("CircleShape2D_xmd7o")
 
 [node name="Delay" type="Area2D" parent="."]
 position = Vector2(1075, 425)
-scale = Vector2(2, 2)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_k7knd")
@@ -101,7 +100,7 @@ script = ExtResource("3_k7knd")
 shape = SubResource("RectangleShape2D_k7knd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Delay"]
-texture = ExtResource("3_c7i46")
+texture = ExtResource("5_xxd73")
 
 [node name="Accept" type="Area2D" parent="."]
 z_index = -6
@@ -118,7 +117,6 @@ texture = ExtResource("4_q1cm5")
 
 [node name="Dispose" type="Area2D" parent="."]
 position = Vector2(1075, 600)
-scale = Vector2(1.4, 1.4)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("7_gjghe")
@@ -127,7 +125,7 @@ script = ExtResource("7_gjghe")
 shape = SubResource("RectangleShape2D_gjghe")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dispose"]
-texture = ExtResource("5_jj7dt")
+texture = ExtResource("9_ala2y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

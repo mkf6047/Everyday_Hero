@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://hsuwry2j43hj" path="res://ProgressReportScene/ProgressReport/ProgressReport.tscn" id="2_qgf1u"]
 [ext_resource type="Script" uid="uid://h1w8hdbqd6rs" path="res://ProgressReportScene/ReportGetter.cs" id="2_tjnon"]
 [ext_resource type="Script" uid="uid://c83uw6xqqqvci" path="res://ProgressReportScene/ReinforceAdventurer.cs" id="5_wd07a"]
-[ext_resource type="Texture2D" uid="uid://8teybl1kdcbv" path="res://Sprites/QuestSprites/DisposeQuest.png" id="6_wd07a"]
+[ext_resource type="Texture2D" uid="uid://b2hfkhaubun8y" path="res://Sprites/Trash-Updated.png" id="7_e5yos"]
 [ext_resource type="Script" uid="uid://c814u7xie6khw" path="res://ProgressReportScene/ProgressAccepted.cs" id="7_l7gry"]
 [ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="8_wd07a"]
 [ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="9_6wbnv"]
@@ -33,7 +33,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tjnon"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wbnv"]
-size = Vector2(64, 64)
+size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xqv5e"]
 size = Vector2(36, 200)
@@ -96,7 +96,7 @@ shape = SubResource("RectangleShape2D_6wbnv")
 texture = ExtResource("8_wd07a")
 
 [node name="GoodProgress" type="Area2D" parent="."]
-position = Vector2(1027, 550)
+position = Vector2(1027, 450)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("7_l7gry")
@@ -105,7 +105,7 @@ script = ExtResource("7_l7gry")
 shape = SubResource("RectangleShape2D_6wbnv")
 
 [node name="Sprite2D" type="Sprite2D" parent="GoodProgress"]
-texture = ExtResource("6_wd07a")
+texture = ExtResource("7_e5yos")
 
 [node name="Reports" type="Node2D" parent="."]
 

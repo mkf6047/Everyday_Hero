@@ -12,7 +12,7 @@ public partial class DelayQuest : Area2D
         manager = (QuestSortingScene)GetParent();
         mySprite = (Sprite2D)GetNode("Sprite2D");
         collidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/Delay-Quest-Hover.png");
-        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/QuestSprites/DelayQuest.png");
+        notCollidingSprite = GD.Load<Texture2D>("res://Sprites/Updated-DelayBin.png");
     }
 
     public override void _Process(double delta)
