@@ -21,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_rnjad")
 
 [node name="Save Game" type="Button" parent="."]
@@ -99,6 +100,7 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("8_rmvl3")
 bbcode_enabled = true
 script = ExtResource("1_u6xfk")
@@ -119,6 +121,7 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("8_rmvl3")
 bbcode_enabled = true
 script = ExtResource("1_u6xfk")
@@ -139,6 +142,7 @@ layout_mode = 0
 offset_left = 64.0
 offset_right = 814.0
 offset_bottom = 75.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("8_rmvl3")
 bbcode_enabled = true
 script = ExtResource("1_u6xfk")
@@ -153,6 +157,7 @@ offset_left = 496.0
 offset_top = 100.0
 offset_right = 656.0
 offset_bottom = 140.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("8_rmvl3")
 bbcode_enabled = true
 text = "[font_size=22][center]Save Complete!"
@@ -165,7 +170,9 @@ script = ExtResource("7_s4yxm")
 [node name="MenuInfoText" type="RichTextLabel" parent="MenuInfo"]
 offset_right = 320.0
 offset_bottom = 160.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("8_rmvl3")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "[center]wao
 socool"

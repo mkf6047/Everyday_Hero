@@ -4,11 +4,11 @@ using System;
 public partial class ChangeColorCollide : Area2D
 {
     LeaderSprite parent;
-    ClassInformation classInfo;
+    ClassInformationV2 classInfo;
     public override void _Ready()
     {
         parent = (LeaderSprite)GetParent();
-        classInfo = (ClassInformation)GetNode("ClassInformation2");
+        classInfo = (ClassInformationV2)GetNode("ClassInformation2");
     }
 
     public virtual void OnArea2DBodyEntered(Node2D body)

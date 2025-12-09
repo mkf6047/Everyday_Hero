@@ -14,6 +14,7 @@ script = ExtResource("1_3o3eu")
 offset_top = 80.0
 offset_right = 1152.0
 offset_bottom = 240.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_lc4ij")
 bbcode_enabled = true
 text = "[center][color=black][font_size=96]Everyday Hero"
@@ -23,6 +24,7 @@ scroll_active = false
 offset_top = 324.0
 offset_right = 1152.0
 offset_bottom = 364.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_scf63")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -32,6 +34,7 @@ text = "[center][color=black]Press Z / Enter to Continue."
 offset_top = 364.0
 offset_right = 1152.0
 offset_bottom = 404.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_scf63")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true

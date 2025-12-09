@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3bccles35ihs"]
+[gd_scene load_steps=13 format=3 uid="uid://c3bccles35ihs"]
 
 [ext_resource type="Script" uid="uid://2qpdfw3lbk0i" path="res://MusicAndSFX/Music/BackgroundNoise.cs" id="1_2atvq"]
 [ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
@@ -7,11 +7,9 @@
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="3_u4c7l"]
 [ext_resource type="AudioStream" uid="uid://dgaqunpi1v5r5" path="res://MusicAndSFX/SFX/scribble-6144.mp3" id="4_s7lxk"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="4_u4c7l"]
-[ext_resource type="Script" uid="uid://bjgklur5ro0fa" path="res://MusicAndSFX/Music/MasterSlider.cs" id="4_wyhvt"]
-[ext_resource type="Script" uid="uid://cqtxwjluf6ogl" path="res://MusicAndSFX/Music/MusicSlider.cs" id="5_72mk8"]
 [ext_resource type="AudioStream" uid="uid://bk2455wvyaush" path="res://MusicAndSFX/SFX/scribble_short-104286.mp3" id="5_n7612"]
 [ext_resource type="AudioStream" uid="uid://brh0erbhfibl6" path="res://MusicAndSFX/SFX/scribbling-81928.mp3" id="6_0yvqy"]
-[ext_resource type="Script" uid="uid://fu5bj1i34p7a" path="res://MusicAndSFX/Music/SfxSlider.cs" id="10_13auq"]
+[ext_resource type="Script" uid="uid://cveqjakllkq" path="res://MusicAndSFX/Music/VolumeControl.cs" id="8_uq4qm"]
 [ext_resource type="Script" uid="uid://2a0s5k8cs7g3" path="res://MusicAndSFX/Music/CloseAudioMenu.cs" id="13_s7lxk"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2xbjh"]
@@ -22,15 +20,18 @@ stream_2/stream = ExtResource("5_n7612")
 stream_3/stream = ExtResource("6_0yvqy")
 
 [node name="BackgroundNoise" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_2atvq")
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_pof3t")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="ScribbleSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_2xbjh")
+bus = &"Sfx"
 
 [node name="ControlMenu" type="Node2D" parent="."]
 z_index = 100
@@ -53,6 +54,7 @@ offset_left = 200.0
 offset_top = 150.0
 offset_right = 400.0
 offset_bottom = 210.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_u4c7l")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -63,6 +65,7 @@ offset_left = 200.0
 offset_top = 225.0
 offset_right = 400.0
 offset_bottom = 285.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_u4c7l")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -73,6 +76,7 @@ offset_left = 200.0
 offset_top = 300.0
 offset_right = 400.0
 offset_bottom = 360.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("3_u4c7l")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
@@ -86,12 +90,14 @@ offset_left = 276.0
 offset_top = 190.0
 offset_right = 876.0
 offset_bottom = 210.0
-value = 50.0
-rounded = true
+max_value = 1.0
+step = 0.001
+value = 1.0
 scrollable = false
 tick_count = 21
 ticks_on_borders = true
-script = ExtResource("4_wyhvt")
+script = ExtResource("8_uq4qm")
+busName = "Master"
 
 [node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/MasterSlider"]
 layout_mode = 0
@@ -103,6 +109,7 @@ bbcode_enabled = true
 text = "0"
 
 [node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/MasterSlider"]
+layout_mode = 0
 offset_left = 580.0
 offset_top = 20.0
 offset_right = 620.0
@@ -116,14 +123,17 @@ offset_left = 276.0
 offset_top = 265.0
 offset_right = 876.0
 offset_bottom = 285.0
-value = 50.0
-rounded = true
+max_value = 1.0
+step = 0.001
+value = 1.0
 scrollable = false
 tick_count = 21
 ticks_on_borders = true
-script = ExtResource("5_72mk8")
+script = ExtResource("8_uq4qm")
+busName = "Music"
 
 [node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/MusicSlider"]
+layout_mode = 0
 offset_top = 20.0
 offset_right = 40.0
 offset_bottom = 60.0
@@ -132,6 +142,7 @@ bbcode_enabled = true
 text = "0"
 
 [node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/MusicSlider"]
+layout_mode = 0
 offset_left = 580.0
 offset_top = 20.0
 offset_right = 620.0
@@ -145,14 +156,17 @@ offset_left = 276.0
 offset_top = 340.0
 offset_right = 876.0
 offset_bottom = 360.0
-value = 50.0
-rounded = true
+max_value = 1.0
+step = 0.001
+value = 1.0
 scrollable = false
 tick_count = 21
 ticks_on_borders = true
-script = ExtResource("10_13auq")
+script = ExtResource("8_uq4qm")
+busName = "Sfx"
 
 [node name="Min" type="RichTextLabel" parent="ControlMenu/Sliders/SFXSlider"]
+layout_mode = 0
 offset_top = 20.0
 offset_right = 40.0
 offset_bottom = 60.0
@@ -161,6 +175,7 @@ bbcode_enabled = true
 text = "0"
 
 [node name="Max" type="RichTextLabel" parent="ControlMenu/Sliders/SFXSlider"]
+layout_mode = 0
 offset_left = 580.0
 offset_top = 20.0
 offset_right = 620.0
@@ -186,10 +201,12 @@ scale = Vector2(1, 2)
 texture = ExtResource("4_u4c7l")
 
 [node name="CloseAudioMenu" type="Button" parent="ControlMenu"]
+z_index = 3
 offset_left = 516.0
 offset_top = 390.0
 offset_right = 636.0
 offset_bottom = 436.0
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_u4c7l")
 theme_override_font_sizes/font_size = 24
 text = "Close Menu"

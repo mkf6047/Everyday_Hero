@@ -33,6 +33,7 @@ shape = SubResource("RectangleShape2D_w37uj")
 script = ExtResource("3_h5he3")
 
 [node name="QuestLabel" type="RichTextLabel" parent="QuestData"]
+process_mode = 3
 offset_left = -60.0
 offset_top = -120.0
 offset_right = 60.0
@@ -45,6 +46,7 @@ scroll_active = false
 autowrap_mode = 2
 
 [node name="QuestValue" type="RichTextLabel" parent="QuestData"]
+process_mode = 3
 offset_left = 10.0
 offset_top = 85.0
 offset_right = 70.0
@@ -56,6 +58,7 @@ text = "[font_size=14][center]"
 scroll_active = false
 
 [node name="QuestDescription" type="RichTextLabel" parent="QuestData"]
+process_mode = 3
 offset_left = -65.0
 offset_top = -70.0
 offset_right = 65.0
@@ -66,6 +69,7 @@ bbcode_enabled = true
 scroll_active = false
 
 [node name="QuestRank" type="RichTextLabel" parent="QuestData"]
+process_mode = 3
 offset_left = -75.0
 offset_top = 85.0
 offset_right = -35.0
@@ -77,10 +81,12 @@ text = "[font_size=14][center]"
 scroll_active = false
 
 [node name="QuestDuration" type="RichTextLabel" parent="QuestData"]
+process_mode = 3
 offset_left = -30.0
 offset_top = 85.0
 offset_right = 10.0
 offset_bottom = 125.0
+mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("4_lsw17")
 bbcode_enabled = true
 text = "[font_size=14][center]"

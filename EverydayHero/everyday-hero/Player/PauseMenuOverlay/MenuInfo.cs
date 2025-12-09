@@ -14,9 +14,9 @@ public partial class MenuInfo : Node2D
         if (Input.IsActionJustPressed("cancel"))
         {
             menuInfoText.Clear();
-            menuInfoText.AddText("Playtime: " + PlayerStats.Instance.Playtime);
+            menuInfoText.AddText("Playtime: " + PlayerStats.Instance.Playtime + " Days Passed");
             menuInfoText.Newline();
-            menuInfoText.AddText("Coins: " + PlayerStats.Instance.Coins);
+            menuInfoText.AddText("Coins: " + PlayerStats.Instance.Coins + "G");
             menuInfoText.Newline();
             menuInfoText.AddText("Rank: " + PlayerStats.Instance.Rank);
             menuInfoText.Newline();

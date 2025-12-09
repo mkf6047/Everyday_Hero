@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=44 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dr606irqms6ic" path="res://QuestSorting/ClassAndRank.cs" id="16_udyga"]
 [ext_resource type="Script" uid="uid://cbuajbd7lcmr3" path="res://QuestSorting/ChangeColorCollide.cs" id="18_oe7wh"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="19_oe7wh"]
+[ext_resource type="Script" uid="uid://bk865ur2j7sjt" path="res://QuestSorting/ClassInformationV2.cs" id="19_xxd73"]
 [ext_resource type="Script" uid="uid://b3oy871merbc2" path="res://QuestSorting/CharacterInfo.cs" id="20_qvrdk"]
 [ext_resource type="Script" uid="uid://rpcatfysos27" path="res://QuestSorting/ClassInformation.cs" id="21_b74tf"]
 [ext_resource type="Script" uid="uid://cb3gf6vqeqlj4" path="res://QuestSorting/ConcealPartyInfo.cs" id="21_oe7wh"]
@@ -42,11 +43,11 @@ size = Vector2(64, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjghe"]
 size = Vector2(64, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaefm"]
-size = Vector2(36, 200)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpoqg"]
 size = Vector2(200, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaefm"]
+size = Vector2(36, 200)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_soa40"]
 size = Vector2(750, 26)
@@ -188,6 +189,55 @@ position = Vector2(150, 300)
 texture = ExtResource("14_b74tf")
 script = ExtResource("15_1eepb")
 
+[node name="ChangeColorCollide" type="Area2D" parent="PartyInformation/LeaderSprite"]
+position = Vector2(0, -80)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("18_oe7wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
+shape = SubResource("RectangleShape2D_lpoqg")
+
+[node name="ClassInformation2" type="Node2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
+z_index = 8
+position = Vector2(-967, -375)
+script = ExtResource("19_xxd73")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(968, 525)
+scale = Vector2(0.667, 1)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 240, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+z_index = 10
+position = Vector2(879, 525)
+scale = Vector2(0.667, 1)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+z_index = 10
+position = Vector2(1056, 525)
+scale = Vector2(0.667, 1)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+z_index = 12
+offset_left = 880.0
+offset_top = 448.0
+offset_right = 1056.0
+offset_bottom = 600.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+
 [node name="LeaderBackground" type="Sprite2D" parent="PartyInformation/LeaderSprite"]
 z_index = -1
 position = Vector2(0, 1.5)
@@ -237,55 +287,6 @@ theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "[center]Heroes"
-
-[node name="ChangeColorCollide" type="Area2D" parent="PartyInformation/LeaderSprite"]
-position = Vector2(0, -80)
-collision_layer = 8
-collision_mask = 8
-script = ExtResource("18_oe7wh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
-shape = SubResource("RectangleShape2D_lpoqg")
-
-[node name="ClassInformation2" type="Node2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
-z_index = 8
-position = Vector2(-967, -375)
-script = ExtResource("21_b74tf")
-
-[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
-z_index = 11
-texture_repeat = 2
-position = Vector2(968, 525)
-scale = Vector2(0.667, 1)
-texture = ExtResource("9_gjghe")
-region_enabled = true
-region_rect = Rect2(0, 0, 240, 180)
-
-[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
-z_index = 10
-position = Vector2(879, 525)
-scale = Vector2(0.667, 1)
-texture = ExtResource("10_18a2g")
-
-[node name="RightEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
-z_index = 10
-position = Vector2(1056, 525)
-scale = Vector2(0.667, 1)
-texture = ExtResource("10_18a2g")
-flip_h = true
-
-[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
-z_index = 12
-offset_left = 880.0
-offset_top = 448.0
-offset_right = 1056.0
-offset_bottom = 600.0
-mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("19_oe7wh")
-bbcode_enabled = true
-text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
-- Slow. Party takes longer to complete quests
--"
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
 visible = false
@@ -790,12 +791,12 @@ visible = false
 [connection signal="body_exited" from="Accept" to="Accept" method="OnArea2DBodyExited"]
 [connection signal="body_entered" from="Dispose" to="Dispose" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Dispose" to="Dispose" method="OnArea2DBodyExited"]
-[connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
-[connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]
 [connection signal="body_entered" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyExited"]
 [connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo2" to="PartyInformation/Class&Rank/CharacterInfo2" method="MouseEnter"]
