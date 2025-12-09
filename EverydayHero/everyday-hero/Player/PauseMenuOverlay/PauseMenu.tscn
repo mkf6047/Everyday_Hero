@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhq048n6g1h0q"]
+[gd_scene load_steps=13 format=3 uid="uid://bhq048n6g1h0q"]
 
 [ext_resource type="Script" uid="uid://cbpnlwy0osagj" path="res://Player/PauseMenuOverlay/SaveGame.cs" id="1_b3xel"]
 [ext_resource type="Script" uid="uid://df4strnry4sf0" path="res://Player/PauseMenuOverlay/PauseMenu.cs" id="1_rnjad"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cxofrsx3lmscr" path="res://Player/PauseMenuOverlay/SaveSlots.cs" id="2_sv6vm"]
 [ext_resource type="Script" uid="uid://dj3jtyjjwh6wg" path="res://Player/PauseMenuOverlay/QuitGame.cs" id="3_gs41k"]
 [ext_resource type="Script" uid="uid://bt53r432d7yh1" path="res://Player/PauseMenuOverlay/SaveComplete.cs" id="4_sv6vm"]
+[ext_resource type="Script" uid="uid://vf04v15t4vkx" path="res://Maps/Menus/RevealAudioSettings.cs" id="5_t81pl"]
 [ext_resource type="Script" uid="uid://jwq1o2gdq4u8" path="res://Player/PauseMenuOverlay/MenuInfo.cs" id="7_s4yxm"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="8_8dvts"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="8_rmvl3"]
@@ -58,6 +59,7 @@ offset_bottom = 290.0
 theme_override_fonts/font = ExtResource("8_rmvl3")
 theme_override_font_sizes/font_size = 18
 text = "Audio Settings"
+script = ExtResource("5_t81pl")
 
 [node name="SaveSlots" type="Node2D" parent="."]
 process_mode = 3

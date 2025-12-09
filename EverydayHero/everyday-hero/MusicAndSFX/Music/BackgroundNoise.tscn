@@ -33,6 +33,7 @@ parameters/looping = true
 stream = SubResource("AudioStreamRandomizer_2xbjh")
 
 [node name="ControlMenu" type="Node2D" parent="."]
+z_index = 100
 
 [node name="Text" type="Node2D" parent="ControlMenu"]
 z_index = 1
