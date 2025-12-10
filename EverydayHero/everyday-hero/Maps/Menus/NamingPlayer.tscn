@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdm10lkjgrd7l"]
+[gd_scene load_steps=5 format=3 uid="uid://cdm10lkjgrd7l"]
 
 [ext_resource type="Script" uid="uid://cdxnhw0b1n2qp" path="res://Maps/Menus/ConfirmName.cs" id="1_ig5ih"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="1_qoly1"]
 [ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_58we6"]
+[ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="4_vf8ve"]
 
 [node name="NamingPlayer" type="Node2D"]
 
 [node name="Prompt" type="RichTextLabel" parent="."]
-offset_top = 30.0
+offset_top = 290.0
 offset_right = 1152.0
-offset_bottom = 70.0
+offset_bottom = 330.0
 theme_override_fonts/normal_font = ExtResource("1_qoly1")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -17,9 +18,9 @@ text = "[center][font_size=22][color=black]What is your name?"
 
 [node name="PlayerName" type="LineEdit" parent="."]
 offset_left = 380.0
-offset_top = 90.0
+offset_top = 340.0
 offset_right = 620.0
-offset_bottom = 122.0
+offset_bottom = 377.0
 theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 18
 placeholder_text = "Type name here"
@@ -30,9 +31,9 @@ position = Vector2(100, 160)
 
 [node name="ConfirmName" type="Button" parent="."]
 offset_left = 660.0
-offset_top = 90.0
+offset_top = 340.0
 offset_right = 782.0
-offset_bottom = 121.0
+offset_bottom = 377.0
 theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 18
 text = "Confirm Name"
@@ -46,3 +47,13 @@ z_index = -2
 position = Vector2(576, 324)
 scale = Vector2(1.125, 1)
 texture = ExtResource("2_58we6")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_top = 80.0
+offset_right = 1152.0
+offset_bottom = 240.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("4_vf8ve")
+bbcode_enabled = true
+text = "[center][color=black][font_size=96]Everyday Hero"
+scroll_active = false

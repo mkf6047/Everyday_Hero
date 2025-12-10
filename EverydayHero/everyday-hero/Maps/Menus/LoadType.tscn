@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk6lo2mprn42k"]
+[gd_scene load_steps=11 format=3 uid="uid://bk6lo2mprn42k"]
 
 [ext_resource type="Script" uid="uid://cako6jfp7u8if" path="res://Maps/Menus/ToNewGame.cs" id="1_6aa38"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="1_r5od4"]
@@ -9,14 +9,15 @@
 [ext_resource type="Script" uid="uid://biyrsjq1402pg" path="res://Maps/Menus/Yes.cs" id="6_q5do8"]
 [ext_resource type="Script" uid="uid://drie1xm52q50i" path="res://Maps/Menus/No.cs" id="7_ai7d0"]
 [ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="8_ai7d0"]
+[ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="10_aw4yk"]
 
 [node name="LoadType" type="Node2D"]
 
 [node name="ToNewGame" type="Button" parent="."]
 offset_left = 516.0
-offset_top = 100.0
+offset_top = 250.0
 offset_right = 636.0
-offset_bottom = 150.0
+offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("1_r5od4")
 theme_override_font_sizes/font_size = 26
 text = "New Game"
@@ -24,9 +25,9 @@ script = ExtResource("1_6aa38")
 
 [node name="ToLoadMenu" type="Button" parent="."]
 offset_left = 512.0
-offset_top = 175.0
+offset_top = 325.0
 offset_right = 640.0
-offset_bottom = 225.0
+offset_bottom = 375.0
 theme_override_fonts/font = ExtResource("1_r5od4")
 theme_override_font_sizes/font_size = 27
 text = "Load Game"
@@ -34,9 +35,9 @@ script = ExtResource("2_y7ovg")
 
 [node name="DeleteSaveFiles" type="Button" parent="."]
 offset_left = 511.0
-offset_top = 250.0
+offset_top = 400.0
 offset_right = 641.0
-offset_bottom = 300.0
+offset_bottom = 450.0
 theme_override_fonts/font = ExtResource("1_r5od4")
 theme_override_font_sizes/font_size = 26
 text = "Delete Saves"
@@ -96,3 +97,13 @@ z_index = -2
 position = Vector2(576, 324)
 scale = Vector2(1.125, 1)
 texture = ExtResource("8_ai7d0")
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_top = 80.0
+offset_right = 1152.0
+offset_bottom = 240.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("10_aw4yk")
+bbcode_enabled = true
+text = "[center][color=black][font_size=96]Everyday Hero"
+scroll_active = false

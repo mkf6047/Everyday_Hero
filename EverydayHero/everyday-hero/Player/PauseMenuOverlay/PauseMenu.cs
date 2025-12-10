@@ -15,7 +15,7 @@ public partial class PauseMenu : Control
 
     public override void _Process(double delta)
     {
-        if (Input.IsActionJustPressed("cancel") /*&& (!playerFunctions.IsBusy)*/)
+        if (Input.IsActionJustPressed("cancel")  || Input.IsActionJustPressed("BringOutPauseMenu"))
         {
             if (isMenuOpen)
             {

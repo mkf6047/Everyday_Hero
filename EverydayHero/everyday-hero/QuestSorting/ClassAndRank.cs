@@ -23,6 +23,7 @@ public partial class ClassAndRank : Control
 		for(int i = 0; i < 6; i++)
         {
 			rankDisplay.Newline();
+			isOnQuest.Newline();
 			if (PartyLists.Instance.parties[0][i].onQuest) {
 				pre = "[color=black]";
 				post = "[/color]";
@@ -33,7 +34,6 @@ public partial class ClassAndRank : Control
 				post = "";
 				isOnQuest.AppendText(pre + "Present" + post); 
 			}
-			isOnQuest.Newline();
 			rankDisplay.AppendText(pre + "Rank: " + PartyLists.Instance.parties[0][i].heroRank + post);
         }
 
