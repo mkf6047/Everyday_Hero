@@ -32,10 +32,10 @@ text = "[font_size=15][center]Press Z/enter to continue"
 [node name="Textbox" type="RichTextLabel" parent="."]
 z_index = 3
 layout_mode = 0
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 988.0
-offset_bottom = 192.0
+offset_left = 395.0
+offset_top = 58.0
+offset_right = 1103.0
+offset_bottom = 186.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("2_b6i00")
 theme_override_font_sizes/normal_font_size = 24
@@ -83,6 +83,6 @@ texture = ExtResource("4_q7uqf")
 
 [node name="LeaderSprite" type="Sprite2D" parent="."]
 z_index = 5
-position = Vector2(1060, 120)
-scale = Vector2(0.4, 0.4)
+position = Vector2(344, 126)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_n2684")

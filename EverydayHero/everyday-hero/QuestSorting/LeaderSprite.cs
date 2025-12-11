@@ -5,7 +5,7 @@ public partial class LeaderSprite : Sprite2D
 {
     Texture2D kniTex, magTex, monTex, rogTex, cleTex, ranTex, philTex;
 
-    Sprite2D left, right, back;
+    Sprite2D left, right, back, speakerSprite;
 
     ChangeColorCollide collisionDetection;
 
@@ -21,6 +21,7 @@ public partial class LeaderSprite : Sprite2D
         left = (Sprite2D)GetNode("LeaderBckgndLeftEnd");
         right = (Sprite2D)GetNode("LeaderBckgndRightEnd");
         back = (Sprite2D)GetNode("LeaderBackground");
+        speakerSprite = (Sprite2D)GetNode("../SpeakerSprite");
         collisionDetection = (ChangeColorCollide)GetNode("ChangeColorCollide");
     }
 
@@ -31,24 +32,31 @@ public partial class LeaderSprite : Sprite2D
         {
             case "Knight":
                 this.Texture = kniTex;
+                speakerSprite.Texture = kniTex;
                 break;
             case "Mage":
                 this.Texture = magTex;
+                speakerSprite.Texture = magTex;
                 break;
             case "Monk":
                 this.Texture = monTex;
+                speakerSprite.Texture = monTex;
                 break;
             case "Rogue":
                 this.Texture = rogTex;
+                speakerSprite.Texture = rogTex;
                 break;
             case "Cleric":
                 this.Texture = cleTex;
+                speakerSprite.Texture = cleTex;
                 break;
             case "Ranger":
                 this.Texture = ranTex;
+                speakerSprite.Texture = ranTex;
                 break;
             case "Phillip":
-                this.Texture = ranTex;
+                this.Texture = philTex;
+                speakerSprite.Texture = philTex;
                 break;
             default:
                 GD.Print("Error: Invalid Sprite");
