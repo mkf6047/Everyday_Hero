@@ -202,7 +202,6 @@ scroll_active = false
 [node name="PartyInformation" type="Node2D" parent="."]
 
 [node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
-visible = false
 z_index = -4
 position = Vector2(150, 260)
 texture = ExtResource("14_b74tf")
@@ -308,8 +307,7 @@ bbcode_enabled = true
 text = "[center]Heroes"
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
-visible = false
-z_index = 13
+z_index = 15
 layout_mode = 3
 anchors_preset = 0
 offset_left = 190.0
@@ -321,9 +319,9 @@ script = ExtResource("16_udyga")
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 6
 layout_mode = 0
-offset_left = 134.0
+offset_left = 198.0
 offset_top = 180.0
-offset_right = 384.0
+offset_right = 448.0
 offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
@@ -339,9 +337,9 @@ Jack Decker"
 [node name="RankDisplay" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 8
 layout_mode = 0
-offset_left = 434.0
+offset_left = 498.0
 offset_top = 180.0
-offset_right = 634.0
+offset_right = 698.0
 offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
@@ -357,9 +355,9 @@ Rank:"
 [node name="In-Out" type="RichTextLabel" parent="PartyInformation/Class&Rank"]
 z_index = 8
 layout_mode = 0
-offset_left = 648.0
+offset_left = 712.0
 offset_top = 180.0
-offset_right = 923.0
+offset_right = 987.0
 offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
@@ -375,15 +373,15 @@ Rank:"
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 2
 texture_repeat = 2
-position = Vector2(496, 300)
+position = Vector2(528, 300)
 scale = Vector2(1, 1.5)
 texture = ExtResource("9_gjghe")
 region_enabled = true
-region_rect = Rect2(0, 0, 864, 180)
+region_rect = Rect2(0, 0, 800, 180)
 
 [node name="LeftEnd" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 2
-position = Vector2(48, 300)
+position = Vector2(112, 300)
 scale = Vector2(1, 1.5)
 texture = ExtResource("10_18a2g")
 
@@ -396,7 +394,7 @@ flip_h = true
 
 [node name="CharacterInfo1" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 5
-position = Vector2(480, 225)
+position = Vector2(544, 225)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -452,7 +450,7 @@ texture = ExtResource("22_6gojl")
 
 [node name="CharacterInfo2" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 6
-position = Vector2(480, 256)
+position = Vector2(544, 256)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -508,7 +506,7 @@ texture = ExtResource("23_xxd73")
 
 [node name="CharacterInfo3" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 7
-position = Vector2(480, 288)
+position = Vector2(544, 288)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -564,7 +562,7 @@ texture = ExtResource("24_ala2y")
 
 [node name="CharacterInfo4" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 8
-position = Vector2(480, 320)
+position = Vector2(544, 320)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -620,7 +618,7 @@ texture = ExtResource("25_cvqbe")
 
 [node name="CharacterInfo5" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 9
-position = Vector2(480, 352)
+position = Vector2(544, 352)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -676,7 +674,7 @@ texture = ExtResource("26_bq2s0")
 
 [node name="CharacterInfo6" type="Area2D" parent="PartyInformation/Class&Rank"]
 z_index = 12
-position = Vector2(480, 384)
+position = Vector2(544, 384)
 collision_layer = 32
 collision_mask = 32
 priority = 1
@@ -732,7 +730,7 @@ texture = ExtResource("27_o8tmi")
 
 [node name="Collapse Tab" type="Sprite2D" parent="PartyInformation/Class&Rank"]
 z_index = 3
-position = Vector2(59, 300)
+position = Vector2(123, 300)
 rotation = 3.14159
 scale = Vector2(1.4, 1)
 texture = ExtResource("10_18a2g")
