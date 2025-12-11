@@ -44,7 +44,7 @@ size = Vector2(100, 64)
 size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpoqg"]
-size = Vector2(200, 150)
+size = Vector2(100, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yaefm"]
 size = Vector2(36, 200)
@@ -201,61 +201,60 @@ scroll_active = false
 
 [node name="PartyInformation" type="Node2D" parent="."]
 
-[node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
-visible = false
-z_index = -4
-position = Vector2(150, 260)
-texture = ExtResource("14_b74tf")
-script = ExtResource("15_1eepb")
+[node name="CurrentHeroAbilities" type="Node2D" parent="PartyInformation"]
 
-[node name="ChangeColorCollide" type="Area2D" parent="PartyInformation/LeaderSprite"]
-position = Vector2(0, -80)
+[node name="ChangeColorCollide" type="Area2D" parent="PartyInformation/CurrentHeroAbilities"]
+z_index = 10
+position = Vector2(343, 126)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("18_oe7wh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide"]
 shape = SubResource("RectangleShape2D_lpoqg")
 
-[node name="ClassInformation2" type="Node2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide"]
+[node name="ClassInformation2" type="Node2D" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide"]
 z_index = 8
-position = Vector2(-967, -375)
 script = ExtResource("19_xxd73")
 
-[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide/ClassInformation2"]
 z_index = 11
 texture_repeat = 2
-position = Vector2(968, 525)
-scale = Vector2(0.667, 1)
+position = Vector2(140, 140)
 texture = ExtResource("9_gjghe")
 region_enabled = true
-region_rect = Rect2(0, 0, 240, 180)
+region_rect = Rect2(0, 0, 320, 180)
 
-[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide/ClassInformation2"]
 z_index = 10
-position = Vector2(879, 525)
-scale = Vector2(0.667, 1)
+position = Vector2(-30, 140)
 texture = ExtResource("10_18a2g")
 
-[node name="RightEnd" type="Sprite2D" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide/ClassInformation2"]
 z_index = 10
-position = Vector2(1056, 525)
-scale = Vector2(0.667, 1)
+position = Vector2(310, 140)
 texture = ExtResource("10_18a2g")
 flip_h = true
 
-[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/LeaderSprite/ChangeColorCollide/ClassInformation2"]
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/CurrentHeroAbilities/ChangeColorCollide/ClassInformation2"]
 z_index = 12
-offset_left = 880.0
-offset_top = 448.0
-offset_right = 1056.0
-offset_bottom = 600.0
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
 text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
 - Slow. Party takes longer to complete quests
 -"
+
+[node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
+visible = false
+z_index = -4
+position = Vector2(150, 260)
+texture = ExtResource("14_b74tf")
+script = ExtResource("15_1eepb")
 
 [node name="LeaderBackground" type="Sprite2D" parent="PartyInformation/LeaderSprite"]
 z_index = -1
@@ -308,6 +307,7 @@ bbcode_enabled = true
 text = "[center]Heroes"
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
+visible = false
 z_index = 15
 layout_mode = 3
 anchors_preset = 0
@@ -927,6 +927,7 @@ visible = false
 z_index = 75
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("23_oe7wh")]
+visible = false
 z_index = 5
 
 [connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
@@ -935,10 +936,10 @@ z_index = 5
 [connection signal="body_exited" from="Accept" to="Accept" method="OnArea2DBodyExited"]
 [connection signal="body_entered" from="Dispose" to="Dispose" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Dispose" to="Dispose" method="OnArea2DBodyExited"]
-[connection signal="body_entered" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyEntered"]
-[connection signal="body_exited" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="OnArea2DBodyExited"]
-[connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="MouseEnter"]
-[connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ChangeColorCollide" to="PartyInformation/LeaderSprite/ChangeColorCollide" method="MouseExit"]
+[connection signal="body_entered" from="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" to="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" to="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" method="OnArea2DBodyExited"]
+[connection signal="mouse_entered" from="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" to="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" to="PartyInformation/CurrentHeroAbilities/ChangeColorCollide" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" to="PartyInformation/LeaderSprite/ExpandTab/RevealPartyInfo" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/CharacterInfo1" to="PartyInformation/Class&Rank/CharacterInfo1" method="MouseEnter"]

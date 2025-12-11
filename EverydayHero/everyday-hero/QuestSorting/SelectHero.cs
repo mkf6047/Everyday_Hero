@@ -22,7 +22,7 @@ public partial class SelectHero : Area2D
         if (Input.IsMouseButtonPressed(MouseButton.Left) && mouseIn && !PartyLists.Instance.parties[0][charOrder -1].onQuest)
         {
 			scene.ChangeActiveHero(charOrder);
-			activeHero.RevealActiveHero();
+			//activeHero.RevealActiveHero();
         }
     }
 

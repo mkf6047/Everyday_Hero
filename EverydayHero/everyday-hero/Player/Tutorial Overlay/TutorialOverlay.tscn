@@ -44,13 +44,14 @@ flip_h = true
 [node name="AdvanceTextPrompt" type="RichTextLabel" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 953.0
+offset_left = 943.0
 offset_top = 595.0
-offset_right = 1113.0
+offset_right = 1103.0
 offset_bottom = 635.0
 theme_override_fonts/normal_font = ExtResource("2_fsc1l")
 bbcode_enabled = true
-text = "[font_size=12][center]Press Z/enter to continue"
+text = "[font_size=15]Click to continue"
+horizontal_alignment = 2
 
 [node name="Nameplate" type="RichTextLabel" parent="."]
 z_index = 1

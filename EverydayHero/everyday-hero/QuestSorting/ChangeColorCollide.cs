@@ -3,11 +3,11 @@ using System;
 
 public partial class ChangeColorCollide : Area2D
 {
-    LeaderSprite parent;
+    //LeaderSprite parent;
     ClassInformationV2 classInfo;
     public override void _Ready()
     {
-        parent = (LeaderSprite)GetParent();
+        //parent = (LeaderSprite)GetParent();
         classInfo = (ClassInformationV2)GetNode("ClassInformation2");
     }
 
@@ -16,7 +16,7 @@ public partial class ChangeColorCollide : Area2D
 		try
 		{
 			MoveableQuest quest = (MoveableQuest)body;
-			parent.Collision();
+			//parent.Collision();
 		}
 		catch
 		{
@@ -30,7 +30,7 @@ public partial class ChangeColorCollide : Area2D
 		try
 		{
 			MoveableQuest quest = (MoveableQuest)body;
-			parent.NoCollision();
+			//parent.NoCollision();
 		}
 		catch
 		{
