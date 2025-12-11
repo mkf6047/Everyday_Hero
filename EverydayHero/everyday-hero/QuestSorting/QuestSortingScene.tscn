@@ -202,6 +202,7 @@ scroll_active = false
 [node name="PartyInformation" type="Node2D" parent="."]
 
 [node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
+visible = false
 z_index = -4
 position = Vector2(150, 260)
 texture = ExtResource("14_b74tf")

@@ -3,10 +3,10 @@ using System;
 
 public partial class ConfirmName : Button
 {
-    LineEdit playername;
+    PlayerNameDecider playername;
     public override void _Ready()
     {
-        playername = (LineEdit)GetNode("../PlayerName");
+        playername = (PlayerNameDecider)GetNode("../PlayerName");
         this.Pressed += Clicked;
     }
 
