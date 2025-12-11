@@ -27,16 +27,6 @@ public partial class TutorialInfo : Node
     public override void _Ready()
     {
         tutorialLines = new Godot.Collections.Array<Godot.Collections.Array<string>>();
-        // tutorialLines.Add(new Godot.Collections.Array<string>());
-        // using (var file = FileAccess.Open("res://Player/Tutorial Overlay/TutorialMethods.txt", FileAccess.ModeFlags.Read))
-        // {
-        //     string content = "";
-        //     while (!file.EofReached())
-        //     {
-        //         content = file.GetLine();
-        //         tutorialLines[0].Add(content);
-        //     }
-        // }
         foreach (string a in tutorialDialougeFiles)
         {
             ReadLinesFromFile(a);
@@ -255,14 +245,16 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if(currentLine == 4 || currentLine == 6 || currentLine == 13){ speakerName = "[center]" +PlayerStats.Instance.PlayerName;}
+            GD.Print(currentLine);
+            if((currentLine == 4) || (currentLine == 6) || (currentLine >= 13)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[3].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[3][currentLine], "[center]Manager Phillip");
+                overlay.UpdateText(tutorialLines[3][currentLine], speakerName);
                 if(currentLine == tutorialLines[3].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
+            GD.Print(speakerName);
         }
     }
     private void SaveGame(double delta = 0.0)   //change from private to public
@@ -302,8 +294,6 @@ public partial class TutorialInfo : Node
             else{ canComplete = true; }
         }
     }
-
-    
     public void ProgressReportIntro(double delta = 0.0)   //change from private to public
     {
         if (tutorialComplete[5])       //replace 0 with actual corresponding int.
@@ -342,7 +332,6 @@ public partial class TutorialInfo : Node
     }
 
     //insert new tutorials here!!!!!
-
     public void ActivateTutorial(int tutorialNum)
     {
         var tutOver = GetTree().GetFirstNodeInGroup("TutorialNode");
