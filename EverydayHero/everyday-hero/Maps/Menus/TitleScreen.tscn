@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dmguphgtpyar5" path="res://Sprites/Title-Screen.png" id="2_jbvtc"]
 [ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="2_lc4ij"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="3_scf63"]
-[ext_resource type="Texture2D" uid="uid://ttqs6u4vvrnc" path="res://Sprites/Gear.png" id="5_4wqe6"]
+[ext_resource type="Texture2D" uid="uid://cvaa38nf016dw" path="res://Sprites/Sound-Settings.png" id="5_4wqe6"]
 [ext_resource type="Script" uid="uid://vf04v15t4vkx" path="res://Maps/Menus/RevealAudioSettings.cs" id="6_nixvr"]
 
 [node name="TitleScreen" type="Node2D"]
