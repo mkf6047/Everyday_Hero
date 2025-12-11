@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=50 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -31,7 +31,6 @@
 [ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="26_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="27_o8tmi"]
 [ext_resource type="Script" uid="uid://cnef6si46wjkw" path="res://QuestSorting/SelectHero.cs" id="29_ala2y"]
-[ext_resource type="Texture2D" uid="uid://3rar4aefnacy" path="res://Sprites/NPCSprites/Manager-Philip.png" id="30_ala2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -750,7 +749,7 @@ script = ExtResource("21_oe7wh")
 shape = SubResource("RectangleShape2D_yaefm")
 
 [node name="HeroList" type="Node2D" parent="PartyInformation"]
-z_index = -10
+z_index = -15
 position = Vector2(150, 260)
 
 [node name="ListBackground" type="Sprite2D" parent="PartyInformation/HeroList"]
@@ -872,7 +871,7 @@ texture = ExtResource("27_o8tmi")
 z_index = 5
 position = Vector2(344, 126)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("30_ala2y")
+texture = ExtResource("14_b74tf")
 
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation"]
 z_index = 3
@@ -929,7 +928,7 @@ visible = false
 z_index = 75
 
 [node name="TutorialOverlay" parent="." instance=ExtResource("23_oe7wh")]
-visible = false
+z_index = 5
 
 [connection signal="body_entered" from="Delay" to="Delay" method="OnArea2DBodyEntered"]
 [connection signal="body_exited" from="Delay" to="Delay" method="OnArea2DBodyExited"]
