@@ -15,11 +15,11 @@ public partial class RevealAudioSettings : Button
 
     public void MouseEnter()
     {
-        this.Icon = GD.Load<Texture2D>("res://Sprites/Gear-Hover.png");
+        this.Icon = GD.Load<Texture2D>("res://Sprites/Sound-Settings-Hover.png");
     }
 
     public void MouseExit()
     {
-        this.Icon = GD.Load<Texture2D>("res://Sprites/Gear.png");
+        this.Icon = GD.Load<Texture2D>("res://Sprites/Sound-Settings.png");
     }
 }

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
 [ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
-[ext_resource type="Texture2D" uid="uid://cogswfxlyt11b" path="res://Sprites/Updated-DelayBin.png" id="5_xxd73"]
+[ext_resource type="Texture2D" uid="uid://dkmhs5e1hhk4m" path="res://Sprites/Updated-Delay-Bin.png" id="5_ala2y"]
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
 [ext_resource type="Script" uid="uid://ja6qwldklccn" path="res://QuestSorting/QssResults.cs" id="9_18a2g"]
 [ext_resource type="Texture2D" uid="uid://b2hfkhaubun8y" path="res://Sprites/Trash-Updated.png" id="9_ala2y"]
@@ -119,7 +119,7 @@ script = ExtResource("3_k7knd")
 shape = SubResource("RectangleShape2D_k7knd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Delay"]
-texture = ExtResource("5_xxd73")
+texture = ExtResource("5_ala2y")
 
 [node name="Accept" type="Area2D" parent="."]
 visible = false
