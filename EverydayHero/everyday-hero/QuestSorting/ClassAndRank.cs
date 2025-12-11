@@ -48,7 +48,7 @@ public partial class ClassAndRank : Control
         {
 			isOnQuest.Newline();
 			if (PartyLists.Instance.parties[0][i].onQuest) { isOnQuest.AppendText("Out On Quest"); }
-			else{ isOnQuest.AppendText("Present"); }
+			else{ isOnQuest.AppendText("[color=black]Present[/color]"); }
         }
     }
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=45 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=51 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
 [ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
-[ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="4_q1cm5"]
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
 [ext_resource type="Texture2D" uid="uid://cogswfxlyt11b" path="res://Sprites/Updated-DelayBin.png" id="5_xxd73"]
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
@@ -31,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dv4i6ek3i80vc" path="res://Sprites/NPCSprites/Monk-Icon.png" id="25_cvqbe"]
 [ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="26_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="27_o8tmi"]
+[ext_resource type="Script" uid="uid://cnef6si46wjkw" path="res://QuestSorting/SelectHero.cs" id="29_ala2y"]
 [ext_resource type="Texture2D" uid="uid://3rar4aefnacy" path="res://Sprites/NPCSprites/Manager-Philip.png" id="30_ala2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
@@ -39,7 +39,7 @@
 size = Vector2(100, 100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ky2r"]
-size = Vector2(64, 32)
+size = Vector2(100, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjghe"]
 size = Vector2(100, 100)
@@ -67,6 +67,24 @@ size = Vector2(750, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hr8c"]
 size = Vector2(750, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxd73"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ala2y"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvqbe"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq2s0"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8tmi"]
+size = Vector2(220, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7t0y"]
+size = Vector2(220, 25)
 
 [node name="QuestSortingScene" type="Node2D"]
 script = ExtResource("1_qc3r1")
@@ -104,6 +122,7 @@ shape = SubResource("RectangleShape2D_k7knd")
 texture = ExtResource("5_xxd73")
 
 [node name="Accept" type="Area2D" parent="."]
+visible = false
 z_index = -6
 position = Vector2(150, 225)
 collision_layer = 8
@@ -114,7 +133,6 @@ script = ExtResource("5_3ky2r")
 shape = SubResource("RectangleShape2D_3ky2r")
 
 [node name="Sprite2D" type="Sprite2D" parent="Accept"]
-texture = ExtResource("4_q1cm5")
 
 [node name="Dispose" type="Area2D" parent="."]
 position = Vector2(1075, 600)
@@ -185,8 +203,9 @@ scroll_active = false
 [node name="PartyInformation" type="Node2D" parent="."]
 
 [node name="LeaderSprite" type="Sprite2D" parent="PartyInformation"]
+visible = false
 z_index = -4
-position = Vector2(150, 300)
+position = Vector2(150, 260)
 texture = ExtResource("14_b74tf")
 script = ExtResource("15_1eepb")
 
@@ -310,7 +329,7 @@ offset_bottom = 420.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
-text = "[font_size=20]Adventurers:
+text = "[font_size=20]Heros:
 Allistrad von Leopoldo
 Rosalind Deacon
 Lucy Fern
@@ -730,6 +749,125 @@ script = ExtResource("21_oe7wh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/Class&Rank/Collapse Tab/ConcealPartyInfo"]
 shape = SubResource("RectangleShape2D_yaefm")
 
+[node name="HeroList" type="Node2D" parent="PartyInformation"]
+z_index = -10
+position = Vector2(150, 260)
+
+[node name="ListBackground" type="Sprite2D" parent="PartyInformation/HeroList"]
+z_index = -1
+position = Vector2(0, 1.5)
+scale = Vector2(4, 2.028)
+texture = ExtResource("9_gjghe")
+region_rect = Rect2(0, 0, 128, 224)
+
+[node name="ListBckgndLeftEnd" type="Sprite2D" parent="PartyInformation/HeroList"]
+z_index = -1
+position = Vector2(-88, 1.5)
+scale = Vector2(2, 2.028)
+texture = ExtResource("10_18a2g")
+
+[node name="ListBckgndRightEnd" type="Sprite2D" parent="PartyInformation/HeroList"]
+z_index = -1
+position = Vector2(88, 1.5)
+scale = Vector2(2, 2.028)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="Textbox" type="RichTextLabel" parent="PartyInformation/HeroList"]
+z_index = 6
+offset_left = -50.0
+offset_top = -170.0
+offset_right = 200.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=18]Heros:
+Allistrad von Leopoldo
+Rosalind Deacon
+Lucy Fern
+Rashao Kahan
+Thornton Breyer
+Jack Decker"
+
+[node name="SelectHero" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, -127)
+script = ExtResource("29_ala2y")
+charOrder = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero"]
+shape = SubResource("RectangleShape2D_xxd73")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("22_6gojl")
+
+[node name="SelectHero2" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, -98)
+script = ExtResource("29_ala2y")
+charOrder = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero2"]
+shape = SubResource("RectangleShape2D_ala2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero2"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("23_xxd73")
+
+[node name="SelectHero3" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, -69)
+script = ExtResource("29_ala2y")
+charOrder = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero3"]
+shape = SubResource("RectangleShape2D_cvqbe")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero3"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("24_ala2y")
+
+[node name="SelectHero4" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, -40)
+script = ExtResource("29_ala2y")
+charOrder = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero4"]
+shape = SubResource("RectangleShape2D_bq2s0")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero4"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("25_cvqbe")
+
+[node name="SelectHero5" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, -11)
+script = ExtResource("29_ala2y")
+charOrder = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero5"]
+shape = SubResource("RectangleShape2D_o8tmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero5"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("26_bq2s0")
+
+[node name="SelectHero6" type="Area2D" parent="PartyInformation/HeroList"]
+position = Vector2(0, 18)
+script = ExtResource("29_ala2y")
+charOrder = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartyInformation/HeroList/SelectHero6"]
+shape = SubResource("RectangleShape2D_p7t0y")
+
+[node name="Sprite2D" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero6"]
+position = Vector2(-75, 0)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("27_o8tmi")
+
 [node name="SpeakerSprite" type="Sprite2D" parent="PartyInformation"]
 z_index = 5
 position = Vector2(344, 126)
@@ -819,3 +957,15 @@ visible = false
 [connection signal="mouse_exited" from="PartyInformation/Class&Rank/CharacterInfo6" to="PartyInformation/Class&Rank/CharacterInfo6" method="MouseExit"]
 [connection signal="mouse_entered" from="PartyInformation/Class&Rank/Collapse Tab/ConcealPartyInfo" to="PartyInformation/Class&Rank/Collapse Tab/ConcealPartyInfo" method="MouseEnter"]
 [connection signal="mouse_exited" from="PartyInformation/Class&Rank/Collapse Tab/ConcealPartyInfo" to="PartyInformation/Class&Rank/Collapse Tab/ConcealPartyInfo" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero" to="PartyInformation/HeroList/SelectHero" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero" to="PartyInformation/HeroList/SelectHero" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero2" to="PartyInformation/HeroList/SelectHero2" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero2" to="PartyInformation/HeroList/SelectHero2" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero3" to="PartyInformation/HeroList/SelectHero3" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero3" to="PartyInformation/HeroList/SelectHero3" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero4" to="PartyInformation/HeroList/SelectHero4" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero4" to="PartyInformation/HeroList/SelectHero4" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero5" to="PartyInformation/HeroList/SelectHero5" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero5" to="PartyInformation/HeroList/SelectHero5" method="MouseExit"]
+[connection signal="mouse_entered" from="PartyInformation/HeroList/SelectHero6" to="PartyInformation/HeroList/SelectHero6" method="MouseEnter"]
+[connection signal="mouse_exited" from="PartyInformation/HeroList/SelectHero6" to="PartyInformation/HeroList/SelectHero6" method="MouseExit"]

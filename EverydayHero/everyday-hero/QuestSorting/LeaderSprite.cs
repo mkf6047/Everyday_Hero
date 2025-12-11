@@ -25,6 +25,15 @@ public partial class LeaderSprite : Sprite2D
         collisionDetection = (ChangeColorCollide)GetNode("ChangeColorCollide");
     }
 
+    public void RevealActiveHero()
+    {
+        this.Show();
+    }
+
+    public void ConcealActiveHero()
+    {
+        this.Hide();
+    }
 
     public void ReplaceSprite(string charClass)
     {

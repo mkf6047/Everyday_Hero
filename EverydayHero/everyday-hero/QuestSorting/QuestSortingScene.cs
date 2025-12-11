@@ -24,6 +24,7 @@ public partial class QuestSortingScene : Node2D
 	int numofquest = 0;
 	int partiesApplying, currentParty = 0;
 	public int currentHero = 1;
+	public bool heroSelected = false;
 
 	public override void _Ready()
 	{
@@ -205,4 +206,6 @@ public partial class QuestSortingScene : Node2D
 					break;
 			}
     }
+
+	public void HideActiveHero(){ currentHeroSprite.ConcealActiveHero(); }
 }
