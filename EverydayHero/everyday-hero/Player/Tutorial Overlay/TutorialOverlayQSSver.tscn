@@ -81,7 +81,7 @@ rotation = -1.5708
 scale = Vector2(2, 1.25)
 texture = ExtResource("4_q7uqf")
 
-[node name="LeaderSprite" type="Sprite2D" parent="."]
+[node name="SpeakerSprite" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(344, 126)
 scale = Vector2(0.5, 0.5)

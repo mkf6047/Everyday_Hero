@@ -58,7 +58,7 @@ public partial class QuestSortingScene : Node2D
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
 		TutorialInfo.Instance.ActivateTutorial(3);
-		if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
+		//if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		heroName = (RichTextLabel)GetNode("PartyInformation/HeroName");
 		ChangeActiveHero(currentHero);

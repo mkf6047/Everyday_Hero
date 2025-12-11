@@ -10,6 +10,7 @@ public partial class TutorialInfo : Node
     private Vector2 previousMousePos;
     public int tutorialCount = 0;
     int currentLine = 0;
+    string speakerName = "";
     public bool[] tutorialComplete = [false, false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
     private string[] tutorialDialougeFiles = [                  //make sure order of strings here corresponds with the order the related method appears in callTutorial method
         "res://Player/Tutorial Overlay/TutorialDialouge/Walking.txt",
@@ -245,7 +246,8 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[3][0], "[center]Manager Phillip");
+            speakerName = "[center]Manager Phillip";
+            overlay.UpdateText(tutorialLines[3][0], speakerName);
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -253,6 +255,8 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
+            if(currentLine == 4 || currentLine == 6 || currentLine == 13){ speakerName = "[center]" +PlayerStats.Instance.PlayerName;}
+            else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[3].Count - 1)
             {
                 overlay.UpdateText(tutorialLines[3][currentLine], "[center]Manager Phillip");

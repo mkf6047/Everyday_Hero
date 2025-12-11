@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmqmfwc5wdeaf"]
+[gd_scene load_steps=6 format=3 uid="uid://dmqmfwc5wdeaf"]
 
 [ext_resource type="Script" uid="uid://cq74h2phqhan7" path="res://Player/Tutorial Overlay/TutorialOverlay.cs" id="1_0vlly"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="2_6ulci"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="2_fsc1l"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="3_fsc1l"]
+[ext_resource type="Texture2D" uid="uid://3rar4aefnacy" path="res://Sprites/NPCSprites/Manager-Philip.png" id="5_fsc1l"]
 
 [node name="TutorialOverlay" type="Control" groups=["TutorialNode"]]
 layout_mode = 3
@@ -17,10 +18,10 @@ script = ExtResource("1_0vlly")
 [node name="Textbox" type="RichTextLabel" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 64.0
+offset_left = 160.0
 offset_top = 456.0
 offset_right = 1088.0
-offset_bottom = 616.0
+offset_bottom = 596.0
 theme_override_fonts/normal_font = ExtResource("2_fsc1l")
 bbcode_enabled = true
 
@@ -70,3 +71,9 @@ position = Vector2(144, 425)
 rotation = 1.5708
 scale = Vector2(1.5, 1)
 texture = ExtResource("3_fsc1l")
+
+[node name="SpeakerSprite" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(100, 534)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_fsc1l")
