@@ -18,7 +18,7 @@ public partial class TutorialOverlay : Control
         textbox.Text = incomingText;
         nameplate.Text = "";
         nameplate.AppendText(incomingName);
-        if(incomingName == "[center]Manager Phillip"){ speakerSprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Manager-Philip.png"); }
+        if(incomingName == "[center]Manager Phillip"){ speakerSprite.Texture = GD.Load<Texture2D>("res://Sprites/NPCSprites/Philip-Frame.png"); }
         else{ speakerSprite.Texture = GD.Load<Texture2D>("res://Sprites/EmptySprite.png"); }
         ShowOverlay();
     }

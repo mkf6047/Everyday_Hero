@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=51 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="26_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="27_o8tmi"]
 [ext_resource type="Script" uid="uid://cnef6si46wjkw" path="res://QuestSorting/SelectHero.cs" id="29_ala2y"]
+[ext_resource type="Texture2D" uid="uid://myeu2alcchj3" path="res://Sprites/NPCSprites/Knight-Frame.png" id="30_ala2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
 
@@ -121,9 +122,8 @@ shape = SubResource("RectangleShape2D_k7knd")
 texture = ExtResource("5_ala2y")
 
 [node name="Accept" type="Area2D" parent="."]
-visible = false
 z_index = -6
-position = Vector2(150, 225)
+position = Vector2(344, 126)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("5_3ky2r")
@@ -870,7 +870,7 @@ texture = ExtResource("27_o8tmi")
 z_index = 5
 position = Vector2(344, 126)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_b74tf")
+texture = ExtResource("30_ala2y")
 
 [node name="Textbox" type="RichTextLabel" parent="PartyInformation"]
 z_index = 3

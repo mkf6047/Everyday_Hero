@@ -11,13 +11,13 @@ public partial class LeaderSprite : Sprite2D
 
     public override void _Ready()
     {
-        kniTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Updated.png");
-        magTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Wizard-Updated.png");
-        monTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Monk-Updated.png");
-        rogTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Rogue-Updated.png");
-        cleTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Healer-Updated.png");
-        ranTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Ranger-Updated.png");
-        philTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Manager-Philip.png");
+        kniTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Knight-Frame.png");
+        magTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Wizard-Frame.png");
+        monTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Monk-Frame.png");
+        rogTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Rogue-Frame.png");
+        cleTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Healer-Frame.png");
+        ranTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Ranger-Frame.png");
+        philTex = GD.Load<Texture2D>("res://Sprites/NPCSprites/Philip-Frame.png");
         left = (Sprite2D)GetNode("LeaderBckgndLeftEnd");
         right = (Sprite2D)GetNode("LeaderBckgndRightEnd");
         back = (Sprite2D)GetNode("LeaderBackground");
