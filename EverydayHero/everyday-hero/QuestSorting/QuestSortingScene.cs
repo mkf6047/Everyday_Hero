@@ -19,6 +19,8 @@ public partial class QuestSortingScene : Node2D
 
 	ClassAndRank displayClassRank;
 
+	HeroList heroNameDisplay;
+
 	bool readyComplete, calculateOnce, allPartiesSorted = false;
 
 	int numofquest = 0;
@@ -49,10 +51,10 @@ public partial class QuestSortingScene : Node2D
 			default:
 				break;
 		}
-		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
 		resultsDisplay = (QssResults)GetNode("QSSResults");
 		displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
+		heroNameDisplay = (HeroList)GetNode("PartyInformation/HeroList/Textbox");
 		GenerateQuests();
 		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
@@ -61,7 +63,7 @@ public partial class QuestSortingScene : Node2D
 		//if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		heroName = (RichTextLabel)GetNode("PartyInformation/HeroName");
-		ChangeActiveHero(currentHero);
+		UpdateQuesters();
 		BackgroundNoise.Instance.MainMusic();
 	}
 
@@ -160,6 +162,7 @@ public partial class QuestSortingScene : Node2D
 		while (PartyLists.Instance.parties[0][currentHero - 1].onQuest == true) { currentHero++; }
 		ChangeActiveHero(currentHero);
 		displayClassRank.UpdateQuesterStatus();
+		heroNameDisplay.UpdateHeroPresence();
     }
 
 	public void ChangeActiveHero(int change)
