@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=46 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dsqy6pmko0p5g" path="res://Player/Tutorial Overlay/TutorialOverlayQSSver.tscn" id="23_oe7wh"]
 [ext_resource type="Texture2D" uid="uid://qobtf6wq8fie" path="res://Sprites/NPCSprites/Healer-Icon.png" id="23_xxd73"]
 [ext_resource type="Texture2D" uid="uid://dtucq3tmtfbgn" path="res://Sprites/NPCSprites/Wizard-Icon.png" id="24_ala2y"]
+[ext_resource type="Script" uid="uid://d4ep87dmvmx53" path="res://QuestSorting/HeroAbilitiesRank.cs" id="25_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://dv4i6ek3i80vc" path="res://Sprites/NPCSprites/Monk-Icon.png" id="25_cvqbe"]
 [ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="26_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="27_o8tmi"]
@@ -307,6 +308,7 @@ bbcode_enabled = true
 text = "[center]Heroes"
 
 [node name="Class&Rank" type="Control" parent="PartyInformation"]
+visible = false
 z_index = 15
 layout_mode = 3
 anchors_preset = 0
@@ -443,7 +445,7 @@ offset_bottom = 70.0
 mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 bbcode_enabled = true
-text = "[font_size=18][b]Heros:[/b]
+text = "[font_size=25][color=yellow]Heros:[/color][font_size=18]
 Allistrad von Leopoldo
 Rosalind Deacon
 Lucy Fern
@@ -453,7 +455,7 @@ Jack Decker"
 script = ExtResource("29_cvqbe")
 
 [node name="SelectHero" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, -127)
+position = Vector2(0, -120)
 script = ExtResource("29_ala2y")
 charOrder = 1
 
@@ -465,8 +467,46 @@ position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("22_6gojl")
 
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
+
 [node name="SelectHero2" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, -98)
+position = Vector2(0, -91)
 script = ExtResource("29_ala2y")
 charOrder = 2
 
@@ -478,8 +518,46 @@ position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("23_xxd73")
 
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero2"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero2/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero2/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero2/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero2/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
+
 [node name="SelectHero3" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, -69)
+position = Vector2(0, -62)
 script = ExtResource("29_ala2y")
 charOrder = 3
 
@@ -491,8 +569,46 @@ position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("24_ala2y")
 
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero3"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero3/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero3/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero3/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero3/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
+
 [node name="SelectHero4" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, -40)
+position = Vector2(0, -33)
 script = ExtResource("29_ala2y")
 charOrder = 4
 
@@ -504,8 +620,46 @@ position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("25_cvqbe")
 
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero4"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero4/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero4/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero4/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero4/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
+
 [node name="SelectHero5" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, -11)
+position = Vector2(0, -4)
 script = ExtResource("29_ala2y")
 charOrder = 5
 
@@ -517,8 +671,46 @@ position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("26_bq2s0")
 
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero5"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero5/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero5/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero5/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero5/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
+
 [node name="SelectHero6" type="Area2D" parent="PartyInformation/HeroList"]
-position = Vector2(0, 18)
+position = Vector2(0, 25)
 script = ExtResource("29_ala2y")
 charOrder = 6
 
@@ -529,6 +721,44 @@ shape = SubResource("RectangleShape2D_p7t0y")
 position = Vector2(-75, 0)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("27_o8tmi")
+
+[node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero6"]
+visible = false
+z_index = 8
+script = ExtResource("25_bq2s0")
+
+[node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero6/HeroAbilitiesRank"]
+z_index = 11
+texture_repeat = 2
+position = Vector2(140, 140)
+texture = ExtResource("9_gjghe")
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 180)
+
+[node name="LeftEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero6/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(-30, 140)
+texture = ExtResource("10_18a2g")
+
+[node name="RightEnd" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero6/HeroAbilitiesRank"]
+z_index = 10
+position = Vector2(310, 140)
+texture = ExtResource("10_18a2g")
+flip_h = true
+
+[node name="ClassInfoTextbox" type="RichTextLabel" parent="PartyInformation/HeroList/SelectHero6/HeroAbilitiesRank"]
+z_index = 12
+offset_left = -20.0
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 217.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+bbcode_enabled = true
+text = "[font_size=14]- Able to utilize heavy equipment with the strength to carry it.
+- Slow. Party takes longer to complete quests
+-"
+scroll_active = false
 
 [node name="SpeakerSprite" type="Sprite2D" parent="PartyInformation"]
 z_index = 5
