@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=45 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
+[ext_resource type="Texture2D" uid="uid://cjk1027eeasa5" path="res://Sprites/QuestSprites/Plaque.png" id="3_ala2y"]
 [ext_resource type="Script" uid="uid://coge4t7r2tes4" path="res://QuestSorting/DelayQuest.cs" id="3_k7knd"]
 [ext_resource type="Script" uid="uid://xijpiwqlynm6" path="res://QuestSorting/AcceptQuest.cs" id="5_3ky2r"]
 [ext_resource type="Texture2D" uid="uid://dkmhs5e1hhk4m" path="res://Sprites/Updated-Delay-Bin.png" id="5_ala2y"]
@@ -73,12 +74,29 @@ script = ExtResource("1_qc3r1")
 [node name="QuestHolder" type="Node2D" parent="."]
 
 [node name="TableBackground" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 texture_repeat = 2
 position = Vector2(576, 425)
 texture = ExtResource("13_o18v7")
 region_enabled = true
 region_rect = Rect2(0, 0, 1152, 256)
+
+[node name="Plaque" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(65, 325)
+texture = ExtResource("3_ala2y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Plaque"]
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+theme_override_fonts/normal_font = ExtResource("19_oe7wh")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black][center]QUESTS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="QuestGetter" type="Area2D" parent="."]
 collision_layer = 8
