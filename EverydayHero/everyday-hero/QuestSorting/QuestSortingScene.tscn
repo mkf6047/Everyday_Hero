@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bwvt22jao7hln"]
+[gd_scene load_steps=52 format=3 uid="uid://bwvt22jao7hln"]
 
 [ext_resource type="Script" uid="uid://dm7oy0hge5jwh" path="res://QuestSorting/QuestSortingScene.cs" id="1_qc3r1"]
 [ext_resource type="Script" uid="uid://yoqp4oapy43f" path="res://QuestSorting/QuestGetter.cs" id="2_xmd7o"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://bb64ec7uj12bp" path="res://Sprites/NPCSprites/Ranger-Icon.png" id="26_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://t1x4doqaaxuq" path="res://Sprites/NPCSprites/Rogue-Icon.png" id="27_o8tmi"]
 [ext_resource type="Script" uid="uid://cnef6si46wjkw" path="res://QuestSorting/SelectHero.cs" id="29_ala2y"]
+[ext_resource type="Script" uid="uid://bvfhj288rt1vk" path="res://QuestSorting/HeroList.cs" id="29_cvqbe"]
 [ext_resource type="Texture2D" uid="uid://myeu2alcchj3" path="res://Sprites/NPCSprites/Knight-Frame.png" id="30_ala2y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xmd7o"]
@@ -787,6 +788,7 @@ Lucy Fern
 Rashao Kahan
 Thornton Breyer
 Jack Decker"
+script = ExtResource("29_cvqbe")
 
 [node name="SelectHero" type="Area2D" parent="PartyInformation/HeroList"]
 position = Vector2(0, -127)
