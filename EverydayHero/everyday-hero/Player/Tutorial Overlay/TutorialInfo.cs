@@ -246,7 +246,7 @@ public partial class TutorialInfo : Node
         {
             currentLine++;
             GD.Print(currentLine);
-            if((currentLine == 4) || (currentLine == 6) || (currentLine >= 13)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
+            if((currentLine == 5) || (currentLine == 6) || (currentLine >= 13)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[3].Count - 1)
             {
@@ -254,7 +254,6 @@ public partial class TutorialInfo : Node
                 if(currentLine == tutorialLines[3].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
-            GD.Print(speakerName);
         }
     }
     private void SaveGame(double delta = 0.0)   //change from private to public

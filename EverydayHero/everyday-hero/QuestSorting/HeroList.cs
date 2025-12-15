@@ -5,6 +5,9 @@ public partial class HeroList : RichTextLabel
 {
     public void UpdateHeroPresence()
     {
+        this.Text = "";
+        AppendText("[font_size=18][b]Heroes:[/b]");
+        Newline();
         string pre, post, name;
         for(int i = 0; i < 6; i++)
         {
@@ -41,6 +44,7 @@ public partial class HeroList : RichTextLabel
 				post = "";
 			}
 		    AppendText(pre + name + post);
+            Newline();
         }
     }
 }

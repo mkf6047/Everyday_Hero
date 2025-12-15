@@ -22,7 +22,7 @@ public partial class LeaderSprite : Sprite2D
         right = (Sprite2D)GetNode("LeaderBckgndRightEnd");
         back = (Sprite2D)GetNode("LeaderBackground");
         speakerSprite = (Sprite2D)GetNode("../SpeakerSprite");
-        collisionDetection = (ChangeColorCollide)GetNode("ChangeColorCollide");
+        collisionDetection = (ChangeColorCollide)GetNode("../CurrentHeroAbilities/ChangeColorCollide");
         ConcealActiveHero();
     }
 

@@ -45,7 +45,10 @@ public partial class ChangeColorCollide : Area2D
 
 	public void MouseEnter()
 	{
-		classInfo.Show();
+        if (TutorialInfo.Instance.tutorialComplete[3])
+        {
+			classInfo.Show();
+        }
 	}
 	public void MouseExit()
 	{

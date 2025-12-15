@@ -32,13 +32,12 @@ public partial class SelectHero : Area2D
 	}
 	public void MouseEnter()
 	{
-		//classInfo.Show();
 		mouseIn = true;
+		//GD.Print("Enter " + charOrder);
 	}
 	public void MouseExit()
 	{
-		//classInfo.Hide();
 		mouseIn = false;
-		//GD.Print("exit");
+		//GD.Print("Exit " + charOrder);
 	}
 }

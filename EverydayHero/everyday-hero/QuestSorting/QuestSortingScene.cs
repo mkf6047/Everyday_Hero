@@ -100,24 +100,8 @@ public partial class QuestSortingScene : Node2D
 		for (int i = 0; i <= 3; i++)
 		{
 			MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
-			// bool isUnique = true;
-			// do
-			// {
-			// 	if (numofquest > 0)
-			// 	{
-			// 		foreach (MoveableQuest a in questStack)
-			// 		{
-			// 			if (quest.questName == a.questName)
-			// 			{
-			// 				isUnique = false;
-			// 			}
-			// 		}
-			// 		if (!isUnique) { quest = (MoveableQuest)questPreload.Instantiate(); }
-			// 	}
-			// 	else { isUnique = true; GD.Print(isUnique); }
-			// } while (isUnique == false);
 			questHolder.AddChild(quest);
-			quest.Position = new Vector2((i + 1) * 200, 425);
+			quest.Position = new Vector2(150 + (i + 1) * 175, 425);
 			AddQuest(quest);
 		}
 	}
