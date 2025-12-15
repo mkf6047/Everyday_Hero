@@ -22,12 +22,9 @@ public partial class DisposeQuest : Area2D
             if (isColliding)
             {
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
-                if (!quest.Dragging)
-                {
-                    QSSTracker.Instance.rejectedQuests++;
-                    manager.RemoveQuest(quest);
-                    manager.UpdateQuesters();
-                }
+                QSSTracker.Instance.rejectedQuests++;
+                manager.RemoveQuest(quest);
+                manager.UpdateQuesters();
             }
         }
         catch
