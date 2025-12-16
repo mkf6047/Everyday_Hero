@@ -11,33 +11,6 @@ public partial class ChangeColorCollide : Area2D
         classInfo = (ClassInformationV2)GetNode("ClassInformation2");
     }
 
-    public virtual void OnArea2DBodyEntered(Node2D body)
-    {
-		try
-		{
-			MoveableQuest quest = (MoveableQuest)body;
-			//parent.Collision();
-		}
-		catch
-		{
-			GD.PrintErr("Deposite area just collided with something other than a Quest.");
-		}
-        
-    }
-
-    public virtual void OnArea2DBodyExited(Node2D body)
-    {
-		try
-		{
-			MoveableQuest quest = (MoveableQuest)body;
-			//parent.NoCollision();
-		}
-		catch
-		{
-			GD.PrintErr("Deposite area just collided with something other than a Quest.");
-		}
-    }
-
     public void UpdateClassInfo(string questerClass)
     {
         classInfo.UpdateCharInfo(questerClass);
