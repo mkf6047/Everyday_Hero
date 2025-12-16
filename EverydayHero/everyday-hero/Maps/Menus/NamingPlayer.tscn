@@ -62,6 +62,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "a"
 script = ExtResource("2_pnsrc")
+letter = "a"
 
 [node name="b" type="Button" parent="AlpahbetMafia"]
 offset_left = 50.0
@@ -71,8 +72,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "b"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "b"
 
 [node name="c" type="Button" parent="AlpahbetMafia"]
 offset_left = 100.0
@@ -82,8 +82,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "c"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "c"
 
 [node name="d" type="Button" parent="AlpahbetMafia"]
 offset_left = 150.0
@@ -93,8 +92,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "d"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "d"
 
 [node name="e" type="Button" parent="AlpahbetMafia"]
 offset_left = 200.0
@@ -104,8 +102,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "e"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "e"
 
 [node name="f" type="Button" parent="AlpahbetMafia"]
 offset_left = 250.0
@@ -115,8 +112,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "f"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "f"
 
 [node name="g" type="Button" parent="AlpahbetMafia"]
 offset_left = 300.0
@@ -126,8 +122,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "g"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "g"
 
 [node name="h" type="Button" parent="AlpahbetMafia"]
 offset_top = 50.0
@@ -137,8 +132,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "h"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "h"
 
 [node name="i" type="Button" parent="AlpahbetMafia"]
 offset_left = 50.0
@@ -149,8 +143,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "i"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "i"
 
 [node name="j" type="Button" parent="AlpahbetMafia"]
 offset_left = 100.0
@@ -161,8 +154,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "j"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "j"
 
 [node name="k" type="Button" parent="AlpahbetMafia"]
 offset_left = 150.0
@@ -173,8 +165,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "k"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "k"
 
 [node name="l" type="Button" parent="AlpahbetMafia"]
 offset_left = 200.0
@@ -185,8 +176,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "l"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "l"
 
 [node name="m" type="Button" parent="AlpahbetMafia"]
 offset_left = 250.0
@@ -197,8 +187,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "m"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "m"
 
 [node name="n" type="Button" parent="AlpahbetMafia"]
 offset_left = 300.0
@@ -209,8 +198,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "n"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "n"
 
 [node name="o" type="Button" parent="AlpahbetMafia"]
 offset_top = 100.0
@@ -220,8 +208,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "o"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "o"
 
 [node name="p" type="Button" parent="AlpahbetMafia"]
 offset_left = 50.0
@@ -232,8 +219,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "p"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "p"
 
 [node name="q" type="Button" parent="AlpahbetMafia"]
 offset_left = 100.0
@@ -244,8 +230,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "q"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "q"
 
 [node name="r" type="Button" parent="AlpahbetMafia"]
 offset_left = 150.0
@@ -256,8 +241,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "r"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "r"
 
 [node name="s" type="Button" parent="AlpahbetMafia"]
 offset_left = 200.0
@@ -268,8 +252,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "s"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "s"
 
 [node name="t" type="Button" parent="AlpahbetMafia"]
 offset_left = 250.0
@@ -280,8 +263,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "t"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "t"
 
 [node name="u" type="Button" parent="AlpahbetMafia"]
 offset_left = 300.0
@@ -292,8 +274,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "u"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "u"
 
 [node name="v" type="Button" parent="AlpahbetMafia"]
 offset_top = 150.0
@@ -303,8 +284,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "v"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "v"
 
 [node name="w" type="Button" parent="AlpahbetMafia"]
 offset_left = 50.0
@@ -315,8 +295,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "w"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "w"
 
 [node name="x" type="Button" parent="AlpahbetMafia"]
 offset_left = 100.0
@@ -327,8 +306,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "x"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "x"
 
 [node name="y" type="Button" parent="AlpahbetMafia"]
 offset_left = 150.0
@@ -339,8 +317,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "y"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "y"
 
 [node name="z" type="Button" parent="AlpahbetMafia"]
 offset_left = 200.0
@@ -351,8 +328,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "z"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "z"
 
 [node name="Shift" type="Button" parent="AlpahbetMafia"]
 offset_left = 350.0
@@ -364,8 +340,7 @@ theme_override_font_sizes/font_size = 20
 icon = ExtResource("4_yie15")
 icon_alignment = 1
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "Shift"
 
 [node name="Backspace" type="Button" parent="AlpahbetMafia"]
 offset_left = 350.0
@@ -376,8 +351,7 @@ theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "Back"
 script = ExtResource("2_pnsrc")
-theme_override_fonts/font = ExtResource("1_qoly1")
-theme_override_font_sizes/font_size = 20
+letter = "Back"
 
 [node name="ConfirmName" type="Button" parent="."]
 offset_left = 660.0
