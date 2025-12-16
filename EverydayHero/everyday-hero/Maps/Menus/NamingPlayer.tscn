@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdm10lkjgrd7l"]
+[gd_scene load_steps=11 format=3 uid="uid://cdm10lkjgrd7l"]
 
 [ext_resource type="Script" uid="uid://cdxnhw0b1n2qp" path="res://Maps/Menus/ConfirmName.cs" id="1_ig5ih"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="1_qoly1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="4_o585v"]
 [ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="4_vf8ve"]
 [ext_resource type="Texture2D" uid="uid://dehohi8v21y5o" path="res://Sprites/OverlaySprites/ShiftArrow.png" id="4_yie15"]
+[ext_resource type="Texture2D" uid="uid://cd5lfeba2hl4m" path="res://Sprites/OverlaySprites/LeftArrow.png" id="7_7rkld"]
 
 [node name="NamingPlayer" type="Node2D"]
 
@@ -350,6 +351,7 @@ offset_bottom = 190.0
 theme_override_fonts/font = ExtResource("1_qoly1")
 theme_override_font_sizes/font_size = 20
 text = "Back"
+icon = ExtResource("7_7rkld")
 script = ExtResource("2_pnsrc")
 letter = "Back"
 

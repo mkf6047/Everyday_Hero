@@ -17,7 +17,7 @@ public partial class SelectHero : Area2D
     {
         scene = (QuestSortingScene)GetNode("../../../");
         activeHero = (LeaderSprite)GetNode("../../LeaderSprite");
-		describer = (HeroAbilitiesRank)GetNode("HeroesAbilitiesRank");
+		describer = (HeroAbilitiesRank)GetNode("HeroAbilitiesRank");
     }
 
     public override void _Process(double delta)

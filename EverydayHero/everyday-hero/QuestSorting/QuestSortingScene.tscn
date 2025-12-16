@@ -469,7 +469,7 @@ texture = ExtResource("22_6gojl")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero/HeroAbilitiesRank"]
@@ -520,7 +520,7 @@ texture = ExtResource("23_xxd73")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero2"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero2/HeroAbilitiesRank"]
@@ -571,7 +571,7 @@ texture = ExtResource("24_ala2y")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero3"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero3/HeroAbilitiesRank"]
@@ -622,7 +622,7 @@ texture = ExtResource("25_cvqbe")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero4"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero4/HeroAbilitiesRank"]
@@ -673,7 +673,7 @@ texture = ExtResource("26_bq2s0")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero5"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero5/HeroAbilitiesRank"]
@@ -724,7 +724,7 @@ texture = ExtResource("27_o8tmi")
 
 [node name="HeroAbilitiesRank" type="Node2D" parent="PartyInformation/HeroList/SelectHero6"]
 visible = false
-z_index = 8
+z_index = 15
 script = ExtResource("25_bq2s0")
 
 [node name="TextboxSprite" type="Sprite2D" parent="PartyInformation/HeroList/SelectHero6/HeroAbilitiesRank"]

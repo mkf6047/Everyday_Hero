@@ -3,7 +3,7 @@ using System;
 
 public partial class PlayerNameDecider : LineEdit
 {
-    public bool shiftActive = false;
+    public bool shiftActive = true;
     public override void _Ready()
     {
         this.Text = "";
