@@ -19,18 +19,27 @@ public partial class PauseMenu : Control
         {
             if (isMenuOpen)
             {
-                isMenuOpen = false;
-                this.Hide();
-                GetTree().Paused = false;
+                OpenMenu();
             }
             else
             {
-                isMenuOpen = true;
-                GetTree().Paused = true;
-                this.Show();
+                CloseMenu();
             }
         }
         base._Process(delta);
     }
+    
+    public void OpenMenu()
+    {
+        isMenuOpen = false;
+        this.Hide();
+        GetTree().Paused = false;
+    }
 
+    public void CloseMenu()
+    {
+        isMenuOpen = true;
+        GetTree().Paused = true;
+        this.Show();
+    }
 }
