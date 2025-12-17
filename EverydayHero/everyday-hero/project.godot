@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Everyday Hero"
-run/main_scene="uid://bwvt22jao7hln"
+run/main_scene="uid://yra1xlevfyws"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="uid://bma37c168gc5u"
 config/windows_native_icon="res://EverydayHeroIcons.ico"

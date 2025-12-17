@@ -3,13 +3,14 @@ using System;
 
 public partial class MoveableQuest : CharacterBody2D
 {
-	Sprite2D sprite;
+	Sprite2D sprite, completeMark;
 	QuestData data;
 	Vector2 newPosition;
 	Vector2 dir;
 	float draggingDistance;
 	bool dragging;
 	bool mouseIn = false;
+	public bool isComplete = false;
 	public bool chosen = false;
 	public int questReward, questDuration = 0;
 	public string questName, questType, questRank = "";
@@ -22,6 +23,7 @@ public partial class MoveableQuest : CharacterBody2D
 	{
 		sprite = (Sprite2D)GetNode("QuestSprite");
 		data = (QuestData)GetNode("QuestData");
+		completeMark = (Sprite2D)GetNode("Complete");
 	}
 	public override void _Input(InputEvent @event)
 	{
@@ -88,4 +90,10 @@ public partial class MoveableQuest : CharacterBody2D
     {
         data.SpecificQuest(filepath);
     }
+
+	public void Completed()
+	{
+		completeMark.Show();
+		isComplete = true;
+	}
 }

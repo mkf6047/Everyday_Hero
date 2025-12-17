@@ -2,5 +2,5 @@ Eliminate Goblins
 Goblins have been raiding our town. Get rid of them! We need someone strong, able to handle a group of foes with ease.
 E
 20
-2
+1
 Rogue, Ranger, Mage, Monk, Knight

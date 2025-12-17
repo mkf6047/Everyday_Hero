@@ -21,6 +21,8 @@ public partial class QuestSortingScene : Node2D
 
 	HeroList heroNameDisplay;
 
+	AcceptCompletedQuest completedQuestReceptacle;
+
 	bool readyComplete, calculateOnce, allPartiesSorted = false;
 
 	int numofquest = 0;
@@ -55,7 +57,9 @@ public partial class QuestSortingScene : Node2D
 		displayClassRank = (ClassAndRank)GetNode("PartyInformation/Class&Rank");
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
 		heroNameDisplay = (HeroList)GetNode("PartyInformation/HeroList/Textbox");
+		completedQuestReceptacle = (AcceptCompletedQuest)GetNode("AcceptCompletedQuest");
 		GenerateQuests();
+		GenerateCompletedQuests();
 		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
@@ -71,7 +75,7 @@ public partial class QuestSortingScene : Node2D
 	{
 		if ((numofquest <= 0) && readyComplete)
 		{
-			if (Input.IsActionJustPressed("Interact") && calculateOnce) { GetTree().CallDeferred("change_scene_to_file", "res://ProgressReportScene/AllPartyProgressReport.tscn"); }
+			if (Input.IsActionJustPressed("Interact") && calculateOnce) { GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn"); }
 			if (calculateOnce) { return; }
 			if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
 			if (PlayerStats.Instance.QuestsSorted >= 440 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 10)) { PlayerStats.Instance.Rank = "SSS"; }
@@ -106,11 +110,32 @@ public partial class QuestSortingScene : Node2D
 		}
 	}
 
-	// public void NewParty()
-	// {
-	// 	currentParty++;
-	// 	displayClassRank.LoadNextParty(currentParty);
-	// }
+	public void GenerateCompletedQuests()
+	{
+		int returningReports = 0;
+		for(int i = 0; i < 6; i++)
+		{
+			if((PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0) && PartyLists.Instance.parties[0][i].onQuest)
+            {
+                PartyLists.Instance.parties[0][i].onQuest = false;
+				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
+				quest.SpecificQuest("res://QuestSorting/QuestInformation/" + PartyLists.Instance.parties[0][i].currentQuestsTypes[0] + PartyLists.Instance.parties[0][i].currentQuestsNames[0]);
+				questHolder.AddChild(quest);
+				returningReports++;
+				quest.Completed();
+				quest.Position = new Vector2(150 + (returningReports * 175), 475);
+				AddQuest(quest);
+            }
+		}
+		if(returningReports == 0)
+		{
+			completedQuestReceptacle.Hide();
+		}
+		else
+		{
+			TutorialInfo.Instance.ActivateTutorial(5);
+		}
+	}
 
 	public void AddQuest(MoveableQuest quest)
 	{

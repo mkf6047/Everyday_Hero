@@ -22,9 +22,12 @@ public partial class DelayQuest : Area2D
             if (isColliding)
             {
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
-                QSSTracker.Instance.delayedQuests++;
-                manager.RemoveQuest(quest);
-                manager.UpdateQuesters();
+                if (!quest.isComplete)
+                {
+                    QSSTracker.Instance.delayedQuests++;
+                    manager.RemoveQuest(quest);
+                    manager.UpdateQuesters();
+                }
             }
         }
         catch

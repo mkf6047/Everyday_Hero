@@ -18,7 +18,7 @@ public partial class AcceptQuest : Area2D
 			if (isColliding)
 			{
 				MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
-				if (manager.heroSelected)
+				if (manager.heroSelected && !quest.isComplete)
 				{
 					if(manager.currentHero == 7) { return; }
 					//PlayerStats.Instance.Coins += quest.questReward;
