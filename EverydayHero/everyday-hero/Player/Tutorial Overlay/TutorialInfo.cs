@@ -32,7 +32,6 @@ public partial class TutorialInfo : Node
             ReadLinesFromFile(a);
         }
         previousMousePos = new Vector2();
-
         Instance = this;    //this line must go last!!!!!
     }
 
@@ -229,6 +228,7 @@ public partial class TutorialInfo : Node
             {
                 tutorialComplete[3] = true;
                 timer = 0.0;
+                currentLine = 0;
                 overlay.HideOverlay();
                 return;
             }
@@ -245,7 +245,6 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            GD.Print(currentLine);
             if((currentLine == 5) || (currentLine == 6) || (currentLine >= 13)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[3].Count - 1)
@@ -306,6 +305,7 @@ public partial class TutorialInfo : Node
             {
                 tutorialComplete[5] = true;
                 timer = 0.0;
+                currentLine = 0;
                 overlay.HideOverlay();
                 return;
             }
@@ -339,7 +339,7 @@ public partial class TutorialInfo : Node
             overlay = incomingOverlay;
             tutorialFound = true;
         }
-        else if(tutOver is null){ return; }
+        else if(tutOver is null){ GD.Print("Cannot find overlay"); return; }
         else { GD.Print("Unable to load tutorial"); return; }
         int size = tutorialLines.Count;
         if ((tutorialNum >= 0) && (tutorialNum <= (size - 1)))
@@ -357,7 +357,7 @@ public partial class TutorialInfo : Node
         {
             overlay = incomingOverlay;
         }
-        else if(tutOver is null){ return; }
+        else if(tutOver is null){ GD.Print("Cannot find overlay"); return; }
         else { GD.Print("Unable to load tutorial"); return; }
         switch (tutorial)
         {

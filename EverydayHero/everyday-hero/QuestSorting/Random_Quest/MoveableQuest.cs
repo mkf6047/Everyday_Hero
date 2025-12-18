@@ -24,6 +24,7 @@ public partial class MoveableQuest : CharacterBody2D
 		sprite = (Sprite2D)GetNode("QuestSprite");
 		data = (QuestData)GetNode("QuestData");
 		completeMark = (Sprite2D)GetNode("Complete");
+		completeMark.Hide();
 	}
 	public override void _Input(InputEvent @event)
 	{

@@ -59,7 +59,6 @@ public partial class QuestSortingScene : Node2D
 		heroNameDisplay = (HeroList)GetNode("PartyInformation/HeroList/Textbox");
 		completedQuestReceptacle = (AcceptCompletedQuest)GetNode("AcceptCompletedQuest");
 		GenerateQuests();
-		GenerateCompletedQuests();
 		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
 		readyComplete = true;
@@ -67,6 +66,7 @@ public partial class QuestSortingScene : Node2D
 		//if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		heroName = (RichTextLabel)GetNode("PartyInformation/HeroName");
+		GenerateCompletedQuests();
 		UpdateQuesters();
 		BackgroundNoise.Instance.MainMusic();
 	}
@@ -119,8 +119,10 @@ public partial class QuestSortingScene : Node2D
             {
                 PartyLists.Instance.parties[0][i].onQuest = false;
 				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
-				quest.SpecificQuest("res://QuestSorting/QuestInformation/" + PartyLists.Instance.parties[0][i].currentQuestsTypes[0] + PartyLists.Instance.parties[0][i].currentQuestsNames[0]);
 				questHolder.AddChild(quest);
+				string holder = "res://QuestSorting/QuestInformation/" + PartyLists.Instance.parties[0][i].currentQuestsTypes[0] +"/"+ PartyLists.Instance.parties[0][i].currentQuestsNames[0] + ".txt";
+				quest.SpecificQuest(holder);
+				//quest.CallDeferred("SpecificQuest", holder);
 				returningReports++;
 				quest.Completed();
 				quest.Position = new Vector2(150 + (returningReports * 175), 475);
