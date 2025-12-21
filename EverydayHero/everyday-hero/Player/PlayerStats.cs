@@ -11,7 +11,7 @@ public partial class PlayerStats : Node
     private string rank = "Unemployed";
     private string playerName = "Reginald";
     private bool isPlaying = false;
-    public bool isInside = false;
+    public bool isInside = false, qssType = true;
     public Godot.Collections.Array<string> inventory;
     public Godot.Collections.Array<int> inventoryPrice;
     public Vector2 playerLocation;

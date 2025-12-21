@@ -117,7 +117,7 @@ public partial class PartyLists : Node
 
 	public void CalculateFailure(int partyMember)
     {
-		for(int i = 0; i < parties[0][partyMember].currentQuestsNames.Count; i++)
+		for(int i = 0; i < 1; i++)
         {
             string questType = parties[0][partyMember].currentQuestsTypes[i];
 			string questName = parties[0][partyMember].currentQuestsNames[i];
@@ -125,7 +125,7 @@ public partial class PartyLists : Node
 			int heroRank = 0;
 			double compatability = 1.15;
 			if(!parties[0][partyMember].compatableWithQuest) { compatability = 0.75; }
-			using(var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + questType +"/"+questName+".txt", FileAccess.ModeFlags.Read))
+			using(var file = FileAccess.Open("res://QuestSorting/QuestInformation/" + questType +"/"+ questName +".txt", FileAccess.ModeFlags.Read))
             {
                 string value = file.GetLine(); 	//Value = Quest Name
 				value = file.GetLine();			//value = quest description
@@ -149,7 +149,6 @@ public partial class PartyLists : Node
             {
                 parties[0][partyMember].goodbadprogress[i] = 100;
             }
-			GD.Print("D4C");
         }
     }
 

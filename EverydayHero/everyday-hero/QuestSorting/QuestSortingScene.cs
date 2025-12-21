@@ -5,7 +5,7 @@ using System.Linq;
 
 public partial class QuestSortingScene : Node2D
 {
-	Godot.Collections.Array<MoveableQuest> questStack = [];
+	public Godot.Collections.Array<MoveableQuest> questStack = [];
 
 	PackedScene questPreload = GD.Load<PackedScene>("res://QuestSorting/Random_Quest/RandomQuest.tscn");
 
@@ -23,7 +23,7 @@ public partial class QuestSortingScene : Node2D
 
 	AcceptCompletedQuest completedQuestReceptacle;
 
-	bool readyComplete, calculateOnce, allPartiesSorted = false;
+	bool readyComplete = false, calculateOnce = false, allPartiesSorted = false;
 
 	int numofquest = 0;
 	int partiesApplying, currentParty = 0;
@@ -58,15 +58,17 @@ public partial class QuestSortingScene : Node2D
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
 		heroNameDisplay = (HeroList)GetNode("PartyInformation/HeroList/Textbox");
 		completedQuestReceptacle = (AcceptCompletedQuest)GetNode("AcceptCompletedQuest");
-		GenerateQuests();
+		GenerateCompletedQuests();
+		if (PlayerStats.Instance.qssType)
+		{
+			GenerateQuests();
+		}
 		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
-		readyComplete = true;
-		TutorialInfo.Instance.ActivateTutorial(3);
+		SetDeferred("readyComplete", true);
 		//if(TutorialInfo.Instance.tutorialComplete[3]){TutorialInfo.Instance.ActivateTutorial(4);}
 		heroDialouge = (RichTextLabel)GetNode("PartyInformation/Textbox");
 		heroName = (RichTextLabel)GetNode("PartyInformation/HeroName");
-		GenerateCompletedQuests();
 		UpdateQuesters();
 		BackgroundNoise.Instance.MainMusic();
 	}
@@ -75,7 +77,17 @@ public partial class QuestSortingScene : Node2D
 	{
 		if ((numofquest <= 0) && readyComplete)
 		{
-			if (Input.IsActionJustPressed("Interact") && calculateOnce) { GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn"); }
+			if (Input.IsActionJustPressed("Interact") && calculateOnce) 
+			{
+				if (PlayerStats.Instance.qssType)
+				{
+					GetTree().CallDeferred("change_scene_to_file", "res://ProgressReportScene/AllPartyProgressReport.tscn"); 
+				}
+				else
+				{
+					GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn"); 
+				}
+			}
 			if (calculateOnce) { return; }
 			if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
 			if (PlayerStats.Instance.QuestsSorted >= 440 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 10)) { PlayerStats.Instance.Rank = "SSS"; }
@@ -108,6 +120,7 @@ public partial class QuestSortingScene : Node2D
 			quest.Position = new Vector2(150 + (i + 1) * 175, 425);
 			AddQuest(quest);
 		}
+		TutorialInfo.Instance.ActivateTutorial(3);
 	}
 
 	public void GenerateCompletedQuests()
@@ -116,15 +129,15 @@ public partial class QuestSortingScene : Node2D
 		for(int i = 0; i < 6; i++)
 		{
 			if((PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0) && PartyLists.Instance.parties[0][i].onQuest)
-            {
-                PartyLists.Instance.parties[0][i].onQuest = false;
+            {	
+				GD.Print("running");
 				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
 				questHolder.AddChild(quest);
 				string holder = "res://QuestSorting/QuestInformation/" + PartyLists.Instance.parties[0][i].currentQuestsTypes[0] +"/"+ PartyLists.Instance.parties[0][i].currentQuestsNames[0] + ".txt";
 				quest.SpecificQuest(holder);
 				//quest.CallDeferred("SpecificQuest", holder);
 				returningReports++;
-				quest.Completed();
+				if(PartyLists.Instance.parties[0][i].questPassed){ quest.Completed(); } else{ quest.NeedsWork(i); }
 				quest.Position = new Vector2(150 + (returningReports * 175), 475);
 				AddQuest(quest);
             }

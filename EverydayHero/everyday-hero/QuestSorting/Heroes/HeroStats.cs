@@ -21,7 +21,7 @@ public partial class HeroStats : Node
         {"E", 0},
         {"F", 0},
     };
-    public bool onQuest, compatableWithQuest = false;
+    public bool onQuest, compatableWithQuest = false, questPassed = false;
     public int daysRemainingOnQuest = 0;
     public Sprite2D sprite = new Sprite2D();
 }

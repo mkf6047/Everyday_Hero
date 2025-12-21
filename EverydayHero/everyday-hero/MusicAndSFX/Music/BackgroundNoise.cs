@@ -8,7 +8,7 @@ public partial class BackgroundNoise : Node2D
     AudioStreamPlayer musicSpeaker;
 
     //for sound effects
-    AudioStreamPlayer sfxOutput;
+    AudioStreamPlayer scribbleOutput, crumpleOutput, shuffleOutput;
     bool isPlaying = false;
     double timer = 0.0;
     float masterVolumeValue = 50.0f;
@@ -16,7 +16,9 @@ public partial class BackgroundNoise : Node2D
     public override void _Ready()
     {
         musicSpeaker = (AudioStreamPlayer)GetNode("MusicStreamPlayer");
-        sfxOutput = (AudioStreamPlayer)GetNode("ScribbleSoundEffect");
+        scribbleOutput = (AudioStreamPlayer)GetNode("ScribbleSoundEffect");
+        crumpleOutput = (AudioStreamPlayer)GetNode("PaperCrumpleSFX");
+        shuffleOutput = (AudioStreamPlayer)GetNode("PaperShuffleSFX");
         Hide();
         Instance = this;
     }
@@ -26,7 +28,7 @@ public partial class BackgroundNoise : Node2D
         if(Input.IsActionJustPressed("Interact") || Input.IsActionJustPressed("cancel") || Input.IsActionJustPressed("mouse_click"))
         {
             timer = 0.0;
-            sfxOutput.Play();
+            scribbleOutput.Play();
             isPlaying = true;
         }
         if (isPlaying)
@@ -34,7 +36,7 @@ public partial class BackgroundNoise : Node2D
             timer += delta;
             if(timer > 0.5)
             {
-                sfxOutput.Stop();
+                scribbleOutput.Stop();
             }
         }
     }
@@ -53,6 +55,16 @@ public partial class BackgroundNoise : Node2D
         musicSpeaker.Play();
     }
 
+    public void PaperCrumple()
+    {
+        crumpleOutput.Play();
+    }
+
+    public void PaperShuffle()
+    {
+        shuffleOutput.Play();
+    }
+
     public void SetMusicValue(float newVal)
     {
         musicSpeaker.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
@@ -60,12 +72,14 @@ public partial class BackgroundNoise : Node2D
 
     public void SetSFXValue(float newVal)
     {
-        sfxOutput.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
+        scribbleOutput.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
+        crumpleOutput.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
+        shuffleOutput.VolumeLinear = newVal / 100.0f * (masterVolumeValue / 100.0f);
     }
     public void SetMasterVolume(float newVal)
     {
         masterVolumeValue = newVal;
-        SetSFXValue(sfxOutput.VolumeLinear * 100.0f);
+        SetSFXValue(scribbleOutput.VolumeLinear * 100.0f);
         SetMusicValue(musicSpeaker.VolumeLinear * 100.0f);
     }
 }

@@ -10,7 +10,7 @@ public partial class SelectHero : Area2D
 	QuestSortingScene scene;
 	//ClassAndRank parent;
     LeaderSprite activeHero;
-
+	HeroList heroList;
 	HeroAbilitiesRank describer;
 	bool mouseIn = false;
 	public override void _Ready()
@@ -18,6 +18,7 @@ public partial class SelectHero : Area2D
         scene = (QuestSortingScene)GetNode("../../../");
         activeHero = (LeaderSprite)GetNode("../../LeaderSprite");
 		describer = (HeroAbilitiesRank)GetNode("HeroAbilitiesRank");
+		heroList = (HeroList)GetNode("../Textbox");
     }
 
     public override void _Process(double delta)
@@ -36,12 +37,14 @@ public partial class SelectHero : Area2D
 	public void MouseEnter()
 	{
 		mouseIn = true;
+		heroList.UpdateHeroPresence(charOrder - 1);
 		describer.Show();
 		//GD.Print("Enter " + charOrder);
 	}
 	public void MouseExit()
 	{
 		mouseIn = false;
+		heroList.UpdateHeroPresence();
 		describer.Hide();
 		//GD.Print("Exit " + charOrder);
 	}

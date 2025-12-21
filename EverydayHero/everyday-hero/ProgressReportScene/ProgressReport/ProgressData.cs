@@ -23,7 +23,7 @@ public partial class ProgressData : Node2D
         bool passFail = false; //starts off not passing
         Random rand = new Random();
         int randNum = rand.Next(1, 101);
-        if(randNum <= failChance){ passFail = true; }
+        if(randNum <= failChance){ passFail = true; PartyLists.Instance.parties[0][hero].questPassed = true; }
         string updateText = "";
         questProgress.Text = "";
         questProgress.AppendText("[center][color=black]");

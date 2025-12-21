@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3bccles35ihs"]
+[gd_scene load_steps=21 format=3 uid="uid://c3bccles35ihs"]
 
 [ext_resource type="Script" uid="uid://2qpdfw3lbk0i" path="res://MusicAndSFX/Music/BackgroundNoise.cs" id="1_2atvq"]
 [ext_resource type="AudioStream" uid="uid://duf7wr0ch7qi2" path="res://MusicAndSFX/Music/Everyday Hero Title Music.mp3" id="1_pof3t"]
@@ -9,7 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="4_u4c7l"]
 [ext_resource type="AudioStream" uid="uid://bk2455wvyaush" path="res://MusicAndSFX/SFX/scribble_short-104286.mp3" id="5_n7612"]
 [ext_resource type="AudioStream" uid="uid://brh0erbhfibl6" path="res://MusicAndSFX/SFX/scribbling-81928.mp3" id="6_0yvqy"]
+[ext_resource type="AudioStream" uid="uid://nosc6u7kmlkv" path="res://MusicAndSFX/SFX/PaperShuffleSFX/paper-crinkle-80916.mp3" id="8_0yvqy"]
 [ext_resource type="Script" uid="uid://cveqjakllkq" path="res://MusicAndSFX/Music/VolumeControl.cs" id="8_uq4qm"]
+[ext_resource type="AudioStream" uid="uid://cwux4nffsnmcb" path="res://MusicAndSFX/SFX/PaperShuffleSFX/paper-rustle-81855.mp3" id="9_13auq"]
+[ext_resource type="AudioStream" uid="uid://gfl5o7w5h0u0" path="res://MusicAndSFX/SFX/PaperShuffleSFX/office-paper-crumple-folding-handling-6413 (mp3cut.net).mp3" id="9_n7612"]
+[ext_resource type="AudioStream" uid="uid://cl6p5tgj2087o" path="res://MusicAndSFX/SFX/PaperCrumpleSFX/crumple-03-40747.mp3" id="10_2xbjh"]
+[ext_resource type="AudioStream" uid="uid://bm6h3vojq70r" path="res://MusicAndSFX/SFX/PaperCrumpleSFX/crumple-92100.mp3" id="11_cy7uk"]
+[ext_resource type="AudioStream" uid="uid://degts0nrgia6a" path="res://MusicAndSFX/SFX/PaperCrumpleSFX/paper-bin-toss-1-83125.mp3" id="12_64kc6"]
 [ext_resource type="Script" uid="uid://2a0s5k8cs7g3" path="res://MusicAndSFX/Music/CloseAudioMenu.cs" id="13_s7lxk"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2xbjh"]
@@ -18,6 +24,18 @@ stream_0/stream = ExtResource("3_cc1jn")
 stream_1/stream = ExtResource("4_s7lxk")
 stream_2/stream = ExtResource("5_n7612")
 stream_3/stream = ExtResource("6_0yvqy")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uq4qm"]
+streams_count = 3
+stream_0/stream = ExtResource("8_0yvqy")
+stream_1/stream = ExtResource("9_13auq")
+stream_2/stream = ExtResource("9_n7612")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_grl10"]
+streams_count = 3
+stream_0/stream = ExtResource("10_2xbjh")
+stream_1/stream = ExtResource("11_cy7uk")
+stream_2/stream = ExtResource("12_64kc6")
 
 [node name="BackgroundNoise" type="Node2D"]
 process_mode = 3
@@ -32,6 +50,14 @@ parameters/looping = true
 
 [node name="ScribbleSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_2xbjh")
+bus = &"Sfx"
+
+[node name="PaperShuffleSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_uq4qm")
+bus = &"Sfx"
+
+[node name="PaperCrumpleSFX" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_grl10")
 bus = &"Sfx"
 
 [node name="ControlMenu" type="Node2D" parent="."]

@@ -9,10 +9,10 @@
 [ext_resource type="Script" uid="uid://dwf5uud1nskt3" path="res://QuestSorting/DisposeQuest.cs" id="7_gjghe"]
 [ext_resource type="Script" uid="uid://ja6qwldklccn" path="res://QuestSorting/QssResults.cs" id="9_18a2g"]
 [ext_resource type="Texture2D" uid="uid://b2hfkhaubun8y" path="res://Sprites/Trash-Updated.png" id="9_ala2y"]
-[ext_resource type="Texture2D" uid="uid://c4pcpf0kyol07" path="res://Sprites/QuestSprites/AcceptQuest.png" id="9_bq2s0"]
 [ext_resource type="Texture2D" uid="uid://bhhlm51fpsnxg" path="res://Sprites/OverlaySprites/TextboxCenter.png" id="9_gjghe"]
 [ext_resource type="Script" uid="uid://be7bg2m0p0eo3" path="res://QuestSorting/AcceptCompletedQuest.cs" id="9_o8tmi"]
 [ext_resource type="Texture2D" uid="uid://bt21nncvodtkm" path="res://Sprites/OverlaySprites/TextboxEnd.png" id="10_18a2g"]
+[ext_resource type="Texture2D" uid="uid://cmo5u5kchd0n4" path="res://Sprites/Done-Bin.png" id="10_o8tmi"]
 [ext_resource type="Texture2D" uid="uid://cif3a6vius0k8" path="res://Sprites/QuestSprites/QSSBackground.png" id="13_o18v7"]
 [ext_resource type="Texture2D" uid="uid://cvk0int33gflr" path="res://Sprites/NPCSprites/Knight-Updated.png" id="14_b74tf"]
 [ext_resource type="Texture2D" uid="uid://dogj10ee67ayp" path="res://Sprites/OverlaySprites/MenuSelector.png" id="14_yaefm"]
@@ -113,7 +113,7 @@ shape = SubResource("CircleShape2D_xmd7o")
 [node name="Sprite2D" type="Sprite2D" parent="QuestGetter"]
 
 [node name="Delay" type="Area2D" parent="."]
-position = Vector2(1075, 425)
+position = Vector2(65, 490)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("3_k7knd")
@@ -138,7 +138,7 @@ shape = SubResource("RectangleShape2D_3ky2r")
 
 [node name="AcceptCompletedQuest" type="Area2D" parent="."]
 z_index = -1
-position = Vector2(65, 375)
+position = Vector2(1075, 375)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("9_o8tmi")
@@ -147,7 +147,7 @@ script = ExtResource("9_o8tmi")
 shape = SubResource("RectangleShape2D_1bmva")
 
 [node name="Sprite2D" type="Sprite2D" parent="AcceptCompletedQuest"]
-texture = ExtResource("9_bq2s0")
+texture = ExtResource("10_o8tmi")
 
 [node name="Dispose" type="Area2D" parent="."]
 position = Vector2(1075, 600)
@@ -212,7 +212,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("19_oe7wh")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[right]Press 'Z' to Continue..."
+text = "[right]Click to Continue..."
 scroll_active = false
 
 [node name="PartyInformation" type="Node2D" parent="."]
@@ -472,6 +472,7 @@ Jack Decker"
 script = ExtResource("29_cvqbe")
 
 [node name="SelectHero" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, -120)
 script = ExtResource("29_ala2y")
 charOrder = 1
@@ -523,6 +524,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 scroll_active = false
 
 [node name="SelectHero2" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, -91)
 script = ExtResource("29_ala2y")
 charOrder = 2
@@ -574,6 +576,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 scroll_active = false
 
 [node name="SelectHero3" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, -62)
 script = ExtResource("29_ala2y")
 charOrder = 3
@@ -625,6 +628,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 scroll_active = false
 
 [node name="SelectHero4" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, -33)
 script = ExtResource("29_ala2y")
 charOrder = 4
@@ -676,6 +680,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 scroll_active = false
 
 [node name="SelectHero5" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, -4)
 script = ExtResource("29_ala2y")
 charOrder = 5
@@ -727,6 +732,7 @@ text = "[font_size=14]- Able to utilize heavy equipment with the strength to car
 scroll_active = false
 
 [node name="SelectHero6" type="Area2D" parent="PartyInformation/HeroList"]
+z_index = 25
 position = Vector2(0, 25)
 script = ExtResource("29_ala2y")
 charOrder = 6

@@ -8,9 +8,9 @@ public partial class DayTracker : Node2D
         BackgroundNoise.Instance.NighttimeMusic();
 		for(int i = 0; i < 6; i++)
         {
-            if (PartyLists.Instance.parties[0][i].onQuest)
+            if (PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0)
             {
-                PartyLists.Instance.parties[0][i].daysRemainingOnQuest--;
+                PartyLists.Instance.parties[0][i].onQuest = false;
             }
         }
         PlayerStats.Instance.DaysPassed += 1;
@@ -20,10 +20,8 @@ public partial class DayTracker : Node2D
     {
         if (Input.IsActionJustPressed("Interact"))
         {
-            GD.Print("SceneFilePath change begun");
+            PlayerStats.Instance.qssType = true;
             GetTree().CallDeferred("change_scene_to_file", "res://QuestSorting/QuestSortingScene.tscn");
-            //GetTree().ChangeSceneToFile("res://QuestSorting/QuestSortingScene.tscn");
-            GD.Print("SceneFilePath change sucessfully");
         }
     }
 

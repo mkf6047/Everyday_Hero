@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://yhbdyofw3n7k"]
+[gd_scene load_steps=9 format=3 uid="uid://yhbdyofw3n7k"]
 
 [ext_resource type="Script" uid="uid://bdcwmogegcsh7" path="res://QuestSorting/Random_Quest/MoveableQuest.cs" id="1_mupi5"]
 [ext_resource type="Texture2D" uid="uid://c6atyep8si700" path="res://Sprites/QuestSprites/QuestPaper.png" id="2_w37uj"]
 [ext_resource type="Script" uid="uid://vhcqwsewfmvp" path="res://QuestSorting/Random_Quest/QuestData.cs" id="3_h5he3"]
 [ext_resource type="Texture2D" uid="uid://cpe6idjcsp4wp" path="res://Sprites/QuestSprites/CompleteStamp.png" id="3_j1evi"]
 [ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="4_lsw17"]
+[ext_resource type="Texture2D" uid="uid://b6snsbi7qmair" path="res://Sprites/QuestSprites/NeedHelpStamp.png" id="5_p2r8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tebf4"]
 size = Vector2(160, 256)
@@ -35,6 +36,22 @@ theme_override_fonts/normal_font = ExtResource("4_lsw17")
 theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 text = "[color=black]DONE"
+
+[node name="InProgress" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(60, 70)
+rotation = -0.785398
+texture = ExtResource("5_p2r8k")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InProgress"]
+offset_left = -10.0
+offset_top = -7.0
+offset_right = 30.0
+offset_bottom = 33.0
+theme_override_fonts/normal_font = ExtResource("4_lsw17")
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[color=black]HELP"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tebf4")

@@ -3,7 +3,7 @@ using System;
 
 public partial class HeroList : RichTextLabel
 {
-    public void UpdateHeroPresence()
+    public void UpdateHeroPresence(int hover = -1)
     {
         this.Text = "";
         AppendText("[font_size=25][color=yellow]Heroes:[/color][font_size=18]");
@@ -39,6 +39,11 @@ public partial class HeroList : RichTextLabel
 				pre = "[color=black]";
 				post = "[/color]";
 			}
+            else if(i == hover)
+            {
+                pre = "[color=yellow]";
+				post = "[/color]";
+            }
 			else{
 				pre = "";
 				post = "";

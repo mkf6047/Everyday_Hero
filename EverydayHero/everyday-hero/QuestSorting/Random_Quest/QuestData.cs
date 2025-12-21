@@ -106,6 +106,7 @@ public partial class QuestData : Node2D
 
     public void SpecificQuest(string filepath)
     {
+        GD.Print(filepath);
         using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Read))
         {
             string value = file.GetLine();

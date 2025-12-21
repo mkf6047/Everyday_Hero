@@ -15,11 +15,13 @@ public partial class QuestGetter : Area2D
 		Position = GetGlobalMousePosition();
 		int count = GetOverlappingBodies().Count;
 
-		if (count == 0)
-		{
-		}
+		if (count == 0){/* No collisons, leave empty. */}
 		else if (count == 1)
 		{
+			foreach(MoveableQuest b in parent.questStack)
+			{
+				b.notChosen();
+			}
 			MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
 			quest.isChosen();
 

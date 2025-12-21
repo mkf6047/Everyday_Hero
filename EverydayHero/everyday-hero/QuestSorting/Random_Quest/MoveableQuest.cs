@@ -3,16 +3,16 @@ using System;
 
 public partial class MoveableQuest : CharacterBody2D
 {
-	Sprite2D sprite, completeMark;
+	Sprite2D sprite, completeMark, continueMark;
 	QuestData data;
 	Vector2 newPosition;
 	Vector2 dir;
 	float draggingDistance;
-	bool dragging;
+	bool dragging, canChange = true;
 	bool mouseIn = false;
-	public bool isComplete = false;
+	public bool isComplete = false, needHelp = false;
 	public bool chosen = false;
-	public int questReward, questDuration = 0;
+	public int questReward, questDuration = 0, heroInNeed = -1;
 	public string questName, questType, questRank = "";
 	public string[] bestHeroes = [];
 	public bool Dragging
@@ -24,7 +24,9 @@ public partial class MoveableQuest : CharacterBody2D
 		sprite = (Sprite2D)GetNode("QuestSprite");
 		data = (QuestData)GetNode("QuestData");
 		completeMark = (Sprite2D)GetNode("Complete");
+		continueMark = (Sprite2D)GetNode("InProgress");
 		completeMark.Hide();
+		continueMark.Hide();
 	}
 	public override void _Input(InputEvent @event)
 	{
@@ -63,6 +65,15 @@ public partial class MoveableQuest : CharacterBody2D
 			Velocity = (newPosition - Position) * new Vector2(30, 30);
 			MoveAndSlide();
 		}
+		if(chosen && mouseIn && canChange)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestSelected.png");
+			canChange = false;
+		}
+		else if (!chosen || !mouseIn)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestPaper.png");
+		}
 	}
 
 	public void isChosen()
@@ -78,7 +89,8 @@ public partial class MoveableQuest : CharacterBody2D
 	public virtual void MouseEnter()
 	{
 		mouseIn = true;
-		sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestSelected.png");
+		canChange = true;
+		//if(chosen){ sprite.Texture = GD.Load<Texture2D>("res://Sprites/QuestSprites/QuestSelected.png"); }
 	}
 
 	public virtual void MouseExit()
@@ -96,5 +108,12 @@ public partial class MoveableQuest : CharacterBody2D
 	{
 		completeMark.Show();
 		isComplete = true;
+	}
+
+	public void NeedsWork(int heroToHelp)
+	{
+		continueMark.Show();
+		needHelp = true;
+		heroInNeed = heroToHelp;
 	}
 }

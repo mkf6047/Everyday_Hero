@@ -21,6 +21,22 @@ public partial class AcceptQuest : Area2D
 				if (manager.heroSelected && !quest.isComplete)
 				{
 					if(manager.currentHero == 7) { return; }
+					if (quest.needHelp)
+					{
+						GD.Print("Power");
+						PartyLists.Instance.parties[0][quest.heroInNeed].goodbadprogress[0] += 25;
+						if (PartyLists.Instance.parties[0][quest.heroInNeed].goodbadprogress[0] > 100)
+						{
+							PartyLists.Instance.parties[0][quest.heroInNeed].goodbadprogress[0] = 100;
+						}
+						PartyLists.Instance.parties[0][manager.currentHero - 1].onQuest = true;
+						manager.RemoveQuest(quest);
+                    	manager.UpdateQuesters();
+						manager.HideActiveHero();
+                    	BackgroundNoise.Instance.PaperShuffle();
+
+						return;
+					}
 					//PlayerStats.Instance.Coins += quest.questReward;
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsTypes[0] = quest.questType;
 					PartyLists.Instance.parties[0][manager.currentHero - 1].currentQuestsNames[0] = quest.questName;
@@ -44,6 +60,7 @@ public partial class AcceptQuest : Area2D
 					manager.RemoveQuest(quest);
                     manager.UpdateQuesters();
 					manager.HideActiveHero();
+                    BackgroundNoise.Instance.PaperShuffle();
 					//manager.NewParty();
 				}
 			}

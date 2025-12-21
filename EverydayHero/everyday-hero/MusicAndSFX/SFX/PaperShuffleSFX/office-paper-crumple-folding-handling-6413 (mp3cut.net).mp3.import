@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gfl5o7w5h0u0"
+path="res://.godot/imported/office-paper-crumple-folding-handling-6413 (mp3cut.net).mp3-72ad6f7bcfbe5ea930408889cfa26721.mp3str"
+
+[deps]
+
+source_file="res://MusicAndSFX/SFX/PaperShuffleSFX/office-paper-crumple-folding-handling-6413 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/office-paper-crumple-folding-handling-6413 (mp3cut.net).mp3-72ad6f7bcfbe5ea930408889cfa26721.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

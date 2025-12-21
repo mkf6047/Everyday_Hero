@@ -11,7 +11,7 @@ public partial class TutorialInfo : Node
     public int tutorialCount = 0;
     int currentLine = 0;
     string speakerName = "";
-    public bool[] tutorialComplete = [false, false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
+    public bool[] tutorialComplete = [true, false, false, false, false, false];      //add one per tutorial, position corresponding with tutorial lines
     private string[] tutorialDialougeFiles = [                  //make sure order of strings here corresponds with the order the related method appears in callTutorial method
         "res://Player/Tutorial Overlay/TutorialDialouge/Walking.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/ClickOnBuilding.txt",
@@ -98,7 +98,7 @@ public partial class TutorialInfo : Node
     }
     #endregion
 
-    public void Walking(double delta = 0.0)    //index 0
+    public void Walking(double delta = 0.0)    //call with ActivateTutorial(0)
     {
         if (tutorialComplete[0])               //walking corresponds to 0 in list.
         {
@@ -137,7 +137,7 @@ public partial class TutorialInfo : Node
             else{ canComplete = true; }
         }
     }
-    public void ClickOnBuilding(double delta = 0.0)  //index 1
+    public void ClickOnBuilding(double delta = 0.0)  //call with ActivateTutorial(1)
     {
         if (tutorialComplete[1])       
         {
@@ -176,7 +176,7 @@ public partial class TutorialInfo : Node
             else { canComplete = true; }
         }
     }
-    public void InteractWithDesk(double delta = 0.0)
+    public void InteractWithDesk(double delta = 0.0)    //call with ActivateTutorial(2)
     {
         if (tutorialComplete[2])
         {
@@ -215,7 +215,7 @@ public partial class TutorialInfo : Node
             else{ canComplete = true; }
         }
     }
-    public void QSSIntro(double delta = 0.0)   //change from private to public
+    public void QSSIntro(double delta = 0.0)   //call with ActivateTutorial(3)
     {
         if (tutorialComplete[3])       //replace 0 with actual corresponding int.
         {
@@ -255,7 +255,7 @@ public partial class TutorialInfo : Node
             else{ canComplete = true; }
         }
     }
-    private void SaveGame(double delta = 0.0)   //change from private to public
+    private void SaveGame(double delta = 0.0)   //call with ActivateTutorial(4)
     {
         if (tutorialComplete[4])       //replace 0 with actual corresponding int.
         {
@@ -292,7 +292,7 @@ public partial class TutorialInfo : Node
             else{ canComplete = true; }
         }
     }
-    public void ProgressReportIntro(double delta = 0.0)   //change from private to public
+    public void ProgressReportIntro(double delta = 0.0)   //call with ActivateTutorial(5)
     {
         if (tutorialComplete[5])       //replace 0 with actual corresponding int.
         {

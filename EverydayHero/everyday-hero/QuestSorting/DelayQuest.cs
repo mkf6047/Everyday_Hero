@@ -27,6 +27,7 @@ public partial class DelayQuest : Area2D
                     QSSTracker.Instance.delayedQuests++;
                     manager.RemoveQuest(quest);
                     manager.UpdateQuesters();
+                    BackgroundNoise.Instance.PaperShuffle();
                 }
             }
         }
@@ -41,7 +42,7 @@ public partial class DelayQuest : Area2D
     {
         try
         {
-            mySprite.Texture = collidingSprite;
+            //mySprite.Texture = collidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = true;
         }
@@ -55,7 +56,7 @@ public partial class DelayQuest : Area2D
     {
         try
         {
-            mySprite.Texture = notCollidingSprite;
+            //mySprite.Texture = notCollidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = false;
         }

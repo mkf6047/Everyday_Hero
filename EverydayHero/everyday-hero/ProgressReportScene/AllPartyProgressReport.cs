@@ -30,23 +30,20 @@ public partial class AllPartyProgressReport : Node2D
             if (PartyLists.Instance.parties[0][i].onQuest)
             {
                 PartyLists.Instance.parties[0][i].daysRemainingOnQuest--;
-				if(PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0)
-                {
-                    PartyLists.Instance.parties[0][i].onQuest = false;
-                }
             }
         }
 		partyInfo = (PartyInformation)GetNode("PartyInformation");
-		readyComplete = true;
         TutorialInfo.Instance.ActivateTutorial(5);
-        PlayerStats.Instance.DaysPassed += 1;
+		readyComplete = true;
+        //PlayerStats.Instance.DaysPassed += 1;
 	}
 
 	public override void _Process(double delta)
 	{
         if(numofreports <= 0)
         {
-            GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn");
+			PlayerStats.Instance.qssType = false;
+            GetTree().CallDeferred("change_scene_to_file", "res://QuestSorting/QuestSortingScene.tscn");
         }
 	}
 

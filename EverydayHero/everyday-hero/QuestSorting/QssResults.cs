@@ -12,16 +12,6 @@ public partial class QssResults : Node2D
         this.Hide();
         base._Ready();
     }
-    public override void _Process(double delta)
-    {
-        if (isActive)
-        {
-            if (Input.IsActionJustPressed("Interact"))
-            {
-                GetTree().CallDeferred("change_scene_to_file", "res://Maps/BuildingInteriors/BuildingInterior.tscn");
-            }
-        }
-    }
 
     public void RevealResults(string resultString)
     {

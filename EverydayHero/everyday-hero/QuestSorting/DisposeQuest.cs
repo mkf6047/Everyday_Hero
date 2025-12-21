@@ -27,6 +27,16 @@ public partial class DisposeQuest : Area2D
                     QSSTracker.Instance.rejectedQuests++;
                     manager.RemoveQuest(quest);
                     manager.UpdateQuesters();
+                    BackgroundNoise.Instance.PaperCrumple();
+                }
+                if (quest.needHelp)
+                {
+                    PartyLists.Instance.parties[0][quest.heroInNeed].completionByRank[quest.questRank] -= 1;
+                    PartyLists.Instance.parties[0][quest.heroInNeed].onQuest = false;
+                    QSSTracker.Instance.rejectedQuests++;
+                    manager.RemoveQuest(quest);
+                    manager.UpdateQuesters();
+                    BackgroundNoise.Instance.PaperCrumple();
                 }
             }
         }
@@ -41,7 +51,7 @@ public partial class DisposeQuest : Area2D
     {
         try
         {
-            mySprite.Texture = collidingSprite;
+            //mySprite.Texture = collidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = true;
         }
@@ -55,7 +65,7 @@ public partial class DisposeQuest : Area2D
     {
         try
         {
-            mySprite.Texture = notCollidingSprite;
+            //mySprite.Texture = notCollidingSprite;
             MoveableQuest quest = (MoveableQuest)body;
             isColliding = false;
         }
