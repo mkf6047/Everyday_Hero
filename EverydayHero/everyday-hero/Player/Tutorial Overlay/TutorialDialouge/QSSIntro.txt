@@ -1,8 +1,9 @@
 Good to meet you! I'm Phillip, a Manager here in the Hero's Guild. Now, let's get you sorted.
 So, every day new quests will come in for us. It’s your job to decide how the guild will handle each of them.
 Of course, the best way to handle quests is to have our guild’s fine heroes complete them. 
-Each day heroes will come in looking for work. Take a look at their abilities to assign a quest they will excel at.
-All you have to do is call each hero up to the counter. Then, just pass them the quest, and they're off!
+Each day heroes will come in looking for work. Take a look at their abilities and rank to assign a quest they will excel at.
+A hero will often have no problem with quests of the same rank as them, and less so when it fits their skill sets.
+All you have to do to send a hero on a quest is to call each hero up to the counter. Then, just pass them the quest, and they're off!
 *Clicking on the hero's name will call them up to the counter. Click and drag the quest over to them, to send them out on a quest.*
 *While a Hero is selected, mousing over them in this box will provide information about their abilities*
 If you don’t have a good way of handling a certain quest at present, you can always place it in the delay bin to your left, to delay it until the following day, and make it tomorrow you’s problem.
