@@ -33,7 +33,7 @@ public partial class AllPartyProgressReport : Node2D
             }
         }
 		partyInfo = (PartyInformation)GetNode("PartyInformation");
-        TutorialInfo.Instance.ActivateTutorial(5);
+        TutorialInfo.Instance.ActivateTutorial(4);
 		readyComplete = true;
         //PlayerStats.Instance.DaysPassed += 1;
 	}

@@ -17,8 +17,8 @@ public partial class TutorialInfo : Node
         "res://Player/Tutorial Overlay/TutorialDialouge/ClickOnBuilding.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/InteractWithDesk.txt",
         "res://Player/Tutorial Overlay/TutorialDialouge/QSSIntro.txt",
-        "res://Player/Tutorial Overlay/TutorialDialouge/SaveGame.txt",
-        "res://Player/Tutorial Overlay/TutorialDialouge/ProgressReportIntro.txt"
+        "res://Player/Tutorial Overlay/TutorialDialouge/ProgressReportIntro.txt",
+        "res://Player/Tutorial Overlay/TutorialDialouge/ReturningHeroes.txt"
     ];
     public bool tutorialCondition, canComplete = true;
     bool tutorialFound = false;
@@ -284,9 +284,11 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
+            if(currentLine >= 4){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
+            else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[4].Count - 1)
             {
-                overlay.UpdateText(tutorialLines[4][currentLine], PlayerStats.Instance.PlayerName);
+                overlay.UpdateText(tutorialLines[4][currentLine], speakerName);
                 if(currentLine == tutorialLines[4].Count - 1){ canComplete = true; }
             }
             else{ canComplete = true; }
