@@ -20,7 +20,7 @@ public partial class AcceptCompletedQuest : Area2D
 				if (quest.isComplete)
 				{
 					PlayerStats.Instance.Coins += quest.questReward;
-
+					QSSTracker.Instance.acceptedQuests++;
 					manager.RemoveQuest(quest);
                     manager.UpdateQuesters();
 					manager.HideActiveHero();

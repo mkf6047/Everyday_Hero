@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7ocaotmeneby"]
+
+[ext_resource type="Script" uid="uid://b21h6mp51d7t7" path="res://DayTrackerScene/NoonBreak/AfternoonBreak.cs" id="1_rci6p"]
+[ext_resource type="Texture2D" uid="uid://d2u768ui4u2c5" path="res://Sprites/Black_background.png" id="2_slgad"]
+[ext_resource type="FontFile" uid="uid://dk24bq345c7um" path="res://Sprites/Fonts/ghosthey/ghosthey-Regular.ttf" id="3_o5l1h"]
+[ext_resource type="Script" uid="uid://dr625u8sa3mny" path="res://DayTrackerScene/DayCount.cs" id="4_sive7"]
+[ext_resource type="FontFile" uid="uid://dsggppl3elo0h" path="res://Sprites/Fonts/Quintessential/Quintessential-Regular.ttf" id="5_84bi6"]
+[ext_resource type="PackedScene" uid="uid://bhq048n6g1h0q" path="res://Player/PauseMenuOverlay/PauseMenu.tscn" id="6_axabw"]
+
+[node name="NoonBreak" type="Node2D"]
+script = ExtResource("1_rci6p")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_slgad")
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="DayCount" type="RichTextLabel" parent="."]
+offset_top = 100.0
+offset_right = 1152.0
+offset_bottom = 350.0
+theme_override_fonts/normal_font = ExtResource("3_o5l1h")
+bbcode_enabled = true
+text = "[center][font_size=150]Day 1"
+scroll_active = false
+script = ExtResource("4_sive7")
+
+[node name="ContinuePrompt" type="RichTextLabel" parent="."]
+offset_top = 400.0
+offset_right = 1152.0
+offset_bottom = 440.0
+theme_override_fonts/normal_font = ExtResource("5_84bi6")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Click to continue..."
+
+[node name="LunchBreak" type="RichTextLabel" parent="."]
+offset_top = 360.0
+offset_right = 1152.0
+offset_bottom = 400.0
+theme_override_fonts/normal_font = ExtResource("5_84bi6")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Lunch Break"
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_axabw")]
+visible = false
+z_index = 50

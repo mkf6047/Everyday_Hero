@@ -24,6 +24,30 @@ public partial class DelayQuest : Area2D
                 MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
                 if (!quest.isComplete)
                 {
+                    string holder = "res://QuestSorting/QuestInformation/" + quest.questType +"/"+ quest.questName + ".txt";
+                    if (quest.needHelp)
+                    {
+                        if (QSSTracker.Instance.delayedQuestInfo.ContainsKey(holder))
+                        {
+                            QSSTracker.Instance.delayedHelp[holder].Add(quest.heroInNeed);
+                        }
+                        else
+                        {
+                            QSSTracker.Instance.delayedHelp[holder] = new Godot.Collections.Array<int>();
+                            QSSTracker.Instance.delayedHelp[holder].Add(quest.heroInNeed);
+                            GD.Print("neat");
+                        }
+                        PartyLists.Instance.parties[0][quest.heroInNeed].daysRemainingOnQuest++;
+                        PartyLists.Instance.parties[0][quest.heroInNeed].onQuest = true;
+                    }
+                    else
+                    {
+                        if(QSSTracker.Instance.delayedQuestInfo.ContainsKey(holder))
+                        {
+                            QSSTracker.Instance.delayedQuestInfo[holder]++;
+                        }
+                        else{ QSSTracker.Instance.delayedQuestInfo[holder] = 1; }
+                    }
                     QSSTracker.Instance.delayedQuests++;
                     manager.RemoveQuest(quest);
                     manager.UpdateQuesters();

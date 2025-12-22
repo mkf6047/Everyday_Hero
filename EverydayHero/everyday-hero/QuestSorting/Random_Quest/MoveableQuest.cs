@@ -8,10 +8,8 @@ public partial class MoveableQuest : CharacterBody2D
 	Vector2 newPosition;
 	Vector2 dir;
 	float draggingDistance;
-	bool dragging, canChange = true;
-	bool mouseIn = false;
-	public bool isComplete = false, needHelp = false;
-	public bool chosen = false;
+	bool dragging, canChange = true,  mouseIn = false;
+	public bool isComplete = false, needHelp = false, chosen = false, isDelayed = false;
 	public int questReward, questDuration = 0, heroInNeed = -1;
 	public string questName, questType, questRank = "";
 	public string[] bestHeroes = [];

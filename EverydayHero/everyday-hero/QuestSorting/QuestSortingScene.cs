@@ -58,10 +58,15 @@ public partial class QuestSortingScene : Node2D
 		currentHeroSprite = (LeaderSprite)GetNode("PartyInformation/LeaderSprite");
 		heroNameDisplay = (HeroList)GetNode("PartyInformation/HeroList/Textbox");
 		completedQuestReceptacle = (AcceptCompletedQuest)GetNode("AcceptCompletedQuest");
-		GenerateCompletedQuests();
 		if (PlayerStats.Instance.qssType)
 		{
 			GenerateQuests();
+			GenerateDelayedQuests();
+		}
+		else
+		{
+			GenerateCompletedQuests();
+			GenerateDelayedHelp();
 		}
 		//displayClassRank.LoadNextParty(currentParty);
 		QSSTracker.Instance.ResetCounts();
@@ -81,7 +86,7 @@ public partial class QuestSortingScene : Node2D
 			{
 				if (PlayerStats.Instance.qssType)
 				{
-					GetTree().CallDeferred("change_scene_to_file", "res://ProgressReportScene/AllPartyProgressReport.tscn"); 
+					GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/NoonBreak/AfternoonBreak.tscn"); 
 				}
 				else
 				{
@@ -90,14 +95,14 @@ public partial class QuestSortingScene : Node2D
 			}
 			if (calculateOnce) { return; }
 			if (PlayerStats.Instance.Rank == "Unemployed") { PlayerStats.Instance.Rank = "F"; }
-			if (PlayerStats.Instance.QuestsSorted >= 440 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 10)) { PlayerStats.Instance.Rank = "SSS"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 210 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 9)) { PlayerStats.Instance.Rank = "SS"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 130 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 8)) { PlayerStats.Instance.Rank = "S"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 80 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 6)) { PlayerStats.Instance.Rank = "A"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 50 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 5)) { PlayerStats.Instance.Rank = "B"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 30 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 4)) { PlayerStats.Instance.Rank = "C"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 20 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 3)) { PlayerStats.Instance.Rank = "D"; }
-			else if (PlayerStats.Instance.QuestsSorted >= 10 && (InvestmentBenefits.Instance.buildingLevels["Guildhall"] >= 2)) { PlayerStats.Instance.Rank = "E"; }
+			if (PlayerStats.Instance.QuestsSorted >= 440) { PlayerStats.Instance.Rank = "SSS"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 210) { PlayerStats.Instance.Rank = "SS"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 130) { PlayerStats.Instance.Rank = "S"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 80) { PlayerStats.Instance.Rank = "A"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 50) { PlayerStats.Instance.Rank = "B"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 30) { PlayerStats.Instance.Rank = "C"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 20) { PlayerStats.Instance.Rank = "D"; }
+			else if (PlayerStats.Instance.QuestsSorted >= 10) { PlayerStats.Instance.Rank = "E"; }
 			PlayerStats.Instance.isInside = true;
 			resultsDisplay.RevealResults("" + QSSTracker.Instance.acceptedQuests + ";" +
 											QSSTracker.Instance.delayedQuests + ";" +
@@ -130,7 +135,6 @@ public partial class QuestSortingScene : Node2D
 		{
 			if((PartyLists.Instance.parties[0][i].daysRemainingOnQuest <= 0) && PartyLists.Instance.parties[0][i].onQuest)
             {	
-				GD.Print("running");
 				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
 				questHolder.AddChild(quest);
 				string holder = "res://QuestSorting/QuestInformation/" + PartyLists.Instance.parties[0][i].currentQuestsTypes[0] +"/"+ PartyLists.Instance.parties[0][i].currentQuestsNames[0] + ".txt";
@@ -138,7 +142,7 @@ public partial class QuestSortingScene : Node2D
 				//quest.CallDeferred("SpecificQuest", holder);
 				returningReports++;
 				if(PartyLists.Instance.parties[0][i].questPassed){ quest.Completed(); } else{ quest.NeedsWork(i); }
-				quest.Position = new Vector2(150 + (returningReports * 175), 475);
+				quest.Position = new Vector2(150 + (returningReports * 175), 425);
 				AddQuest(quest);
             }
 		}
@@ -149,6 +153,44 @@ public partial class QuestSortingScene : Node2D
 		else
 		{
 			TutorialInfo.Instance.ActivateTutorial(5);
+		}
+	}
+
+	public void GenerateDelayedQuests()
+	{
+		int delayedQuests = 0;
+		foreach(var(questPath, amount) in QSSTracker.Instance.delayedQuestInfo)
+		{
+			for(int i = 0; i < amount; i++)
+			{
+				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
+				questHolder.AddChild(quest);
+				quest.SpecificQuest(questPath);
+				quest.isDelayed = true;
+				delayedQuests++;
+				quest.Position = new Vector2(150 + (delayedQuests * 175), 450);
+				AddQuest(quest);
+			}
+		}
+	}
+
+	public void GenerateDelayedHelp()
+	{
+		int delayedQuests = 0;
+		foreach(var(questPath, amount) in QSSTracker.Instance.delayedHelp)
+		{
+			for(int i = 0; i < amount.Count; i++)
+			{
+				GD.Print(questPath);
+				MoveableQuest quest = (MoveableQuest)questPreload.Instantiate();
+				questHolder.AddChild(quest);
+				quest.SpecificQuest(questPath);
+				quest.isDelayed = true;
+				quest.NeedsWork(amount[i]);
+				delayedQuests++;
+				quest.Position = new Vector2(150 + (delayedQuests * 175), 450);
+				AddQuest(quest);
+			}
 		}
 	}
 
@@ -234,6 +276,12 @@ public partial class QuestSortingScene : Node2D
 		}
 		heroSelected = true;
     }
+
+	public void PhillipNotHero()
+	{
+		heroDialouge.Text = "";
+		heroDialouge.AppendText("I'm not a hero, man!");
+	}
 
 	public void HideActiveHero(){ currentHeroSprite.ConcealActiveHero(); }
 }

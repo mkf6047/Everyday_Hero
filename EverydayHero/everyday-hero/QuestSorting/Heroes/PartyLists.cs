@@ -71,7 +71,7 @@ public partial class PartyLists : Node
 	public void MakeStaticParty()
 	{
 		Godot.Collections.Array<HeroStats> newParty = new Godot.Collections.Array<HeroStats>();
-		for (int i = 0; i <= 5; i++)
+		for (int i = 0; i <= 6; i++)
 		{
 			HeroStats newPartyMember = new HeroStats();
 			switch (i)

@@ -31,6 +31,10 @@ public partial class DisposeQuest : Area2D
                 }
                 if (quest.needHelp)
                 {
+					if (quest.isDelayed)
+					{
+						QSSTracker.Instance.delayedHelp["res://QuestSorting/QuestInformation/" + quest.questType +"/"+ quest.questName + ".txt"].Remove(quest.heroInNeed);
+					}
                     PartyLists.Instance.parties[0][quest.heroInNeed].completionByRank[quest.questRank] -= 1;
                     PartyLists.Instance.parties[0][quest.heroInNeed].onQuest = false;
                     QSSTracker.Instance.rejectedQuests++;

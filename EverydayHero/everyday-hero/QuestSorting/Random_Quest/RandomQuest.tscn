@@ -22,7 +22,6 @@ script = ExtResource("1_mupi5")
 texture = ExtResource("2_w37uj")
 
 [node name="Complete" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(60, 70)
 rotation = -0.785398
 texture = ExtResource("3_j1evi")
@@ -38,7 +37,6 @@ bbcode_enabled = true
 text = "[color=black]DONE"
 
 [node name="InProgress" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(60, 70)
 rotation = -0.785398
 texture = ExtResource("5_p2r8k")

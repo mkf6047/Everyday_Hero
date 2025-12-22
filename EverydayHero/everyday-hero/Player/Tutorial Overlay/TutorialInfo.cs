@@ -245,7 +245,7 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if((currentLine == 5) || (currentLine == 6) || (currentLine >= 13)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
+            if((currentLine == 7) || (currentLine == 6) || (currentLine >= 14)){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[3].Count - 1)
             {
@@ -276,7 +276,7 @@ public partial class TutorialInfo : Node
         }
         if (Math.Abs(delta - 0.0) < epsilon)
         {
-            overlay.UpdateText(tutorialLines[4][0], PlayerStats.Instance.PlayerName);    //replace first 0 with tutorial index
+            overlay.UpdateText(tutorialLines[4][0], "[center]Manager Phillip");    //replace first 0 with tutorial index
             currentLine = 0;
             tutorialCondition = false;
             canComplete = false;
@@ -284,7 +284,7 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if(currentLine >= 4){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
+            if(currentLine >= 13){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[4].Count - 1)
             {

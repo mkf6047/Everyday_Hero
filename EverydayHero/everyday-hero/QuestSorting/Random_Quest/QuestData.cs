@@ -106,7 +106,6 @@ public partial class QuestData : Node2D
 
     public void SpecificQuest(string filepath)
     {
-        GD.Print(filepath);
         using (var file = FileAccess.Open(filepath, FileAccess.ModeFlags.Read))
         {
             string value = file.GetLine();
@@ -120,19 +119,19 @@ public partial class QuestData : Node2D
 
             value = file.GetLine();
             questRank.Text = "";
-            questRank.AppendText("[color=black][font_size=13]Rank:");
+            questRank.AppendText("[center][color=black][font_size=13]Rank:");
             questRank.Newline();
             questRank.AppendText(value);
             this.parent.questRank = value;
 
             value = file.GetLine();
             questValue.Text = "";
-            questValue.AppendText("[color=black]" + value + "G");
+            questValue.AppendText("[center][color=black]" + value + "G");
             this.parent.questReward = int.Parse(value);
 
             value = file.GetLine();
             questDuration.Text = "";
-            questDuration.AppendText("[font_size=13][color=black][center]Days:");
+            questDuration.AppendText("[center][font_size=13][color=black][center]Days:");
             questDuration.Newline();
             questDuration.AppendText(value);
             this.parent.questDuration = int.Parse(value);
@@ -140,6 +139,10 @@ public partial class QuestData : Node2D
             value = file.GetLine();
             this.parent.bestHeroes = value.Split(',');
             //GD.Print("quest information ported sucessfully.");
+            if(filepath.Contains("Collection")){ this.parent.questType = "Collection";}
+            if(filepath.Contains("Complex")){ this.parent.questType = "Complex";}
+            if(filepath.Contains("Conquest")){ this.parent.questType = "Conquest";}
+            if(filepath.Contains("Escort")){ this.parent.questType = "Escort";}
         }
     }
 }

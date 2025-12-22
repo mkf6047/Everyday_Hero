@@ -4,7 +4,7 @@ using System.Linq;
 
 public partial class AcceptQuest : Area2D
 {
-	bool isColliding = false;
+	bool isColliding = false, outOfHeroes = false;
 	QuestSortingScene manager;
 	public override void _Ready()
 	{
@@ -20,10 +20,23 @@ public partial class AcceptQuest : Area2D
 				MoveableQuest quest = (MoveableQuest)GetOverlappingBodies()[0];
 				if (manager.heroSelected && !quest.isComplete)
 				{
-					if(manager.currentHero == 7) { return; }
+					if(manager.currentHero == 7) 
+					{
+						if (!outOfHeroes)
+						{
+							manager.PhillipNotHero();
+							outOfHeroes = true;
+						}
+						return; 
+					}
+					PlayerStats.Instance.QuestsSorted += 1;
+					QSSTracker.Instance.acceptedQuests++;
 					if (quest.needHelp)
 					{
-						GD.Print("Power");
+						if (quest.isDelayed)
+						{
+							QSSTracker.Instance.delayedHelp["res://QuestSorting/QuestInformation/" + quest.questType +"/"+ quest.questName + ".txt"].Remove(quest.heroInNeed);
+						}
 						PartyLists.Instance.parties[0][quest.heroInNeed].goodbadprogress[0] += 25;
 						if (PartyLists.Instance.parties[0][quest.heroInNeed].goodbadprogress[0] > 100)
 						{
@@ -54,8 +67,6 @@ public partial class AcceptQuest : Area2D
                         if(a.Contains(PartyLists.Instance.parties[0][manager.currentHero - 1].heroClass)){ iscompatable = true; }
                     }
 					PartyLists.Instance.parties[0][manager.currentHero - 1].compatableWithQuest = iscompatable;
-					PlayerStats.Instance.QuestsSorted += 1;
-					QSSTracker.Instance.acceptedQuests++;
 
 					manager.RemoveQuest(quest);
                     manager.UpdateQuesters();
