@@ -36,6 +36,7 @@ public partial class AllPartyProgressReport : Node2D
         TutorialInfo.Instance.ActivateTutorial(4);
 		readyComplete = true;
         //PlayerStats.Instance.DaysPassed += 1;
+		BackgroundNoise.Instance.MainMusic();
 	}
 
 	public override void _Process(double delta)

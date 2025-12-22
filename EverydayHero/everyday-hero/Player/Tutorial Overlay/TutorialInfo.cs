@@ -284,7 +284,7 @@ public partial class TutorialInfo : Node
         else if (Input.IsActionJustPressed("Interact"))
         {
             currentLine++;
-            if(currentLine >= 13){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
+            if(currentLine >= 3){ speakerName = "[center]" + PlayerStats.Instance.PlayerName;}
             else{ speakerName = "[center]Manager Phillip";}
             if (currentLine <= tutorialLines[4].Count - 1)
             {
