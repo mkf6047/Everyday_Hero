@@ -32,7 +32,7 @@ public partial class AllPartyProgressReport : Node2D
                 PartyLists.Instance.parties[0][i].daysRemainingOnQuest--;
             }
         }
-		partyInfo = (PartyInformation)GetNode("PartyInformation");
+		//partyInfo = (PartyInformation)GetNode("PartyInformation");
         TutorialInfo.Instance.ActivateTutorial(4);
 		readyComplete = true;
         //PlayerStats.Instance.DaysPassed += 1;
