@@ -91,6 +91,7 @@ public partial class QuestSortingScene : Node2D
 				else
 				{
 					GetTree().CallDeferred("change_scene_to_file", "res://DayTrackerScene/DayTracker.tscn"); 
+        			PlayerStats.Instance.DaysPassed += 1;
 				}
 			}
 			if (calculateOnce) { return; }

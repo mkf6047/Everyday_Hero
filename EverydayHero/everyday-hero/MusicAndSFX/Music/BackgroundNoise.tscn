@@ -233,6 +233,7 @@ offset_left = 516.0
 offset_top = 390.0
 offset_right = 636.0
 offset_bottom = 436.0
+mouse_filter = 1
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_u4c7l")
 theme_override_font_sizes/font_size = 24

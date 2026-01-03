@@ -17,7 +17,7 @@ public partial class PauseMenu : Control
     {
         if (Input.IsActionJustPressed("cancel"))
         {
-            if (isMenuOpen)
+            if (!isMenuOpen)
             {
                 OpenMenu();
             }
@@ -29,14 +29,14 @@ public partial class PauseMenu : Control
         base._Process(delta);
     }
     
-    public void OpenMenu()
+    public void CloseMenu()
     {
         isMenuOpen = false;
         this.Hide();
         GetTree().Paused = false;
     }
 
-    public void CloseMenu()
+    public void OpenMenu()
     {
         isMenuOpen = true;
         GetTree().Paused = true;

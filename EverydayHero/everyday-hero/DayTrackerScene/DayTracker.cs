@@ -13,7 +13,6 @@ public partial class DayTracker : Node2D
                 PartyLists.Instance.parties[0][i].onQuest = false;
             }
         }
-        PlayerStats.Instance.DaysPassed += 1;
     }
 
     public override void _Process(double delta)
